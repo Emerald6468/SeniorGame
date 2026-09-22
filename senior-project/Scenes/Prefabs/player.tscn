@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://q1bcuxedsge5"]
+
+[ext_resource type="Script" uid="uid://jonrbbhp01q5" path="res://Scripts/player.gd" id="1_sm2rp"]
+[ext_resource type="AudioStream" uid="uid://tp4khmc0ak8x" path="res://Assets/Audio/SFX/Running.wav" id="2_pv3ct"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
+
+[node name="Player" type="CharacterBody3D" unique_id=469422006]
+script = ExtResource("1_sm2rp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1083743219]
+shape = SubResource("CapsuleShape3D_bhunq")
+debug_color = Color(0, 0.6, 0.69803923, 0.6666667)
+
+[node name="Head" type="Node3D" parent="." unique_id=1326759573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5820372, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1910088690]
+
+[node name="Running" type="AudioStreamPlayer" parent="." unique_id=1721402892]
+stream = ExtResource("2_pv3ct")
+volume_db = -8.0

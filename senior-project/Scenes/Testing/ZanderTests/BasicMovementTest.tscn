@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bnemr2an3w41g"]
+
+[ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_05r2y"]
+[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/templategrid_albedo.png" id="1_aaow1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05r2y"]
+albedo_texture = ExtResource("1_aaow1")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sn0t7"]
+sky_top_color = Color(0.6583407, 0.22435483, 0.59418625, 1)
+sky_horizon_color = Color(0.87722045, 0.52248424, 0.37153265, 1)
+
+[sub_resource type="Sky" id="Sky_riqys"]
+sky_material = SubResource("ProceduralSkyMaterial_sn0t7")
+
+[sub_resource type="Environment" id="Environment_bhunq"]
+background_mode = 2
+sky = SubResource("Sky_riqys")
+
+[node name="BasicMovementTest" type="Node3D" unique_id=1730153282]
+
+[node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_05r2y")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=633388165]
+transform = Transform3D(56.47115, 0, 0, 0, 0.99999976, 0, 0, 0, 61.972607, 0, -2.059403, 0)
+material_override = SubResource("StandardMaterial3D_05r2y")
+use_collision = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1229304955]
+environment = SubResource("Environment_bhunq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1615992708]
+transform = Transform3D(1, 0, 0, 0, 0.9882916, 0.15257694, 0, -0.15257694, 0.9882916, 0, 6.1631517, 0)
