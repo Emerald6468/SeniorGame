@@ -15,6 +15,14 @@ var was_on_ground = false
 var coyote_time_available = false
 var c_start = false
 var c_time = .5
+
+#Crouch/Slide
+var slide_deccel = .03
+var slide_threshold = 12.0
+var is_sliding = false
+var is_crouching = false
+
+
 #Camera
 var mouse_sensitivity = 0.4
 @onready var head: Node3D = $Head
@@ -85,7 +93,12 @@ func _physics_process(delta: float) -> void:
 		velocity.z = direction.z * cur_speed
 		if is_on_floor():
 			if !running.playing:running.play()
-			cur_speed = move_toward(cur_speed,max_speed,accel)
+			if !is_crouching and !is_sliding: cur_speed = move_toward(cur_speed,max_speed,accel)
+			if Input.is_action_just_pressed("Slide"):
+				if cur_speed >= slide_threshold: is_sliding = true
+				else: is_crouching = true
+			else: is_sliding = false;is_crouching = false
+			
 	else:
 		running.stop()
 		cur_speed = move_toward(cur_speed,SPEED,deccel)
