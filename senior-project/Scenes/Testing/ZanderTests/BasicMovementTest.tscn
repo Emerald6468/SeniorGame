@@ -20,11 +20,12 @@ sky = SubResource("Sky_riqys")
 [node name="BasicMovementTest" type="Node3D" unique_id=1730153282]
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_05r2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2951248, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=633388165]
-transform = Transform3D(56.47115, 0, 0, 0, 0.99999976, 0, 0, 0, 61.972607, 0, -2.059403, 0)
+[node name="Floor" type="CSGBox3D" parent="." unique_id=633388165]
 material_override = SubResource("StandardMaterial3D_05r2y")
 use_collision = true
+size = Vector3(100, 2, 100)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1229304955]
 environment = SubResource("Environment_bhunq")

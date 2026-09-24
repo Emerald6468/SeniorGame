@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://jonrbbhp01q5" path="res://Scripts/player.gd" id="1_sm2rp"]
 [ext_resource type="AudioStream" uid="uid://tp4khmc0ak8x" path="res://Assets/Audio/SFX/Running.wav" id="2_pv3ct"]
+[ext_resource type="PackedScene" uid="uid://o27u5krdqb62" path="res://Scenes/UI/UI.tscn" id="3_v1l4e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bhunq"]
 
 [node name="Player" type="CharacterBody3D" unique_id=469422006]
 script = ExtResource("1_sm2rp")
@@ -11,6 +14,9 @@ script = ExtResource("1_sm2rp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1083743219]
 shape = SubResource("CapsuleShape3D_bhunq")
 debug_color = Color(0, 0.6, 0.69803923, 0.6666667)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=2097862558]
+mesh = SubResource("CapsuleMesh_bhunq")
 
 [node name="Head" type="Node3D" parent="." unique_id=1326759573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
@@ -20,3 +26,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 [node name="Running" type="AudioStreamPlayer" parent="." unique_id=1721402892]
 stream = ExtResource("2_pv3ct")
 volume_db = -8.0
+
+[node name="Ui" parent="." unique_id=753733901 instance=ExtResource("3_v1l4e")]

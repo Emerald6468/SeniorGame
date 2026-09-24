@@ -4,6 +4,12 @@ extends CharacterBody3D
 const SPEED = 8.0
 const JUMP_VELOCITY = 4.5
 
+#Flexible Speed
+var cur_speed
+var max_speed = 26.0
+var accel = 0.02
+var deccel = .5
+
 #Camera
 var mouse_sensitivity = 0.4
 @onready var head: Node3D = $Head
@@ -16,6 +22,9 @@ var t_bob:float = 0.0
 
 #Audio
 @onready var running: AudioStreamPlayer = $Running
+
+func _ready() -> void:
+	cur_speed = SPEED
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -33,7 +42,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -41,13 +50,17 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		if !running.playing and is_on_floor():running.play()
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * cur_speed
+		velocity.z = direction.z * cur_speed
+		if is_on_floor():
+			if !running.playing:running.play()
+			cur_speed = move_toward(cur_speed,max_speed,accel)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-	if !direction or !is_on_floor():running.stop()
+		velocity.x = move_toward(velocity.x, 0, cur_speed)
+		velocity.z = move_toward(velocity.z, 0, cur_speed)
+	if !direction or !is_on_floor():
+		cur_speed = move_toward(cur_speed,SPEED,deccel)
+		running.stop()
 	
 	#Head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())

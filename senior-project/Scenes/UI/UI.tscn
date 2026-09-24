@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://o27u5krdqb62"]
+
+[ext_resource type="Script" uid="uid://b8xxhuy38u5te" path="res://Scripts/ui.gd" id="1_s86y4"]
+
+[node name="Ui" type="Control" unique_id=753733901]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s86y4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=23702782]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1525682755]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Speed" type="Label" parent="CanvasLayer/MarginContainer" unique_id=1720541619]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Speed = 0"
