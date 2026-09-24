@@ -27,6 +27,8 @@ var t_bob:float = 0.0
 
 #Audio
 @onready var running: AudioStreamPlayer = $Running
+@onready var jump: AudioStreamPlayer = $Jump
+@onready var jump_land: AudioStreamPlayer = $JumpLand
 
 func _ready() -> void:
 	cur_speed = SPEED
@@ -57,15 +59,18 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle jump.
 	if is_on_floor(): 
+		if !was_on_ground: jump_land.play()
 		coyote_time_available = true
 		was_on_ground = true
 		c_start = false
 	elif coyote_time_available and was_on_ground : 
 		coyote_time()
 		was_on_ground = false
+	else: was_on_ground = false
 	#Normal Jump
 	if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote_time_available):
 		coyote_time_available = false
+		jump.play()
 		velocity.y = JUMP_VELOCITY
 	print(str(coyote_time_available))
 #endregion

@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://jonrbbhp01q5" path="res://Scripts/player.gd" id="1_sm2rp"]
 [ext_resource type="AudioStream" uid="uid://tp4khmc0ak8x" path="res://Assets/Audio/SFX/Running.wav" id="2_pv3ct"]
+[ext_resource type="AudioStream" uid="uid://bhhg8qfhgqspk" path="res://Assets/Audio/SFX/JumpLand.wav" id="3_cb7df"]
 [ext_resource type="PackedScene" uid="uid://o27u5krdqb62" path="res://Scenes/UI/UI.tscn" id="3_v1l4e"]
+[ext_resource type="AudioStream" uid="uid://dwujkuabp5ysk" path="res://Assets/Audio/SFX/Jump.wav" id="4_v34u6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
 
@@ -26,5 +28,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 [node name="Running" type="AudioStreamPlayer" parent="." unique_id=1721402892]
 stream = ExtResource("2_pv3ct")
 volume_db = -8.0
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=143305410]
+stream = ExtResource("4_v34u6")
+volume_db = -8.0
+
+[node name="JumpLand" type="AudioStreamPlayer" parent="." unique_id=2044813445]
+stream = ExtResource("3_cb7df")
+volume_db = -5.0
 
 [node name="Ui" parent="." unique_id=753733901 instance=ExtResource("3_v1l4e")]
