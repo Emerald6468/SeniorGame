@@ -23,6 +23,13 @@ sky = SubResource("Sky_riqys")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2951248, 0)
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=633388165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45.62406)
+material_override = SubResource("StandardMaterial3D_05r2y")
+use_collision = true
+size = Vector3(100, 2, 100)
+
+[node name="Floor2" type="CSGBox3D" parent="." unique_id=1877117540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60.75692)
 material_override = SubResource("StandardMaterial3D_05r2y")
 use_collision = true
 size = Vector3(100, 2, 100)
