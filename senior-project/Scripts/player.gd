@@ -25,7 +25,9 @@ var is_crouching = false
 var slide_start = false
 var set_speed:float
 var curve_x = 0.0
+var max_slide_speed:float
 
+#Camera heights
 var head_level:float
 var crouch_level:float
 var slide_level:float
@@ -52,6 +54,7 @@ var t_bob:float = 0.0
 
 func _ready() -> void:
 	cur_speed = SPEED
+	max_slide_speed = max_speed + 5.0
 	head_level = $Head.position.y
 	crouch_level = head_level - crouch_diff
 	slide_level = head_level - slide_diff
@@ -158,6 +161,9 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		cur_speed = move_toward(cur_speed,SPEED,deccel/10)
 		running.stop()
+	var speed_diff = cur_speed - max_slide_speed
+	if cur_speed > max_slide_speed: cur_speed = move_toward(cur_speed,max_slide_speed,speed_diff/5)
+	
 	
 	#Head bob
 	t_bob += delta * velocity.length() * float(is_on_floor()) * float(!is_sliding)
