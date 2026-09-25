@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://o27u5krdqb62" path="res://Scenes/UI/UI.tscn" id="3_v1l4e"]
 [ext_resource type="AudioStream" uid="uid://dwujkuabp5ysk" path="res://Assets/Audio/SFX/Jump.wav" id="4_v34u6"]
 [ext_resource type="AudioStream" uid="uid://c6hbuyu8cokal" path="res://Assets/Audio/SFX/SFX_air_woosh(1).wav" id="5_v34u6"]
+[ext_resource type="AudioStream" uid="uid://p0oe7u4bdlgl" path="res://Assets/Audio/SFX/721347__riley_garinger__pvc-whoosh_02_mono_subby.wav" id="6_ak25i"]
 
 [sub_resource type="Curve" id="Curve_fdt7q"]
 _limits = [-9.0, 5.0, 0.0, 2.0]
-_data = [Vector2(0, 0), 0.0, -1.3483144, 0, 0, Vector2(0.5, 5), 0.0, 0.0, 0, 0, Vector2(2, -0.134), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, -9.223934, 0, 0, Vector2(0.45, 5), 0.0, 0.0, 0, 0, Vector2(2, -0.134), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
@@ -47,5 +48,8 @@ volume_db = -5.0
 [node name="Slide" type="AudioStreamPlayer" parent="." unique_id=1112154175]
 stream = ExtResource("5_v34u6")
 volume_db = 5.0
+
+[node name="SlideStart" type="AudioStreamPlayer" parent="." unique_id=1086960223]
+stream = ExtResource("6_ak25i")
 
 [node name="Ui" parent="." unique_id=753733901 instance=ExtResource("3_v1l4e")]

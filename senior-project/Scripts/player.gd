@@ -48,6 +48,7 @@ var t_bob:float = 0.0
 @onready var jump: AudioStreamPlayer = $Jump
 @onready var jump_land: AudioStreamPlayer = $JumpLand
 @onready var slide: AudioStreamPlayer = $Slide
+@onready var slide_start_audio: AudioStreamPlayer = $SlideStart
 
 func _ready() -> void:
 	cur_speed = SPEED
@@ -69,14 +70,21 @@ func coyote_time():
 func slide_lerp():
 	if slide_start:
 		slide_start = false
+		curve_x = 0.0
+		set_speed = cur_speed
+		var set_diff = set_speed - 11.9
+		slide_curve.set_point_value(2,-set_diff)
+		slide_start_audio.play()
+	
 	if cur_speed < set_speed +5.0: 
 		print("rise")
-		cur_speed = slide_curve.sample(curve_x)
-	if cur_speed >= slide_threshold: 
+		cur_speed = slide_curve.sample(curve_x) + set_speed
+	elif cur_speed >= slide_threshold: 
 		print("slow")
-		cur_speed = slide_curve.sample(curve_x)
-	if slide_curve.max_domain > curve_x: curve_x += .1
-	print("done")
+		cur_speed = slide_curve.sample(curve_x) + set_speed
+	print(curve_x)
+	if slide_curve.max_domain > curve_x: curve_x += .01
+	else:print("done")
 		
 
 func _physics_process(delta: float) -> void:
@@ -123,19 +131,23 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_pressed("Slide"):
 				if cur_speed >= slide_threshold: is_sliding = true
 				else: is_crouching = true
+			else: is_sliding = false;is_crouching = false
 			if Input.is_action_just_pressed("Slide"):
 				slide_start = true
-			else: is_sliding = false;is_crouching = false
 			if is_sliding: 
-				print("slide")
-				slide_lerp()
-				$Head.position.y = move_toward(slide_level,.02,$Head.position.y)
-				if !slide.playing: slide.play()
+				if cur_speed < slide_threshold: 
+					is_sliding = false
+					is_crouching = true
+				else:
+					print("slide")
+					slide_lerp()
+					$Head.position.y = move_toward(slide_level,$Head.position.y,.03)
+					if !slide.playing: slide.play()
 			elif is_crouching:
 				slide.stop()
-				$Head.position.y = move_toward(crouch_level,.05,$Head.position.y)
+				$Head.position.y = move_toward(crouch_level,$Head.position.y,.05)
 			else: 
-				$Head.position.y = move_toward(head_level,.2,$Head.position.y)
+				$Head.position.y = move_toward(head_level,$Head.position.y,.2)
 				slide.stop()
 	else:
 		running.stop()
@@ -148,7 +160,6 @@ func _physics_process(delta: float) -> void:
 		running.stop()
 	
 	#Head bob
-	print(str(float(!is_sliding)))
 	t_bob += delta * velocity.length() * float(is_on_floor()) * float(!is_sliding)
 	camera.transform.origin = _headbob(t_bob)
 		
