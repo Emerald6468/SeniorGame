@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cyik10fgpnsng"]
+
+[ext_resource type="Script" uid="uid://bccqukyxrgjid" path="res://Scripts/basic_spell.gd" id="1_6vach"]
+[ext_resource type="AudioStream" uid="uid://c4ijkiw6pvc8g" path="res://Assets/Audio/SFX/cast.wav" id="2_nqgcp"]
+[ext_resource type="AudioStream" uid="uid://jttcnvc3qju5" path="res://Assets/Audio/SFX/pop.wav" id="3_ubdu3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqys"]
+transparency = 1
+albedo_color = Color(1.4780655, 7.150652, 1.1520548, 0.05490196)
+
+[sub_resource type="SphereMesh" id="SphereMesh_bhunq"]
+material = SubResource("StandardMaterial3D_riqys")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_riqys"]
+
+[sub_resource type="Animation" id="Animation_6vach"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qg5o6"]
+resource_name = "explode"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.8, 0.8, 0.8), Vector3(3, 3, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nqgcp"]
+_data = {
+&"RESET": SubResource("Animation_6vach"),
+&"explode": SubResource("Animation_qg5o6")
+}
+
+[node name="BasicSpell" type="RigidBody3D" unique_id=92920020]
+collision_layer = 4
+collision_mask = 5
+gravity_scale = 0.0
+contact_monitor = true
+script = ExtResource("1_6vach")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=743141123]
+shape = SubResource("SphereShape3D_bhunq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=816806969]
+light_color = Color(0.073794164, 0.6653061, 0.34027615, 1)
+light_energy = 8.0
+light_indirect_energy = 2.0
+omni_range = 1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=726153033]
+mesh = SubResource("SphereMesh_bhunq")
+
+[node name="Monitor" type="Area3D" parent="." unique_id=1290234502]
+transform = Transform3D(1.275, 0, 0, 0, 1.275, 0, 0, 0, 1.275, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor" unique_id=326232320]
+shape = SubResource("SphereShape3D_riqys")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=554529299]
+libraries/ = SubResource("AnimationLibrary_nqgcp")
+
+[node name="Cast" type="AudioStreamPlayer" parent="." unique_id=1794661807]
+stream = ExtResource("2_nqgcp")
+volume_db = -2.0
+
+[node name="Pop" type="AudioStreamPlayer" parent="." unique_id=808768573]
+stream = ExtResource("3_ubdu3")
+volume_db = -10.0

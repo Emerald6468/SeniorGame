@@ -49,6 +49,11 @@ var BOB_FREQ: float = 3
 var BOB_AMP: float = 0.03
 var t_bob:float = 0.0
 
+#Spells
+@onready var right_spell_spawn: Marker3D = $Head/Camera3D/Right_Spell_Spawn
+@onready var left_spell_spawn: Marker3D = $Head/Camera3D/Left_Spell_Spawn
+const BASIC_SPELL = preload("uid://cyik10fgpnsng")
+
 #Audio
 @onready var running: AudioStreamPlayer = $Running
 @onready var jump: AudioStreamPlayer = $Jump
@@ -137,9 +142,9 @@ func _physics_process(delta: float) -> void:
 		#print(str(coyote_time_available))
 #endregion
 
+#region Movement
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-#region Movement
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -189,6 +194,21 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 #endregion
 	
+#region Combat
+	#Combat
+	#Attacks
+	if Input.is_action_just_pressed("Fire_Right") and !get_node("UI").right_casting:
+		print("fire right")
+		get_node("UI").wand_animation("right","Cast_Spell")
+		var basic_spell = BASIC_SPELL.instantiate()
+		get_parent().add_child(basic_spell)
+		basic_spell.global_position = right_spell_spawn.global_position
+		basic_spell.global_rotation = right_spell_spawn.global_rotation
+		#var vec3 = Vector3(0,0,-9)
+		#basic_spell.add_constant_central_force(vec3)
+#endregion
+
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity

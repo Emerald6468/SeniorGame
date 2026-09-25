@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://o27u5krdqb62" path="res://Scenes/UI/UI.tscn" id="3_v1l4e"]
 [ext_resource type="AudioStream" uid="uid://dwujkuabp5ysk" path="res://Assets/Audio/SFX/Jump.wav" id="4_v34u6"]
 [ext_resource type="AudioStream" uid="uid://c6hbuyu8cokal" path="res://Assets/Audio/SFX/SFX_air_woosh(1).wav" id="5_v34u6"]
-[ext_resource type="AudioStream" uid="uid://p0oe7u4bdlgl" path="res://Assets/Audio/SFX/721347__riley_garinger__pvc-whoosh_02_mono_subby.wav" id="6_ak25i"]
+[ext_resource type="AudioStream" uid="uid://p0oe7u4bdlgl" path="res://Assets/Audio/SFX/Slidestart.wav" id="6_ak25i"]
 
 [sub_resource type="Curve" id="Curve_fdt7q"]
 _limits = [-9.0, 5.0, 0.0, 2.0]
@@ -18,6 +18,7 @@ point_count = 3
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bhunq"]
 
 [node name="Player" type="CharacterBody3D" unique_id=469422006]
+collision_layer = 2
 script = ExtResource("1_sm2rp")
 slide_curve = SubResource("Curve_fdt7q")
 
@@ -32,6 +33,12 @@ mesh = SubResource("CapsuleMesh_bhunq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1910088690]
+
+[node name="Right_Spell_Spawn" type="Marker3D" parent="Head/Camera3D" unique_id=1385046776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3901411, -0.115736246, -0.505494)
+
+[node name="Left_Spell_Spawn" type="Marker3D" parent="Head/Camera3D" unique_id=1093797762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41726235, -0.115736246, -0.505494)
 
 [node name="Running" type="AudioStreamPlayer" parent="." unique_id=1721402892]
 stream = ExtResource("2_pv3ct")
@@ -52,4 +59,4 @@ volume_db = 5.0
 [node name="SlideStart" type="AudioStreamPlayer" parent="." unique_id=1086960223]
 stream = ExtResource("6_ak25i")
 
-[node name="Ui" parent="." unique_id=753733901 instance=ExtResource("3_v1l4e")]
+[node name="UI" parent="." unique_id=753733901 instance=ExtResource("3_v1l4e")]
