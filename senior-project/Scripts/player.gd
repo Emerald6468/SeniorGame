@@ -207,8 +207,18 @@ func _physics_process(delta: float) -> void:
 		get_parent().add_child(basic_spell)
 		basic_spell.global_position = right_spell_spawn.global_position
 		basic_spell.global_rotation = right_spell_spawn.global_rotation
-		#var vec3 = Vector3(0,0,-9)
-		#basic_spell.add_constant_central_force(vec3)
+	
+	if Input.is_action_just_pressed("Fire_Left") and !get_node("UI").left_casting:
+		print("fire left")
+		get_node("UI").wand_animation("left","LCast_Spell")
+		var basic_spell = BASIC_SPELL.instantiate()
+		get_parent().add_child(basic_spell)
+		#var material = basic_spell.get_node("Mesh").get_surface_material(0)
+		#var new_color = Color("Red")
+		#basic_spell.get_node("Mesh").set_surface_material(0,new_color)
+		#basic_spell.get_node("Mesh").albedo_color.set_color(new_color)
+		basic_spell.global_position = left_spell_spawn.global_position
+		basic_spell.global_rotation = left_spell_spawn.global_rotation
 #endregion
 
 

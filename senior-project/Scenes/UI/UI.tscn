@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8xxhuy38u5te" path="res://Scripts/ui.gd" id="1_s86y4"]
 [ext_resource type="Texture2D" uid="uid://cg8qrfevh2beq" path="res://Assets/placehold_right_wand.png" id="2_636u5"]
+[ext_resource type="Texture2D" uid="uid://cntmbeomma8sm" path="res://Assets/placehold_left_wand.png" id="3_akgwn"]
 
 [sub_resource type="Animation" id="Animation_636u5"]
 resource_name = "Cast_Spell"
@@ -31,6 +32,33 @@ tracks/1/keys = {
 "values": [Vector2(1006.00006, 463), Vector2(952.00006, 455), Vector2(1006.00006, 463)]
 }
 
+[sub_resource type="Animation" id="Animation_b83rk"]
+resource_name = "LCast_Spell"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/PlaceholdLeftWand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.27576202, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/PlaceholdLeftWand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(179.00006, 463), Vector2(229, 455), Vector2(179, 463)]
+}
+
 [sub_resource type="Animation" id="Animation_akgwn"]
 length = 0.001
 tracks/0/type = "value"
@@ -57,10 +85,35 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1006.00006, 463)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/PlaceholdLeftWand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(179.00006, 463)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/PlaceholdLeftWand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b83rk"]
 _data = {
 &"Cast_Spell": SubResource("Animation_636u5"),
+&"LCast_Spell": SubResource("Animation_b83rk"),
 &"RESET": SubResource("Animation_akgwn")
 }
 
@@ -96,6 +149,11 @@ text = "Speed = 0"
 position = Vector2(1006.00006, 463)
 scale = Vector2(2.484, 2.1174862)
 texture = ExtResource("2_636u5")
+
+[node name="PlaceholdLeftWand" type="Sprite2D" parent="CanvasLayer" unique_id=670262680]
+position = Vector2(179.00006, 463)
+scale = Vector2(2.484, 2.1174862)
+texture = ExtResource("3_akgwn")
 
 [node name="RightHand" type="AnimationPlayer" parent="." unique_id=1741079159]
 libraries/ = SubResource("AnimationLibrary_b83rk")

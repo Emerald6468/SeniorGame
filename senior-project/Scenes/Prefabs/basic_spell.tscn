@@ -2,16 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bccqukyxrgjid" path="res://Scripts/basic_spell.gd" id="1_6vach"]
 [ext_resource type="AudioStream" uid="uid://c4ijkiw6pvc8g" path="res://Assets/Audio/SFX/cast.wav" id="2_nqgcp"]
+[ext_resource type="Material" uid="uid://cw7bcghcy0sgq" path="res://Assets/Materials/GreenOrb.tres" id="2_ubdu3"]
 [ext_resource type="AudioStream" uid="uid://jttcnvc3qju5" path="res://Assets/Audio/SFX/pop.wav" id="3_ubdu3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqys"]
-transparency = 1
-albedo_color = Color(1.4780655, 7.150652, 1.1520548, 0.05490196)
-
-[sub_resource type="SphereMesh" id="SphereMesh_bhunq"]
-material = SubResource("StandardMaterial3D_riqys")
+[sub_resource type="SphereMesh" id="SphereMesh_6ls40"]
+material = ExtResource("2_ubdu3")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_riqys"]
 
@@ -20,7 +17,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:scale")
+tracks/0/path = NodePath("Mesh:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -36,7 +33,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:scale")
+tracks/0/path = NodePath("Mesh:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -68,8 +65,8 @@ light_energy = 8.0
 light_indirect_energy = 2.0
 omni_range = 1.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=726153033]
-mesh = SubResource("SphereMesh_bhunq")
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=726153033]
+mesh = SubResource("SphereMesh_6ls40")
 
 [node name="Monitor" type="Area3D" parent="." unique_id=1290234502]
 transform = Transform3D(1.275, 0, 0, 0, 1.275, 0, 0, 0, 1.275, 0, 0, 0)
