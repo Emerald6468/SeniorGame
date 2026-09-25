@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_05r2y"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/templategrid_albedo.png" id="1_aaow1"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
+albedo_texture = ExtResource("1_aaow1")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05r2y"]
 albedo_texture = ExtResource("1_aaow1")
 
@@ -17,14 +20,17 @@ sky_material = SubResource("ProceduralSkyMaterial_sn0t7")
 background_mode = 2
 sky = SubResource("Sky_riqys")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qv700"]
+albedo_texture = ExtResource("1_aaow1")
+
 [node name="BasicMovementTest" type="Node3D" unique_id=1730153282]
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_05r2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2951248, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699963, 2.2951248, -24.407276)
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=633388165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45.62406)
-material_override = SubResource("StandardMaterial3D_05r2y")
+material_override = SubResource("StandardMaterial3D_gl5sm")
 use_collision = true
 size = Vector3(100, 2, 100)
 
@@ -39,3 +45,27 @@ environment = SubResource("Environment_bhunq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1615992708]
 transform = Transform3D(1, 0, 0, 0, 0.9882916, 0.15257694, 0, -0.15257694, 0.9882916, 0, 6.1631517, 0)
+
+[node name="Wall" type="CSGBox3D" parent="." unique_id=493814638]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 80.715294, 5.1952662, -18.624264)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+size = Vector3(1, 7.815857, 62.933)
+
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=1209432615]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 80.715294, 5.1952662, -9.436257)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+size = Vector3(1, 7.815857, 62.933)
+
+[node name="Wall3" type="CSGBox3D" parent="." unique_id=1514548959]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.33594, 16.059425, -33.50002)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+size = Vector3(1, 29.544174, 26.378)
+
+[node name="Wall4" type="CSGBox3D" parent="." unique_id=1784821640]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.33594, 16.059425, -27.930752)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+size = Vector3(1, 29.544174, 26.378)

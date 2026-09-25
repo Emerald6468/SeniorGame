@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 #Base Speed
 const SPEED = 8.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 6.0
 
 #Flexible Speed
 var cur_speed
@@ -34,6 +34,10 @@ var slide_level:float
 var crouch_diff = .25
 var slide_diff = .45
 
+#Wall Jumping
+var last_collision
+var last_wall_jumped
+var block_walls = false
 
 #Camera
 var mouse_sensitivity = 0.4
@@ -108,16 +112,29 @@ func _physics_process(delta: float) -> void:
 		coyote_time_available = true
 		was_on_ground = true
 		c_start = false
+		block_walls = false
 	elif coyote_time_available and was_on_ground : 
 		coyote_time()
 		was_on_ground = false
 	else: was_on_ground = false
+	#JUMPS
+	if get_slide_collision_count() > 0: last_collision = get_last_slide_collision().get_collider()
 	#Normal Jump
 	if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote_time_available):
 		coyote_time_available = false
 		jump.play()
 		velocity.y = JUMP_VELOCITY
-	#print(str(coyote_time_available))
+	
+	#Wall Jump
+	elif Input.is_action_just_pressed("Jump") and is_on_wall_only():
+		if last_wall_jumped != last_collision or !block_walls:
+			print("walljump")
+			block_walls = true
+			last_wall_jumped = last_collision
+			print(str(last_wall_jumped))
+			jump.play()
+			velocity.y = JUMP_VELOCITY
+		#print(str(coyote_time_available))
 #endregion
 
 	# Get the input direction and handle the movement/deceleration.
