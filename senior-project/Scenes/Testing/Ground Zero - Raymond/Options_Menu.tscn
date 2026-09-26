@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dd5bfi6ywknex"]
+
+[ext_resource type="Script" uid="uid://crd5hfh8ptqjg" path="res://Scenes/Prefabs/menu.gd" id="1_qic0v"]
+
+[node name="Menu" type="Control" unique_id=841887808]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 521.0
+offset_top = 241.0
+offset_right = 561.0
+offset_bottom = 281.0
+script = ExtResource("1_qic0v")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=675006456]
+layout_mode = 0
+offset_left = -271.0
+offset_top = -22.999998
+offset_right = -231.0
+offset_bottom = 17.000002
+scale = Vector2(16.72988, 12.961725)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1486486983]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=1982356293]
+layout_mode = 2
