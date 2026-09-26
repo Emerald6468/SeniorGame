@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bxq2qvjocv2hs"]
+
+[ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_a4py3"]
+[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/templategrid_albedo.png" id="2_jsx41"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
+albedo_texture = ExtResource("2_jsx41")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05r2y"]
+albedo_texture = ExtResource("2_jsx41")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sn0t7"]
+sky_top_color = Color(0.6583407, 0.22435483, 0.59418625, 1)
+sky_horizon_color = Color(0.87722045, 0.52248424, 0.37153265, 1)
+
+[sub_resource type="Sky" id="Sky_riqys"]
+sky_material = SubResource("ProceduralSkyMaterial_sn0t7")
+
+[sub_resource type="Environment" id="Environment_bhunq"]
+background_mode = 2
+sky = SubResource("Sky_riqys")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qv700"]
+albedo_texture = ExtResource("2_jsx41")
+
+[node name="BasicMovementTest" type="Node3D" unique_id=1730153282]
+
+[node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_a4py3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699963, 2.2951248, -24.407276)
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=633388165 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45.62406)
+material_override = SubResource("StandardMaterial3D_gl5sm")
+use_collision = true
+collision_mask = 7
+size = Vector3(100, 2, 100)
+
+[node name="Floor2" type="CSGBox3D" parent="." unique_id=1877117540 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60.75692)
+material_override = SubResource("StandardMaterial3D_05r2y")
+use_collision = true
+collision_mask = 7
+size = Vector3(100, 2, 100)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1229304955]
+environment = SubResource("Environment_bhunq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1615992708]
+transform = Transform3D(1, 0, 0, 0, 0.9882916, 0.15257694, 0, -0.15257694, 0.9882916, 0, 6.1631517, 0)
+
+[node name="Wall" type="CSGBox3D" parent="." unique_id=493814638 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 80.715294, 5.1952662, -18.624264)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 7
+size = Vector3(1, 7.815857, 62.933)
+
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=1209432615 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 80.715294, 5.1952662, -9.436257)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 7
+size = Vector3(1, 7.815857, 62.933)
+
+[node name="Wall3" type="CSGBox3D" parent="." unique_id=1514548959 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.33594, 16.059425, -33.50002)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 7
+size = Vector3(1, 29.544174, 26.378)
+
+[node name="Wall4" type="CSGBox3D" parent="." unique_id=1784821640 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.33594, 16.059425, -27.930752)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 7
+size = Vector3(1, 29.544174, 26.378)
