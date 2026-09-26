@@ -111,7 +111,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		#increase fall with shift
 		var mod = 1.0
-		if Input.is_action_pressed("Slide"): mod += 2.0
+		if Input.is_action_pressed("Slide") and !is_sliding: mod += 2.0
 		velocity += get_gravity() * delta * mod
 	
 	# Handle jump.
