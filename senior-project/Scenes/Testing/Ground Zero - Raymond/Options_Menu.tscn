@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dd5bfi6ywknex"]
 
-[ext_resource type="Script" uid="uid://crd5hfh8ptqjg" path="res://Scenes/Prefabs/menu.gd" id="1_qic0v"]
+[ext_resource type="Script" uid="uid://ct8dienvdy8kq" path="res://Scripts/options_menu.gd" id="1_qic0v"]
 
 [node name="Menu" type="Control" unique_id=841887808]
 layout_mode = 3
@@ -13,14 +13,23 @@ script = ExtResource("1_qic0v")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=675006456]
 layout_mode = 0
-offset_left = -271.0
-offset_top = -22.999998
-offset_right = -231.0
-offset_bottom = 17.000002
-scale = Vector2(16.72988, 12.961725)
+offset_left = -517.0
+offset_top = -240.99998
+offset_right = -387.99017
+offset_bottom = -161.50687
+scale = Vector2(1.7051328, 2.7424147)
+offset_transform_enabled = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1486486983]
 layout_mode = 2
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=1982356293]
+[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=394542520]
 layout_mode = 2
+text = "Volume"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer" unique_id=840793844]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
