@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SeniorProject"
-run/main_scene="uid://bnemr2an3w41g"
+run/main_scene="uid://bxq2qvjocv2hs"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
