@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_05r2y"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/templategrid_albedo.png" id="1_aaow1"]
+[ext_resource type="PackedScene" uid="uid://dqt8vddolrbd4" path="res://Scenes/Prefabs/enemy.tscn" id="3_gl5sm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
 albedo_texture = ExtResource("1_aaow1")
@@ -27,6 +28,7 @@ albedo_texture = ExtResource("1_aaow1")
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_05r2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699963, 2.2951248, -24.407276)
+right_spell_type = 1
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=633388165 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45.62406)
@@ -75,3 +77,12 @@ material_override = SubResource("StandardMaterial3D_qv700")
 use_collision = true
 collision_mask = 7
 size = Vector3(1, 29.544174, 26.378)
+
+[node name="Enemy" parent="." unique_id=2086751755 instance=ExtResource("3_gl5sm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 2.1226172, -24.317936)
+
+[node name="Enemy2" parent="." unique_id=722245584 instance=ExtResource("3_gl5sm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 2.1226172, -16.120533)
+
+[node name="Enemy3" parent="." unique_id=1478946173 instance=ExtResource("3_gl5sm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 2.1226172, -35.832047)

@@ -53,6 +53,16 @@ var t_bob:float = 0.0
 @onready var right_spell_spawn: Marker3D = $Head/Camera3D/Right_Spell_Spawn
 @onready var left_spell_spawn: Marker3D = $Head/Camera3D/Left_Spell_Spawn
 const BASIC_SPELL = preload("uid://cyik10fgpnsng")
+var spell_array:Array[String] = ["GreenOrb","RedOrb","Fireball"]
+enum SPELLTYPE{
+	GreenOrb,
+	RedOrb,
+	Fireball
+}
+@export var left_spell_type: SPELLTYPE
+@export var right_spell_type: SPELLTYPE
+var left_spell:String
+var right_spell:String
 
 #Audio
 @onready var running: AudioStreamPlayer = $Running
@@ -61,12 +71,24 @@ const BASIC_SPELL = preload("uid://cyik10fgpnsng")
 @onready var slide: AudioStreamPlayer = $Slide
 @onready var slide_start_audio: AudioStreamPlayer = $SlideStart
 
+
 func _ready() -> void:
+	set_spell_type()
 	cur_speed = SPEED
 	max_slide_speed = max_speed + 5.0
 	head_level = $Head.position.y
 	crouch_level = head_level - crouch_diff
 	slide_level = head_level - slide_diff
+
+func set_spell_type():
+	match left_spell_type:
+		SPELLTYPE.GreenOrb: left_spell = "GreenOrb"
+		SPELLTYPE.RedOrb: left_spell = "RedOrb"
+		SPELLTYPE.Fireball: left_spell = "Fireball"
+	match right_spell_type:
+		SPELLTYPE.GreenOrb: right_spell = "GreenOrb"
+		SPELLTYPE.RedOrb: right_spell = "RedOrb"
+		SPELLTYPE.Fireball: right_spell = "Fireball"
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -184,7 +206,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, cur_speed)
 		velocity.z = move_toward(velocity.z, 0, cur_speed)
 	if !is_on_floor():
-		cur_speed = move_toward(cur_speed,SPEED,deccel/10)
+		cur_speed = move_toward(cur_speed,SPEED,deccel/500)
 		running.stop()
 	var speed_diff = cur_speed - max_slide_speed
 	if cur_speed > max_slide_speed: cur_speed = move_toward(cur_speed,max_slide_speed,speed_diff/5)
@@ -204,6 +226,7 @@ func _physics_process(delta: float) -> void:
 		print("fire right")
 		get_node("UI").wand_animation("right","Cast_Spell")
 		var basic_spell = BASIC_SPELL.instantiate()
+		basic_spell.setspell(right_spell)
 		get_parent().add_child(basic_spell)
 		basic_spell.global_position = right_spell_spawn.global_position
 		basic_spell.global_rotation = right_spell_spawn.global_rotation
@@ -212,6 +235,7 @@ func _physics_process(delta: float) -> void:
 		print("fire left")
 		get_node("UI").wand_animation("left","LCast_Spell")
 		var basic_spell = BASIC_SPELL.instantiate()
+		basic_spell.setspell(left_spell)
 		get_parent().add_child(basic_spell)
 		#var material = basic_spell.get_node("Mesh").get_surface_material(0)
 		#var new_color = Color("Red")
