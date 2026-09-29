@@ -12,8 +12,10 @@ grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1611547273]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 530.0
+offset_top = 199.0
+offset_right = 648.0
+offset_bottom = 336.0
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=157150538]
 layout_mode = 2
