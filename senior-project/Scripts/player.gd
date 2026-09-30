@@ -63,6 +63,8 @@ enum SPELLTYPE{
 @export var right_spell_type: SPELLTYPE
 var left_spell:String
 var right_spell:String
+var can_cast_left = true
+var can_cast_right = true
 
 #Audio
 @onready var running: AudioStreamPlayer = $Running
@@ -119,7 +121,16 @@ func slide_lerp():
 	print(curve_x)
 	if slide_curve.max_domain > curve_x: curve_x += .01
 	else:print("done")
-		
+
+func left_spell_cooldown(left_cd):
+	can_cast_left = false
+	await get_tree().create_timer(left_cd,false,true).timeout
+	can_cast_left = true
+
+func right_spell_cooldown(right_cd):
+	can_cast_right = false
+	await get_tree().create_timer(right_cd,false,true).timeout
+	can_cast_right = true
 
 func _physics_process(delta: float) -> void:
 	#QUIT GAME COMMAND/CTRL X
@@ -222,25 +233,27 @@ func _physics_process(delta: float) -> void:
 #region Combat
 	#Combat
 	#Attacks
-	if Input.is_action_just_pressed("Fire_Right") and !get_node("UI").right_casting:
+	if Input.is_action_just_pressed("Fire_Right") and !get_node("UI").right_casting and can_cast_right:
 		print("fire right")
 		get_node("UI").wand_animation("right","Cast_Spell")
 		var basic_spell = BASIC_SPELL.instantiate()
 		basic_spell.setspell(right_spell)
 		get_parent().add_child(basic_spell)
+		var right_cd = basic_spell.get_cooldown()
+		print(str(right_cd))
+		right_spell_cooldown(right_cd)
 		basic_spell.global_position = right_spell_spawn.global_position
 		basic_spell.global_rotation = right_spell_spawn.global_rotation
 	
-	if Input.is_action_just_pressed("Fire_Left") and !get_node("UI").left_casting:
+	if Input.is_action_just_pressed("Fire_Left") and !get_node("UI").left_casting and can_cast_left:
 		print("fire left")
 		get_node("UI").wand_animation("left","LCast_Spell")
 		var basic_spell = BASIC_SPELL.instantiate()
 		basic_spell.setspell(left_spell)
 		get_parent().add_child(basic_spell)
-		#var material = basic_spell.get_node("Mesh").get_surface_material(0)
-		#var new_color = Color("Red")
-		#basic_spell.get_node("Mesh").set_surface_material(0,new_color)
-		#basic_spell.get_node("Mesh").albedo_color.set_color(new_color)
+		var left_cd = basic_spell.get_cooldown()
+		print(str(left_cd))
+		right_spell_cooldown(left_cd)
 		basic_spell.global_position = left_spell_spawn.global_position
 		basic_spell.global_rotation = left_spell_spawn.global_rotation
 #endregion

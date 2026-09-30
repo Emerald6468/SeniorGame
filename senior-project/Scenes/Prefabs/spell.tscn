@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://cyik10fgpnsng"]
 
-[ext_resource type="Script" uid="uid://bccqukyxrgjid" path="res://Scripts/basic_spell.gd" id="1_6vach"]
-[ext_resource type="AudioStream" uid="uid://c4ijkiw6pvc8g" path="res://Assets/Audio/SFX/cast.wav" id="2_nqgcp"]
-[ext_resource type="Material" uid="uid://cw7bcghcy0sgq" path="res://Assets/Materials/GreenOrb.tres" id="2_ubdu3"]
-[ext_resource type="Material" uid="uid://cev8xw6mbfnqq" path="res://Assets/Materials/RedOrb.tres" id="3_cxdxu"]
-[ext_resource type="AudioStream" uid="uid://jttcnvc3qju5" path="res://Assets/Audio/SFX/pop.wav" id="3_ubdu3"]
+[ext_resource type="Script" uid="uid://bccqukyxrgjid" path="res://Scripts/spell.gd" id="1_dccnc"]
+[ext_resource type="SphereMesh" uid="uid://blgwfxnr5aolo" path="res://Assets/Meshes/GreenOrb.tres" id="2_6j7ya"]
+[ext_resource type="SphereMesh" uid="uid://c2xqxx4bm24c6" path="res://Assets/Meshes/RedOrb.tres" id="3_o3ap2"]
+[ext_resource type="Material" uid="uid://cw7bcghcy0sgq" path="res://Assets/Materials/GreenOrb.tres" id="4_ddrsn"]
+[ext_resource type="Material" uid="uid://cev8xw6mbfnqq" path="res://Assets/Materials/RedOrb.tres" id="5_4esxp"]
+[ext_resource type="AudioStream" uid="uid://c4ijkiw6pvc8g" path="res://Assets/Audio/SFX/cast.wav" id="6_oaw1j"]
+[ext_resource type="AudioStream" uid="uid://jttcnvc3qju5" path="res://Assets/Audio/SFX/pop.wav" id="7_raawd"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_bhunq"]
-resource_local_to_scene = true
-material = ExtResource("2_ubdu3")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_riqys"]
 
@@ -51,13 +49,19 @@ _data = {
 &"explode": SubResource("Animation_qg5o6")
 }
 
-[node name="BasicSpell" type="RigidBody3D" unique_id=92920020]
+[node name="Spell" type="RigidBody3D" unique_id=92920020]
 collision_layer = 4
 collision_mask = 13
 gravity_scale = 0.0
 contact_monitor = true
-script = ExtResource("1_6vach")
-my_materials = Array[Material]([ExtResource("2_ubdu3"), ExtResource("3_cxdxu")])
+script = ExtResource("1_dccnc")
+red_orb_speed = 0.5
+red_orb_CT = 2.0
+green_orb_damage = 20.0
+red_orb_damage = 50.0
+fireball_damage = 40.0
+all_meshes = Array[Mesh]([ExtResource("2_6j7ya"), ExtResource("3_o3ap2")])
+all_materials = Array[Material]([ExtResource("4_ddrsn"), ExtResource("5_4esxp")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=743141123]
 shape = SubResource("SphereShape3D_bhunq")
@@ -69,7 +73,7 @@ light_indirect_energy = 2.0
 omni_range = 1.0
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=632355400]
-mesh = SubResource("SphereMesh_bhunq")
+mesh = ExtResource("3_o3ap2")
 
 [node name="Monitor" type="Area3D" parent="." unique_id=1290234502]
 transform = Transform3D(1.275, 0, 0, 0, 1.275, 0, 0, 0, 1.275, 0, 0, 0)
@@ -82,9 +86,9 @@ shape = SubResource("SphereShape3D_riqys")
 libraries/ = SubResource("AnimationLibrary_nqgcp")
 
 [node name="Cast" type="AudioStreamPlayer" parent="." unique_id=1794661807]
-stream = ExtResource("2_nqgcp")
+stream = ExtResource("6_oaw1j")
 volume_db = -2.0
 
 [node name="Pop" type="AudioStreamPlayer" parent="." unique_id=808768573]
-stream = ExtResource("3_ubdu3")
+stream = ExtResource("7_raawd")
 volume_db = -10.0

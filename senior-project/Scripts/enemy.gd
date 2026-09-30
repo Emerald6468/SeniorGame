@@ -14,16 +14,17 @@ enum ENEMY_STATES{
 func _ready() -> void:
 	pass # Replace with function body.
 
-func got_hit(spell: String):
+func got_hit(spell: String,damage: float):
 	match spell:
 		"Fireball":
-			pass
+			health -= damage
+			print("ouch a " + spell + " " + str(health))
 		"GreenOrb":
-			health -= 20
-			print("ouch  " + str(health))
+			health -= damage
+			print("ouch a " + spell + " "  + str(health))
 		"RedOrb":
-			health -= 50
-			print("ouch  " + str(health))
+			health -= damage
+			print("ouch a " + spell + " "  + str(health))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
