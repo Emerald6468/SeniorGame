@@ -34,6 +34,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_b83rk"]
 resource_name = "LCast_Spell"
+length = 0.63
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

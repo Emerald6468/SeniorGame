@@ -19,6 +19,7 @@ const RED_ORB = preload("uid://cev8xw6mbfnqq")
 @export var green_orb_speed: float = 1.0
 @export var red_orb_speed: float = 1.0
 @export var fireball_speed: float = 1.0
+#@export var ice_speed: float = 1.0
 
 #casting times
 @export_category("Casting Times:")
@@ -41,7 +42,7 @@ var all_CT: Array[float]
 var all_damage: Array[float]
 
 #spell variables
-var spell_num:int
+var spell_num:int 
 var spell_name:String
 var spell_mesh: Mesh
 var spell_material: Material
