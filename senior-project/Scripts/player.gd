@@ -9,6 +9,7 @@ var cur_speed
 var max_speed = 17.0
 var accel = 0.04
 var deccel = .25
+var cur_jump
 
 #Coyote time
 var was_on_ground = false
@@ -165,7 +166,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote_time_available):
 		coyote_time_available = false
 		jump.play()
-		velocity.y = JUMP_VELOCITY
+		if is_sliding: cur_jump *= 1.5
+		velocity.y = cur_jump
 	
 	#Wall Jump
 	elif Input.is_action_just_pressed("Jump") and is_on_wall_only():
@@ -183,6 +185,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if cur_speed < SPEED: cur_speed = SPEED
+	cur_jump = JUMP_VELOCITY
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
