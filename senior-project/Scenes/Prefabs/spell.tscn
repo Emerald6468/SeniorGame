@@ -55,11 +55,12 @@ collision_mask = 13
 gravity_scale = 0.0
 contact_monitor = true
 script = ExtResource("1_dccnc")
+green_orb_speed = 1.5
 red_orb_speed = 0.5
 green_orb_CT = 0.65
 red_orb_CT = 2.0
-green_orb_damage = 20.0
-red_orb_damage = 50.0
+green_orb_damage = 33.4
+red_orb_damage = 50.1
 all_meshes = Array[Mesh]([ExtResource("2_6j7ya"), ExtResource("3_o3ap2")])
 all_materials = Array[Material]([ExtResource("4_ddrsn"), ExtResource("5_4esxp")])
 

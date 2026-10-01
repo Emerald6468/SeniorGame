@@ -19,7 +19,7 @@ var c_time = .5
 #Crouch/Slide
 @export var slide_curve:Curve
 var slide_deccel = .03
-var slide_threshold = 12.0
+var slide_threshold = 10.0
 var is_sliding = false
 var is_crouching = false
 var slide_start = false
@@ -108,7 +108,7 @@ func slide_lerp():
 		slide_start = false
 		curve_x = 0.0
 		set_speed = cur_speed
-		var set_diff = set_speed - 11.9
+		var set_diff = set_speed - (slide_threshold - 0.1)
 		slide_curve.set_point_value(2,-set_diff)
 		slide_start_audio.play()
 	
@@ -135,7 +135,8 @@ func right_spell_cooldown(right_cd):
 func _physics_process(delta: float) -> void:
 	#QUIT GAME COMMAND/CTRL X
 	if Input.is_action_just_pressed("DevQuit"):get_tree().quit()
-	
+	#RESTART SCENE
+	if Input.is_action_just_pressed("Restart"):get_tree().reload_current_scene()
 	#controlls mouse
 	if !Global.InsideMenu: Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -218,6 +219,10 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, cur_speed)
 	if !is_on_floor():
 		cur_speed = move_toward(cur_speed,SPEED,deccel/500)
+		is_sliding = false
+		is_crouching = false
+		$Head.position.y = move_toward(head_level,$Head.position.y,.2)
+		slide.stop()
 		running.stop()
 	var speed_diff = cur_speed - max_slide_speed
 	if cur_speed > max_slide_speed: cur_speed = move_toward(cur_speed,max_slide_speed,speed_diff/5)
