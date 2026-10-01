@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 6.0
 
 #Flexible Speed
 var cur_speed
-var max_speed = 20.0
+var max_speed = 17.0
 var accel = 0.04
 var deccel = .25
 
@@ -14,12 +14,12 @@ var deccel = .25
 var was_on_ground = false
 var coyote_time_available = false
 var c_start = false
-var c_time = .5
+@export var c_time = .2
 
 #Crouch/Slide
 @export var slide_curve:Curve
 var slide_deccel = .03
-var slide_threshold = 10.0
+@export var slide_threshold = 8.5
 var is_sliding = false
 var is_crouching = false
 var slide_start = false
@@ -182,13 +182,17 @@ func _physics_process(delta: float) -> void:
 #region Movement
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	if cur_speed < SPEED: cur_speed = SPEED
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * cur_speed
 		velocity.z = direction.z * cur_speed
 		if is_on_floor():
+			var speed_diff = cur_speed - max_speed
+			if cur_speed > max_speed: cur_speed = move_toward(cur_speed,max_speed,speed_diff/2)
 			if !running.playing:running.play()
+			#increase speed normally
 			if !is_crouching and !is_sliding: cur_speed = move_toward(cur_speed,max_speed,accel)
 			if Input.is_action_pressed("Slide"):
 				if cur_speed >= slide_threshold: is_sliding = true
@@ -224,10 +228,7 @@ func _physics_process(delta: float) -> void:
 		$Head.position.y = move_toward(head_level,$Head.position.y,.2)
 		slide.stop()
 		running.stop()
-	var speed_diff = cur_speed - max_slide_speed
-	if cur_speed > max_slide_speed: cur_speed = move_toward(cur_speed,max_slide_speed,speed_diff/5)
-	
-	
+
 	#Head bob
 	t_bob += delta * velocity.length() * float(is_on_floor()) * float(!is_sliding)
 	camera.transform.origin = _headbob(t_bob)
