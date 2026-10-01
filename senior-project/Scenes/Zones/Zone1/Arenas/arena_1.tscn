@@ -256,6 +256,7 @@ material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("2_xhtoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+right_spell_type = 1
 
 [node name="lights" type="Node3D" parent="." unique_id=1842736137]
 
