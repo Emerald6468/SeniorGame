@@ -10,7 +10,7 @@
 
 [sub_resource type="Curve" id="Curve_fdt7q"]
 _limits = [-9.0, 5.0, 0.0, 2.0]
-_data = [Vector2(0, 0), 0.0, -9.223934, 0, 0, Vector2(0.45, 5), 0.0, 0.0, 0, 0, Vector2(2, -0.134), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, -9.223934, 0, 0, Vector2(0.45, 5), 0.0, 0.0, 0, 0, Vector2(1.922, -0.1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]

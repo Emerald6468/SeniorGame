@@ -45,6 +45,9 @@ var mouse_sensitivity = 0.4
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 
+#camera tilt
+@export var tilt_degrees = 2.0
+
 #Headbob
 var BOB_FREQ: float = 3
 var BOB_AMP: float = 0.03
@@ -105,14 +108,18 @@ func coyote_time():
 		coyote_time_available = false
 
 func slide_lerp():
+	
 	if slide_start:
 		slide_start = false
 		curve_x = 0.0
 		set_speed = cur_speed
+		#at start of slide, sets the height of the slide curve to fit with additional speed
+		#does this by moving the last point down according to the difference between speed and threshold
 		var set_diff = set_speed - (slide_threshold - 0.1)
 		slide_curve.set_point_value(2,-set_diff)
 		slide_start_audio.play()
-	
+	if slide_curve.max_domain > curve_x: curve_x += .01
+	else:print("done");return
 	if cur_speed < set_speed +5.0: 
 		print("rise")
 		cur_speed = slide_curve.sample(curve_x) + set_speed
@@ -120,8 +127,7 @@ func slide_lerp():
 		print("slow")
 		cur_speed = slide_curve.sample(curve_x) + set_speed
 	print(curve_x)
-	if slide_curve.max_domain > curve_x: curve_x += .01
-	else:print("done")
+	
 
 func left_spell_cooldown(left_cd):
 	can_cast_left = false
@@ -184,16 +190,25 @@ func _physics_process(delta: float) -> void:
 #region Movement
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	#keeps minimum speed
 	if cur_speed < SPEED: cur_speed = SPEED
 	cur_jump = JUMP_VELOCITY
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	#camera rotation
+	if input_dir.x != 0:
+		if camera.rotation.z == 0.0:
+			if input_dir.x > 0:
+				camera.rotate_z(deg_to_rad(-tilt_degrees))
+			if input_dir.x < 0:
+				camera.rotate_z(deg_to_rad(tilt_degrees))
+	else: camera.rotation.z = 0.0
 	if direction:
 		velocity.x = direction.x * cur_speed
 		velocity.z = direction.z * cur_speed
 		if is_on_floor():
 			var speed_diff = cur_speed - max_speed
-			if cur_speed > max_speed: cur_speed = move_toward(cur_speed,max_speed,speed_diff/2)
+			if cur_speed > max_speed and !slide_start: cur_speed = move_toward(cur_speed,max_speed,speed_diff/5)
 			if !running.playing:running.play()
 			#increase speed normally
 			if !is_crouching and !is_sliding: cur_speed = move_toward(cur_speed,max_speed,accel)
@@ -218,6 +233,7 @@ func _physics_process(delta: float) -> void:
 			else: 
 				$Head.position.y = move_toward(head_level,$Head.position.y,.2)
 				slide.stop()
+		
 	else:
 		running.stop()
 		slide.stop()
