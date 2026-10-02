@@ -17,6 +17,11 @@ var coyote_time_available = false
 var c_start = false
 @export var c_time = .2
 
+#roadrunner time
+var r_available = false
+@export var r_time = .1
+var deccel_pause = false
+
 #Crouch/Slide
 @export var slide_curve:Curve
 var slide_deccel = .03
@@ -130,6 +135,13 @@ func coyote_time():
 		await get_tree().create_timer(c_time).timeout
 		coyote_time_available = false
 
+func roadrunner_time():
+	if r_available:
+		r_available = false
+		deccel_pause = true
+		print("roadrunna")
+		await get_tree().create_timer(r_time).timeout
+		deccel_pause = false
 func slide_lerp():
 	
 	if slide_start:
@@ -149,7 +161,6 @@ func slide_lerp():
 	elif cur_speed >= slide_threshold: 
 		print("slow")
 		cur_speed = slide_curve.sample(curve_x) + set_speed
-	print(curve_x)
 	
 
 func left_spell_cooldown(left_cd):
@@ -177,10 +188,13 @@ func _physics_process(delta: float) -> void:
 		var mod = 1.0
 		if Input.is_action_pressed("Slide") and !is_sliding: mod += 2.0
 		velocity += get_gravity() * delta * mod
+		#allow roadrunner time
+		r_available = true
 	
 	# Handle jump.
 	if is_on_floor(): 
 		if !was_on_ground: jump_land.play()
+		roadrunner_time()
 		coyote_time_available = true
 		was_on_ground = true
 		c_start = false
@@ -201,21 +215,18 @@ func _physics_process(delta: float) -> void:
 	#Wall Jump
 	elif Input.is_action_just_pressed("Jump") and is_on_wall_only():
 		if last_wall_jumped != last_collision or !block_walls:
-			print("walljump")
 			block_walls = true
 			last_wall_jumped = last_collision
-			print(str(last_wall_jumped))
+			#print(str(last_wall_jumped))
 			jump.play()
 			velocity.y = JUMP_VELOCITY
-		#print(str(coyote_time_available))
 #endregion
 
 #region Movement
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	#keeps minimum speed
 	if cur_speed < SPEED: cur_speed = SPEED
 	cur_jump = JUMP_VELOCITY
+	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	#camera rotation for tilting
@@ -238,7 +249,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = direction.z * cur_speed
 		if is_on_floor():
 			var speed_diff = cur_speed - max_speed
-			if cur_speed > max_speed and !slide_start: cur_speed = move_toward(cur_speed,max_speed,speed_diff/5)
+			if cur_speed > max_speed and !slide_start and !deccel_pause: cur_speed = move_toward(cur_speed,max_speed,speed_diff/5)
 			if !running.playing:running.play()
 			#increase speed normally
 			if !is_crouching and !is_sliding: cur_speed = move_toward(cur_speed,max_speed,accel)
@@ -253,7 +264,6 @@ func _physics_process(delta: float) -> void:
 					is_sliding = false
 					is_crouching = true
 				else:
-					print("slide")
 					slide_lerp()
 					$Head.position.y = move_toward(slide_level,$Head.position.y,.03)
 					if !slide.playing: slide.play()
@@ -291,28 +301,23 @@ func _physics_process(delta: float) -> void:
 	var assist = false
 	if aim_assist.collide_with_bodies and str(aim_assist.get_collider())!="<Object#null>":
 		target_pos = aim_assist.get_collision_point();assist = true
-	if assist:print(str(aim_assist.get_collider()))
 	if Input.is_action_just_pressed("Fire_Right") and !get_node("UI").right_casting and can_cast_right:
-		print("fire right")
 		get_node("UI").wand_animation("right","Cast_Spell")
 		var basic_spell = BASIC_SPELL.instantiate()
 		basic_spell.setspell(right_spell)
 		get_parent().add_child(basic_spell)
 		var right_cd = basic_spell.get_cooldown()
-		print(str(right_cd))
 		right_spell_cooldown(right_cd)
 		basic_spell.global_position = right_spell_spawn.global_position
 		basic_spell.global_rotation = right_spell_spawn.global_rotation
 		if assist:basic_spell.look_at(target_pos)
 	
 	if Input.is_action_just_pressed("Fire_Left") and !get_node("UI").left_casting and can_cast_left:
-		print("fire left")
 		get_node("UI").wand_animation("left","LCast_Spell")
 		var basic_spell = BASIC_SPELL.instantiate()
 		basic_spell.setspell(left_spell)
 		get_parent().add_child(basic_spell)
 		var left_cd = basic_spell.get_cooldown()
-		print(str(left_cd))
 		right_spell_cooldown(left_cd)
 		basic_spell.global_position = left_spell_spawn.global_position
 		basic_spell.global_rotation = left_spell_spawn.global_rotation
