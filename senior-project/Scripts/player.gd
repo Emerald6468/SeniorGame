@@ -314,6 +314,7 @@ func _physics_process(delta: float) -> void:
 		right_spell_cooldown(left_cd)
 		basic_spell.global_position = left_spell_spawn.global_position
 		basic_spell.global_rotation = left_spell_spawn.global_rotation
+		if assist:basic_spell.look_at(target_pos)
 #endregion
 
 
