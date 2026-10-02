@@ -289,7 +289,9 @@ func _physics_process(delta: float) -> void:
 	#Combat
 	#Attacks
 	var assist = false
-	if aim_assist.collide_with_bodies: target_pos = aim_assist.get_collision_point();assist = true
+	if aim_assist.collide_with_bodies and str(aim_assist.get_collider())!="<Object#null>":
+		target_pos = aim_assist.get_collision_point();assist = true
+	if assist:print(str(aim_assist.get_collider()))
 	if Input.is_action_just_pressed("Fire_Right") and !get_node("UI").right_casting and can_cast_right:
 		print("fire right")
 		get_node("UI").wand_animation("right","Cast_Spell")
