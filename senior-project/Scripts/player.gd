@@ -45,6 +45,10 @@ var last_collision
 var last_wall_jumped
 var block_walls = false
 
+#wall_run
+var on_wall = false
+@export var wall_run_mod = .6
+
 #Camera
 var mouse_sensitivity = 0.4
 @onready var head: Node3D = $Head
@@ -55,7 +59,6 @@ var mouse_sensitivity = 0.4
 var tilt_time = 0.2
 var tilting = false
 var tilt_finished = false
-
 
 #Headbob
 var BOB_FREQ: float = 3
@@ -142,6 +145,7 @@ func roadrunner_time():
 		print("roadrunna")
 		await get_tree().create_timer(r_time).timeout
 		deccel_pause = false
+
 func slide_lerp():
 	
 	if slide_start:
@@ -186,8 +190,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		#increase fall with shift
 		var mod = 1.0
+		var wall_mod = 1.0
 		if Input.is_action_pressed("Slide") and !is_sliding: mod += 2.0
-		velocity += get_gravity() * delta * mod
+		if is_on_wall(): wall_mod = wall_run_mod 
+		velocity += get_gravity() * delta * mod * wall_mod
 		#allow roadrunner time
 		r_available = true
 	
