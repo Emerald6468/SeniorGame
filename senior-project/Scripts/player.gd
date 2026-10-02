@@ -57,6 +57,10 @@ var BOB_FREQ: float = 3
 var BOB_AMP: float = 0.03
 var t_bob:float = 0.0
 
+#Attacks
+@onready var aim_assist: RayCast3D = $Head/Camera3D/AimAssist
+var target_pos:Vector3
+
 #Spells
 @onready var right_spell_spawn: Marker3D = $Head/Camera3D/Right_Spell_Spawn
 @onready var left_spell_spawn: Marker3D = $Head/Camera3D/Left_Spell_Spawn
@@ -106,7 +110,9 @@ func _headbob(time) -> Vector3:
 	return pos
 
 func headtilt(tilt:String):
-	var tilt_move = tilt_degrees / 30
+	var air_mod = 1.0 
+	if !is_on_floor(): air_mod = 0.7
+	var tilt_move = tilt_degrees / 30 * air_mod
 	var return_move = tilt_move * 6
 	if !tilt_finished:
 		match tilt:
@@ -282,6 +288,8 @@ func _physics_process(delta: float) -> void:
 #region Combat
 	#Combat
 	#Attacks
+	var assist = false
+	if aim_assist.collide_with_bodies: target_pos = aim_assist.get_collision_point();assist = true
 	if Input.is_action_just_pressed("Fire_Right") and !get_node("UI").right_casting and can_cast_right:
 		print("fire right")
 		get_node("UI").wand_animation("right","Cast_Spell")
@@ -293,6 +301,7 @@ func _physics_process(delta: float) -> void:
 		right_spell_cooldown(right_cd)
 		basic_spell.global_position = right_spell_spawn.global_position
 		basic_spell.global_rotation = right_spell_spawn.global_rotation
+		if assist:basic_spell.look_at(target_pos)
 	
 	if Input.is_action_just_pressed("Fire_Left") and !get_node("UI").left_casting and can_cast_left:
 		print("fire left")
