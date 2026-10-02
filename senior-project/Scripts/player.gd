@@ -47,6 +47,10 @@ var mouse_sensitivity = 0.4
 
 #camera tilt
 @export var tilt_degrees = 2.0
+var tilt_time = 0.2
+var tilting = false
+var tilt_finished = false
+
 
 #Headbob
 var BOB_FREQ: float = 3
@@ -100,6 +104,19 @@ func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	return pos
+
+func headtilt(tilt:String):
+	var tilt_move = tilt_degrees / 30
+	var return_move = tilt_move * 6
+	if !tilt_finished:
+		match tilt:
+			"left":
+				camera.rotate_z(deg_to_rad(-tilt_move))
+			"right":
+				camera.rotate_z(deg_to_rad(tilt_move))
+			"center":
+				if camera.rotation.z > 0 : camera.rotate_z(deg_to_rad(-return_move)) #left
+				if camera.rotation.z < 0 : camera.rotate_z(deg_to_rad(return_move)) #right
 
 func coyote_time():
 	if !c_start:
@@ -195,14 +212,21 @@ func _physics_process(delta: float) -> void:
 	cur_jump = JUMP_VELOCITY
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	#camera rotation
+	#camera rotation for tilting
 	if input_dir.x != 0:
-		if camera.rotation.z == 0.0:
-			if input_dir.x > 0:
-				camera.rotate_z(deg_to_rad(-tilt_degrees))
-			if input_dir.x < 0:
-				camera.rotate_z(deg_to_rad(tilt_degrees))
-	else: camera.rotation.z = 0.0
+		#tilt left
+		if input_dir.x > 0:
+			if rad_to_deg(camera.rotation.z) <= -tilt_degrees: tilt_finished = true
+			else: tilt_finished = false
+			headtilt("left")
+		#tilt right
+		if input_dir.x < 0:
+			if rad_to_deg(camera.rotation.z) >= tilt_degrees: tilt_finished = true
+			else: tilt_finished = false
+			headtilt("right")
+	else: 
+		headtilt("center")
+		tilt_finished = false
 	if direction:
 		velocity.x = direction.x * cur_speed
 		velocity.z = direction.z * cur_speed
