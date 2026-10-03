@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b8xxhuy38u5te" path="res://Scripts/ui.gd" id="1_s86y4"]
 [ext_resource type="Texture2D" uid="uid://cg8qrfevh2beq" path="res://Assets/placehold_right_wand.png" id="2_636u5"]
+[ext_resource type="Texture2D" uid="uid://elmliu2nvdx2" path="res://Assets/UI/Placeholder/enemy_health_bars_2.0/enemy_health_bars_2.0/enemy_health_bar_foreground_001.png" id="2_oqha6"]
+[ext_resource type="Texture2D" uid="uid://bhbn48epqfpu2" path="res://Assets/UI/Placeholder/enemy_health_bars_2.0/enemy_mana_bar_000.png" id="3_7tgkj"]
 [ext_resource type="Texture2D" uid="uid://cntmbeomma8sm" path="res://Assets/placehold_left_wand.png" id="3_akgwn"]
 
 [sub_resource type="Animation" id="Animation_636u5"]
@@ -145,6 +147,14 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Speed = 0"
+
+[node name="Mana" type="TextureProgressBar" parent="CanvasLayer/MarginContainer" unique_id=1289210696]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+value = 100.0
+texture_under = ExtResource("2_oqha6")
+texture_progress = ExtResource("3_7tgkj")
 
 [node name="PlaceholdRightWand" type="Sprite2D" parent="CanvasLayer" unique_id=333821037]
 position = Vector2(1006.00006, 463)

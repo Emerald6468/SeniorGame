@@ -10,6 +10,8 @@ var exploded = false
 @onready var pop: AudioStreamPlayer = $Pop
 @onready var mesh: MeshInstance3D = $Mesh
 
+
+
 #materials
 const GREEN_ORB = preload("uid://cw7bcghcy0sgq")
 const RED_ORB = preload("uid://cev8xw6mbfnqq")
@@ -33,6 +35,12 @@ const RED_ORB = preload("uid://cev8xw6mbfnqq")
 @export var red_orb_damage: float = 1.0
 @export var fireball_damage: float = 1.0
 
+#spell costs
+@export_category("Spell Costs:")
+@export var green_orb_cost: float = 20.0
+@export var red_orb_cost: float = 20.0
+@export var fireball_cost: float = 20.0
+
 #spell arrays
 @export_category("Cosmetic:")
 @export var all_meshes: Array[Mesh]
@@ -40,6 +48,7 @@ const RED_ORB = preload("uid://cev8xw6mbfnqq")
 var all_speeds: Array[float]
 var all_CT: Array[float]
 var all_damage: Array[float]
+var all_costs: Array[float]
 
 #spell variables
 var spell_num:int 
@@ -49,11 +58,13 @@ var spell_material: Material
 var spell_speed:float
 var cast_time:float
 var spell_damage:float
+var spell_cost:float
 
 func setspell(spell:String):
 	all_speeds = [green_orb_speed,red_orb_speed,fireball_speed]
 	all_CT = [green_orb_CT,red_orb_CT,fireball_CT]
 	all_damage = [green_orb_damage,red_orb_damage,fireball_damage]
+	all_costs =[green_orb_cost,red_orb_cost,fireball_cost]
 	match spell:
 		"GreenOrb":
 			spell_num = 0
@@ -68,6 +79,7 @@ func setspell(spell:String):
 	spell_speed = all_speeds[spell_num]
 	cast_time = all_CT[spell_num]
 	spell_damage = all_damage[spell_num]
+	spell_cost = all_costs[spell_num]
 
 func get_cooldown():
 	return cast_time

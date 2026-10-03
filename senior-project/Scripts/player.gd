@@ -65,11 +65,19 @@ var BOB_FREQ: float = 3
 var BOB_AMP: float = 0.03
 var t_bob:float = 0.0
 
+#MANA
+@export_category("MANA")
+@export var max_mana:float = 100.0
+@export var cur_mana:float
+@export var mana_gain_mod:float = 1.0
+var can_cast = true
+
 #Attacks
 @onready var aim_assist: RayCast3D = $Head/Camera3D/AimAssist
 var target_pos:Vector3
 
 #Spells
+@export_category("SPELLS")
 @onready var right_spell_spawn: Marker3D = $Head/Camera3D/Right_Spell_Spawn
 @onready var left_spell_spawn: Marker3D = $Head/Camera3D/Left_Spell_Spawn
 const BASIC_SPELL = preload("uid://cyik10fgpnsng")
@@ -97,6 +105,7 @@ var can_cast_right = true
 func _ready() -> void:
 	set_spell_type()
 	cur_speed = SPEED
+	cur_mana = max_mana
 	max_slide_speed = max_speed + 5.0
 	head_level = $Head.position.y
 	crouch_level = head_level - crouch_diff
@@ -142,7 +151,6 @@ func roadrunner_time():
 	if r_available:
 		r_available = false
 		deccel_pause = true
-		print("roadrunna")
 		await get_tree().create_timer(r_time).timeout
 		deccel_pause = false
 
@@ -158,12 +166,12 @@ func slide_lerp():
 		slide_curve.set_point_value(2,-set_diff)
 		slide_start_audio.play()
 	if slide_curve.max_domain > curve_x: curve_x += .01
-	else:print("done");return
+	else:return
 	if cur_speed < set_speed +5.0: 
-		print("rise")
+		#print("rise")
 		cur_speed = slide_curve.sample(curve_x) + set_speed
 	elif cur_speed >= slide_threshold: 
-		print("slow")
+		#print("slow")
 		cur_speed = slide_curve.sample(curve_x) + set_speed
 	
 
@@ -177,6 +185,16 @@ func right_spell_cooldown(right_cd):
 	await get_tree().create_timer(right_cd,false,true).timeout
 	can_cast_right = true
 
+func mana_tracker(spell):
+	if cur_mana > 0:
+		can_cast = true
+		if spell != null:
+			var mana_cost = spell.spell_cost; cur_mana -= mana_cost
+	else: can_cast = false
+
+func mana_recharge():
+	cur_mana += (cur_speed/60) * mana_gain_mod
+	if cur_mana > max_mana: cur_mana = max_mana
 func _physics_process(delta: float) -> void:
 	#QUIT GAME COMMAND/CTRL X
 	if Input.is_action_just_pressed("DevQuit"):get_tree().quit()
@@ -253,6 +271,8 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * cur_speed
 		velocity.z = direction.z * cur_speed
+		#mana recharge
+		mana_recharge()
 		if is_on_floor():
 			var speed_diff = cur_speed - max_speed
 			if cur_speed > max_speed and !slide_start and !deccel_pause: cur_speed = move_toward(cur_speed,max_speed,speed_diff/5)
@@ -303,31 +323,38 @@ func _physics_process(delta: float) -> void:
 	
 #region Combat
 	#Combat
+	#Mana
+	get_node("UI").cur_mana = cur_mana
 	#Attacks
 	var assist = false
 	if aim_assist.collide_with_bodies and str(aim_assist.get_collider())!="<Object#null>":
 		target_pos = aim_assist.get_collision_point();assist = true
-	if Input.is_action_just_pressed("Fire_Right") and !get_node("UI").right_casting and can_cast_right:
+	
+	if Input.is_action_just_pressed("Fire_Right") and can_cast and can_cast_right:
 		get_node("UI").wand_animation("right","Cast_Spell")
 		var basic_spell = BASIC_SPELL.instantiate()
 		basic_spell.setspell(right_spell)
 		get_parent().add_child(basic_spell)
 		var right_cd = basic_spell.get_cooldown()
 		right_spell_cooldown(right_cd)
+		mana_tracker(basic_spell)
 		basic_spell.global_position = right_spell_spawn.global_position
 		basic_spell.global_rotation = right_spell_spawn.global_rotation
 		if assist:basic_spell.look_at(target_pos)
+	else:mana_tracker(null)
 	
-	if Input.is_action_just_pressed("Fire_Left") and !get_node("UI").left_casting and can_cast_left:
+	if Input.is_action_just_pressed("Fire_Left") and can_cast and can_cast_left:
 		get_node("UI").wand_animation("left","LCast_Spell")
 		var basic_spell = BASIC_SPELL.instantiate()
 		basic_spell.setspell(left_spell)
 		get_parent().add_child(basic_spell)
 		var left_cd = basic_spell.get_cooldown()
 		right_spell_cooldown(left_cd)
+		mana_tracker(basic_spell)
 		basic_spell.global_position = left_spell_spawn.global_position
 		basic_spell.global_rotation = left_spell_spawn.global_rotation
 		if assist:basic_spell.look_at(target_pos)
+	else:mana_tracker(null)
 #endregion
 
 
