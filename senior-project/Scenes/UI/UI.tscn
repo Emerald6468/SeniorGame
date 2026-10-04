@@ -149,6 +149,7 @@ size_flags_vertical = 0
 text = "Speed = 0"
 
 [node name="Mana" type="TextureProgressBar" parent="CanvasLayer/MarginContainer" unique_id=1289210696]
+modulate = Color(1, 1, 1, 0.6392157)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0

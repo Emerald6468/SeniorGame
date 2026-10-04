@@ -32,6 +32,7 @@ var slide_start = false
 var set_speed:float
 var curve_x = 0.0
 var max_slide_speed:float
+var slide_jump = 1.5
 
 #Camera heights
 var head_level:float
@@ -157,6 +158,7 @@ func roadrunner_time():
 func slide_lerp():
 	
 	if slide_start:
+		print("slide start")
 		slide_start = false
 		curve_x = 0.0
 		set_speed = cur_speed
@@ -165,7 +167,7 @@ func slide_lerp():
 		var set_diff = set_speed - (slide_threshold - 0.1)
 		slide_curve.set_point_value(2,-set_diff)
 		slide_start_audio.play()
-	if slide_curve.max_domain > curve_x: curve_x += .01
+	if slide_curve.max_domain > curve_x: curve_x += .01;print("x:"+str(curve_x))
 	else:return
 	if cur_speed < set_speed +5.0: 
 		#print("rise")
@@ -233,7 +235,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote_time_available):
 		coyote_time_available = false
 		jump.play()
-		if is_sliding: cur_jump *= 1.5
+		if is_sliding: cur_jump *= slide_jump
 		velocity.y = cur_jump
 	
 	#Wall Jump
@@ -279,7 +281,7 @@ func _physics_process(delta: float) -> void:
 			if !running.playing:running.play()
 			#increase speed normally
 			if !is_crouching and !is_sliding: cur_speed = move_toward(cur_speed,max_speed,accel)
-			if Input.is_action_pressed("Slide"):
+			if Input.is_action_pressed("Slide"): #chooses slide or crouch
 				if cur_speed >= slide_threshold: is_sliding = true
 				else: is_crouching = true
 			else: is_sliding = false;is_crouching = false
@@ -308,6 +310,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, cur_speed)
 	if !is_on_floor():
 		cur_speed = move_toward(cur_speed,SPEED,deccel/500)
+		curve_x = 0.0
 		is_sliding = false
 		is_crouching = false
 		$Head.position.y = move_toward(head_level,$Head.position.y,.2)
