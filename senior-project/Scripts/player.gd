@@ -167,7 +167,8 @@ func slide_lerp():
 		var set_diff = set_speed - (slide_threshold - 0.1)
 		slide_curve.set_point_value(2,-set_diff)
 		slide_start_audio.play()
-	if slide_curve.max_domain > curve_x: curve_x += .01;print("x:"+str(curve_x))
+	if slide_curve.max_domain > curve_x: curve_x += .01;print("x:"+str(curve_x) + "slide" + str(Input.is_action_pressed("Slide")) + 
+	"is_slide: " + str(is_sliding))
 	else:return
 	if cur_speed < set_speed +5.0: 
 		#print("rise")
@@ -197,7 +198,11 @@ func mana_tracker(spell):
 func mana_recharge():
 	cur_mana += (cur_speed/60) * mana_gain_mod
 	if cur_mana > max_mana: cur_mana = max_mana
+
+
+
 func _physics_process(delta: float) -> void:
+	print(str(Input.is_action_pressed("Slide")))
 	#QUIT GAME COMMAND/CTRL X
 	if Input.is_action_just_pressed("DevQuit"):get_tree().quit()
 	#RESTART SCENE
@@ -311,6 +316,7 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		cur_speed = move_toward(cur_speed,SPEED,deccel/500)
 		curve_x = 0.0
+		set_speed = cur_speed
 		is_sliding = false
 		is_crouching = false
 		$Head.position.y = move_toward(head_level,$Head.position.y,.2)
