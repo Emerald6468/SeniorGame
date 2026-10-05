@@ -28,6 +28,10 @@ Global="*uid://4qagi1gsy4k4"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/func_godot/plugin.cfg")
+
 [global_group]
 
 Collidable_enviroment=""
