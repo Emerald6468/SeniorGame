@@ -3,5 +3,6 @@
 [ext_resource type="Material" uid="uid://cev8xw6mbfnqq" path="res://Assets/Materials/RedOrb.tres" id="1_edwxn"]
 
 [resource]
-resource_local_to_scene = true
 material = ExtResource("1_edwxn")
+radius = 0.75
+height = 1.5

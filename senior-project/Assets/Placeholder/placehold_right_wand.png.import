@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cntmbeomma8sm"
-path="res://.godot/imported/placehold_left_wand.png-40d357eea5e160d9540dde76fef2d068.ctex"
+uid="uid://cg8qrfevh2beq"
+path="res://.godot/imported/placehold_right_wand.png-ce83fa519283ab67c553c57a4ade41f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placehold_left_wand.png"
-dest_files=["res://.godot/imported/placehold_left_wand.png-40d357eea5e160d9540dde76fef2d068.ctex"]
+source_file="res://Assets/Placeholder/placehold_right_wand.png"
+dest_files=["res://.godot/imported/placehold_right_wand.png-ce83fa519283ab67c553c57a4ade41f0.ctex"]
 
 [params]
 

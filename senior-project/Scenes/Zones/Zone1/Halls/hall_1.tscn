@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddc4ekte7mymd"]
 
-[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/templategrid_albedo.png" id="1_0guxe"]
+[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_0guxe"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="2_2auyt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xhtoe"]

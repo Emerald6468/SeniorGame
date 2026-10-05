@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bf8f50lk5cq8b"]
+
+[ext_resource type="Texture2D" uid="uid://ddctoru5csha3" path="res://Assets/Placeholder/abstract-flame-background-blazing-orange-fire.jpg" id="1_1vlgc"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_1vlgc")

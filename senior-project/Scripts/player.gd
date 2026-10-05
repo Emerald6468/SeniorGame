@@ -202,7 +202,7 @@ func mana_recharge():
 
 
 func _physics_process(delta: float) -> void:
-	print(str(Input.is_action_pressed("Slide")))
+	#print(str(Input.is_action_pressed("Slide")))
 	#QUIT GAME COMMAND/CTRL X
 	if Input.is_action_just_pressed("DevQuit"):get_tree().quit()
 	#RESTART SCENE
