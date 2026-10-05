@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://bnemr2an3w41g"]
+[gd_scene format=3 uid="uid://cwfjv0ljhtbah"]
 
-[ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_05r2y"]
-[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_aaow1"]
-[ext_resource type="PackedScene" uid="uid://dqt8vddolrbd4" path="res://Scenes/Prefabs/enemy.tscn" id="3_gl5sm"]
+[ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_pfiqw"]
+[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="2_6nl2d"]
+[ext_resource type="PackedScene" uid="uid://dqt8vddolrbd4" path="res://Scenes/Prefabs/enemy.tscn" id="3_pxhlj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
-albedo_texture = ExtResource("1_aaow1")
+albedo_texture = ExtResource("2_6nl2d")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05r2y"]
-albedo_texture = ExtResource("1_aaow1")
+albedo_texture = ExtResource("2_6nl2d")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sn0t7"]
 sky_top_color = Color(0.6583407, 0.22435483, 0.59418625, 1)
@@ -22,11 +22,11 @@ background_mode = 2
 sky = SubResource("Sky_riqys")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qv700"]
-albedo_texture = ExtResource("1_aaow1")
+albedo_texture = ExtResource("2_6nl2d")
 
 [node name="BasicMovementTest" type="Node3D" unique_id=1730153282]
 
-[node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_05r2y")]
+[node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_pfiqw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699963, 2.2951248, -24.407276)
 left_spell_type = 2
 right_spell_type = 2
@@ -79,20 +79,5 @@ use_collision = true
 collision_mask = 15
 size = Vector3(1, 29.544174, 26.378)
 
-[node name="Enemy" parent="." unique_id=2086751755 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 33.99781, -24.317936)
-
-[node name="Enemy2" parent="." unique_id=722245584 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 2.1226172, -16.120533)
-
-[node name="Enemy3" parent="." unique_id=1478946173 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 2.1226172, -35.832047)
-
-[node name="Enemy4" parent="." unique_id=529556784 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(0.23545477, 0, -0.9718853, 0, 1, 0, 0.9718853, 0, 0.23545477, 27.005875, 2.1226182, -62.70293)
-
-[node name="Enemy5" parent="." unique_id=669243450 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(0.23545477, 0, -0.9718853, 0, 1, 0, 0.9718853, 0, 0.23545477, 24.370014, 2.1226182, -62.064354)
-
-[node name="Enemy6" parent="." unique_id=909837333 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(0.23545477, 0, -0.9718853, 0, 1, 0, 0.9718853, 0, 0.23545477, 29.591784, 2.1226182, -63.329407)
+[node name="Enemy" parent="." unique_id=2086751755 instance=ExtResource("3_pxhlj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 4.4359794, -24.317936)

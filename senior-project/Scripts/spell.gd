@@ -10,7 +10,7 @@ var exploded = false
 @onready var pop: AudioStreamPlayer = $Pop
 @onready var mesh: MeshInstance3D = $Mesh
 
-
+const EXPLOSION = preload("uid://c6f0gnsuxx2c6")
 
 #materials
 const GREEN_ORB = preload("uid://cw7bcghcy0sgq")
@@ -60,6 +60,9 @@ var cast_time:float
 var spell_damage:float
 var spell_cost:float
 
+#spell tags
+var explodes:bool = false
+
 func setspell(spell:String):
 	all_speeds = [green_orb_speed,red_orb_speed,fireball_speed]
 	all_CT = [green_orb_CT,red_orb_CT,fireball_CT]
@@ -72,6 +75,7 @@ func setspell(spell:String):
 			spell_num = 1
 		"Fireball":
 			spell_num = 2
+			explodes = true
 	#Setting Spells variables
 	spell_name = spell
 	spell_mesh = all_meshes[spell_num]
@@ -95,6 +99,9 @@ func _ready() -> void:
 func explode():
 	if !exploding:
 					exploding = true
+					if explodes:
+						var explosion = EXPLOSION.instantiate()
+						add_child(explosion)
 					if !aplayer.is_playing(): 
 						pop.play()
 						aplayer.play("explode")
@@ -102,6 +109,7 @@ func explode():
 						await get_tree().create_timer(e_time).timeout
 						exploded = true
 					print("hit")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !exploding:

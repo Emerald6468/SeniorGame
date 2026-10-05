@@ -1,8 +1,10 @@
+class_name Player
 extends CharacterBody3D
 
 #Base Speed
 const SPEED = 8.0
 const JUMP_VELOCITY = 6.0
+var knockback_velocity:Vector3
 
 #Flexible Speed
 var cur_speed
@@ -366,6 +368,9 @@ func _physics_process(delta: float) -> void:
 	else:mana_tracker(null)
 #endregion
 
+#Spells interactions on player
+	#fireball knockback
+	velocity += knockback_velocity
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
