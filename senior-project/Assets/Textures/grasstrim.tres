@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d08jk6kbgksma"]
+
+[ext_resource type="Texture2D" uid="uid://dixmknanqewlw" path="res://Assets/Textures/grasstrim.png" id="1_opxnv"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.3882353, 0.6901961, 0, 1)
+albedo_texture = ExtResource("1_opxnv")
+metallic_specular = 0.0
+texture_filter = 2

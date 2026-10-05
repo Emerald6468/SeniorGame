@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c3r5f45advnws"]
+
+[ext_resource type="Texture2D" uid="uid://dcpmexqi1mmb2" path="res://Assets/Textures/grass1.png" id="1_752j0"]
+
+[resource]
+albedo_color = Color(0.388742, 0.6906469, 5.7756904e-07, 1)
+albedo_texture = ExtResource("1_752j0")
+metallic_specular = 0.0
+texture_filter = 2
