@@ -42,21 +42,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func got_hit(spell: String,damage: float):
-	match spell:
-		"Fireball":
-			health -= damage
-			print("ouch a " + spell + " " + str(health))
-		"GreenOrb":
-			health -= damage
-			print("ouch a " + spell + " "  + str(health))
-		"RedOrb":
-			health -= damage
-			print("ouch a " + spell + " "  + str(health))
-		"IceDart":
-			health -= damage
-			print("ouch a " + spell + " "  + str(health))
-			
-			
+	health -= damage
+	print("ouch a " + spell + " "  + str(health))
+
 func _physics_process(delta: float) -> void:
 	#falling
 	if !is_on_floor(): velocity += get_gravity() * delta
