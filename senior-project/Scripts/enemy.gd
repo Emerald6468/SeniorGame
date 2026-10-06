@@ -52,6 +52,9 @@ func got_hit(spell: String,damage: float):
 		"RedOrb":
 			health -= damage
 			print("ouch a " + spell + " "  + str(health))
+		"IceDart":
+			health -= damage
+			print("ouch a " + spell + " "  + str(health))
 			
 			
 func _physics_process(delta: float) -> void:

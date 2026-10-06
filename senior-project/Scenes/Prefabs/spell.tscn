@@ -7,8 +7,10 @@
 [ext_resource type="SphereMesh" uid="uid://deit5ljwuuiys" path="res://Assets/Meshes/FireBall.tres" id="4_6j7ya"]
 [ext_resource type="Material" uid="uid://cw7bcghcy0sgq" path="res://Assets/Materials/GreenOrb.tres" id="4_ddrsn"]
 [ext_resource type="Material" uid="uid://cev8xw6mbfnqq" path="res://Assets/Materials/RedOrb.tres" id="5_4esxp"]
+[ext_resource type="CylinderMesh" uid="uid://n4kafh1ulx3p" path="res://Assets/Meshes/IceDart.tres" id="5_oaw1j"]
 [ext_resource type="AudioStream" uid="uid://c4ijkiw6pvc8g" path="res://Assets/Audio/SFX/cast.wav" id="6_oaw1j"]
 [ext_resource type="AudioStream" uid="uid://jttcnvc3qju5" path="res://Assets/Audio/SFX/pop.wav" id="7_raawd"]
+[ext_resource type="Material" uid="uid://01ks7kok8t15" path="res://Assets/Materials/IceDart.tres" id="9_raawd"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
 
@@ -64,14 +66,18 @@ contact_monitor = true
 script = ExtResource("1_dccnc")
 green_orb_speed = 1.5
 red_orb_speed = 0.5
+icedart_speed = 3.0
 green_orb_CT = 0.65
 red_orb_CT = 2.0
 green_orb_damage = 33.4
 red_orb_damage = 66.7
+fireball_damage = 10.0
+icedart_damage = 50.1
 red_orb_cost = 40.0
 fireball_cost = 1.0
-all_meshes = Array[Mesh]([ExtResource("2_6j7ya"), ExtResource("3_o3ap2"), ExtResource("4_6j7ya")])
-all_materials = Array[Material]([ExtResource("4_ddrsn"), ExtResource("5_4esxp"), ExtResource("3_dccnc")])
+icedart_cost = 2.0
+all_meshes = Array[Mesh]([ExtResource("2_6j7ya"), ExtResource("3_o3ap2"), ExtResource("4_6j7ya"), ExtResource("5_oaw1j")])
+all_materials = Array[Material]([ExtResource("4_ddrsn"), ExtResource("5_4esxp"), ExtResource("3_dccnc"), ExtResource("9_raawd")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=743141123]
 shape = SubResource("SphereShape3D_bhunq")

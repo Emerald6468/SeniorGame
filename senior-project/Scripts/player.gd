@@ -88,7 +88,8 @@ var spell_array:Array[String] = ["GreenOrb","RedOrb","Fireball"]
 enum SPELLTYPE{
 	GreenOrb,
 	RedOrb,
-	Fireball
+	Fireball,
+	IceDart
 }
 @export var left_spell_type: SPELLTYPE
 @export var right_spell_type: SPELLTYPE
@@ -119,10 +120,12 @@ func set_spell_type():
 		SPELLTYPE.GreenOrb: left_spell = "GreenOrb"
 		SPELLTYPE.RedOrb: left_spell = "RedOrb"
 		SPELLTYPE.Fireball: left_spell = "Fireball"
+		SPELLTYPE.IceDart: left_spell = "IceDart"
 	match right_spell_type:
 		SPELLTYPE.GreenOrb: right_spell = "GreenOrb"
 		SPELLTYPE.RedOrb: right_spell = "RedOrb"
 		SPELLTYPE.Fireball: right_spell = "Fireball"
+		SPELLTYPE.IceDart: right_spell = "IceDart"
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO

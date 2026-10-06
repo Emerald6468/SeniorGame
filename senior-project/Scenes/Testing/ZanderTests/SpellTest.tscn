@@ -29,7 +29,7 @@ albedo_texture = ExtResource("2_6nl2d")
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_pfiqw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699963, 2.2951248, -24.407276)
 left_spell_type = 2
-right_spell_type = 2
+right_spell_type = 3
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=633388165 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45.62406)

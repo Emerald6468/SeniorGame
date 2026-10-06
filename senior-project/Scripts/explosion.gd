@@ -3,7 +3,7 @@ extends Area3D
 const SPELL_RAY = preload("uid://8tqosv5tarkr")
 var explosion_time = 1
 @onready var boom: AudioStreamPlayer = $Boom
-var found_collision = false
+var found_collisions = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,10 +42,10 @@ func get_knockback(target,point):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var body_list
-	if has_overlapping_bodies() and !found_collision:
+	if has_overlapping_bodies() and !found_collisions:
 		body_list = get_overlapping_bodies()
 		for body in body_list:
-			if body is Enemy or body is Player: found_collision = true
+			if body is Enemy or body is Player: found_collisions = true
 			if body is Enemy:
 				var point = body.global_position
 				get_knockback(body,point)
