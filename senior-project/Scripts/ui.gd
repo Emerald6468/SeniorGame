@@ -15,12 +15,12 @@ var cur_mana:float
 func _ready() -> void:
 	pass # Replace with function body.
 
-func wand_animation(hand,name):
+func wand_animation(hand,s_name):
 	match hand:
 		"right":
-			if !right_hand.is_playing(): right_hand.play(str(name))
+			if !right_hand.is_playing(): right_hand.play(str(s_name))
 		"left":
-			if !left_hand.is_playing(): left_hand.play(str(name))
+			if !left_hand.is_playing(): left_hand.play(str(s_name))
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#print(str(cur_mana))

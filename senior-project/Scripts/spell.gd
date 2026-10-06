@@ -62,6 +62,7 @@ var spell_cost:float
 
 #spell tags
 var explodes:bool = false
+var burns:bool = false
 
 func setspell(spell:String):
 	all_speeds = [green_orb_speed,red_orb_speed,fireball_speed]
@@ -76,6 +77,7 @@ func setspell(spell:String):
 		"Fireball":
 			spell_num = 2
 			explodes = true
+			burns = true
 	#Setting Spells variables
 	spell_name = spell
 	spell_mesh = all_meshes[spell_num]
@@ -126,6 +128,7 @@ func _process(delta: float) -> void:
 				explode()
 			elif collision is Enemy:
 				print("enemy")
+				if burns: collision.on_fire = true;collision.b_timer = true
 				explode()
 				collision.got_hit(spell_name,spell_damage)
 	if exploded:

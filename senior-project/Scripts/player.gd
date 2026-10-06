@@ -313,8 +313,8 @@ func _physics_process(delta: float) -> void:
 		running.stop()
 		slide.stop()
 		cur_speed = move_toward(cur_speed,SPEED,deccel)
-		velocity.x = move_toward(velocity.x, 0, cur_speed)
-		velocity.z = move_toward(velocity.z, 0, cur_speed)
+		velocity.x = move_toward(velocity.x, 0, deccel*2)
+		velocity.z = move_toward(velocity.z, 0, deccel*2)
 	if !is_on_floor():
 		cur_speed = move_toward(cur_speed,SPEED,deccel/500)
 		curve_x = 0.0
