@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c6f0gnsuxx2c6"]
+
+[ext_resource type="Script" uid="uid://yrdns1nhiu2q" path="res://Scripts/explosion.gd" id="1_4xphp"]
+[ext_resource type="AudioStream" uid="uid://dmkmsk52bb1dj" path="res://Assets/Audio/SFX/Boom.wav" id="2_q3vcj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sn0t7"]
+
+[node name="Explosion" type="Area3D" unique_id=1303617044]
+collision_layer = 256
+collision_mask = 10
+script = ExtResource("1_4xphp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1828428205]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("SphereShape3D_sn0t7")
+debug_color = Color(0.9863978, 0, 0.32880265, 0.41960785)
+
+[node name="Boom" type="AudioStreamPlayer" parent="." unique_id=1197725806]
+stream = ExtResource("2_q3vcj")
+volume_db = -15.0

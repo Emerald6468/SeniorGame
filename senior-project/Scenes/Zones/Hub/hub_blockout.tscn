@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cttjworvixciu"]
 
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_ya2lj"]
-[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/templategrid_albedo.png" id="2_7k6b3"]
+[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="2_7k6b3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7k6b3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

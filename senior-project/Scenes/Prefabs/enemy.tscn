@@ -38,3 +38,8 @@ debug_color = Color(0.99343544, 0, 0.24443278, 0.41960785)
 [node name="HealthBar" parent="." unique_id=1536670344 node_paths=PackedStringArray("character") instance=ExtResource("2_5f3i6")]
 tint_progress = Color(0.76133096, 0.15065676, 0.42558947, 1)
 character = NodePath("..")
+
+[node name="Status" type="Label3D" parent="." unique_id=298338188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6219754, 0)
+billboard = 2
+text = "STATUS"

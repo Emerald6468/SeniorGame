@@ -10,7 +10,7 @@
 
 [sub_resource type="Curve" id="Curve_fdt7q"]
 _limits = [-9.0, 5.0, 0.0, 2.0]
-_data = [Vector2(0, 0), 0.0, -9.223934, 0, 0, Vector2(0.45, 5), 0.0, 0.0, 0, 0, Vector2(2, -0.134), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, -9.223934, 0, 0, Vector2(0.45, 5), 0.0, 0.0, 0, 0, Vector2(1.922, -0.1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
@@ -39,6 +39,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3901411, -0.115736246, -0.5
 
 [node name="Left_Spell_Spawn" type="Marker3D" parent="Head/Camera3D" unique_id=1093797762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41726235, -0.115736246, -0.505494)
+
+[node name="AimAssist" type="RayCast3D" parent="Head/Camera3D" unique_id=1625247997]
+target_position = Vector3(0, 0, -20)
+collision_mask = 9
 
 [node name="Running" type="AudioStreamPlayer" parent="." unique_id=1721402892]
 stream = ExtResource("2_pv3ct")

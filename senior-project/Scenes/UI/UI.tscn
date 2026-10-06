@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://o27u5krdqb62"]
 
 [ext_resource type="Script" uid="uid://b8xxhuy38u5te" path="res://Scripts/ui.gd" id="1_s86y4"]
-[ext_resource type="Texture2D" uid="uid://cg8qrfevh2beq" path="res://Assets/placehold_right_wand.png" id="2_636u5"]
-[ext_resource type="Texture2D" uid="uid://cntmbeomma8sm" path="res://Assets/placehold_left_wand.png" id="3_akgwn"]
+[ext_resource type="Texture2D" uid="uid://cg8qrfevh2beq" path="res://Assets/Placeholder/placehold_right_wand.png" id="2_636u5"]
+[ext_resource type="Texture2D" uid="uid://elmliu2nvdx2" path="res://Assets/UI/Placeholder/enemy_health_bars_2.0/enemy_health_bars_2.0/enemy_health_bar_foreground_001.png" id="2_oqha6"]
+[ext_resource type="Texture2D" uid="uid://bhbn48epqfpu2" path="res://Assets/UI/Placeholder/enemy_health_bars_2.0/enemy_mana_bar_000.png" id="3_7tgkj"]
+[ext_resource type="Texture2D" uid="uid://cntmbeomma8sm" path="res://Assets/Placeholder/placehold_left_wand.png" id="3_akgwn"]
 
 [sub_resource type="Animation" id="Animation_636u5"]
 resource_name = "Cast_Spell"
@@ -146,6 +148,15 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Speed = 0"
 
+[node name="Mana" type="TextureProgressBar" parent="CanvasLayer/MarginContainer" unique_id=1289210696]
+modulate = Color(1, 1, 1, 0.6392157)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+value = 100.0
+texture_under = ExtResource("2_oqha6")
+texture_progress = ExtResource("3_7tgkj")
+
 [node name="PlaceholdRightWand" type="Sprite2D" parent="CanvasLayer" unique_id=333821037]
 position = Vector2(1006.00006, 463)
 scale = Vector2(2.484, 2.1174862)
@@ -155,6 +166,20 @@ texture = ExtResource("2_636u5")
 position = Vector2(179.00006, 463)
 scale = Vector2(2.484, 2.1174862)
 texture = ExtResource("3_akgwn")
+
+[node name="CrossHair" type="Label" parent="CanvasLayer" unique_id=837836248]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -20.0
+offset_right = 16.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = " +"
 
 [node name="RightHand" type="AnimationPlayer" parent="." unique_id=1741079159]
 libraries/ = SubResource("AnimationLibrary_b83rk")
