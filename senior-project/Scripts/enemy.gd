@@ -4,6 +4,7 @@ extends CharacterBody3D
 var health: float = max_health
 var knockback_velocity:Vector3
 var deccel = .1
+var speed:float = 4.0
 
 enum ENEMY_STATES{
 	Idle,
@@ -14,6 +15,12 @@ enum ENEMY_STATES{
 
 #Status tracker
 @onready var status: Label3D = $Status
+
+#Monitor
+@onready var monitor: Area3D = $Monitor
+var player_pos: Vector3
+@onready var enemy_head: Marker3D = $EnemyHead
+
 
 #burning
 var on_fire = false
@@ -26,8 +33,30 @@ func status_tracker():
 		status.text = "On Fire"
 	else: status.text = ""
 
+func find_player():
+	if monitor.has_overlapping_bodies():
+		var bodies = monitor.get_overlapping_bodies()
+		for body in bodies:
+			if body is Player:
+				player_pos = body.global_position
+	else: player_pos = Vector3.ZERO
+
+func check_for_player():
+	find_player()
+	if enemy_state != ENEMY_STATES.Dead:
+		if player_pos and player_pos != Vector3.ZERO: enemy_state = ENEMY_STATES.Chasing
+		else: enemy_state = ENEMY_STATES.Idle
+
+func chase_player():
+	print("i be chasing")
+	var look_pos = player_pos
+	look_pos.y = enemy_head.position.y
+	look_at(look_pos,Vector3.UP,false)
+	velocity = (player_pos - position).normalized() * speed
+
 func burning():
 	if on_fire:
+		#if health>burn_damage:
 		health -= burn_damage
 		if b_timer:
 			b_timer = false
@@ -54,6 +83,12 @@ func _physics_process(delta: float) -> void:
 	velocity.z = move_toward(velocity.z, 0, deccel)
 	#fireball burn
 	burning()
+	
+	#check for player nearby
+	check_for_player()
+	
+	if enemy_state == ENEMY_STATES.Chasing: chase_player()
+	
 	
 	move_and_slide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.

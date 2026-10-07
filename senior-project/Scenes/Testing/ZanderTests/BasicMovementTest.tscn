@@ -72,6 +72,34 @@ use_collision = true
 collision_mask = 15
 size = Vector3(1, 29.544174, 26.378)
 
+[node name="Wall5" type="CSGBox3D" parent="." unique_id=536535639 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.73733, 4.4269257, -38.682655)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(5.4432373, 6.634392, 10.000524)
+
+[node name="Wall6" type="CSGBox3D" parent="." unique_id=1773317717 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.73733, 4.4269257, -49.378315)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(5.4432373, 6.634392, 10.000524)
+
+[node name="Wall7" type="CSGBox3D" parent="." unique_id=564230548 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.73733, 4.4269257, -61.80815)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(5.4432373, 6.634392, 10.000524)
+
+[node name="Wall8" type="CSGBox3D" parent="." unique_id=759970955 groups=["Collidable_enviroment"]]
+transform = Transform3D(-0.9956303, 0, -0.09338233, 0, 1, 0, 0.09338233, 0, -0.9956303, -9.070549, 4.4269257, -53.877865)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(1.4775507, 6.634392, 10.000524)
+
 [node name="Wall4" type="CSGBox3D" parent="." unique_id=1784821640 groups=["Collidable_enviroment"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.33594, 16.059425, -27.930752)
 material_override = SubResource("StandardMaterial3D_qv700")

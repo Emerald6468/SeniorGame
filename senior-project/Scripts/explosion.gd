@@ -15,7 +15,9 @@ func _ready() -> void:
 func get_knock(target,direction,force):
 	target.knockback_velocity = direction * force
 	await get_tree().create_timer(0.1).timeout
-	target.knockback_velocity = Vector3.ZERO
+	var alive = true if target != null else false
+	if alive:
+		target.knockback_velocity = Vector3.ZERO
 
 func get_distance(point):
 	return global_position.distance_to(point)
