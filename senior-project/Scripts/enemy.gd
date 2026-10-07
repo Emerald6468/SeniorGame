@@ -20,13 +20,22 @@ enum ENEMY_STATES{
 @onready var monitor: Area3D = $Monitor
 var player_pos: Vector3
 @onready var enemy_head: Marker3D = $EnemyHead
-
+@export var social_distance = 4.0
+var close_enough = false
 
 #burning
 var on_fire = false
 var burn_time: float = 3.0
 var b_timer = false
 var burn_damage = .3
+
+
+func not_to_close(target):
+	var cur_distance = global_position.distance_to(target)
+	if cur_distance <= social_distance: close_enough = true
+	else: close_enough = false
+	#if close_enough: print("to close")
+	#else: print("still going")
 
 func status_tracker():
 	if on_fire:
@@ -48,11 +57,16 @@ func check_for_player():
 		else: enemy_state = ENEMY_STATES.Idle
 
 func chase_player():
-	print("i be chasing")
 	var look_pos = player_pos
 	look_pos.y = enemy_head.position.y
-	look_at(look_pos,Vector3.UP,false)
-	velocity = (player_pos - position).normalized() * speed
+	not_to_close(look_pos)
+	if !close_enough and is_on_floor():
+		look_at(look_pos,Vector3(0, 1, 0),false)
+		if knockback_velocity == Vector3.ZERO or !knockback_velocity:
+			velocity = (look_pos - position).normalized() * speed #move toward player
+		else: print(str(knockback_velocity))
+
+
 
 func burning():
 	if on_fire:
@@ -61,7 +75,6 @@ func burning():
 		if b_timer:
 			b_timer = false
 			await get_tree().create_timer(burn_time * .667).timeout
-			print("test")
 			burn_damage = burn_damage * (.667)
 			await get_tree().create_timer(burn_time/3).timeout
 			burn_damage = burn_damage * 1.5
@@ -79,8 +92,9 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor(): velocity += get_gravity() * delta
 	#fireball knockback
 	velocity += knockback_velocity
-	velocity.x = move_toward(velocity.x, 0, deccel)
-	velocity.z = move_toward(velocity.z, 0, deccel)
+	if knockback_velocity == Vector3.ZERO or !knockback_velocity:
+		velocity.x = move_toward(velocity.x, 0, deccel)
+		velocity.z = move_toward(velocity.z, 0, deccel)
 	#fireball burn
 	burning()
 	

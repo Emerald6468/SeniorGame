@@ -13,8 +13,10 @@ func _ready() -> void:
 	queue_free()
 
 func get_knock(target,direction,force):
-	target.knockback_velocity = direction * force
-	await get_tree().create_timer(0.1).timeout
+	var mod = 1.0
+	if target is Enemy: mod = 1.5
+	target.knockback_velocity = direction * force * mod
+	await get_tree().create_timer(.1).timeout
 	var alive = true if target != null else false
 	if alive:
 		target.knockback_velocity = Vector3.ZERO
@@ -49,7 +51,7 @@ func _process(delta: float) -> void:
 		for body in body_list:
 			if body is Enemy or body is Player: found_collisions = true
 			if body is Enemy:
-				var point = body.global_position
+				var point = body.enemy_head.global_position
 				get_knockback(body,point)
 			if body is Player:
 				var point = body.get_node("Head").global_position

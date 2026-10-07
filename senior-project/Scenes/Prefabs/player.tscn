@@ -19,6 +19,7 @@ point_count = 3
 
 [node name="Player" type="CharacterBody3D" unique_id=469422006]
 collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_sm2rp")
 slide_curve = SubResource("Curve_fdt7q")
 
