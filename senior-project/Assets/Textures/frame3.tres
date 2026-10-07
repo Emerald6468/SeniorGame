@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://etwyoinend70" path="res://Assets/Textures/frame3.png" id="1_1qgr3"]
 
 [resource]
+albedo_color = Color(0.6052743, 0.6052743, 0.6052743, 1)
 albedo_texture = ExtResource("1_1qgr3")
 metallic_specular = 0.0
 texture_filter = 2

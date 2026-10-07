@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dasdu0xub0ql5" path="res://Assets/Textures/walltest5white.png" id="1_w3t2v"]
 
 [resource]
+albedo_color = Color(0.8032789, 0.65048665, 0.5142456, 1)
 albedo_texture = ExtResource("1_w3t2v")
 metallic_specular = 0.0
 texture_filter = 2

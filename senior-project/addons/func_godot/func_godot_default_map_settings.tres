@@ -9,3 +9,4 @@
 script = ExtResource("1_dlf23")
 inverse_scale_factor = 100.0
 base_texture_dir = "res://Assets/Textures"
+save_generated_materials = false

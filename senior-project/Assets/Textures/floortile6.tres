@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://i26anmpw7d0k" path="res://Assets/Textures/floortile6.png" id="1_nnwhn"]
 
 [resource]
+albedo_color = Color(0.77001476, 0.7700148, 0.7700148, 1)
 albedo_texture = ExtResource("1_nnwhn")
 metallic_specular = 0.0
 texture_filter = 2

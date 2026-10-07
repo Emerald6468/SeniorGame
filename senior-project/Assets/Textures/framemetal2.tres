@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blksf17rb7yfk"]
+
+[ext_resource type="Texture2D" uid="uid://c2gk8l8y6b3f5" path="res://Assets/Textures/framemetal2.png" id="1_alhqc"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.2627451, 0.32941177, 0.33333334, 1)
+albedo_texture = ExtResource("1_alhqc")
+metallic_specular = 0.0
+texture_filter = 2
