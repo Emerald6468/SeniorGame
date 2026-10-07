@@ -1,23 +1,23 @@
-[gd_scene format=4 uid="uid://co8q4ra67bsci"]
+[gd_scene format=4 uid="uid://cjtx2jjncontf"]
 
-[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_2oala"]
-[ext_resource type="Texture2D" uid="uid://cjxqwj44mpj7q" path="res://Assets/Textures/wood1.png" id="2_km03g"]
-[ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="2_xhtoe"]
-[ext_resource type="PackedScene" uid="uid://dwp4x74k76jlm" path="res://Scenes/Testing/Ground Zero - Raymond/Pause_Screen.tscn" id="3_fuqwi"]
-[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="4_eg5nu"]
-[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="5_vtcy5"]
-[ext_resource type="Material" uid="uid://dldtn0twiaev7" path="res://Assets/Textures/frame7white.tres" id="6_5u3ss"]
-[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="7_ymwoq"]
-[ext_resource type="Material" uid="uid://c3r5f45advnws" path="res://Assets/Textures/grass1.tres" id="8_nersi"]
-[ext_resource type="Material" uid="uid://bd54jseykqn4p" path="res://Assets/Textures/frame.tres" id="9_ymwoq"]
-[ext_resource type="Texture2D" uid="uid://drv8h1gxijfdi" path="res://Assets/Textures/frame.png" id="10_0k5nc"]
-[ext_resource type="Material" uid="uid://hmejbu5ynfvh" path="res://Assets/Textures/floortile6.tres" id="11_itq52"]
-[ext_resource type="Material" uid="uid://d08jk6kbgksma" path="res://Assets/Textures/grasstrim.tres" id="11_nersi"]
-[ext_resource type="Material" uid="uid://jyst3k23c4en" path="res://Assets/Textures/walltest5white.tres" id="12_km03g"]
-[ext_resource type="Material" uid="uid://cd2ukyhdyycbd" path="res://Assets/Textures/frame3.tres" id="13_iaol8"]
-[ext_resource type="Material" uid="uid://bbhfc0jw46c0x" path="res://Assets/Textures/floor1.tres" id="14_3niwi"]
-[ext_resource type="Material" uid="uid://ccss46eio3xeh" path="res://Assets/Textures/wall1.tres" id="16_3niwi"]
-[ext_resource type="Material" uid="uid://blksf17rb7yfk" path="res://Assets/Textures/framemetal2.tres" id="17_0k5nc"]
+[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_y8kri"]
+[ext_resource type="Texture2D" uid="uid://cjxqwj44mpj7q" path="res://Assets/Textures/wood1.png" id="2_8bmhe"]
+[ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_y84hh"]
+[ext_resource type="PackedScene" uid="uid://dwp4x74k76jlm" path="res://Scenes/Testing/Ground Zero - Raymond/Pause_Screen.tscn" id="4_vjvii"]
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="5_8avfq"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="6_nyj3q"]
+[ext_resource type="Material" uid="uid://dldtn0twiaev7" path="res://Assets/Textures/frame7white.tres" id="7_7i4v3"]
+[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="8_td08v"]
+[ext_resource type="Material" uid="uid://c3r5f45advnws" path="res://Assets/Textures/grass1.tres" id="9_v8jaq"]
+[ext_resource type="Texture2D" uid="uid://drv8h1gxijfdi" path="res://Assets/Textures/frame.png" id="10_30qt5"]
+[ext_resource type="Material" uid="uid://d08jk6kbgksma" path="res://Assets/Textures/grasstrim.tres" id="11_uoy7x"]
+[ext_resource type="Material" uid="uid://hmejbu5ynfvh" path="res://Assets/Textures/floortile6.tres" id="12_pyonl"]
+[ext_resource type="Material" uid="uid://jyst3k23c4en" path="res://Assets/Textures/walltest5white.tres" id="13_eg40w"]
+[ext_resource type="Material" uid="uid://cd2ukyhdyycbd" path="res://Assets/Textures/frame3.tres" id="14_t6ytm"]
+[ext_resource type="Material" uid="uid://bbhfc0jw46c0x" path="res://Assets/Textures/floor1.tres" id="15_h428q"]
+[ext_resource type="Material" uid="uid://ccss46eio3xeh" path="res://Assets/Textures/wall1.tres" id="16_tgugj"]
+[ext_resource type="Material" uid="uid://bd54jseykqn4p" path="res://Assets/Textures/frame.tres" id="17_6on8h"]
+[ext_resource type="Material" uid="uid://blksf17rb7yfk" path="res://Assets/Textures/framemetal2.tres" id="18_5blbf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xhtoe"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,13 +32,13 @@ sky = SubResource("Sky_fuqwi")
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhtoe"]
-albedo_texture = ExtResource("1_2oala")
+albedo_texture = ExtResource("1_y8kri")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaol8"]
 albedo_color = Color(0.73046875, 0.5938548, 0.40803528, 1)
-albedo_texture = ExtResource("2_km03g")
+albedo_texture = ExtResource("2_8bmhe")
 uv1_scale = Vector3(0.2, 0.2, 0.2)
 uv1_triplanar = true
 
@@ -47,13 +47,13 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("7_ymwoq")
+albedo_texture = ExtResource("8_td08v")
 metallic_specular = 0.0
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8akdw"]
 albedo_color = Color(0.65882355, 0.6, 0.57254905, 1)
-albedo_texture = ExtResource("10_0k5nc")
+albedo_texture = ExtResource("10_30qt5")
 metallic_specular = 0.0
 texture_filter = 2
 
@@ -64,7 +64,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 96,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8A"),
-"material": ExtResource("6_5u3ss"),
+"material": ExtResource("7_7i4v3"),
 "name": "frame7white",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -88,7 +88,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 6,
 "index_data": PackedByteArray("AAABAAIAAAACAAMA"),
-"material": ExtResource("8_nersi"),
+"material": ExtResource("9_v8jaq"),
 "name": "grass1",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -112,7 +112,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 24,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8A"),
-"material": ExtResource("11_nersi"),
+"material": ExtResource("11_uoy7x"),
 "name": "grasstrim",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -124,7 +124,7 @@ _surfaces = [{
 size = Vector3(6, 1, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0k5nc"]
-albedo_texture = ExtResource("7_ymwoq")
+albedo_texture = ExtResource("8_td08v")
 metallic_specular = 0.0
 texture_filter = 2
 
@@ -147,7 +147,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 30,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMA"),
-"material": ExtResource("11_itq52"),
+"material": ExtResource("12_pyonl"),
 "name": "floortile6",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -159,7 +159,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 6,
 "index_data": PackedByteArray("AAABAAIAAAACAAMA"),
-"material": ExtResource("12_km03g"),
+"material": ExtResource("13_eg40w"),
 "name": "walltest5white",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -171,7 +171,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 90,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsA"),
-"material": ExtResource("13_iaol8"),
+"material": ExtResource("14_t6ytm"),
 "name": "frame3",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -183,7 +183,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 12,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcA"),
-"material": ExtResource("8_nersi"),
+"material": ExtResource("9_v8jaq"),
 "name": "grass1",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -195,7 +195,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 18,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsA"),
-"material": ExtResource("14_3niwi"),
+"material": ExtResource("15_h428q"),
 "name": "floor1",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -211,7 +211,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("7_ymwoq")
+albedo_texture = ExtResource("8_td08v")
 metallic_specular = 0.0
 texture_filter = 2
 
@@ -234,7 +234,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 12,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcA"),
-"material": ExtResource("16_3niwi"),
+"material": ExtResource("16_tgugj"),
 "name": "wall1",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -246,7 +246,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 96,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8A"),
-"material": ExtResource("9_ymwoq"),
+"material": ExtResource("17_6on8h"),
 "name": "frame",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -258,7 +258,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 18,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsA"),
-"material": ExtResource("17_0k5nc"),
+"material": ExtResource("18_5blbf"),
 "name": "framemetal2",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -269,7 +269,7 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_8akdw"]
 size = Vector3(5.125, 0.625, 20.5)
 
-[node name="Arena1" type="Node3D" unique_id=2014480433]
+[node name="Arena2" type="Node3D" unique_id=2014480433]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -376,18 +376,25 @@ collision_mask = 7
 size = Vector3(7.621643, 0.90341187, 4.4714293)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D34" type="CSGBox3D" parent="Geo" unique_id=928631532 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.243443, 9.869454, -8.481163)
-use_collision = true
-collision_mask = 7
-size = Vector3(22.200478, 9.950287, 3.670285)
-material = SubResource("StandardMaterial3D_xhtoe")
-
 [node name="CSGBox3D37" type="CSGBox3D" parent="Geo" unique_id=128774079 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.703584, 9.869454, -2.3184242)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.578583, 9.869454, -0.19342422)
 use_collision = true
 collision_mask = 7
 size = Vector3(0.375, 8.375, 3.5)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D43" type="CSGBox3D" parent="Geo" unique_id=1706267150 groups=["Collidable_enviroment"]]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.108917, 7.8694544, -6.380924)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.25, 3.375, 6.125)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="Geo" unique_id=423107791 groups=["Collidable_enviroment"]]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.108917, 7.5569544, 6.931576)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.25, 2.75, 5.25)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D21" type="CSGBox3D" parent="Geo" unique_id=894799963 groups=["Collidable_enviroment"]]
@@ -425,57 +432,43 @@ collision_mask = 7
 size = Vector3(2.9609375, 1.5, 1.3498535)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Geo" unique_id=1611707608 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050445557, 4.8965607, 10.51416)
+[node name="CSGBox3D39" type="CSGBox3D" parent="Geo" unique_id=2119599916 groups=["Collidable_enviroment"]]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.8125, 8.887573)
 use_collision = true
 collision_mask = 7
-size = Vector3(6.4648438, 0.25, 19.104492)
+size = Vector3(2.9609375, 0.125, 1.125)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D39" type="CSGBox3D" parent="Geo" unique_id=142381426 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2203674, 7.4590607, 18.503906)
+[node name="CSGBox3D40" type="CSGBox3D" parent="Geo" unique_id=1936982769 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, 8.875, 0.8125, 0.012573242)
 use_collision = true
 collision_mask = 7
-size = Vector3(0.125, 4.375, 3.125)
+size = Vector3(2.9609375, 0.125, 1.125)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D41" type="CSGBox3D" parent="Geo" unique_id=2146312680 groups=["Collidable_enviroment"]]
+transform = Transform3D(-1.0000001, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1.0000001, 0, 0.8125, -8.862427)
+use_collision = true
+collision_mask = 7
+size = Vector3(2.9609375, 0.125, 1.125)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D42" type="CSGBox3D" parent="Geo" unique_id=858154356 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711392e-08, -8.875, 0.8125, 0.012573242)
+use_collision = true
+collision_mask = 7
+size = Vector3(2.9609375, 0.125, 1.125)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Geo" unique_id=939061405 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9423513, 2.2145653, 1.5916624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.031476, 2.2145653, -9.941106)
 use_collision = true
 collision_mask = 7
 size = Vector3(0.25, 5.375, 0.25)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Geo" unique_id=1483861187 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9423513, 2.2145653, 6.7166624)
-use_collision = true
-collision_mask = 7
-size = Vector3(0.25, 5.375, 0.25)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="Geo" unique_id=153286798 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9423513, 2.2145653, 11.841662)
-use_collision = true
-collision_mask = 7
-size = Vector3(0.25, 5.375, 0.25)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D17" type="CSGBox3D" parent="Geo" unique_id=1986370459 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9423513, 2.2145653, 16.466663)
-use_collision = true
-collision_mask = 7
-size = Vector3(0.25, 5.375, 0.25)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D18" type="CSGBox3D" parent="Geo" unique_id=1549447980 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.807951, 2.2145653, 1.5916624)
-use_collision = true
-collision_mask = 7
-size = Vector3(0.25, 5.375, 0.25)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D19" type="CSGBox3D" parent="Geo" unique_id=120206142 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.807951, 2.2145653, 6.7166624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.031476, 2.2145653, 10.251101)
 use_collision = true
 collision_mask = 7
 size = Vector3(0.25, 5.375, 0.25)
@@ -493,28 +486,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.807951, 3.1901531, -12.927
 use_collision = true
 collision_mask = 7
 size = Vector3(0.5, 5.375, 0.5)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D23" type="CSGBox3D" parent="Geo" unique_id=194618669 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.807951, 2.2145653, 11.841662)
-use_collision = true
-collision_mask = 7
-size = Vector3(0.25, 5.375, 0.25)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D24" type="CSGBox3D" parent="Geo" unique_id=255438891 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.807951, 2.2145653, 16.466663)
-use_collision = true
-collision_mask = 7
-size = Vector3(0.25, 5.375, 0.25)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D28" type="CSGBox3D" parent="Geo" unique_id=1410508548 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 17.995342, 2.1488714, -0.40056515)
-visible = false
-use_collision = true
-collision_mask = 7
-size = Vector3(4, 0.25, 19.104492)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Geo" unique_id=1692778722 groups=["Collidable_enviroment"]]
@@ -538,8 +509,78 @@ collision_mask = 7
 size = Vector3(3, 0.125, 5.041)
 material = SubResource("StandardMaterial3D_iaol8")
 
-[node name="Player" parent="." unique_id=469422006 instance=ExtResource("2_xhtoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geo" unique_id=1999448535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+use_collision = true
+collision_mask = 7
+radius = 8.0
+height = 1.0
+sides = 12
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Geo/CSGCylinder3D" unique_id=1217572468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1796875, 0)
+operation = 2
+radius = 7.75
+height = 0.734375
+sides = 12
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Geo" unique_id=1083687265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0)
+use_collision = true
+collision_mask = 7
+radius = 4.25
+height = 0.5
+sides = 12
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Geo" unique_id=700662685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.75, 0)
+use_collision = true
+collision_mask = 7
+radius = 2.5
+height = 0.5
+sides = 12
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Geo" unique_id=184099565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.75, 0)
+use_collision = true
+collision_mask = 7
+radius = 1.0
+height = 0.5
+sides = 12
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Geo" unique_id=545706304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7734375, 0)
+use_collision = true
+collision_mask = 7
+height = 3.484375
+sides = 12
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Geo" unique_id=986426786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4023438, 0)
+use_collision = true
+collision_mask = 7
+radius = 2.0
+height = 2.2421875
+sides = 12
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Geo" unique_id=1481577159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2.6081858, 0)
+use_collision = true
+collision_mask = 7
+radius = 2.0
+height = 5.2490234
+sides = 12
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="Player" parent="." unique_id=469422006 instance=ExtResource("3_y84hh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 17.125)
 right_spell_type = 2
 
 [node name="lights" type="Node3D" parent="." unique_id=1842736137]
@@ -567,13 +608,13 @@ spot_attenuation = 0.01
 
 [node name="enemies" type="Node3D" parent="." unique_id=374510159]
 
-[node name="PauseMenu" parent="." unique_id=209076557 instance=ExtResource("3_fuqwi")]
+[node name="PauseMenu" parent="." unique_id=209076557 instance=ExtResource("4_vjvii")]
 
 [node name="FuncGodotMap" type="Node3D" parent="." unique_id=2011209370]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.125, 0, 1.125)
-script = ExtResource("4_eg5nu")
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.36747, 0, 13.443361)
+script = ExtResource("5_8avfq")
 global_map_file = "D:/Modding/TrenchBroom/maps/flowerbed1.map"
-map_settings = ExtResource("5_vtcy5")
+map_settings = ExtResource("6_nyj3q")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
 [node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=930798075]
@@ -588,9 +629,9 @@ shape = SubResource("BoxShape3D_itq52")
 
 [node name="FuncGodotMap2" type="Node3D" parent="." unique_id=198075901]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-script = ExtResource("4_eg5nu")
+script = ExtResource("5_8avfq")
 global_map_file = "D:/Modding/TrenchBroom/maps/Arena1floor.map"
-map_settings = ExtResource("5_vtcy5")
+map_settings = ExtResource("6_nyj3q")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
 [node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap2" unique_id=1656376841]
@@ -604,10 +645,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156245, 0)
 shape = SubResource("BoxShape3D_vsnhd")
 
 [node name="FuncGodotMap3" type="Node3D" parent="." unique_id=463301855]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 20, 2.25, 0)
-script = ExtResource("4_eg5nu")
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 20, 5.375, 0)
+script = ExtResource("5_8avfq")
 global_map_file = "D:/Modding/TrenchBroom/maps/awning1.map"
-map_settings = ExtResource("5_vtcy5")
+map_settings = ExtResource("6_nyj3q")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
 [node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap3" unique_id=1321516554]
@@ -617,5 +658,22 @@ collision_mask = 0
 mesh = SubResource("ArrayMesh_0k5nc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap3/entity_0_worldspawn" unique_id=1409347149]
+transform = Transform3D(1, 0, 0, 0, 1.0000012, 0, 0, 0, 1.0000012, -2.5625, -0.31250024, 0.15625)
+shape = SubResource("BoxShape3D_8akdw")
+
+[node name="FuncGodotMap4" type="Node3D" parent="." unique_id=2102190332]
+transform = Transform3D(-1, 0, -8.7422784e-08, 0, 1.0000001, 0, 8.742278e-08, 0, -1.0000001, -20, 5.375, 0)
+script = ExtResource("5_8avfq")
+global_map_file = "D:/Modding/TrenchBroom/maps/awning1.map"
+map_settings = ExtResource("6_nyj3q")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap4" unique_id=1889052875]
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap4/entity_0_worldspawn" unique_id=1637432785]
+mesh = SubResource("ArrayMesh_0k5nc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap4/entity_0_worldspawn" unique_id=82700233]
 transform = Transform3D(1, 0, 0, 0, 1.0000012, 0, 0, 0, 1.0000012, -2.5625, -0.31250024, 0.15625)
 shape = SubResource("BoxShape3D_8akdw")
