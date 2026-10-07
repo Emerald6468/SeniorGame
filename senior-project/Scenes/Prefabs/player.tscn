@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dwujkuabp5ysk" path="res://Assets/Audio/SFX/Jump.wav" id="4_v34u6"]
 [ext_resource type="AudioStream" uid="uid://c6hbuyu8cokal" path="res://Assets/Audio/SFX/SFX_air_woosh(1).wav" id="5_v34u6"]
 [ext_resource type="AudioStream" uid="uid://p0oe7u4bdlgl" path="res://Assets/Audio/SFX/Slidestart.wav" id="6_ak25i"]
+[ext_resource type="AudioStream" uid="uid://xw121ahg4geb" path="res://Assets/Audio/SFX/Wrong.wav" id="7_fdt7q"]
 
 [sub_resource type="Curve" id="Curve_fdt7q"]
 _limits = [-9.0, 5.0, 0.0, 2.0]
@@ -63,5 +64,9 @@ volume_db = 5.0
 
 [node name="SlideStart" type="AudioStreamPlayer" parent="." unique_id=1086960223]
 stream = ExtResource("6_ak25i")
+
+[node name="Wrong" type="AudioStreamPlayer" parent="." unique_id=824858420]
+stream = ExtResource("7_fdt7q")
+volume_db = -5.0
 
 [node name="UI" parent="." unique_id=753733901 instance=ExtResource("3_v1l4e")]

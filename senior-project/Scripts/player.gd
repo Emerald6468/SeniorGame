@@ -104,6 +104,8 @@ var can_cast_right = true
 @onready var jump_land: AudioStreamPlayer = $JumpLand
 @onready var slide: AudioStreamPlayer = $Slide
 @onready var slide_start_audio: AudioStreamPlayer = $SlideStart
+@onready var wrong: AudioStreamPlayer = $Wrong
+
 
 
 func _ready() -> void:
@@ -183,6 +185,7 @@ func slide_lerp():
 		cur_speed = slide_curve.sample(curve_x) + set_speed
 	
 
+#region spells
 func left_spell_cooldown(left_cd):
 	can_cast_left = false
 	await get_tree().create_timer(left_cd,false,true).timeout
@@ -201,9 +204,41 @@ func mana_tracker(spell):
 	else: can_cast = false
 
 func mana_recharge():
-	cur_mana += (cur_speed/60) * mana_gain_mod
+	var speed_mod = 1.0
+	if cur_speed > 15.0: speed_mod = 2.0
+	cur_mana += (cur_speed * mana_gain_mod * speed_mod)/60
 	if cur_mana > max_mana: cur_mana = max_mana
 
+func cast_left(assist):
+	get_node("UI").wand_animation("left","LCast_Spell")
+	var basic_spell = BASIC_SPELL.instantiate()
+	basic_spell.setspell(left_spell)
+	get_parent().add_child(basic_spell)
+	var left_cd = basic_spell.get_cooldown()
+	right_spell_cooldown(left_cd)
+	mana_tracker(basic_spell)
+	basic_spell.global_position = left_spell_spawn.global_position
+	basic_spell.global_rotation = left_spell_spawn.global_rotation
+	if assist:basic_spell.look_at(target_pos)
+
+func cast_right(assist):
+	get_node("UI").wand_animation("right","Cast_Spell")
+	var basic_spell = BASIC_SPELL.instantiate()
+	basic_spell.setspell(right_spell)
+	get_parent().add_child(basic_spell)
+	var right_cd = basic_spell.get_cooldown()
+	right_spell_cooldown(right_cd)
+	mana_tracker(basic_spell)
+	basic_spell.global_position = right_spell_spawn.global_position
+	basic_spell.global_rotation = right_spell_spawn.global_rotation
+	if assist:basic_spell.look_at(target_pos)
+
+
+func cant_cast():
+	mana_tracker(null)
+	if Input.is_action_just_pressed("Fire_Right") or Input.is_action_just_pressed("Fire_Left"):
+		wrong.play()
+#endregion
 
 
 func _physics_process(delta: float) -> void:
@@ -343,32 +378,16 @@ func _physics_process(delta: float) -> void:
 	var assist = false
 	if aim_assist.collide_with_bodies and str(aim_assist.get_collider())!="<Object#null>":
 		target_pos = aim_assist.get_collision_point();assist = true
-	
-	if Input.is_action_just_pressed("Fire_Right") and can_cast and can_cast_right:
-		get_node("UI").wand_animation("right","Cast_Spell")
-		var basic_spell = BASIC_SPELL.instantiate()
-		basic_spell.setspell(right_spell)
-		get_parent().add_child(basic_spell)
-		var right_cd = basic_spell.get_cooldown()
-		right_spell_cooldown(right_cd)
-		mana_tracker(basic_spell)
-		basic_spell.global_position = right_spell_spawn.global_position
-		basic_spell.global_rotation = right_spell_spawn.global_rotation
-		if assist:basic_spell.look_at(target_pos)
-	else:mana_tracker(null)
-	
-	if Input.is_action_just_pressed("Fire_Left") and can_cast and can_cast_left:
-		get_node("UI").wand_animation("left","LCast_Spell")
-		var basic_spell = BASIC_SPELL.instantiate()
-		basic_spell.setspell(left_spell)
-		get_parent().add_child(basic_spell)
-		var left_cd = basic_spell.get_cooldown()
-		right_spell_cooldown(left_cd)
-		mana_tracker(basic_spell)
-		basic_spell.global_position = left_spell_spawn.global_position
-		basic_spell.global_rotation = left_spell_spawn.global_rotation
-		if assist:basic_spell.look_at(target_pos)
-	else:mana_tracker(null)
+	var left = Input.is_action_just_pressed("Fire_Left")
+	var right = Input.is_action_just_pressed("Fire_Right")
+	if left and right and can_cast and can_cast_left and can_cast_right:
+		cast_left(assist)
+		cast_right(assist)
+	elif left and can_cast and can_cast_left:
+		cast_left(assist)
+	elif right and can_cast and can_cast_right:
+		cast_right(assist)
+	else:cant_cast()
 #endregion
 
 #Spells interactions on player

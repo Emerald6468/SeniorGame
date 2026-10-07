@@ -13,7 +13,7 @@ func _ready() -> void:
 	queue_free()
 
 func get_knock(target,direction,force):
-	var mod = 1.0
+	var mod = 0.6
 	if target is Enemy: mod = 1.5
 	target.knockback_velocity = direction * force * mod
 	await get_tree().create_timer(.1).timeout
