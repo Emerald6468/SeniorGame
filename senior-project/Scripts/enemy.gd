@@ -61,10 +61,11 @@ func chase_player():
 	look_pos.y = enemy_head.position.y
 	not_to_close(look_pos)
 	if !close_enough and is_on_floor():
+		#print(str(knockback_velocity))
 		look_at(look_pos,Vector3(0, 1, 0),false)
 		if knockback_velocity == Vector3.ZERO or !knockback_velocity:
 			velocity = (look_pos - position).normalized() * speed #move toward player
-		else: print(str(knockback_velocity))
+	else: print(str(knockback_velocity))
 
 
 
