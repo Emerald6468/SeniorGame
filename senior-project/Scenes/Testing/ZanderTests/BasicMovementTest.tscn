@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_05r2y"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_aaow1"]
-[ext_resource type="PackedScene" uid="uid://dqt8vddolrbd4" path="res://Scenes/Prefabs/enemy.tscn" id="3_gl5sm"]
+[ext_resource type="PackedScene" uid="uid://dqt8vddolrbd4" path="res://Scenes/Prefabs/Enemies/enemy.tscn" id="3_gl5sm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
 albedo_texture = ExtResource("1_aaow1")

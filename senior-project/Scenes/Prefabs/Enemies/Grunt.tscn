@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://d20bamxgu5rol"]
+
+[ext_resource type="Script" uid="uid://b2cx0401a0lsr" path="res://Scripts/grunt.gd" id="1_k8oup"]
+[ext_resource type="PackedScene" uid="uid://cn52u1ymc5fx4" path="res://Scenes/UI/HealthBar.tscn" id="2_2yum5"]
+[ext_resource type="CylinderMesh" uid="uid://n4kafh1ulx3p" path="res://Assets/Meshes/IceDart.tres" id="3_gcdnb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0vkdb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sn0t7"]
+albedo_color = Color(0.3117973, 0.55289906, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5u74h"]
+material = SubResource("StandardMaterial3D_sn0t7")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bp4vv"]
+height = 0.1413269
+radius = 20.0
+
+[node name="Grunt" type="CharacterBody3D" unique_id=1065493351]
+collision_layer = 8
+collision_mask = 11
+script = ExtResource("1_k8oup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1466883705]
+shape = SubResource("CapsuleShape3D_0vkdb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1277890064]
+mesh = SubResource("CapsuleMesh_5u74h")
+
+[node name="Monitor" type="Area3D" parent="." unique_id=1500906170]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor" unique_id=1665372549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.052387714, 0)
+shape = SubResource("CylinderShape3D_bp4vv")
+debug_color = Color(0.99343544, 0, 0.24443278, 0.41960785)
+
+[node name="HealthBar" parent="." unique_id=1536670344 node_paths=PackedStringArray("character") instance=ExtResource("2_2yum5")]
+tint_progress = Color(0.76133096, 0.15065676, 0.42558947, 1)
+character = NodePath("..")
+
+[node name="Status" type="Label3D" parent="." unique_id=1711183500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6219754, 0)
+billboard = 2
+text = "STATUS"
+
+[node name="Nose" type="MeshInstance3D" parent="." unique_id=1793650306]
+transform = Transform3D(0.39999995, 0, 0, 0, -0.0026612543, 0.39999115, 0, -0.39999115, -0.0026612543, 0, 0.455325, -0.54025143)
+mesh = ExtResource("3_gcdnb")
+
+[node name="EnemyHead" type="Marker3D" parent="." unique_id=1586069134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 1.7164066, -0.034263775)

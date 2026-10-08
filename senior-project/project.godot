@@ -39,6 +39,8 @@ folder_colors={
 "res://Assets/": "orange",
 "res://Assets/Audio/": "red",
 "res://Scenes/": "blue",
+"res://Scenes/Prefabs/": "purple",
+"res://Scenes/Prefabs/Enemies/": "purple",
 "res://Scripts/": "green",
 "res://addons/": "gray"
 }
