@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c8av3xlq10tef"]
+
+[node name="ScreenResolution" type="Control" unique_id=806398176]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1462817653]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 311.0
+offset_right = 793.0
+offset_bottom = 432.0
+theme_override_font_sizes/font_size = 43
+text = "Hello, this is a wip
+(work in progress)"
