@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwp4x74k76jlm"]
 
-[ext_resource type="Script" uid="uid://lb7j4ubc6c6d" path="res://Scenes/Testing/Ground Zero - Raymond/pause_screen.gd" id="1_a7t3f"]
+[ext_resource type="Script" uid="uid://lb7j4ubc6c6d" path="res://Scripts/pause_screen.gd" id="1_a7t3f"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=209076557]
 process_mode = 3
@@ -8,7 +8,7 @@ script = ExtResource("1_a7t3f")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1828905832]
 offset_right = 1153.0
-offset_bottom = 647.0
+offset_bottom = 727.0
 offset_transform_enabled = true
 color = Color(0, 0, 0, 0.60784316)
 
