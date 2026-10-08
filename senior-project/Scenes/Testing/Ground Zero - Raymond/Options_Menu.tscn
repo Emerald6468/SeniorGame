@@ -12,11 +12,16 @@ offset_bottom = 281.0
 script = ExtResource("1_qic0v")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=675006456]
-layout_mode = 0
-offset_left = -42.0
-offset_top = -53.999985
-offset_right = 87.00983
-offset_bottom = 25.493134
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.7
+anchor_top = 0.91200006
+anchor_right = 1.7
+anchor_bottom = 0.91200006
+offset_left = -110.0
+offset_top = -22.479996
+offset_right = 19.009827
+offset_bottom = 43.520004
 scale = Vector2(1.7051328, 2.7424147)
 offset_transform_enabled = true
 
@@ -25,6 +30,7 @@ layout_mode = 2
 
 [node name="Volume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=394542520]
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Volume"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer" unique_id=840793844]

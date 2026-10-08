@@ -12,11 +12,16 @@ offset_bottom = 281.0
 script = ExtResource("3_b52cc")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=675006456]
-layout_mode = 0
-offset_left = -77.0
-offset_top = -92.999985
-offset_right = -7.0
-offset_bottom = 50.000015
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.87700003
+anchor_top = 3.9240003
+anchor_right = 0.87700003
+anchor_bottom = 3.9240003
+offset_left = -83.08
+offset_top = -192.96
+offset_right = -13.080002
+offset_bottom = -70.68298
 scale = Vector2(3.2021294, 2.7023158)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1486486983]
