@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://elmliu2nvdx2" path="res://Assets/UI/Placeholder/enemy_health_bars_2.0/enemy_health_bars_2.0/enemy_health_bar_foreground_001.png" id="2_oqha6"]
 [ext_resource type="Texture2D" uid="uid://bhbn48epqfpu2" path="res://Assets/UI/Placeholder/enemy_health_bars_2.0/enemy_mana_bar_000.png" id="3_7tgkj"]
 [ext_resource type="Texture2D" uid="uid://cntmbeomma8sm" path="res://Assets/Placeholder/placehold_left_wand.png" id="3_akgwn"]
+[ext_resource type="PackedScene" uid="uid://dwp4x74k76jlm" path="res://Scenes/Testing/Ground Zero - Raymond/Pause_Screen.tscn" id="6_7tgkj"]
 
 [sub_resource type="Animation" id="Animation_636u5"]
 resource_name = "Cast_Spell"
@@ -186,3 +187,5 @@ libraries/ = SubResource("AnimationLibrary_b83rk")
 
 [node name="LeftHand" type="AnimationPlayer" parent="." unique_id=850829599]
 libraries/ = SubResource("AnimationLibrary_b83rk")
+
+[node name="PauseMenu" parent="." unique_id=209076557 instance=ExtResource("6_7tgkj")]

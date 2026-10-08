@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_etkop"]
 [ext_resource type="Texture2D" uid="uid://cjxqwj44mpj7q" path="res://Assets/Textures/wood1.png" id="2_li054"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_m06yq"]
-[ext_resource type="PackedScene" uid="uid://dwp4x74k76jlm" path="res://Scenes/Testing/Ground Zero - Raymond/Pause_Screen.tscn" id="4_l6luj"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="5_ov0ot"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="6_tr4f7"]
 [ext_resource type="Material" uid="uid://dldtn0twiaev7" path="res://Assets/Textures/frame7white.tres" id="7_ttlaa"]
@@ -593,8 +592,6 @@ spot_range = 17.0
 spot_attenuation = 0.01
 
 [node name="enemies" type="Node3D" parent="." unique_id=374510159]
-
-[node name="PauseMenu" parent="." unique_id=209076557 instance=ExtResource("4_l6luj")]
 
 [node name="FuncGodotMap" type="Node3D" parent="." unique_id=2011209370]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.36747, 0, 13.443361)
