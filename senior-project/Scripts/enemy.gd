@@ -4,7 +4,10 @@ extends CharacterBody3D
 var health: float = max_health
 var knockback_velocity:Vector3
 var deccel = .1
-var speed:float = 4.0
+var SPEED:float = 4.0
+var cur_speed:float = SPEED
+
+@export var immortal = false
 
 enum ENEMY_STATES{
 	Idle,
@@ -14,7 +17,7 @@ enum ENEMY_STATES{
 @export var enemy_state: ENEMY_STATES
 
 #Status tracker
-@onready var status: Label3D = $Status
+@onready var status_text: Label3D = $Status
 
 #Monitor
 @onready var monitor: Area3D = $Monitor
@@ -29,6 +32,20 @@ var burn_time: float = 3.0
 var b_timer = false
 var burn_damage = .3
 
+#frozen
+var froze = false
+var f_time = 3.0
+var f_timer = false
+
+func freezing():
+	var freeze_mod = 1.0
+	if froze:
+		freeze_mod = 0.6
+		if f_timer:
+			f_timer = false
+			await get_tree().create_timer(f_time).timeout
+			froze = false
+	cur_speed = SPEED * freeze_mod
 
 func not_to_close(target):
 	var cur_distance = global_position.distance_to(target)
@@ -38,9 +55,15 @@ func not_to_close(target):
 	#else: print("still going")
 
 func status_tracker():
+	var status_list: Array[String] = []
 	if on_fire:
-		status.text = "On Fire"
-	else: status.text = ""
+		status_list.append("Burning")
+	if froze:
+		status_list.append("Froze")
+	status_text.text = ""
+	if status_list: for status in status_list:
+		status_text.text += status + "\n"
+
 
 func find_player():
 	if monitor.has_overlapping_bodies():
@@ -64,7 +87,7 @@ func chase_player():
 		#print(str(knockback_velocity))
 		look_at(look_pos,Vector3(0, 1, 0),false)
 		if knockback_velocity == Vector3.ZERO or !knockback_velocity:
-			velocity = (look_pos - position).normalized() * speed #move toward player
+			velocity = (look_pos - position).normalized() * cur_speed #move toward player
 	else: print(str(knockback_velocity))
 
 
@@ -98,7 +121,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, deccel)
 	#fireball burn
 	burning()
-	
+	#ice dart freeze
+	freezing()
 	#check for player nearby
 	check_for_player()
 	
@@ -112,7 +136,8 @@ func _process(delta: float) -> void:
 	
 	if enemy_state != ENEMY_STATES.Dead:
 		if health < 0:
-			enemy_state = ENEMY_STATES.Dead
+			if !immortal:enemy_state = ENEMY_STATES.Dead
+			else: health = max_health
 	else:
 		print("i die :(")
 		queue_free()

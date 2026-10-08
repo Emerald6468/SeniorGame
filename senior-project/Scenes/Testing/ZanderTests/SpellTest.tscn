@@ -81,3 +81,4 @@ size = Vector3(1, 29.544174, 26.378)
 
 [node name="Enemy" parent="." unique_id=2086751755 instance=ExtResource("3_pxhlj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 4.4359794, -24.317936)
+immortal = true
