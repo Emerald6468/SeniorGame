@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw3mfmvigamss"
-path.s3tc="res://.godot/imported/fencetest1.png-601cfa05d95a49a9d9f39691237e72b5.s3tc.ctex"
+uid="uid://qo7258qw6h5v"
+path.s3tc="res://.godot/imported/Rune3Neon.png-8fa6b9c7e7a25fa8ce0b377fa9563a04.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/fencetest1.png"
-dest_files=["res://.godot/imported/fencetest1.png-601cfa05d95a49a9d9f39691237e72b5.s3tc.ctex"]
+source_file="res://Assets/Textures/Rune3Neon.png"
+dest_files=["res://.godot/imported/Rune3Neon.png-8fa6b9c7e7a25fa8ce0b377fa9563a04.s3tc.ctex"]
 
 [params]
 

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw3mfmvigamss"
-path.s3tc="res://.godot/imported/fencetest1.png-601cfa05d95a49a9d9f39691237e72b5.s3tc.ctex"
+uid="uid://dcuegxotp5alv"
+path.s3tc="res://.godot/imported/BayWindow01_Untitled.png-3508a1a6c861afff47c182a6663318ba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "8c23fcb193ab0890be973dd06c0312c8"
+}
 
 [deps]
 
-source_file="res://Assets/Textures/fencetest1.png"
-dest_files=["res://.godot/imported/fencetest1.png-601cfa05d95a49a9d9f39691237e72b5.s3tc.ctex"]
+source_file="res://Assets/Meshes/BayWindow01_Untitled.png"
+dest_files=["res://.godot/imported/BayWindow01_Untitled.png-3508a1a6c861afff47c182a6663318ba.s3tc.ctex"]
 
 [params]
 

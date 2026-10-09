@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw3mfmvigamss"
-path.s3tc="res://.godot/imported/fencetest1.png-601cfa05d95a49a9d9f39691237e72b5.s3tc.ctex"
+uid="uid://dyrt6u28obvqk"
+path.s3tc="res://.godot/imported/Bell1_Untitled.png-8d76a079eff3f612147331fa64c64b6c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "940cc12ef0e45c47ae7bf55a202bb4f9"
+}
 
 [deps]
 
-source_file="res://Assets/Textures/fencetest1.png"
-dest_files=["res://.godot/imported/fencetest1.png-601cfa05d95a49a9d9f39691237e72b5.s3tc.ctex"]
+source_file="res://Assets/Meshes/Bell1_Untitled.png"
+dest_files=["res://.godot/imported/Bell1_Untitled.png-8d76a079eff3f612147331fa64c64b6c.s3tc.ctex"]
 
 [params]
 
