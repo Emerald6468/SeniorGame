@@ -2,7 +2,7 @@ extends Enemy
 
 #this enemy is going to be airborn and be a quick fodder enemy that dies quickly
 #only attack is laser
-@onready var ground_check: RayCast3D = $Body/GroundCheck
+@onready var ground_check: RayCast3D = $GroundCheck
 
 #attack
 var just_attacked = false
@@ -23,7 +23,7 @@ func keep_off_ground():
 	if ground_check.collide_with_bodies and !touching_null:
 		#print("near floor")
 		#print(str(ground_check.get_collider()))
-		position.y += .5
+		position.y += 0.1
 
 func _physics_process(delta: float) -> void:
 	super(delta)

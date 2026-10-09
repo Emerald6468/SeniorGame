@@ -6,6 +6,7 @@ var knockback_velocity:Vector3
 var deccel = .1
 var SPEED:float = 4.0
 var cur_speed:float = SPEED
+@onready var body: CollisionShape3D = $Body
 
 
 
@@ -104,11 +105,11 @@ func find_player():
 
 func player_found():
 	look_pos = player_pos
-	look_pos.y = enemy_head.position.y
+	look_pos.y = global_position.y
 	not_to_close(look_pos)
 	if !close_enough and (is_on_floor() or floats):
 		#print(str(knockback_velocity))
-		look_at(look_pos,Vector3(0, 1, 0),false)
+		body.look_at(look_pos,Vector3(0, 1, 0),false)
 
 func not_to_close(target):
 	var cur_distance = global_position.distance_to(target)
@@ -117,13 +118,13 @@ func not_to_close(target):
 
 func chase_player():
 	look_pos = player_pos
-	look_pos.y = enemy_head.position.y
+	look_pos.y = global_position.y
 	not_to_close(look_pos)
 	if !close_enough and (is_on_floor() or floats):
 		#print(str(knockback_velocity))
-		look_at(look_pos,Vector3(0, 1, 0),false)
+		body.look_at(look_pos,Vector3(0, 1, 0),false)
 		if knockback_velocity == Vector3.ZERO or !knockback_velocity:
-			velocity = (look_pos - position).normalized() * cur_speed #move toward player
+			velocity = (look_pos - global_position).normalized() * cur_speed #move toward player
 	else: pass;#print(str(knockback_velocity))
 #endregion
 
@@ -135,7 +136,8 @@ func got_hit(spell: String,damage: float):
 
 func _physics_process(delta: float) -> void:
 	#falling
-	if !is_on_floor() and !floats: velocity += get_gravity() * delta
+	if !is_on_floor() and !floats: 
+		velocity += get_gravity() * delta
 	#fireball knockback
 	velocity += knockback_velocity
 	if knockback_velocity == Vector3.ZERO or !knockback_velocity:

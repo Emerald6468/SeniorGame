@@ -28,7 +28,7 @@ albedo_texture = ExtResource("2_y3o1s")
 [node name="BasicMovementTest" type="Node3D" unique_id=1730153282]
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_plqio")]
-transform = Transform3D(0.04728123, 0, 0.99888164, 0, 1, 0, -0.99888164, 0, 0.04728123, 24.699963, 2.2951248, -24.407276)
+transform = Transform3D(0.04728123, 0, 0.99888164, 0, 1, 0, -0.99888164, 0, 0.04728123, 34.377052, 2.2951248, -24.407276)
 left_spell_type = 2
 right_spell_type = 3
 
@@ -82,8 +82,14 @@ use_collision = true
 collision_mask = 15
 size = Vector3(1, 29.544174, 26.378)
 
-[node name="Grunt" parent="." unique_id=1065493351 instance=ExtResource("4_y3o1s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3074536, 3.4887822, -13.869026)
-
 [node name="Wisp" parent="." unique_id=1065873302 instance=ExtResource("5_1ir8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.202695, 3.4978151, -30.477316)
+
+[node name="Grunt" parent="." unique_id=1065493351 instance=ExtResource("4_y3o1s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.29488, 2, -5.0559044)
+
+[node name="Grunt2" parent="." unique_id=1840421104 instance=ExtResource("4_y3o1s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9216905, 2.000001, -51.0914)
+
+[node name="Grunt3" parent="." unique_id=316437831 instance=ExtResource("4_y3o1s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4848061, 1.999999, -50.419456)
