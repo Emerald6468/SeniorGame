@@ -7,6 +7,7 @@ process_mode = 3
 script = ExtResource("1_a7t3f")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1828905832]
+z_as_relative = false
 offset_right = 1153.0
 offset_bottom = 727.0
 offset_transform_enabled = true

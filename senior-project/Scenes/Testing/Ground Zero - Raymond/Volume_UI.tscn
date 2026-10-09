@@ -11,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1611547273]
+process_mode = 3
 layout_mode = 0
 offset_left = 440.0
 offset_top = 167.99998

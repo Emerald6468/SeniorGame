@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ct8dienvdy8kq" path="res://Scripts/options_menu.gd" id="1_qic0v"]
 
-[node name="Menu" type="Control" unique_id=841887808]
+[node name="OptionsMenu" type="Control" unique_id=841887808 groups=["Options"]]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 521.0
@@ -11,17 +11,28 @@ offset_right = 561.0
 offset_bottom = 281.0
 script = ExtResource("1_qic0v")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1077645787]
+z_as_relative = false
+layout_mode = 0
+offset_left = -524.0
+offset_top = -273.0
+offset_right = 629.0
+offset_bottom = 454.0
+offset_transform_enabled = true
+color = Color(0, 0, 0, 0.60784316)
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=675006456]
+process_mode = 3
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.7
 anchor_top = 0.91200006
 anchor_right = 1.7
 anchor_bottom = 0.91200006
-offset_left = -110.0
-offset_top = -22.479996
-offset_right = 19.009827
-offset_bottom = 43.520004
+offset_left = -101.0
+offset_top = -77.48
+offset_right = 28.009827
+offset_bottom = 23.519997
 scale = Vector2(1.7051328, 2.7424147)
 offset_transform_enabled = true
 
@@ -38,10 +49,10 @@ layout_mode = 2
 text = "Resolution
 "
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer" unique_id=840793844]
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer" unique_id=840793844]
 layout_mode = 2
-text = "Back"
+text = "Main Menu"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ScreenResolution" to="." method="_on_screen_resolution_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_back_pressed"]
