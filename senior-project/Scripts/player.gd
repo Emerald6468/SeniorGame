@@ -215,7 +215,7 @@ func cast_left(assist):
 	basic_spell.setspell(left_spell)
 	get_parent().add_child(basic_spell)
 	var left_cd = basic_spell.get_cooldown()
-	right_spell_cooldown(left_cd)
+	#left_spell_cooldown(left_cd)
 	mana_tracker(basic_spell)
 	basic_spell.global_position = left_spell_spawn.global_position
 	basic_spell.global_rotation = left_spell_spawn.global_rotation
@@ -227,7 +227,7 @@ func cast_right(assist):
 	basic_spell.setspell(right_spell)
 	get_parent().add_child(basic_spell)
 	var right_cd = basic_spell.get_cooldown()
-	right_spell_cooldown(right_cd)
+	#right_spell_cooldown(right_cd)
 	mana_tracker(basic_spell)
 	basic_spell.global_position = right_spell_spawn.global_position
 	basic_spell.global_rotation = right_spell_spawn.global_rotation

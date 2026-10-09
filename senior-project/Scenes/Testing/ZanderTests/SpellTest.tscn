@@ -27,7 +27,7 @@ albedo_texture = ExtResource("2_6nl2d")
 [node name="BasicMovementTest" type="Node3D" unique_id=1730153282]
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_pfiqw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699963, 2.2951248, -24.407276)
+transform = Transform3D(0.11663208, 0, 0.9931752, 0, 1, 0, -0.9931752, 0, 0.11663208, 24.699963, 2.2951248, -24.407276)
 left_spell_type = 2
 right_spell_type = 3
 

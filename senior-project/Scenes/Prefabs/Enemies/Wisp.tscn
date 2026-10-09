@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bjl1p1fviswuf"]
+
+[ext_resource type="Script" uid="uid://c2jjfplp7cmno" path="res://Scripts/Enemies/wisp.gd" id="1_16pg6"]
+[ext_resource type="PackedScene" uid="uid://cn52u1ymc5fx4" path="res://Scenes/UI/HealthBar.tscn" id="2_5g17a"]
+[ext_resource type="Shape3D" uid="uid://dksyqbkxgdt4q" path="res://Assets/Meshes/Collisions/EnemyMonitor.tres" id="3_5g17a"]
+[ext_resource type="CylinderMesh" uid="uid://n4kafh1ulx3p" path="res://Assets/Meshes/IceDart.tres" id="3_qmjd6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0vkdb"]
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sn0t7"]
+albedo_color = Color(0.42959124, 0.051782057, 0.65689266, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5u74h"]
+material = SubResource("StandardMaterial3D_sn0t7")
+height = 1.0
+
+[node name="Wisp" type="CharacterBody3D" unique_id=1065493351]
+collision_layer = 8
+collision_mask = 11
+motion_mode = 1
+script = ExtResource("1_16pg6")
+social_distance = 7.0
+floats = true
+
+[node name="Body" type="CollisionShape3D" parent="." unique_id=1466883705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58887315, 0)
+shape = SubResource("CapsuleShape3D_0vkdb")
+
+[node name="GroundCheck" type="RayCast3D" parent="Body" unique_id=832560413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52639985, 0)
+target_position = Vector3(0, -3, 0)
+
+[node name="EnemyHead" type="Marker3D" parent="Body" unique_id=1586069134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 0.07605243, -0.034263775)
+
+[node name="Nose" type="MeshInstance3D" parent="Body" unique_id=1793650306]
+transform = Transform3D(0.39999995, 0, 0, 0, -0.0026612543, 0.39999115, 0, -0.39999115, -0.0026612543, 0, -0.018240929, -0.54025143)
+mesh = ExtResource("3_qmjd6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body" unique_id=1277890064]
+mesh = SubResource("CapsuleMesh_5u74h")
+
+[node name="Monitor" type="Area3D" parent="." unique_id=1500906170]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor" unique_id=1665372549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.052387714, 0)
+shape = ExtResource("3_5g17a")
+debug_color = Color(0.99343544, 0, 0.24443278, 0.41960785)
+
+[node name="HealthBar" parent="." unique_id=1536670344 node_paths=PackedStringArray("character") instance=ExtResource("2_5g17a")]
+tint_progress = Color(0.76133096, 0.15065676, 0.42558947, 1)
+character = NodePath("..")
+
+[node name="Status" type="Label3D" parent="." unique_id=1711183500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6219754, 0)
+billboard = 2
+text = "STATUS"

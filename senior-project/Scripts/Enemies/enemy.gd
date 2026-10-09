@@ -22,13 +22,14 @@ enum ENEMY_STATES{
 @onready var monitor: Area3D = $Monitor
 var player_pos: Vector3
 var look_pos: Vector3
-@onready var enemy_head: Marker3D = $EnemyHead
+@onready var enemy_head: Marker3D = $Body/EnemyHead
 @export var social_distance = 4.0
 var close_enough = false
 
 @export_category("EnemyTags:")
 @export var chases = true
 @export var immortal = false
+@export var floats = false
 
 #region Status VARS
 #Status tracker
@@ -105,7 +106,7 @@ func player_found():
 	look_pos = player_pos
 	look_pos.y = enemy_head.position.y
 	not_to_close(look_pos)
-	if !close_enough and is_on_floor():
+	if !close_enough and (is_on_floor() or floats):
 		#print(str(knockback_velocity))
 		look_at(look_pos,Vector3(0, 1, 0),false)
 
@@ -118,7 +119,7 @@ func chase_player():
 	look_pos = player_pos
 	look_pos.y = enemy_head.position.y
 	not_to_close(look_pos)
-	if !close_enough and is_on_floor():
+	if !close_enough and (is_on_floor() or floats):
 		#print(str(knockback_velocity))
 		look_at(look_pos,Vector3(0, 1, 0),false)
 		if knockback_velocity == Vector3.ZERO or !knockback_velocity:
@@ -134,7 +135,7 @@ func got_hit(spell: String,damage: float):
 
 func _physics_process(delta: float) -> void:
 	#falling
-	if !is_on_floor(): velocity += get_gravity() * delta
+	if !is_on_floor() and !floats: velocity += get_gravity() * delta
 	#fireball knockback
 	velocity += knockback_velocity
 	if knockback_velocity == Vector3.ZERO or !knockback_velocity:

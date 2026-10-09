@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_plqio"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="2_y3o1s"]
-[ext_resource type="PackedScene" uid="uid://dqt8vddolrbd4" path="res://Scenes/Prefabs/Enemies/enemy.tscn" id="3_1ir8y"]
 [ext_resource type="PackedScene" uid="uid://d20bamxgu5rol" path="res://Scenes/Prefabs/Enemies/Grunt.tscn" id="4_y3o1s"]
+[ext_resource type="PackedScene" uid="uid://bjl1p1fviswuf" path="res://Scenes/Prefabs/Enemies/Wisp.tscn" id="5_1ir8y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sn0t7"]
 sky_top_color = Color(0.6583407, 0.22435483, 0.59418625, 1)
@@ -28,7 +28,7 @@ albedo_texture = ExtResource("2_y3o1s")
 [node name="BasicMovementTest" type="Node3D" unique_id=1730153282]
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_plqio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699963, 2.2951248, -24.407276)
+transform = Transform3D(0.04728123, 0, 0.99888164, 0, 1, 0, -0.99888164, 0, 0.04728123, 24.699963, 2.2951248, -24.407276)
 left_spell_type = 2
 right_spell_type = 3
 
@@ -82,9 +82,8 @@ use_collision = true
 collision_mask = 15
 size = Vector3(1, 29.544174, 26.378)
 
-[node name="Enemy" parent="." unique_id=2086751755 instance=ExtResource("3_1ir8y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 4.4359794, -24.317936)
-immortal = true
-
 [node name="Grunt" parent="." unique_id=1065493351 instance=ExtResource("4_y3o1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3074536, 3.4887822, -13.869026)
+
+[node name="Wisp" parent="." unique_id=1065873302 instance=ExtResource("5_1ir8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.202695, 3.4978151, -30.477316)
