@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc06at4el0vtp"
-path.s3tc="res://.godot/imported/wall2.png-0535f5e07394ca51e1434998d7e6bc71.s3tc.ctex"
+uid="uid://ycu4bqadrw1p"
+path.s3tc="res://.godot/imported/wallbrick1.png-2376374b1842bbd8e118148a8e105d80.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/wall2.png"
-dest_files=["res://.godot/imported/wall2.png-0535f5e07394ca51e1434998d7e6bc71.s3tc.ctex"]
+source_file="res://Assets/Textures/wallbrick1.png"
+dest_files=["res://.godot/imported/wallbrick1.png-2376374b1842bbd8e118148a8e105d80.s3tc.ctex"]
 
 [params]
 
