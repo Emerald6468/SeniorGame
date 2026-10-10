@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwp4x74k76jlm"]
 
-[ext_resource type="Script" uid="uid://lb7j4ubc6c6d" path="res://Scripts/pause_screen.gd" id="1_a7t3f"]
+[ext_resource type="Script" uid="uid://lb7j4ubc6c6d" path="res://Scripts/UI Stuff/pause_screen.gd" id="1_a7t3f"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=209076557]
 process_mode = 3
@@ -41,7 +41,7 @@ theme_override_font_sizes/font_size = 48
 text = "Main Menu"
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Options" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MainMenu" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_button_pressed"]

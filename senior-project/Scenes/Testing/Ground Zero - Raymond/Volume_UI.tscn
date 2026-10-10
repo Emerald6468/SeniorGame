@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b2r74qn74y6el"]
 
-[ext_resource type="Script" uid="uid://dhcdb0fjpyirh" path="res://Scripts/VoulmeSlider.gd" id="1_frgyf"]
+[ext_resource type="Script" uid="uid://dhcdb0fjpyirh" path="res://Scripts/UI Stuff/volume_slider.gd" id="1_frgyf"]
 
 [node name="VolumeUi" type="Control" unique_id=1484686374]
 layout_mode = 3
