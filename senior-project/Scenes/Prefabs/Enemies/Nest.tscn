@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://wy0vgdc6rfum"]
+
+[ext_resource type="Script" uid="uid://cts82kf3lmyd" path="res://Scripts/Enemies/nest.gd" id="1_3d54m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqys"]
+albedo_color = Color(0.583472, 0.0002523014, 0.5849469, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_bhunq"]
+material = SubResource("StandardMaterial3D_riqys")
+
+[node name="Nest" type="Node3D" unique_id=209987961]
+script = ExtResource("1_3d54m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=197302991]
+mesh = SubResource("SphereMesh_bhunq")

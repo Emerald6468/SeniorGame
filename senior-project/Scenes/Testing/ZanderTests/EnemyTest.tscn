@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="2_y3o1s"]
 [ext_resource type="PackedScene" uid="uid://d20bamxgu5rol" path="res://Scenes/Prefabs/Enemies/Grunt.tscn" id="4_y3o1s"]
 [ext_resource type="PackedScene" uid="uid://bjl1p1fviswuf" path="res://Scenes/Prefabs/Enemies/Wisp.tscn" id="5_1ir8y"]
+[ext_resource type="PackedScene" uid="uid://wy0vgdc6rfum" path="res://Scenes/Prefabs/Enemies/Nest.tscn" id="5_50qf6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sn0t7"]
 sky_top_color = Color(0.6583407, 0.22435483, 0.59418625, 1)
@@ -93,3 +94,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9216905, 2.000001, -51.0914
 
 [node name="Grunt3" parent="." unique_id=316437831 instance=ExtResource("4_y3o1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4848061, 1.999999, -50.419456)
+
+[node name="Nest" parent="." unique_id=209987961 instance=ExtResource("5_50qf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.139185, 2.3932946, -33.25351)
