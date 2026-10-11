@@ -124,3 +124,26 @@ Pause={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+
+[shader_globals]
+
+diffuse_curve={
+"type": "sampler2D",
+"value": "::GradientTexture1D_34pjd"
+}
+fresnel_smoothness={
+"type": "float",
+"value": 0.05
+}
+outline_width={
+"type": "float",
+"value": 4.0
+}
+outline_color={
+"type": "color",
+"value": Color(0, 0, 0, 1)
+}
+specular_smoothness={
+"type": "float",
+"value": 0.05
+}
