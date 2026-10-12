@@ -1,11 +1,18 @@
 extends CanvasLayer
 
+var packed_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Options_Menu.tscn")
+var options_instance = packed_scene.instantiate()
+@onready
+var pause_menu = $VBoxContainer
+
+
 
 func _ready() -> void:
 	# When the node is ready, hide the pause menu and make the game unpaused.
 	
 	visible = false
 	get_tree().paused = false
+	
 	
 
 func _input(event: InputEvent) -> void:
@@ -31,14 +38,13 @@ func _on_options_pressed() -> void:
 	# adds it as a child of the current node.
 	
 		get_tree().paused = true
-		var packed_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Options_Menu.tscn")
-		var options_instance = packed_scene.instantiate()
 		add_child(options_instance)
+		pause_menu.visible = false
 
 
 func _on_resume_pressed() -> void:
 	# When the resume button is pressed, the pause menu is hidden and the game resumes.
-	
+		
 		visible = false
 		get_tree().paused = false
 
