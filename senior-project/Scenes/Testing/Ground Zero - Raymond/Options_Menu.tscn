@@ -4,21 +4,34 @@
 
 [node name="OptionsMenu" type="Control" unique_id=841887808 groups=["Options"]]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 521.0
-offset_top = 241.0
-offset_right = 561.0
-offset_bottom = 281.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_qic0v")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1077645787]
 visible = false
 z_as_relative = false
-layout_mode = 0
-offset_left = -524.0
-offset_top = -273.0
-offset_right = 629.0
-offset_bottom = 454.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.5
+offset_top = -363.5
+offset_right = 576.5
+offset_bottom = 363.5
+grow_horizontal = 2
+grow_vertical = 2
 offset_transform_enabled = true
 color = Color(0, 0, 0, 0.60784316)
 

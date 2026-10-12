@@ -19,6 +19,8 @@ func _input(event: InputEvent) -> void:
 	# Checks if the player pressed the pause key.
 	
 	if Input.is_action_just_pressed("Pause"):
+		
+		
 		# If the game is not paused, hide the pause menu and resume the game.
 		
 		if get_tree().paused:

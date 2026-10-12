@@ -8,17 +8,27 @@ script = ExtResource("1_a7t3f")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1828905832]
 z_as_relative = false
-offset_right = 1153.0
-offset_bottom = 727.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 offset_transform_enabled = true
 color = Color(0, 0, 0, 0.60784316)
 
+<<<<<<< Updated upstream
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1867778982]
+=======
+[node name="Panel" type="Panel" parent="ColorRect" unique_id=1758077228]
+layout_mode = 1
+>>>>>>> Stashed changes
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+<<<<<<< Updated upstream
 offset_left = -134.5
 offset_top = -118.5
 offset_right = 134.5
@@ -34,18 +44,58 @@ text = "Resume"
 
 [node name="Options" type="Button" parent="VBoxContainer" unique_id=119232645]
 layout_mode = 2
+=======
+offset_left = -181.0
+offset_top = -236.0
+offset_right = 208.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options" type="Button" parent="ColorRect/Panel" unique_id=119232645]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 179.0
+offset_right = 326.0
+offset_bottom = 277.0
+>>>>>>> Stashed changes
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 50
 text = "Options"
 
+<<<<<<< Updated upstream
 [node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=1737964576]
 layout_mode = 2
+=======
+[node name="Resume" type="Button" parent="ColorRect/Panel" unique_id=287783941]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 68.0
+offset_right = 322.0
+offset_bottom = 166.0
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
+[node name="MainMenu" type="Button" parent="ColorRect/Panel" unique_id=1737964576]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 291.0
+offset_right = 333.0
+offset_bottom = 389.0
+>>>>>>> Stashed changes
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 48
 text = "Main Menu"
 
+<<<<<<< Updated upstream
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+=======
+[connection signal="pressed" from="ColorRect/Panel/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/MainMenu" to="." method="_on_main_menu_pressed"]
+>>>>>>> Stashed changes
