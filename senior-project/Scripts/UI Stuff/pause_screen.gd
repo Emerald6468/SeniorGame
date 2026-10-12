@@ -1,10 +1,8 @@
 extends CanvasLayer
 
-var packed_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Options_Menu.tscn")
-var options_instance = packed_scene.instantiate()
+
 @onready
 var pause_menu = $VBoxContainer
-
 
 
 func _ready() -> void:
@@ -12,8 +10,6 @@ func _ready() -> void:
 	
 	visible = false
 	get_tree().paused = false
-	
-	
 
 func _input(event: InputEvent) -> void:
 	# Checks if the player pressed the pause key.
@@ -39,9 +35,14 @@ func _on_options_pressed() -> void:
 	# Pauses the game, loads and creates an instance of the options menu, and 
 	# adds it as a child of the current node.
 	
-		get_tree().paused = true
-		add_child(options_instance)
-		pause_menu.visible = false
+	var packed_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Options_Menu.tscn")
+	var options_instance = packed_scene.instantiate()
+	add_child(options_instance)
+	get_tree().paused = true
+	
+	pause_menu.visible = false
+	
+	
 
 
 func _on_resume_pressed() -> void:
