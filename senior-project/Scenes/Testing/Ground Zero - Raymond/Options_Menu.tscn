@@ -1,72 +1,51 @@
 [gd_scene format=3 uid="uid://dd5bfi6ywknex"]
 
-[ext_resource type="Script" uid="uid://ct8dienvdy8kq" path="res://Scripts/UI Stuff/options_menu.gd" id="1_qic0v"]
+[ext_resource type="Script" uid="uid://lb7j4ubc6c6d" path="res://Scripts/UI Stuff/pause_screen.gd" id="1_qic0v"]
 
-[node name="OptionsMenu" type="Control" unique_id=841887808 groups=["Options"]]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PauseMenu" type="CanvasLayer" unique_id=209076557]
+process_mode = 3
 script = ExtResource("1_qic0v")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1077645787]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1828905832]
 z_as_relative = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.5
-offset_top = -363.5
-offset_right = 576.5
-offset_bottom = 363.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1153.0
+offset_bottom = 727.0
 offset_transform_enabled = true
 color = Color(0, 0, 0, 0.60784316)
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=675006456]
-process_mode = 3
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.7
-anchor_top = 0.91200006
-anchor_right = 1.7
-anchor_bottom = 0.91200006
-offset_left = -101.0
-offset_top = -77.48
-offset_right = 28.009827
-offset_bottom = 23.519997
-scale = Vector2(1.7051328, 2.7424147)
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1867778982]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -118.5
+offset_right = 134.5
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=287783941]
+layout_mode = 2
 offset_transform_enabled = true
+theme_override_font_sizes/font_size = 50
+text = "Resume"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1486486983]
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=119232645]
 layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 50
+text = "Options"
 
-[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=394542520]
+[node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=1737964576]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Volume"
-
-[node name="ScreenResolution" type="Button" parent="MarginContainer/VBoxContainer" unique_id=454583185]
-layout_mode = 2
-text = "Resolution
-"
-
-[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer" unique_id=840793844]
-layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 48
 text = "Main Menu"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ScreenResolution" to="." method="_on_screen_resolution_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

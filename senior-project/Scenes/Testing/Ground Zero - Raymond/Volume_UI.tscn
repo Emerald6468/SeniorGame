@@ -1,66 +1,51 @@
 [gd_scene format=3 uid="uid://b2r74qn74y6el"]
 
-[ext_resource type="Script" uid="uid://dhcdb0fjpyirh" path="res://Scripts/UI Stuff/volume_slider.gd" id="1_frgyf"]
+[ext_resource type="Script" uid="uid://lb7j4ubc6c6d" path="res://Scripts/UI Stuff/pause_screen.gd" id="1_frgyf"]
 
-[node name="VolumeUi" type="Control" unique_id=1484686374]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1611547273]
+[node name="PauseMenu" type="CanvasLayer" unique_id=209076557]
 process_mode = 3
-layout_mode = 1
+script = ExtResource("1_frgyf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1828905832]
+z_as_relative = false
+offset_right = 1153.0
+offset_bottom = 727.0
+offset_transform_enabled = true
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1867778982]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -59.0
-offset_top = -68.5
-offset_right = 59.0
-offset_bottom = 68.5
+offset_left = -134.5
+offset_top = -118.5
+offset_right = 134.5
+offset_bottom = 118.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2.4000025, 2.4000025)
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=157150538]
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=287783941]
 layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 50
+text = "Resume"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer" unique_id=422795792]
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=119232645]
 layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 50
+text = "Options"
 
-[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=715188902]
+[node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=1737964576]
 layout_mode = 2
-text = "Master Volume"
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 48
+text = "Main Menu"
 
-[node name="Master" type="HSlider" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1039917601]
-layout_mode = 2
-max_value = 1.0
-step = 0.001
-script = ExtResource("1_frgyf")
-bus_name = "Master"
-
-[node name="Label2" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=2127655845]
-layout_mode = 2
-text = "Music"
-
-[node name="Music" type="HSlider" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=955018493]
-layout_mode = 2
-max_value = 1.0
-step = 0.001
-script = ExtResource("1_frgyf")
-bus_name = "Master"
-
-[node name="Label3" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=1820072383]
-layout_mode = 2
-text = "SFX"
-
-[node name="SFX" type="HSlider" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=2140584471]
-layout_mode = 2
-max_value = 1.0
-step = 0.001
-script = ExtResource("1_frgyf")
-bus_name = "Master"
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
