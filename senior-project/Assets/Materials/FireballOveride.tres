@@ -1,0 +1,33 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d0qyu480cfghv"]
+
+[ext_resource type="Shader" uid="uid://dkebcbopw8irf" path="res://Scripts/Shaders/CartoonFire.gdshader" id="1_u5r21"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ypcdf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_u5r21")
+shader_parameter/apply_shape_deform = false
+shader_parameter/top_radius = 0.706000033535
+shader_parameter/bottom_radius = 0.7250000344375
+shader_parameter/center_radius = 2.42400011514
+shader_parameter/center_position = 0.0
+shader_parameter/cylinder_height = 1.0
+shader_parameter/bottom_curve = 0.4
+shader_parameter/_vibrate_amplitude = 0.015
+shader_parameter/_vibrate_frequency = 200.0
+shader_parameter/_speed = 2.0
+shader_parameter/_scale = 2.775
+shader_parameter/color_inner = Color(1.353, 0.919, 0.416, 0)
+shader_parameter/color_outer = Color(0.737, 0.141, 0, 0.678)
+shader_parameter/color_threshold = 0.58000002755
+shader_parameter/flame_height = 1.2
+shader_parameter/flame_height_offset = -0.995
+shader_parameter/pattern_scale = 2.745
+shader_parameter/use_additional_texture = false
+shader_parameter/flame_additional_texture = SubResource("NoiseTexture2D_ypcdf")
+shader_parameter/texture_scale = 1.0
+shader_parameter/texture_blend = 1.0
+shader_parameter/outline_enabled = false
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_thickness = 0.04

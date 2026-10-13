@@ -105,7 +105,8 @@ func _ready() -> void:
 	apply_central_impulse(facing)
 	mesh.set_mesh(spell_mesh)
 	mesh.set_surface_override_material(0,spell_material)
-	if spell_name == "IceDart": mesh.rotate_x(deg_to_rad(-90))
+	#if spell_name == "IceDart": 
+	mesh.rotate_x(deg_to_rad(-90))
 
 func dissapear():
 	if explodes and !exploding:

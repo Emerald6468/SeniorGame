@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_pfiqw"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="2_6nl2d"]
 [ext_resource type="PackedScene" uid="uid://dqt8vddolrbd4" path="res://Scenes/Prefabs/Enemies/enemy.tscn" id="3_pxhlj"]
+[ext_resource type="SphereMesh" uid="uid://deit5ljwuuiys" path="res://Assets/Meshes/FireBall.tres" id="4_6nl2d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
 albedo_texture = ExtResource("2_6nl2d")
@@ -82,3 +83,7 @@ size = Vector3(1, 29.544174, 26.378)
 [node name="Enemy" parent="." unique_id=2086751755 instance=ExtResource("3_pxhlj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 4.4359794, -24.317936)
 immortal = true
+
+[node name="FireBall" type="MeshInstance3D" parent="." unique_id=742904547]
+transform = Transform3D(1, 0, 0, 0, 0.32790348, 0.9447112, 0, -0.9447112, 0.32790348, 35.165203, 1.5000001, -11.252628)
+mesh = ExtResource("4_6nl2d")

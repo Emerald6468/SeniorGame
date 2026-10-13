@@ -74,6 +74,7 @@ var t_bob:float = 0.0
 @export var cur_mana:float
 @export var mana_gain_mod:float = 1.0
 var can_cast = true
+var infinite_mana = false
 
 #Attacks
 @onready var aim_assist: RayCast3D = $Head/Camera3D/AimAssist
@@ -320,6 +321,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = direction.z * cur_speed
 		#mana recharge
 		mana_recharge()
+		
 		if is_on_floor():
 			var speed_diff = cur_speed - max_speed
 			if cur_speed > max_speed and !slide_start and !deccel_pause: cur_speed = move_toward(cur_speed,max_speed,speed_diff/5)
@@ -373,6 +375,8 @@ func _physics_process(delta: float) -> void:
 #region Combat
 	#Combat
 	#Mana
+	if Input.is_action_just_pressed("InfiniteMana"):infinite_mana = !infinite_mana
+	if infinite_mana: cur_mana = max_mana
 	get_node("UI").cur_mana = cur_mana
 	#Attacks
 	var assist = false
