@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_05r2y"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_aaow1"]
-[ext_resource type="PackedScene" uid="uid://dqt8vddolrbd4" path="res://Scenes/Prefabs/Enemies/enemy.tscn" id="3_gl5sm"]
 [ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="3_qv700"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
@@ -94,27 +93,72 @@ use_collision = true
 collision_mask = 15
 size = Vector3(1.4775507, 6.634392, 10.000524)
 
+[node name="Wall9" type="CSGBox3D" parent="." unique_id=963978455 groups=["Collidable_enviroment"]]
+transform = Transform3D(-0.9956303, 0, -0.09338233, 0, 1, 0, 0.09338233, 0, -0.9956303, 5.9771433, 4.4269257, -53.877865)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(1.4775507, 6.634392, 10.000524)
+
+[node name="Wall10" type="CSGBox3D" parent="." unique_id=1182792326 groups=["Collidable_enviroment"]]
+transform = Transform3D(-0.9956303, 0, -0.09338233, 0, 1, 0, 0.09338233, 0, -0.9956303, 22.001154, 4.4269257, -53.877865)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(1.4775507, 6.634392, 10.000524)
+
+[node name="Wall11" type="CSGBox3D" parent="." unique_id=2021039603 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 14.450462, 6.020536, -53.943985)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 16.551346, 10.000524)
+
+[node name="Wall12" type="CSGBox3D" parent="." unique_id=1862850519 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 15.755743, 5.293689, -53.97054)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 13.45906, 10.000524)
+
+[node name="Wall13" type="CSGBox3D" parent="." unique_id=1200751260 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 17.149353, 4.5462017, -53.959476)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 11.962196, 10.000524)
+
+[node name="Wall14" type="CSGBox3D" parent="." unique_id=1998662277 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 17.729382, 3.8588278, -53.94967)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 10.444773, 10.000524)
+
+[node name="Wall15" type="CSGBox3D" parent="." unique_id=677667256 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 18.433796, 3.1591403, -53.94967)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 8.677953, 10.000524)
+
+[node name="Wall16" type="CSGBox3D" parent="." unique_id=184804510 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 19.354342, 2.5888503, -53.94967)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 7.233996, 10.000524)
+
+[node name="Wall17" type="CSGBox3D" parent="." unique_id=888100222 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 20.305412, 1.8982604, -53.94967)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 5.237115, 10.000524)
+
 [node name="Wall4" type="CSGBox3D" parent="." unique_id=1784821640 groups=["Collidable_enviroment"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.33594, 16.059425, -27.930752)
 material_override = SubResource("StandardMaterial3D_qv700")
 use_collision = true
 collision_mask = 15
 size = Vector3(1, 29.544174, 26.378)
-
-[node name="Enemy" parent="." unique_id=2086751755 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 33.99781, -24.317936)
-
-[node name="Enemy2" parent="." unique_id=722245584 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 2.1226172, -16.120533)
-
-[node name="Enemy3" parent="." unique_id=1478946173 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8863287, 2.1226172, -35.832047)
-
-[node name="Enemy4" parent="." unique_id=529556784 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(0.23545477, 0, -0.9718853, 0, 1, 0, 0.9718853, 0, 0.23545477, 27.005875, 2.1226182, -62.70293)
-
-[node name="Enemy5" parent="." unique_id=669243450 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(0.23545477, 0, -0.9718853, 0, 1, 0, 0.9718853, 0, 0.23545477, 24.370014, 2.1226182, -62.064354)
-
-[node name="Enemy6" parent="." unique_id=909837333 instance=ExtResource("3_gl5sm")]
-transform = Transform3D(0.23545477, 0, -0.9718853, 0, 1, 0, 0.9718853, 0, 0.23545477, 29.591784, 2.1226182, -63.329407)

@@ -41,7 +41,11 @@ var head_level:float
 var crouch_level:float
 var slide_level:float
 var crouch_diff = .25
-var slide_diff = .45
+var slide_diff = .70
+
+#Collisions
+@onready var normal_collision: CollisionShape3D = $NormalCollision
+@onready var slide_collision: CollisionShape3D = $SlideCollision
 
 #Wall Jumping
 var last_collision
@@ -110,6 +114,7 @@ var can_cast_right = true
 
 
 func _ready() -> void:
+	set_collision()
 	set_spell_type()
 	cur_speed = SPEED
 	cur_mana = max_mana
@@ -129,6 +134,18 @@ func set_spell_type():
 		SPELLTYPE.RedOrb: right_spell = "RedOrb"
 		SPELLTYPE.Fireball: right_spell = "Fireball"
 		SPELLTYPE.IceDart: right_spell = "IceDart"
+
+func set_collision():
+	if is_sliding:
+		normal_collision.disabled = true
+		#slide_collision.disabled = false
+		normal_collision.hide()
+		slide_collision.show()
+	else:
+		#slide_collision.disabled = true
+		normal_collision.disabled = false
+		normal_collision.show()
+		slide_collision.hide()
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -295,6 +312,8 @@ func _physics_process(delta: float) -> void:
 #endregion
 
 #region Movement
+	#controls colision
+	set_collision()
 	#keeps minimum speed
 	if cur_speed < SPEED: cur_speed = SPEED
 	cur_jump = JUMP_VELOCITY

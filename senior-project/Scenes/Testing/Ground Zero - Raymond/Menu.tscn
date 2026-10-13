@@ -1,55 +1,63 @@
 [gd_scene format=3 uid="uid://bxq2qvjocv2hs"]
 
+[ext_resource type="Texture2D" uid="uid://cno8j50o1hh6d" path="res://Assets/UI/Start Menu/Start_Card.png" id="2_fpci6"]
 [ext_resource type="Script" uid="uid://crd5hfh8ptqjg" path="res://Scripts/UI Stuff/menu.gd" id="3_b52cc"]
+[ext_resource type="Texture2D" uid="uid://gsmslgla8l5v" path="res://Assets/UI/Start Menu/Options_Card.png" id="3_xgoif"]
+[ext_resource type="Texture2D" uid="uid://dyqtodournjtf" path="res://Assets/UI/Start Menu/Exit_Card.png" id="4_5m7x0"]
 
 [node name="Menu" type="Control" unique_id=841887808]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_b52cc")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=675006456]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1379456265]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=675006456]
 process_mode = 3
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -108.0
-offset_top = -137.0
-offset_right = -38.0
-offset_bottom = -36.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1369.4688
+offset_bottom = -687.7439
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3.2021294, 2.7023158)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1486486983]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1486486983]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1720745278]
+[node name="Play" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1324171999]
 layout_mode = 2
-text = "Play"
+size_flags_vertical = 3
+texture_normal = ExtResource("2_fpci6")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2107069985]
+[node name="Options" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1961596067]
 layout_mode = 2
-text = "Options"
+size_flags_vertical = 3
+texture_normal = ExtResource("3_xgoif")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1709868461]
+[node name="Exit" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1279284301]
 layout_mode = 2
-text = "Exit"
+size_flags_vertical = 3
+texture_normal = ExtResource("4_5m7x0")
+ignore_texture_size = true
+stretch_mode = 0
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -19,18 +19,32 @@ point_count = 3
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bhunq"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k7ict"]
+height = 1.2
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_68wta"]
+height = 1.2
+
 [node name="Player" type="CharacterBody3D" unique_id=469422006]
 collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_sm2rp")
 slide_curve = SubResource("Curve_fdt7q")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1083743219]
+[node name="NormalCollision" type="CollisionShape3D" parent="." unique_id=1083743219]
 shape = SubResource("CapsuleShape3D_bhunq")
 debug_color = Color(0, 0.6, 0.69803923, 0.6666667)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=2097862558]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NormalCollision" unique_id=2097862558]
 mesh = SubResource("CapsuleMesh_bhunq")
+
+[node name="SlideCollision" type="CollisionShape3D" parent="." unique_id=732937491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40409476, 0)
+shape = SubResource("CapsuleShape3D_k7ict")
+debug_color = Color(0.9273253, 3.4846664e-05, 0.667028, 0.6666667)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SlideCollision" unique_id=170012668]
+mesh = SubResource("CapsuleMesh_68wta")
 
 [node name="Head" type="Node3D" parent="." unique_id=1326759573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
