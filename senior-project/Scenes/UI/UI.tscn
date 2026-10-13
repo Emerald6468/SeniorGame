@@ -175,26 +175,34 @@ text = " +"
 [node name="RightHand" type="Control" parent="CanvasLayer" unique_id=239794391]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 744.0
-offset_top = 374.0
-offset_right = 784.0
-offset_bottom = 414.0
+offset_left = 512.0
+offset_top = 226.0
+offset_right = 552.0
+offset_bottom = 266.0
 
-[node name="PlaceholdRightWand" type="Sprite2D" parent="CanvasLayer/RightHand" unique_id=333821037]
-position = Vector2(1006.00006, 463)
+[node name="PlaceholdRightWand" type="TextureRect" parent="CanvasLayer/RightHand" unique_id=1611485955]
+layout_mode = 0
+offset_left = 1006.00006
+offset_top = 463.0
+offset_right = 1131.0
+offset_bottom = 646.0
 scale = Vector2(2.484, 2.1174862)
 texture = ExtResource("2_636u5")
 
 [node name="LeftHand" type="Control" parent="CanvasLayer" unique_id=559978355]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 34.0
-offset_top = 396.0
-offset_right = 74.0
-offset_bottom = 436.0
+offset_left = -58.0
+offset_top = 228.0
+offset_right = -18.0
+offset_bottom = 268.0
 
-[node name="PlaceholdLeftWand" type="Sprite2D" parent="CanvasLayer/LeftHand" unique_id=670262680]
-position = Vector2(179.00006, 463)
+[node name="PlaceholdLeftWand" type="TextureRect" parent="CanvasLayer/LeftHand" unique_id=602071492]
+layout_mode = 0
+offset_left = 179.00006
+offset_top = 463.0
+offset_right = 304.00006
+offset_bottom = 646.0
 scale = Vector2(2.484, 2.1174862)
 texture = ExtResource("3_akgwn")
 
