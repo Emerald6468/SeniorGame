@@ -1659,7 +1659,7 @@ collision_mask = 7
 size = Vector3(3, 0.125, 5.041)
 material = SubResource("StandardMaterial3D_iaol8")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geo" unique_id=874154948]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geo" unique_id=874154948 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 visible = false
 use_collision = true
@@ -1667,25 +1667,25 @@ collision_mask = 7
 size = Vector3(7, 16, 12)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D17" type="CSGBox3D" parent="Geo/CSGBox3D3" unique_id=2017363930]
+[node name="CSGBox3D17" type="CSGBox3D" parent="Geo/CSGBox3D3" unique_id=2017363930 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.75, 0)
 operation = 2
 size = Vector3(4.5, 2.5, 12.125)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D18" type="CSGBox3D" parent="Geo/CSGBox3D3" unique_id=1843435459]
+[node name="CSGBox3D18" type="CSGBox3D" parent="Geo/CSGBox3D3" unique_id=1843435459 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1935587, 0)
 operation = 2
 size = Vector3(2, 9.5, 3)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D19" type="CSGBox3D" parent="Geo/CSGBox3D3" unique_id=1295802665]
+[node name="CSGBox3D19" type="CSGBox3D" parent="Geo/CSGBox3D3" unique_id=1295802665 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4375, 1.5685587, 0)
 operation = 2
 size = Vector3(6.875, 4, 3)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geo/CSGBox3D3" unique_id=1158339003]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geo/CSGBox3D3" unique_id=1158339003 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -5.5, 0)
 operation = 2
 radius = 2.25
@@ -1693,7 +1693,7 @@ height = 12.25
 sides = 12
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Geo" unique_id=1906067508]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geo" unique_id=1906067508 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5, 0)
 visible = false
 use_collision = true
@@ -1701,13 +1701,13 @@ collision_mask = 7
 size = Vector3(7, 15, 7)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Geo/CSGBox3D6" unique_id=88629685]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geo/CSGBox3D6" unique_id=88629685 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.125, 0)
 operation = 2
 size = Vector3(4, 4, 12.125)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geo/CSGBox3D6" unique_id=531117385]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geo/CSGBox3D6" unique_id=531117385 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 5.875, 0)
 operation = 2
 radius = 2.0
@@ -1715,13 +1715,13 @@ height = 12.25
 sides = 12
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Geo/CSGBox3D6" unique_id=174087532]
+[node name="CSGBox3D7" type="CSGBox3D" parent="Geo/CSGBox3D6" unique_id=174087532 groups=["Collidable_enviroment"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3.125, 0)
 operation = 2
 size = Vector3(4, 4, 12.125)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Geo/CSGBox3D6" unique_id=1763843159]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Geo/CSGBox3D6" unique_id=1763843159 groups=["Collidable_enviroment"]]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 5.75, 0)
 operation = 2
 radius = 2.0
@@ -1729,7 +1729,7 @@ height = 12.25
 sides = 12
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="Geo" unique_id=1836197162]
+[node name="CSGBox3D9" type="CSGBox3D" parent="Geo" unique_id=1836197162 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.5, 0)
 visible = false
 use_collision = true
@@ -1737,7 +1737,7 @@ collision_mask = 7
 size = Vector3(7.5, 1, 7.5)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Geo" unique_id=2120030008]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geo" unique_id=2120030008 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6875, 3.75, 0)
 visible = false
 use_collision = true
@@ -1745,25 +1745,25 @@ collision_mask = 7
 size = Vector3(4.375, 7.5, 10.625)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Geo/CSGBox3D5" unique_id=1933362069]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geo/CSGBox3D5" unique_id=1933362069 groups=["Collidable_enviroment"]]
 transform = Transform3D(0.86602545, 0.50000006, 0, -0.50000006, 0.86602545, 0, 0, 0, 1, 0.7538862, 3.6161861, 0)
 operation = 2
 size = Vector3(4.875, 2.5, 12.125)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Geo" unique_id=576679835]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geo" unique_id=576679835 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 10.330003, 0)
 use_collision = true
 collision_mask = 7
 size = Vector3(16.5, 6, 6)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Geo/CSGBox3D4" unique_id=344864758]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geo/CSGBox3D4" unique_id=344864758 groups=["Collidable_enviroment"]]
 operation = 2
 size = Vector3(16.5, 5.5, 5.5)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Geo/CSGBox3D4" unique_id=1172123557]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geo/CSGBox3D4" unique_id=1172123557 groups=["Collidable_enviroment"]]
 operation = 2
 size = Vector3(10, 5.5, 6.75)
 material = SubResource("StandardMaterial3D_xhtoe")
@@ -1811,7 +1811,7 @@ collision_mask = 7
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=973740735]
 mesh = SubResource("ArrayMesh_nersi")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=115429000]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=115429000 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000002, 0.5, 0)
 shape = SubResource("BoxShape3D_itq52")
 
@@ -1828,67 +1828,67 @@ collision_mask = 7
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1267537007]
 mesh = SubResource("ArrayMesh_m06yq")
 
-[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1621393859]
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1621393859 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_l6luj")
 
-[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=827617541]
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=827617541 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_ov0ot")
 
-[node name="entity_0_brush_2_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=306878836]
+[node name="entity_0_brush_2_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=306878836 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_tr4f7")
 
-[node name="entity_0_brush_3_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1570621292]
+[node name="entity_0_brush_3_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1570621292 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_ttlaa")
 
-[node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=140486418]
+[node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=140486418 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_xrskk")
 
-[node name="entity_0_brush_5_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=147024655]
+[node name="entity_0_brush_5_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=147024655 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_3l6i7")
 
-[node name="entity_0_brush_6_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=160177405]
+[node name="entity_0_brush_6_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=160177405 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_7f22h")
 
-[node name="entity_0_brush_7_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1009704048]
+[node name="entity_0_brush_7_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1009704048 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_iu05y")
 
-[node name="entity_0_brush_8_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1886184543]
+[node name="entity_0_brush_8_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1886184543 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_267rv")
 
-[node name="entity_0_brush_9_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=563331889]
+[node name="entity_0_brush_9_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=563331889 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_fd600")
 
-[node name="entity_0_brush_10_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1154713482]
+[node name="entity_0_brush_10_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1154713482 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_0a5cx")
 
-[node name="entity_0_brush_11_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1249382902]
+[node name="entity_0_brush_11_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1249382902 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_bl4j8")
 
-[node name="entity_0_brush_12_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1633166233]
+[node name="entity_0_brush_12_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1633166233 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_lo2dm")
 
-[node name="entity_0_brush_13_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=901485724]
+[node name="entity_0_brush_13_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=901485724 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_umpn4")
 
-[node name="entity_0_brush_14_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=207199372]
+[node name="entity_0_brush_14_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=207199372 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_etx2t")
 
-[node name="entity_0_brush_15_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=323626157]
+[node name="entity_0_brush_15_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=323626157 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_lxmgq")
 
-[node name="entity_0_brush_16_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=964777023]
+[node name="entity_0_brush_16_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=964777023 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_6rdib")
 
-[node name="entity_0_brush_17_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1611845429]
+[node name="entity_0_brush_17_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1611845429 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_8mjtw")
 
-[node name="entity_0_brush_18_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1454787365]
+[node name="entity_0_brush_18_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1454787365 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_mgmym")
 
-[node name="entity_0_brush_19_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1571410247]
+[node name="entity_0_brush_19_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1571410247 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_l75h5")
 
-[node name="entity_0_brush_20_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1157659306]
+[node name="entity_0_brush_20_collision_shape" type="CollisionShape3D" parent="FuncGodotMap2/entity_0_worldspawn" unique_id=1157659306 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_x7q6n")
 
 [node name="FuncGodotMap3" type="Node3D" parent="." unique_id=463301855]
@@ -1904,10 +1904,10 @@ collision_mask = 7
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap3/entity_0_worldspawn" unique_id=1820326632]
 mesh = SubResource("ArrayMesh_j6qja")
 
-[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap3/entity_0_worldspawn" unique_id=274541641]
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap3/entity_0_worldspawn" unique_id=274541641 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_je24l")
 
-[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="FuncGodotMap3/entity_0_worldspawn" unique_id=1964048226]
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="FuncGodotMap3/entity_0_worldspawn" unique_id=1964048226 groups=["Collidable_enviroment"]]
 shape = SubResource("ConvexPolygonShape3D_lx5hw")
 
 [node name="FuncGodotMap4" type="Node3D" parent="." unique_id=1098055892]
@@ -1923,7 +1923,7 @@ collision_mask = 7
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap4/entity_0_worldspawn" unique_id=1621503237]
 mesh = ExtResource("19_l75h5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap4/entity_0_worldspawn" unique_id=2074157202]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap4/entity_0_worldspawn" unique_id=2074157202 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.4375, -2.796875)
 shape = SubResource("BoxShape3D_tr4f7")
 
@@ -1940,7 +1940,7 @@ collision_mask = 7
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap11/entity_0_worldspawn" unique_id=1597812837]
 mesh = SubResource("ArrayMesh_267rv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap11/entity_0_worldspawn" unique_id=952571691]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap11/entity_0_worldspawn" unique_id=952571691 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.4375, -2.796875)
 shape = SubResource("BoxShape3D_tr4f7")
 
@@ -1957,7 +1957,7 @@ collision_mask = 7
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap17/entity_0_worldspawn" unique_id=152229691]
 mesh = SubResource("ArrayMesh_267rv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap17/entity_0_worldspawn" unique_id=206247012]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap17/entity_0_worldspawn" unique_id=206247012 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.4375, -2.796875)
 shape = SubResource("BoxShape3D_tr4f7")
 
@@ -1974,7 +1974,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap5/entity_0_worldspawn" unique_id=2008269940]
 mesh = SubResource("ArrayMesh_rkaxr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap5/entity_0_worldspawn" unique_id=1106692661]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap5/entity_0_worldspawn" unique_id=1106692661 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.64063, -2.796875)
 shape = SubResource("BoxShape3D_7f22h")
 
@@ -1991,7 +1991,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap9/entity_0_worldspawn" unique_id=568375230]
 mesh = ExtResource("29_mgmym")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap9/entity_0_worldspawn" unique_id=1575490360]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap9/entity_0_worldspawn" unique_id=1575490360 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.64063, -2.796875)
 shape = SubResource("BoxShape3D_7f22h")
 
@@ -2008,7 +2008,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap13/entity_0_worldspawn" unique_id=1194117945]
 mesh = ExtResource("29_mgmym")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap13/entity_0_worldspawn" unique_id=1802140944]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap13/entity_0_worldspawn" unique_id=1802140944 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.64063, -2.796875)
 shape = SubResource("BoxShape3D_7f22h")
 
@@ -2025,7 +2025,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap18/entity_0_worldspawn" unique_id=349017378]
 mesh = ExtResource("29_mgmym")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap18/entity_0_worldspawn" unique_id=2030417610]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap18/entity_0_worldspawn" unique_id=2030417610 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.64063, -2.796875)
 shape = SubResource("BoxShape3D_7f22h")
 
@@ -2042,7 +2042,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap7/entity_0_worldspawn" unique_id=147644984]
 mesh = SubResource("ArrayMesh_c0jc6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap7/entity_0_worldspawn" unique_id=73574480]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap7/entity_0_worldspawn" unique_id=73574480 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.64063, -2.796875)
 shape = SubResource("BoxShape3D_7f22h")
 
@@ -2059,7 +2059,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap8/entity_0_worldspawn" unique_id=1098347778]
 mesh = SubResource("ArrayMesh_clrhg")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap8/entity_0_worldspawn" unique_id=1335158664]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap8/entity_0_worldspawn" unique_id=1335158664 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.64063, -2.796875)
 shape = SubResource("BoxShape3D_7f22h")
 
@@ -2076,7 +2076,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap16/entity_0_worldspawn" unique_id=1417825442]
 mesh = ExtResource("29_mgmym")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap16/entity_0_worldspawn" unique_id=1181343597]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap16/entity_0_worldspawn" unique_id=1181343597 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.64063, -2.796875)
 shape = SubResource("BoxShape3D_7f22h")
 
@@ -2093,7 +2093,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap10/entity_0_worldspawn" unique_id=929431203]
 mesh = SubResource("ArrayMesh_x7q6n")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap10/entity_0_worldspawn" unique_id=542691298]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap10/entity_0_worldspawn" unique_id=542691298 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1192397e-06, 11.203125, -5.03125)
 shape = SubResource("BoxShape3D_iu05y")
 
@@ -2110,8 +2110,8 @@ collision_mask = 7
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap12/entity_0_worldspawn" unique_id=2143693093]
 mesh = ExtResource("31_l75h5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap12/entity_0_worldspawn" unique_id=1893140270]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.51563, -2.796875)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap12/entity_0_worldspawn" unique_id=1893140270 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.313226e-10, 11.51563, -2.796875)
 shape = SubResource("BoxShape3D_bfuo4")
 
 [node name="FuncGodotMap6" type="Node3D" parent="." unique_id=1521011282]
@@ -2127,7 +2127,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap6/entity_0_worldspawn" unique_id=93696000]
 mesh = SubResource("ArrayMesh_rkaxr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap6/entity_0_worldspawn" unique_id=968919218]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap6/entity_0_worldspawn" unique_id=968919218 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.64063, -2.796875)
 shape = SubResource("BoxShape3D_7f22h")
 
@@ -2138,17 +2138,17 @@ mesh = ExtResource("30_fd600")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1904594485]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1701038516]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1701038516 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 5.75, 1.8125)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1576950045]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1576950045 groups=["Collidable_enviroment"]]
 transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -1.5929627, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=886706220]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=886706220 groups=["Collidable_enviroment"]]
 transform = Transform3D(-0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.258819, 1.6570373, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
@@ -2160,17 +2160,17 @@ mesh = ExtResource("30_fd600")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=1399970677]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=838506010]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=838506010 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 5.75, 1.8125)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=802517653]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=802517653 groups=["Collidable_enviroment"]]
 transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -1.5929627, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=93875387]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=93875387 groups=["Collidable_enviroment"]]
 transform = Transform3D(-0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.258819, 1.6570373, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
@@ -2183,17 +2183,17 @@ mesh = ExtResource("30_fd600")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=643394408]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=150560859]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=150560859 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 5.75, 1.8125)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=285088639]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=285088639 groups=["Collidable_enviroment"]]
 transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -1.5929627, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=1945803476]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=1945803476 groups=["Collidable_enviroment"]]
 transform = Transform3D(-0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.258819, 1.6570373, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
@@ -2206,17 +2206,17 @@ mesh = ExtResource("30_fd600")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4" unique_id=883338050]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=1451683763]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=1451683763 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 5.75, 1.8125)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=1519002674]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=1519002674 groups=["Collidable_enviroment"]]
 transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -1.5929627, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=680328316]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=680328316 groups=["Collidable_enviroment"]]
 transform = Transform3D(-0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.258819, 1.6570373, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
@@ -2229,17 +2229,17 @@ mesh = ExtResource("30_fd600")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=815351007]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=1654668339]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=1654668339 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 5.75, 1.8125)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=259961590]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=259961590 groups=["Collidable_enviroment"]]
 transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -1.5929627, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=1046781471]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=1046781471 groups=["Collidable_enviroment"]]
 transform = Transform3D(-0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.258819, 1.6570373, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
@@ -2252,17 +2252,17 @@ mesh = ExtResource("30_fd600")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D6" unique_id=524984573]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D" unique_id=1911964622]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D" unique_id=1911964622 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 5.75, 1.8125)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D" unique_id=407240478]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D" unique_id=407240478 groups=["Collidable_enviroment"]]
 transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -1.5929627, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D" unique_id=315798263]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D" unique_id=315798263 groups=["Collidable_enviroment"]]
 transform = Transform3D(-0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.258819, 1.6570373, 5.75, 0.631649)
 shape = SubResource("BoxShape3D_0a5cx")
 debug_color = Color(0, 0.8548469, 1, 1)
@@ -2280,7 +2280,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap14/entity_0_worldspawn" unique_id=729230924]
 mesh = SubResource("ArrayMesh_bk61h")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap14/entity_0_worldspawn" unique_id=979504431]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap14/entity_0_worldspawn" unique_id=979504431 groups=["Collidable_enviroment"]]
 shape = SubResource("BoxShape3D_bl4j8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FuncGodotMap14" unique_id=322245161]
@@ -2308,7 +2308,7 @@ collision_mask = 0
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap15/entity_0_worldspawn" unique_id=336134074]
 mesh = SubResource("ArrayMesh_bk61h")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap15/entity_0_worldspawn" unique_id=461528741]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap15/entity_0_worldspawn" unique_id=461528741 groups=["Collidable_enviroment"]]
 shape = SubResource("BoxShape3D_bl4j8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FuncGodotMap15" unique_id=1323559886]
@@ -2331,7 +2331,7 @@ mesh = ExtResource("35_etx2t")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D7" unique_id=923240862]
 transform = Transform3D(1, 4.371139e-08, -4.371139e-08, -4.371139e-08, -4.371139e-08, -1, -4.371139e-08, 1, -4.3711385e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D7/StaticBody3D" unique_id=1282759834]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D7/StaticBody3D" unique_id=1282759834 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 1.174338e-23, 0, 0, 1, 1.9106895e-15, -0.28125, 4.3711225e-08)
 shape = SubResource("CylinderShape3D_riqys")
 

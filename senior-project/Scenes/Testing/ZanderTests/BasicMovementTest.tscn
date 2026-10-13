@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_05r2y"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_aaow1"]
 [ext_resource type="PackedScene" uid="uid://dqt8vddolrbd4" path="res://Scenes/Prefabs/Enemies/enemy.tscn" id="3_gl5sm"]
+[ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="3_qv700"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
 albedo_texture = ExtResource("1_aaow1")
@@ -10,16 +11,9 @@ albedo_texture = ExtResource("1_aaow1")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05r2y"]
 albedo_texture = ExtResource("1_aaow1")
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sn0t7"]
-sky_top_color = Color(0.6583407, 0.22435483, 0.59418625, 1)
-sky_horizon_color = Color(0.87722045, 0.52248424, 0.37153265, 1)
-
-[sub_resource type="Sky" id="Sky_riqys"]
-sky_material = SubResource("ProceduralSkyMaterial_sn0t7")
-
 [sub_resource type="Environment" id="Environment_bhunq"]
 background_mode = 2
-sky = SubResource("Sky_riqys")
+sky = ExtResource("3_qv700")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qv700"]
 albedo_texture = ExtResource("1_aaow1")
