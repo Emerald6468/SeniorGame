@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://q1bcuxedsge5"]
 
 [ext_resource type="Script" uid="uid://jonrbbhp01q5" path="res://Scripts/player.gd" id="1_sm2rp"]
+[ext_resource type="PackedScene" uid="uid://deqlkyw53gem7" path="res://Scripts/Shaders/border_shader.tscn" id="2_k7ict"]
 [ext_resource type="AudioStream" uid="uid://tp4khmc0ak8x" path="res://Assets/Audio/SFX/Running.wav" id="2_pv3ct"]
 [ext_resource type="AudioStream" uid="uid://bhhg8qfhgqspk" path="res://Assets/Audio/SFX/JumpLand.wav" id="3_cb7df"]
 [ext_resource type="PackedScene" uid="uid://o27u5krdqb62" path="res://Scenes/UI/UI.tscn" id="3_v1l4e"]
@@ -45,6 +46,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41726235, -0.115736246, -0
 [node name="AimAssist" type="RayCast3D" parent="Head/Camera3D" unique_id=1625247997]
 target_position = Vector3(0, 0, -20)
 collision_mask = 9
+
+[node name="BorderShader" parent="Head/Camera3D" unique_id=1110127579 instance=ExtResource("2_k7ict")]
 
 [node name="Running" type="AudioStreamPlayer" parent="." unique_id=1721402892]
 stream = ExtResource("2_pv3ct")

@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ktgp6f6t8r20"]
+
+[ext_resource type="Shader" uid="uid://ywh85mnqxsxt" path="res://Scripts/Shaders/IceDartShaded.gdshader" id="1_n27mm"]
+[ext_resource type="Texture2D" uid="uid://bvfx5g8a7rcot" path="res://Assets/Textures/Snow0192_6_seamless_S.jpg" id="2_ihaw8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_n27mm")
+shader_parameter/FresnelPower = 2.385
+shader_parameter/FresnelColor = Color(0.6087571, 0.73241764, 0.9829032, 1)
+shader_parameter/Color = Color(0.65167344, 0.7670327, 1, 1)
+shader_parameter/Tiling = Vector3(1, 1, 0)
+shader_parameter/Offset = Vector3(0, 0, 0)
+shader_parameter/Ice_Texture = ExtResource("2_ihaw8")
+shader_parameter/RefractionAmount = 1.0
+shader_parameter/Metallic = 0.134
+shader_parameter/Smoothness = 0.627
+shader_parameter/Normals = 0.77

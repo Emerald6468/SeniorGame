@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="2_6y3u3"]
 [ext_resource type="Texture2D" uid="uid://cjxqwj44mpj7q" path="res://Assets/Textures/wood1.png" id="3_mllui"]
 [ext_resource type="Script" uid="uid://jonrbbhp01q5" path="res://Scripts/player.gd" id="4_jqx48"]
+[ext_resource type="PackedScene" uid="uid://deqlkyw53gem7" path="res://Scripts/Shaders/border_shader.tscn" id="5_jqx48"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="5_xlsxc"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="6_hgure"]
 [ext_resource type="AudioStream" uid="uid://tp4khmc0ak8x" path="res://Assets/Audio/SFX/Running.wav" id="6_yhw2v"]
@@ -48,7 +49,6 @@
 [ext_resource type="Texture2D" uid="uid://dyrt6u28obvqk" path="res://Assets/Meshes/Bell1_Untitled.png" id="39_koxox"]
 [ext_resource type="ArrayMesh" uid="uid://bxf2vg26l74f7" path="res://Assets/Meshes/Bell1.glb" id="40_usch8"]
 [ext_resource type="Texture2D" uid="uid://bhntu1vko78qi" path="res://Assets/Textures/decalwindow.png" id="41_nv2xf"]
-[ext_resource type="Shader" uid="uid://brxlok5tyn7bb" path="res://Scripts/Shaders/Outline.gdshader" id="42_6y3u3"]
 
 [sub_resource type="Environment" id="Environment_dyiuk"]
 background_mode = 2
@@ -74,26 +74,6 @@ point_count = 3
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bhunq"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_riqys"]
-render_priority = 0
-shader = ExtResource("42_6y3u3")
-shader_parameter/outlineColor = Color(0, 0, 0, 0.78)
-shader_parameter/depth_threshold = 0.025
-shader_parameter/normal_threshold = 0.5
-shader_parameter/normal_smoothing = 0.25
-shader_parameter/max_thickness = 1.3
-shader_parameter/min_thickness = 0.5
-shader_parameter/max_distance = 75.0
-shader_parameter/min_distance = 2.0
-shader_parameter/grazing_fresnel_power = 5.0
-shader_parameter/grazing_angle_mask_power = 1.0
-shader_parameter/grazing_angle_modulation_factor = 50.0
-
-[sub_resource type="QuadMesh" id="QuadMesh_bhunq"]
-material = SubResource("ShaderMaterial_riqys")
-flip_faces = true
-size = Vector2(2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymwoq"]
 transparency = 2
@@ -1825,9 +1805,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1910088690]
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="Player/Head/Camera3D" unique_id=1303841730]
+[node name="BorderShader" parent="Player/Head/Camera3D" unique_id=1110127579 instance=ExtResource("5_jqx48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043974638, -1.3821422, -17.125)
-mesh = SubResource("QuadMesh_bhunq")
 
 [node name="Right_Spell_Spawn" type="Marker3D" parent="Player/Head/Camera3D" unique_id=1385046776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3901411, -0.115736246, -0.505494)

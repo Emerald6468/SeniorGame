@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://deqlkyw53gem7"]
+
+[ext_resource type="Shader" uid="uid://brxlok5tyn7bb" path="res://Scripts/Shaders/Outline.gdshader" id="1_muep7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_riqys"]
+render_priority = 0
+shader = ExtResource("1_muep7")
+shader_parameter/outlineColor = Color(0, 0, 0, 0.78)
+shader_parameter/depth_threshold = 0.025
+shader_parameter/normal_threshold = 0.5
+shader_parameter/normal_smoothing = 0.25
+shader_parameter/max_thickness = 1.3
+shader_parameter/min_thickness = 0.5
+shader_parameter/max_distance = 75.0
+shader_parameter/min_distance = 2.0
+shader_parameter/grazing_fresnel_power = 5.0
+shader_parameter/grazing_angle_mask_power = 1.0
+shader_parameter/grazing_angle_modulation_factor = 50.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_bhunq"]
+material = SubResource("ShaderMaterial_riqys")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="BorderShader" type="MeshInstance3D" unique_id=1110127579]
+mesh = SubResource("QuadMesh_bhunq")

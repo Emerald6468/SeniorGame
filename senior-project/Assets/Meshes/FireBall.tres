@@ -1,6 +1,6 @@
 [gd_resource type="SphereMesh" format=3 uid="uid://deit5ljwuuiys"]
 
-[ext_resource type="Material" uid="uid://d0qyu480cfghv" path="res://Assets/Materials/FireballOveride.tres" id="1_s7j00"]
+[ext_resource type="Material" uid="uid://d0qyu480cfghv" path="res://Assets/Materials/Spells/FireballOveride.tres" id="1_s7j00"]
 
 [resource]
 lightmap_size_hint = Vector2i(17, 9)
