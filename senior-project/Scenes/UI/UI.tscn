@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8xxhuy38u5te" path="res://Scripts/UI Stuff/ui.gd" id="1_s86y4"]
 [ext_resource type="Texture2D" uid="uid://cg8qrfevh2beq" path="res://Assets/Placeholder/placehold_right_wand.png" id="2_636u5"]
+[ext_resource type="Script" uid="uid://d11kfgsd6jgt" path="res://addons/AutoSizeText/ui/AutoSizeLabel.gd" id="2_jevvu"]
 [ext_resource type="Texture2D" uid="uid://elmliu2nvdx2" path="res://Assets/UI/Placeholder/enemy_health_bars_2.0/enemy_health_bars_2.0/enemy_health_bar_foreground_001.png" id="2_oqha6"]
 [ext_resource type="Texture2D" uid="uid://bhbn48epqfpu2" path="res://Assets/UI/Placeholder/enemy_health_bars_2.0/enemy_mana_bar_000.png" id="3_7tgkj"]
 [ext_resource type="Texture2D" uid="uid://cntmbeomma8sm" path="res://Assets/Placeholder/placehold_left_wand.png" id="3_akgwn"]
@@ -132,31 +133,35 @@ script = ExtResource("1_s86y4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=23702782]
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1525682755]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Speed" type="Label" parent="CanvasLayer/MarginContainer" unique_id=1720541619]
-layout_mode = 2
+[node name="Speed" type="Label" parent="CanvasLayer" unique_id=738045681]
+anchors_preset = -1
+anchor_right = 0.186
+anchor_bottom = 0.104
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 38
 text = "Speed = 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_jevvu")
+metadata/_custom_type_script = "uid://d11kfgsd6jgt"
 
-[node name="Mana" type="TextureProgressBar" parent="CanvasLayer/MarginContainer" unique_id=1289210696]
+[node name="Mana" type="TextureProgressBar" parent="CanvasLayer" unique_id=1289210696]
 modulate = Color(1, 1, 1, 0.6392157)
-layout_mode = 2
+anchors_preset = -1
+anchor_left = 0.75200003
+anchor_top = 0.030000001
+anchor_right = 0.98200005
+anchor_bottom = 0.089
 size_flags_horizontal = 8
 size_flags_vertical = 0
 value = 100.0
+nine_patch_stretch = true
 texture_under = ExtResource("2_oqha6")
 texture_progress = ExtResource("3_7tgkj")
+metadata/_edit_use_anchors_ = true
 
 [node name="CrossHair" type="Label" parent="CanvasLayer" unique_id=837836248]
 anchors_preset = 8
@@ -181,13 +186,19 @@ offset_right = 552.0
 offset_bottom = 266.0
 
 [node name="PlaceholdRightWand" type="TextureRect" parent="CanvasLayer/RightHand" unique_id=1611485955]
-layout_mode = 0
-offset_left = 1006.00006
-offset_top = 463.0
-offset_right = 1131.0
-offset_bottom = 646.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 25.400002
+anchor_top = 11.950001
+anchor_right = 32.4
+anchor_bottom = 21.150002
+offset_left = -10.0
+offset_top = -15.0000305
+offset_right = -165.0
+offset_bottom = -200.00006
 scale = Vector2(2.484, 2.1174862)
 texture = ExtResource("2_636u5")
+metadata/_edit_use_anchors_ = true
 
 [node name="LeftHand" type="Control" parent="CanvasLayer" unique_id=559978355]
 layout_mode = 3

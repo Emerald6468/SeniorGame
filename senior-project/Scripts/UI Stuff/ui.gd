@@ -1,6 +1,6 @@
 extends Control
 
-@onready var speed: Label = $CanvasLayer/MarginContainer/Speed
+@onready var speed: Label = $CanvasLayer/Speed
 
 @onready var right_hand: AnimationPlayer = $RightHand
 @onready var left_hand: AnimationPlayer = $LeftHand
@@ -9,7 +9,7 @@ var right_casting = false
 var left_casting = false
 
 
-@onready var mana: TextureProgressBar = $CanvasLayer/MarginContainer/Mana
+@onready var mana: TextureProgressBar = $CanvasLayer/Mana
 var cur_mana:float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
