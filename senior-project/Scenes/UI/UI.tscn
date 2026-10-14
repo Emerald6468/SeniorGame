@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bhbn48epqfpu2" path="res://Assets/UI/Placeholder/enemy_health_bars_2.0/enemy_mana_bar_000.png" id="3_7tgkj"]
 [ext_resource type="Texture2D" uid="uid://cntmbeomma8sm" path="res://Assets/Placeholder/placehold_left_wand.png" id="3_akgwn"]
 [ext_resource type="PackedScene" uid="uid://dwp4x74k76jlm" path="res://Scenes/Testing/Ground Zero - Raymond/Pause_Screen.tscn" id="6_7tgkj"]
+[ext_resource type="PackedScene" uid="uid://b8qlv4tx3ttk5" path="res://Scripts/Shaders/speed_lines_shader.tscn" id="7_w8wei"]
 
 [sub_resource type="Animation" id="Animation_636u5"]
 resource_name = "Cast_Spell"
@@ -133,6 +134,13 @@ script = ExtResource("1_s86y4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=23702782]
 
+[node name="SpeedLinesShader" parent="CanvasLayer" unique_id=118265119 instance=ExtResource("7_w8wei")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Speed" type="Label" parent="CanvasLayer" unique_id=738045681]
 anchors_preset = -1
 anchor_right = 0.186
@@ -143,6 +151,7 @@ theme_override_font_sizes/font_size = 38
 text = "Speed = 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("2_jevvu")

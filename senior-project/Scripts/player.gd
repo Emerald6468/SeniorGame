@@ -314,6 +314,7 @@ func _physics_process(delta: float) -> void:
 #region Movement
 	#controls colision
 	set_collision()
+	get_node("UI").toggle_speedlines(is_sliding)
 	#keeps minimum speed
 	if cur_speed < SPEED: cur_speed = SPEED
 	cur_jump = JUMP_VELOCITY

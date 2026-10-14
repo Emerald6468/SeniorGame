@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b8qlv4tx3ttk5"]
+
+[ext_resource type="Shader" uid="uid://bantyguybq0w2" path="res://Scripts/Shaders/speed_lines_shader.gdshader" id="1_iirtb"]
+
+[sub_resource type="Gradient" id="Gradient_8wlyu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w8wei"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_riqys"]
+noise = SubResource("FastNoiseLite_w8wei")
+color_ramp = SubResource("Gradient_8wlyu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhunq"]
+shader = ExtResource("1_iirtb")
+shader_parameter/noise = SubResource("NoiseTexture2D_riqys")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_count = 2.0
+shader_parameter/line_density = 0.4590000218025
+shader_parameter/line_faloff = 0.30000001425
+shader_parameter/mask_size = 0.0800000038
+shader_parameter/mask_edge = 0.50000002375
+shader_parameter/animation_speed = 7.7130003188675005
+
+[node name="SpeedLinesShader" type="ColorRect" unique_id=618122917]
+material = SubResource("ShaderMaterial_bhunq")

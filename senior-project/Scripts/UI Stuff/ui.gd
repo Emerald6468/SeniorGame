@@ -12,6 +12,14 @@ var left_casting = false
 @onready var mana: TextureProgressBar = $CanvasLayer/Mana
 var cur_mana:float
 # Called when the node enters the scene tree for the first time.
+@onready var speed_lines_shader: ColorRect = $CanvasLayer/SpeedLinesShader
+
+func toggle_speedlines(slide):
+	if slide:
+		speed_lines_shader.show()
+	else:
+		speed_lines_shader.hide()
+
 func _ready() -> void:
 	pass # Replace with function body.
 
