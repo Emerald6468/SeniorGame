@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccss46eio3xeh"]
-
-[ext_resource type="Texture2D" uid="uid://cs7piq37i84eh" path="res://Assets/Textures/wall1.png" id="1_v3t6j"]
-
-[resource]
-albedo_texture = ExtResource("1_v3t6j")
-metallic_specular = 0.0
-texture_filter = 2

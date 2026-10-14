@@ -1,11 +1,9 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://dhdls6bl8vyx5"]
 
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="1_0vmb0"]
-[ext_resource type="Material" uid="uid://ccss46eio3xeh" path="res://Assets/Textures/wall1.tres" id="2_2b3e3"]
 [ext_resource type="Texture2D" uid="uid://dlbdb4jgsrgna" path="res://Assets/Textures/wall4.png" id="3_1xght"]
 [ext_resource type="Texture2D" uid="uid://cxi8hbo1o7mqp" path="res://Assets/Textures/frame2.png" id="4_uvgnh"]
-[ext_resource type="Material" uid="uid://dldtn0twiaev7" path="res://Assets/Textures/frame7white.tres" id="5_y6tai"]
-[ext_resource type="Material" uid="uid://bd54jseykqn4p" path="res://Assets/Textures/frame.tres" id="6_35iks"]
+[ext_resource type="Texture2D" uid="uid://etwyoinend70" path="res://Assets/Textures/frame3.png" id="4_vitki"]
 [ext_resource type="Texture2D" uid="uid://ycu4bqadrw1p" path="res://Assets/Textures/wallbrick1.png" id="7_768ci"]
 [ext_resource type="Texture2D" uid="uid://cji3jivwgfhje" path="res://Assets/Textures/frame4a.png" id="8_f53y7"]
 [ext_resource type="Texture2D" uid="uid://tkycboofxkoc" path="res://Assets/Textures/floor3.png" id="9_miqhq"]
@@ -23,6 +21,18 @@ texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bl4j8"]
 albedo_color = Color(0.5234375, 0.50094604, 0.50094604, 1)
+albedo_texture = ExtResource("4_uvgnh")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djnx7"]
+albedo_color = Color(0.66796875, 0.66796875, 0.66796875, 1)
+albedo_texture = ExtResource("4_vitki")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vmb0"]
+albedo_color = Color(0.66796875, 0.66796875, 0.66796875, 1)
 albedo_texture = ExtResource("4_uvgnh")
 metallic_specular = 0.0
 texture_filter = 2
@@ -64,7 +74,6 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 24,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8A"),
-"material": ExtResource("2_2b3e3"),
 "name": "wall1",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -100,7 +109,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
-"material": ExtResource("5_y6tai"),
+"material": SubResource("StandardMaterial3D_djnx7"),
 "name": "frame7white",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -112,7 +121,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 72,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMA"),
-"material": ExtResource("6_35iks"),
+"material": SubResource("StandardMaterial3D_0vmb0"),
 "name": "frame",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

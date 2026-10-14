@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ycu4bqadrw1p" path="res://Assets/Textures/wallbrick1.png" id="4_mhl6d"]
 [ext_resource type="Texture2D" uid="uid://cji3jivwgfhje" path="res://Assets/Textures/frame4a.png" id="5_wdqyg"]
 [ext_resource type="Texture2D" uid="uid://drv8h1gxijfdi" path="res://Assets/Textures/frame.png" id="6_jixc8"]
-[ext_resource type="Material" uid="uid://dldtn0twiaev7" path="res://Assets/Textures/frame7white.tres" id="7_f4hok"]
 [ext_resource type="Texture2D" uid="uid://dlbdb4jgsrgna" path="res://Assets/Textures/wall4.png" id="8_x3km7"]
-[ext_resource type="Material" uid="uid://ccss46eio3xeh" path="res://Assets/Textures/wall1.tres" id="9_elfdx"]
 [ext_resource type="Texture2D" uid="uid://tkycboofxkoc" path="res://Assets/Textures/floor3.png" id="10_yxyy7"]
 [ext_resource type="Texture2D" uid="uid://l8x6drj442h1" path="res://Assets/Textures/window1a.png" id="11_adb4r"]
 
@@ -44,6 +42,12 @@ texture_filter = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4q3t"]
 albedo_color = Color(0.27154577, 0.2596588, 0.30078125, 1)
 albedo_texture = ExtResource("6_jixc8")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fdd6"]
+albedo_color = Color(0.7421875, 0.7364571, 0.6755066, 1)
+albedo_texture = ExtResource("3_yiuh8")
 metallic_specular = 0.0
 texture_filter = 2
 
@@ -145,7 +149,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 24,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8A"),
-"material": ExtResource("7_f4hok"),
+"material": SubResource("StandardMaterial3D_1fdd6"),
 "name": "frame7white",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -169,7 +173,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 12,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcA"),
-"material": ExtResource("9_elfdx"),
+"material": SubResource("StandardMaterial3D_1pjeb"),
 "name": "wall1",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
