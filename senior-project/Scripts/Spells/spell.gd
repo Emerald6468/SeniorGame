@@ -12,6 +12,7 @@ var found_collisions = false
 @onready var mesh: MeshInstance3D = $Mesh
 
 const EXPLOSION = preload("uid://c6f0gnsuxx2c6")
+const ICE_CIRCLE = preload("uid://ca2gqkttwwbrx")
 
 #materials
 const GREEN_ORB = preload("uid://cw7bcghcy0sgq")
@@ -68,6 +69,7 @@ var spell_cost:float
 var explodes:bool = false
 var burns:bool = false
 var freezes:bool = false
+var creates_circles: bool = false
 
 func setspell(spell:String):
 	all_speeds = [green_orb_speed,red_orb_speed,fireball_speed,icedart_speed]
@@ -86,6 +88,7 @@ func setspell(spell:String):
 		"IceDart":
 			spell_num = 3
 			freezes = true
+			creates_circles = true
 	#Setting Spells variables
 	spell_name = spell
 	spell_mesh = all_meshes[spell_num]
@@ -140,6 +143,12 @@ func _process(delta: float) -> void:
 		var collisions = monitor.get_overlapping_bodies()
 		for collision in collisions:
 			if collision.is_in_group("Collidable_enviroment"):
+				if creates_circles and collision.is_in_group("Floor"): 
+					var ice_circle = ICE_CIRCLE.instantiate()
+					add_sibling(ice_circle)
+					print("spell_pos")
+					ice_circle.global_position = global_position
+					ice_circle.find_floor()
 				dissapear()
 			elif collision is Enemy:
 				print("enemy")
