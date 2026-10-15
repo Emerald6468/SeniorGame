@@ -1,5 +1,8 @@
 extends Control
 
+@onready var options_menu = $VBoxContainer
+@onready var pause_menu_script = get_parent()
+
 
 
 func _on_volume_pressed() -> void:
@@ -9,9 +12,9 @@ func _on_volume_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	# When back button is pressed, the current scene changes to the main menu.
+	visible = false
+	pause_menu_script.pause_menu.visible = true
 	
-	get_tree().change_scene_to_file("res://Scenes/Testing/Ground Zero - Raymond/Menu.tscn")
 
 
 func _on_resolution_pressed() -> void:
