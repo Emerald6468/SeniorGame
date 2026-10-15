@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://ch1b4i8snto6x" path="res://Assets/Textures/decalwindow2.png" id="42_3odww"]
 [ext_resource type="Texture2D" uid="uid://cevxplog3uoh3" path="res://Assets/Textures/window1.png" id="42_fun0j"]
 [ext_resource type="Texture2D" uid="uid://dv6trihjwd6bd" path="res://Assets/Textures/decalwindow3.png" id="43_j6qja"]
+[ext_resource type="PackedScene" uid="uid://d20bamxgu5rol" path="res://Scenes/Prefabs/Enemies/Grunt.tscn" id="46_je24l"]
 
 [sub_resource type="Environment" id="Environment_dyiuk"]
 background_mode = 2
@@ -2743,5 +2744,35 @@ debug_color = Color(0.7021107, 0, 0, 1)
 [node name="entity_0_brush_6_collision_shape" type="CollisionShape3D" parent="FuncGodotMap20/entity_0_worldspawn" unique_id=1958643500]
 shape = SubResource("ConvexPolygonShape3D_rn33h")
 debug_color = Color(0.7021107, 0, 0, 1)
+
+[node name="Grunt" parent="." unique_id=1065493351 instance=ExtResource("46_je24l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.987587, 2.276349, -16.0281)
+
+[node name="Grunt2" parent="." unique_id=1899900342 instance=ExtResource("46_je24l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8288708, 1, -3.6764526)
+
+[node name="Grunt3" parent="." unique_id=317774171 instance=ExtResource("46_je24l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.638092, 1.6018944, -18.358475)
+
+[node name="Grunt4" parent="." unique_id=116830520 instance=ExtResource("46_je24l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.27128, 1, -16.95706)
+
+[node name="Grunt5" parent="." unique_id=1062479910 instance=ExtResource("46_je24l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.249157, 1, -16.169863)
+
+[node name="Grunt6" parent="." unique_id=75538796 instance=ExtResource("46_je24l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.901363, 1, 14.978794)
+
+[node name="Grunt7" parent="." unique_id=2040950799 instance=ExtResource("46_je24l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.857645, 1, 8.104287)
+
+[node name="Grunt8" parent="." unique_id=2098526730 instance=ExtResource("46_je24l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.971212, 2.2801318, 16.256063)
+
+[node name="Grunt9" parent="." unique_id=683667156 instance=ExtResource("46_je24l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.825596, 8.455002, 0.4398117)
+
+[node name="Grunt10" parent="." unique_id=1953831541 instance=ExtResource("46_je24l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4835744, 8.455002, 0.47894955)
 
 [editable path="Player"]
