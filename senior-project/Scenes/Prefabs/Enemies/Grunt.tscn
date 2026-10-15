@@ -21,15 +21,18 @@ script = ExtResource("1_k8oup")
 [node name="Body" type="CollisionShape3D" parent="." unique_id=1466883705]
 shape = SubResource("CapsuleShape3D_0vkdb")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Body" unique_id=1277890064]
+[node name="Mesh" type="MeshInstance3D" parent="Body" unique_id=1277890064]
 mesh = SubResource("CapsuleMesh_5u74h")
+
+[node name="Nose" type="MeshInstance3D" parent="Body/Mesh" unique_id=1793650306]
+transform = Transform3D(0.39999995, 0, 0, 0, -0.0026612543, 0.39999115, 0, -0.39999115, -0.0026612543, 0, 0.455325, -0.54025143)
+mesh = ExtResource("3_gcdnb")
+
+[node name="SlashSpawnPoint" type="Marker3D" parent="Body/Mesh" unique_id=2020481942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6394439)
 
 [node name="EnemyHead" type="Marker3D" parent="Body" unique_id=1586069134]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 1.7164066, -0.034263775)
-
-[node name="Nose" type="MeshInstance3D" parent="Body" unique_id=1793650306]
-transform = Transform3D(0.39999995, 0, 0, 0, -0.0026612543, 0.39999115, 0, -0.39999115, -0.0026612543, 0, 0.455325, -0.54025143)
-mesh = ExtResource("3_gcdnb")
 
 [node name="Monitor" type="Area3D" parent="." unique_id=1500906170]
 collision_layer = 0

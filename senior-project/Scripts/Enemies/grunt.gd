@@ -6,6 +6,8 @@ extends Enemy
 #attack
 var just_attacked = false
 var a_time = 1.0
+const SLASH = preload("uid://chl0451sq85fm")
+@onready var slash_spawn_point: Marker3D = $Body/Mesh/SlashSpawnPoint
 
 func attack():
 	if !just_attacked:
@@ -16,6 +18,10 @@ func attack():
 
 func melee():
 	print("melee")
+	var slash = SLASH.instantiate()
+	get_tree().root.add_child(slash)
+	slash.global_position = slash_spawn_point.global_position
+	slash.global_rotation = slash_spawn_point.global_rotation
 
 func _physics_process(delta: float) -> void:
 	super(delta)

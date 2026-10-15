@@ -8,6 +8,18 @@
 [ext_resource type="Texture2D" uid="uid://cntmbeomma8sm" path="res://Assets/Placeholder/placehold_left_wand.png" id="3_akgwn"]
 [ext_resource type="PackedScene" uid="uid://dwp4x74k76jlm" path="res://Scenes/Testing/Ground Zero - Raymond/Pause_Screen.tscn" id="6_7tgkj"]
 [ext_resource type="PackedScene" uid="uid://b8qlv4tx3ttk5" path="res://Scripts/Shaders/speed_lines_shader.tscn" id="7_w8wei"]
+[ext_resource type="Shader" uid="uid://d1bh80sj5446f" path="res://Scripts/Shaders/hurt.gdshader" id="8_y85ht"]
+[ext_resource type="Script" uid="uid://d3i0jm22o0ihh" path="res://Scripts/Shaders/hurt_shader.gd" id="9_nqsl3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhunq"]
+shader = ExtResource("8_y85ht")
+shader_parameter/blood_color = Color(0.6058122, 0.07195588, 0.14079654, 1)
+shader_parameter/size = 0.11600000551
+shader_parameter/softness = 1.0
+shader_parameter/roughness = 0.234000011115
+shader_parameter/pulse_speed = 1.63600007771
+shader_parameter/pulse_amount = 0.582000027645
+shader_parameter/max_alpha = 0.85
 
 [sub_resource type="Animation" id="Animation_636u5"]
 resource_name = "Cast_Spell"
@@ -135,6 +147,7 @@ script = ExtResource("1_s86y4")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=23702782]
 
 [node name="SpeedLinesShader" parent="CanvasLayer" unique_id=118265119 instance=ExtResource("7_w8wei")]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -225,6 +238,16 @@ offset_right = 304.00006
 offset_bottom = 646.0
 scale = Vector2(2.484, 2.1174862)
 texture = ExtResource("3_akgwn")
+
+[node name="HurtShader" type="ColorRect" parent="CanvasLayer" unique_id=1745471990]
+material = SubResource("ShaderMaterial_bhunq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24477637, 0.2447764, 0.24477637, 1)
+script = ExtResource("9_nqsl3")
 
 [node name="RightHand" type="AnimationPlayer" parent="." unique_id=1741079159]
 libraries/ = SubResource("AnimationLibrary_b83rk")

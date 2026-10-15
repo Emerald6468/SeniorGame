@@ -23,15 +23,15 @@ script = ExtResource("1_dccm2")
 [node name="Body" type="CollisionShape3D" parent="." unique_id=388227404]
 shape = SubResource("CapsuleShape3D_bhunq")
 
-[node name="Nose" type="MeshInstance3D" parent="Body" unique_id=116420774]
+[node name="Mesh" type="MeshInstance3D" parent="Body" unique_id=1530752893]
+mesh = SubResource("CapsuleMesh_riqys")
+
+[node name="Nose" type="MeshInstance3D" parent="Body/Mesh" unique_id=116420774]
 transform = Transform3D(0.39999995, 0, 0, 0, -0.0026612543, 0.39999115, 0, -0.39999115, -0.0026612543, 0, 0.455325, -0.54025143)
 mesh = ExtResource("3_pe7bt")
 
 [node name="EnemyHead" type="Marker3D" parent="Body" unique_id=959638879]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 1.7164066, -0.034263775)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Body" unique_id=1530752893]
-mesh = SubResource("CapsuleMesh_riqys")
 
 [node name="Monitor" type="Area3D" parent="." unique_id=1113326534]
 collision_layer = 0

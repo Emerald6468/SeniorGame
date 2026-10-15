@@ -31,12 +31,15 @@ shape = SubResource("CapsuleShape3D_0vkdb")
 [node name="EnemyHead" type="Marker3D" parent="Body" unique_id=1586069134]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 0.013329983, -0.034263775)
 
-[node name="Nose" type="MeshInstance3D" parent="Body" unique_id=1793650306]
+[node name="Mesh" type="MeshInstance3D" parent="Body" unique_id=1277890064]
+mesh = SubResource("CapsuleMesh_5u74h")
+
+[node name="Nose" type="MeshInstance3D" parent="Body/Mesh" unique_id=1793650306]
 transform = Transform3D(0.39999995, 0, 0, 0, -0.0026612543, 0.39999115, 0, -0.39999115, -0.0026612543, 0, -0.018240929, -0.54025143)
 mesh = ExtResource("3_qmjd6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Body" unique_id=1277890064]
-mesh = SubResource("CapsuleMesh_5u74h")
+[node name="LaserSpawn Point" type="Marker3D" parent="Body/Mesh" unique_id=1546328888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75314105)
 
 [node name="GroundCheck" type="RayCast3D" parent="." unique_id=832560413]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062473297, 0)

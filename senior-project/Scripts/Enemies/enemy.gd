@@ -7,6 +7,7 @@ var deccel = .1
 var SPEED:float = 4.0
 var cur_speed:float = SPEED
 @onready var body: CollisionShape3D = $Body
+@onready var mesh: MeshInstance3D = $Body/Mesh
 
 
 
@@ -109,7 +110,8 @@ func player_found():
 	not_to_close(look_pos)
 	if !close_enough and (is_on_floor() or floats):
 		#print(str(knockback_velocity))
-		body.look_at(look_pos,Vector3(0, 1, 0),false)
+		mesh.look_at(look_pos,Vector3(0, 1, 0),false)
+	else: mesh.look_at(player_pos,Vector3(0, 1, 0),false)
 
 func not_to_close(target):
 	var cur_distance = global_position.distance_to(target)
@@ -122,7 +124,7 @@ func chase_player():
 	not_to_close(look_pos)
 	if !close_enough and (is_on_floor() or floats):
 		#print(str(knockback_velocity))
-		body.look_at(look_pos,Vector3(0, 1, 0),false)
+		mesh.look_at(player_pos,Vector3(0, 1, 0),false)
 		if knockback_velocity == Vector3.ZERO or !knockback_velocity:
 			velocity = (look_pos - global_position).normalized() * cur_speed #move toward player
 	else: pass;#print(str(knockback_velocity))

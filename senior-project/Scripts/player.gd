@@ -109,6 +109,10 @@ var right_spell:String
 var can_cast_left = true
 var can_cast_right = true
 
+#Health
+var damaged = false
+var hurt_time = 3.0
+
 #Audio
 @onready var running: AudioStreamPlayer = $Running
 @onready var jump: AudioStreamPlayer = $Jump
@@ -129,36 +133,16 @@ func _ready() -> void:
 	crouch_level = head_level - crouch_diff
 	slide_level = head_level - slide_diff
 
-func set_spell_type():
-	match left_spell_type:
-		SPELLTYPE.GreenOrb: left_spell = "GreenOrb"
-		SPELLTYPE.RedOrb: left_spell = "RedOrb"
-		SPELLTYPE.Fireball: left_spell = "Fireball"
-		SPELLTYPE.IceDart: left_spell = "IceDart"
-	match right_spell_type:
-		SPELLTYPE.GreenOrb: right_spell = "GreenOrb"
-		SPELLTYPE.RedOrb: right_spell = "RedOrb"
-		SPELLTYPE.Fireball: right_spell = "Fireball"
-		SPELLTYPE.IceDart: right_spell = "IceDart"
 
-func set_collision():
-	if is_sliding:
-		normal_collision.disabled = true
-		#slide_collision.disabled = false
-		normal_collision.hide()
-		slide_collision.show()
+func got_hurt():
+	if !damaged:
+		damaged = true
+		await get_tree().create_timer(hurt_time).timeout
+		damaged = false
 	else:
-		#slide_collision.disabled = true
-		normal_collision.disabled = false
-		normal_collision.show()
-		slide_collision.hide()
+		Global.GameOver = true
 
-func check_floor():
-	if floor_checker.has_overlapping_bodies():
-		var bodies = floor_checker.get_overlapping_bodies()
-		for body in bodies:
-			if body.is_in_group("Ice"):on_ice = true
-			else: on_ice = false
+#region Camera Sauce
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -179,6 +163,28 @@ func headtilt(tilt:String):
 			"center":
 				if camera.rotation.z > 0 : camera.rotate_z(deg_to_rad(-return_move)) #left
 				if camera.rotation.z < 0 : camera.rotate_z(deg_to_rad(return_move)) #right
+#endregion
+
+#region Movement Functions
+
+func set_collision():
+	if is_sliding:
+		normal_collision.disabled = true
+		#slide_collision.disabled = false
+		normal_collision.hide()
+		slide_collision.show()
+	else:
+		#slide_collision.disabled = true
+		normal_collision.disabled = false
+		normal_collision.show()
+		slide_collision.hide()
+
+func check_floor():
+	if floor_checker.has_overlapping_bodies():
+		var bodies = floor_checker.get_overlapping_bodies()
+		for body in bodies:
+			if body.is_in_group("Ice"):on_ice = true
+			else: on_ice = false
 
 func coyote_time():
 	if !c_start:
@@ -215,8 +221,21 @@ func slide_lerp():
 		#print("slow")
 		cur_speed = slide_curve.sample(curve_x) + set_speed
 	
+#endregion
 
 #region spells
+func set_spell_type():
+	match left_spell_type:
+		SPELLTYPE.GreenOrb: left_spell = "GreenOrb"
+		SPELLTYPE.RedOrb: left_spell = "RedOrb"
+		SPELLTYPE.Fireball: left_spell = "Fireball"
+		SPELLTYPE.IceDart: left_spell = "IceDart"
+	match right_spell_type:
+		SPELLTYPE.GreenOrb: right_spell = "GreenOrb"
+		SPELLTYPE.RedOrb: right_spell = "RedOrb"
+		SPELLTYPE.Fireball: right_spell = "Fireball"
+		SPELLTYPE.IceDart: right_spell = "IceDart"
+
 func left_spell_cooldown(left_cd):
 	can_cast_left = false
 	await get_tree().create_timer(left_cd,false,true).timeout
@@ -245,7 +264,7 @@ func cast_left(assist):
 	var basic_spell = BASIC_SPELL.instantiate()
 	basic_spell.setspell(left_spell)
 	get_parent().add_child(basic_spell)
-	var left_cd = basic_spell.get_cooldown()
+	#var left_cd = basic_spell.get_cooldown()
 	#left_spell_cooldown(left_cd)
 	mana_tracker(basic_spell)
 	basic_spell.global_position = left_spell_spawn.global_position
@@ -257,7 +276,7 @@ func cast_right(assist):
 	var basic_spell = BASIC_SPELL.instantiate()
 	basic_spell.setspell(right_spell)
 	get_parent().add_child(basic_spell)
-	var right_cd = basic_spell.get_cooldown()
+	#var right_cd = basic_spell.get_cooldown()
 	#right_spell_cooldown(right_cd)
 	mana_tracker(basic_spell)
 	basic_spell.global_position = right_spell_spawn.global_position
@@ -277,7 +296,7 @@ func _physics_process(delta: float) -> void:
 	#QUIT GAME COMMAND/CTRL X
 	if Input.is_action_just_pressed("DevQuit"):get_tree().quit()
 	#RESTART SCENE
-	if Input.is_action_just_pressed("Restart"):get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("Restart"):get_tree().reload_current_scene();Global.reset_all()
 	#controlls mouse
 	if !Global.InsideMenu: Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 

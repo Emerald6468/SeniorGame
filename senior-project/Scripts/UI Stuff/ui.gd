@@ -13,6 +13,7 @@ var left_casting = false
 var cur_mana:float
 # Called when the node enters the scene tree for the first time.
 @onready var speed_lines_shader: ColorRect = $CanvasLayer/SpeedLinesShader
+@onready var hurt_shader: ColorRect = $CanvasLayer/HurtShader
 
 func toggle_speedlines(slide):
 	if slide:
@@ -40,3 +41,7 @@ func _process(delta: float) -> void:
 	else: right_casting = false
 	if left_hand.is_playing():left_casting = true
 	else: left_casting = false
+	var damaged
+	damaged = get_parent().damaged
+	if damaged: hurt_shader.show()
+	else: hurt_shader.hide()

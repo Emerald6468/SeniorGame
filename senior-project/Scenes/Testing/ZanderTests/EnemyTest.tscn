@@ -1,21 +1,15 @@
 [gd_scene format=3 uid="uid://mbr5wpaoqa5o"]
 
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_plqio"]
+[ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="2_50qf6"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="2_y3o1s"]
 [ext_resource type="PackedScene" uid="uid://d20bamxgu5rol" path="res://Scenes/Prefabs/Enemies/Grunt.tscn" id="4_y3o1s"]
 [ext_resource type="PackedScene" uid="uid://bjl1p1fviswuf" path="res://Scenes/Prefabs/Enemies/Wisp.tscn" id="5_1ir8y"]
 [ext_resource type="PackedScene" uid="uid://wy0vgdc6rfum" path="res://Scenes/Prefabs/Enemies/Nest.tscn" id="5_50qf6"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sn0t7"]
-sky_top_color = Color(0.6583407, 0.22435483, 0.59418625, 1)
-sky_horizon_color = Color(0.87722045, 0.52248424, 0.37153265, 1)
-
-[sub_resource type="Sky" id="Sky_riqys"]
-sky_material = SubResource("ProceduralSkyMaterial_sn0t7")
-
 [sub_resource type="Environment" id="Environment_bhunq"]
 background_mode = 2
-sky = SubResource("Sky_riqys")
+sky = ExtResource("2_50qf6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
 albedo_texture = ExtResource("2_y3o1s")
