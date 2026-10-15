@@ -2,13 +2,20 @@ extends Control
 
 @onready var options_menu = $VBoxContainer
 @onready var pause_menu_script = get_parent()
+@onready var volume_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Volume_UI.tscn")
+@onready var resolution_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Screen_Resolution.tscn")
+@onready var volume_instance = volume_scene.instantiate()
+@onready var resolution_instance = resolution_scene.instantiate()
+
 
 
 
 func _on_volume_pressed() -> void:
 	# When volume button is pressed, the current scene changes to the volume UI.
+	add_child(volume_instance)
+	options_menu.visible = false
+	volume_instance.visible = true
 	
-	get_tree().change_scene_to_file("res://Scenes/Testing/Ground Zero - Raymond/Volume_UI.tscn")
 
 
 func _on_back_pressed() -> void:
@@ -17,7 +24,7 @@ func _on_back_pressed() -> void:
 	
 
 
-func _on_resolution_pressed() -> void:
+#func _on_resolution_pressed() -> void:
 # When resolution button is pressed, the current scene changes to the screen resolution.
-	
-	get_tree().change_scene_to_file("res://Scenes/Testing/Ground Zero - Raymond/Screen_Resolution.tscn")
+	#add_child(resolution_instance)
+	#options_menu.visible = false

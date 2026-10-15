@@ -1,5 +1,7 @@
 extends HSlider
 
+@onready var options_menu_script = get_node("../../../..")
+
 # Allows the audio bus name to be set in 
 # the Inspector and stores it index.
 @export
@@ -30,3 +32,8 @@ func _on_value_changed(value: float) -> void:
 		linear_to_db(value)
 	)
 	
+
+func _on_button_pressed() -> void:
+	get_node("../../..").visible = false
+	options_menu_script.options_menu.visible = true
+	options_menu_script.volume_instance.visible = false

@@ -16,17 +16,21 @@ scale = Vector2(3.1200025, 3.1200025)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=996190713]
 layout_mode = 1
-anchors_preset = 13
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -27.5
-offset_right = 27.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -86.5
+offset_right = 35.0
+offset_bottom = 86.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=709101696]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="master_label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1509008786]
 layout_mode = 2
@@ -54,3 +58,10 @@ text = "SFX"
 layout_mode = 2
 script = ExtResource("1_frgyf")
 bus_name = "SFX"
+
+[node name="Back" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2088144190]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "  Back   "
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Back" to="PanelContainer/VBoxContainer/master" method="_on_button_pressed"]
