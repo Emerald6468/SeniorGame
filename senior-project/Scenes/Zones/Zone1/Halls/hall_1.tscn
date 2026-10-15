@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://drv8h1gxijfdi" path="res://Assets/Textures/frame.png" id="12_8c7vf"]
 [ext_resource type="Texture2D" uid="uid://cevxplog3uoh3" path="res://Assets/Textures/window1.png" id="13_6i84f"]
 [ext_resource type="Texture2D" uid="uid://bw3mfmvigamss" path="res://Assets/Textures/fencetest1.png" id="14_dtjo1"]
+[ext_resource type="PackedScene" uid="uid://bjl1p1fviswuf" path="res://Scenes/Prefabs/Enemies/Wisp.tscn" id="15_rx1xj"]
+[ext_resource type="PackedScene" uid="uid://d20bamxgu5rol" path="res://Scenes/Prefabs/Enemies/Grunt.tscn" id="16_wsy6g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xhtoe"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -1180,3 +1182,27 @@ use_collision = true
 collision_mask = 7
 size = Vector3(0.25, 5, 15.5)
 material = SubResource("StandardMaterial3D_rx1xj")
+
+[node name="Wisp" parent="." unique_id=1065493351 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27946854, 6.281332, -17.797102)
+
+[node name="Wisp2" parent="." unique_id=1475125276 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.454449, 0, -16.233034)
+
+[node name="Wisp3" parent="." unique_id=780518935 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.916336, 8.7446785, -21.881983)
+
+[node name="Wisp4" parent="." unique_id=950435801 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17899132, 5.0215607, 14.578688)
+
+[node name="Grunt" parent="." unique_id=676758711 instance=ExtResource("16_wsy6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.285196, 1.000001, -4.092325)
+
+[node name="Grunt2" parent="." unique_id=1243110435 instance=ExtResource("16_wsy6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.446552, 1.000001, -1.3056564)
+
+[node name="Wisp5" parent="." unique_id=1261338998 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2855616, 0.34612846, -98.60901)
+
+[node name="Wisp6" parent="." unique_id=1775640411 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.189595, 8.051934, -9.699628)

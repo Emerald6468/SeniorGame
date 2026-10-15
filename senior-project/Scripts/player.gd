@@ -293,6 +293,9 @@ func cant_cast():
 
 func _physics_process(delta: float) -> void:
 	#print(str(Input.is_action_pressed("Slide")))
+	if Input.is_action_just_pressed("DevScene1"):get_tree().change_scene_to_file("res://Scenes/Zones/Zone1/Arenas/arena_3.tscn")
+	if Input.is_action_just_pressed("DevScene2"):get_tree().change_scene_to_file("res://Scenes/Zones/Zone1/Halls/hall_1.tscn")
+
 	#QUIT GAME COMMAND/CTRL X
 	if Input.is_action_just_pressed("DevQuit"):get_tree().quit()
 	#RESTART SCENE
