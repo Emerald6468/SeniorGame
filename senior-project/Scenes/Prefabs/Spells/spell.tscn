@@ -7,8 +7,8 @@
 [ext_resource type="Material" uid="uid://cw7bcghcy0sgq" path="res://Assets/Materials/Spells/GreenOrb.tres" id="4_ddrsn"]
 [ext_resource type="Material" uid="uid://cev8xw6mbfnqq" path="res://Assets/Materials/Spells/RedOrb.tres" id="5_4esxp"]
 [ext_resource type="CylinderMesh" uid="uid://n4kafh1ulx3p" path="res://Assets/Meshes/IceDart.tres" id="5_oaw1j"]
-[ext_resource type="AudioStream" uid="uid://c4ijkiw6pvc8g" path="res://Assets/Audio/SFX/cast.wav" id="6_oaw1j"]
-[ext_resource type="AudioStream" uid="uid://jttcnvc3qju5" path="res://Assets/Audio/SFX/pop.wav" id="7_raawd"]
+[ext_resource type="AudioStream" uid="uid://c4ijkiw6pvc8g" path="res://Assets/Audio/Old SFX/cast.wav" id="6_oaw1j"]
+[ext_resource type="AudioStream" uid="uid://jttcnvc3qju5" path="res://Assets/Audio/Old SFX/pop.wav" id="7_raawd"]
 [ext_resource type="Material" uid="uid://d0qyu480cfghv" path="res://Assets/Materials/Spells/FireballOveride.tres" id="8_4esxp"]
 [ext_resource type="Material" uid="uid://ktgp6f6t8r20" path="res://Assets/Materials/Spells/IceDartShaded.tres" id="9_4esxp"]
 

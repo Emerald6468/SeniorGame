@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://p0oe7u4bdlgl"
-path="res://.godot/imported/Slidestart.wav-3986cb69a999a565ebda795108b3bb75.sample"
+path="res://.godot/imported/Slidestart.wav-e5b0428d862fd03c3adaa5a9d527e11f.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/Slidestart.wav"
-dest_files=["res://.godot/imported/Slidestart.wav-3986cb69a999a565ebda795108b3bb75.sample"]
+source_file="res://Assets/Audio/Old SFX/Slidestart.wav"
+dest_files=["res://.godot/imported/Slidestart.wav-e5b0428d862fd03c3adaa5a9d527e11f.sample"]
 
 [params]
 

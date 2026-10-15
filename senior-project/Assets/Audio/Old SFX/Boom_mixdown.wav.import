@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://di3v1dbo4nie0"
-path="res://.godot/imported/Boom_mixdown.wav-7f7292f7ce3c65755d76a2401a23af5c.sample"
+path="res://.godot/imported/Boom_mixdown.wav-456fa01cea9eabec31ff9f93b09ddcb9.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/Boom_mixdown.wav"
-dest_files=["res://.godot/imported/Boom_mixdown.wav-7f7292f7ce3c65755d76a2401a23af5c.sample"]
+source_file="res://Assets/Audio/Old SFX/Boom_mixdown.wav"
+dest_files=["res://.godot/imported/Boom_mixdown.wav-456fa01cea9eabec31ff9f93b09ddcb9.sample"]
 
 [params]
 
