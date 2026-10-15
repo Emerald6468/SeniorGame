@@ -9,9 +9,11 @@ var knockback_velocity:Vector3
 #Flexible Speed
 var cur_speed
 var max_speed = 17.0
+var og_max = max_speed
 var accel = 0.04
 var deccel = .25
 var cur_jump
+
 
 #Coyote time
 var was_on_ground = false
@@ -46,6 +48,10 @@ var slide_diff = .70
 #Collisions
 @onready var normal_collision: CollisionShape3D = $NormalCollision
 @onready var slide_collision: CollisionShape3D = $SlideCollision
+
+#floor check
+@onready var floor_checker: Area3D = $FloorChecker
+var on_ice = true
 
 #Wall Jumping
 var last_collision
@@ -146,6 +152,13 @@ func set_collision():
 		normal_collision.disabled = false
 		normal_collision.show()
 		slide_collision.hide()
+
+func check_floor():
+	if floor_checker.has_overlapping_bodies():
+		var bodies = floor_checker.get_overlapping_bodies()
+		for body in bodies:
+			if body.is_in_group("Ice"):on_ice = true
+			else: on_ice = false
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -314,6 +327,7 @@ func _physics_process(delta: float) -> void:
 #region Movement
 	#controls colision
 	set_collision()
+	check_floor()
 	get_node("UI").toggle_speedlines(is_sliding)
 	#keeps minimum speed
 	if cur_speed < SPEED: cur_speed = SPEED
@@ -344,9 +358,14 @@ func _physics_process(delta: float) -> void:
 		
 		if is_on_floor():
 			var speed_diff = cur_speed - max_speed
-			if cur_speed > max_speed and !slide_start and !deccel_pause: cur_speed = move_toward(cur_speed,max_speed,speed_diff/5)
+			if cur_speed > max_speed and !slide_start and !deccel_pause and !on_ice:
+				cur_speed = move_toward(cur_speed,max_speed,speed_diff/5)
+				print("test" + str(on_ice))
+			else:print(str(on_ice))
 			if !running.playing:running.play()
 			#increase speed normally
+			if on_ice: max_speed = 100
+			else: max_speed = og_max
 			if !is_crouching and !is_sliding: cur_speed = move_toward(cur_speed,max_speed,accel)
 			if Input.is_action_pressed("Slide"): #chooses slide or crouch
 				if cur_speed >= slide_threshold: is_sliding = true

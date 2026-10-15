@@ -25,9 +25,12 @@ height = 1.2
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_68wta"]
 height = 1.2
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
+
 [node name="Player" type="CharacterBody3D" unique_id=469422006]
 collision_layer = 2
 collision_mask = 9
+floor_snap_length = 0.2
 script = ExtResource("1_sm2rp")
 slide_curve = SubResource("Curve_fdt7q")
 
@@ -62,6 +65,13 @@ target_position = Vector3(0, 0, -20)
 collision_mask = 9
 
 [node name="BorderShader" parent="Head/Camera3D" unique_id=1110127579 instance=ExtResource("2_k7ict")]
+
+[node name="FloorChecker" type="Area3D" parent="." unique_id=1348423522]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorChecker" unique_id=862448457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6029131, 0)
+shape = SubResource("SphereShape3D_bhunq")
+debug_color = Color(0.90558654, 0.3048343, 0, 0.41960785)
 
 [node name="Running" type="AudioStreamPlayer" parent="." unique_id=1721402892]
 stream = ExtResource("2_pv3ct")

@@ -51,6 +51,7 @@ folder_colors={
 
 Collidable_enviroment=""
 Floor=""
+Ice=""
 
 [input]
 

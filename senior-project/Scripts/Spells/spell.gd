@@ -146,7 +146,7 @@ func _process(delta: float) -> void:
 				if creates_circles and collision.is_in_group("Floor"): 
 					var ice_circle = ICE_CIRCLE.instantiate()
 					add_sibling(ice_circle)
-					print("spell_pos")
+					#rint("spell_pos")
 					ice_circle.global_position = global_position
 					ice_circle.find_floor()
 				dissapear()

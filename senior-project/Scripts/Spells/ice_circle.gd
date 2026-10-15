@@ -9,10 +9,11 @@ var m_time = 3.0
 var distance_from_floor
 
 func find_floor():
-	print("test")
-	print("y: " + str(global_position.y))
+	#print("test")
+	#print("y: " + str(global_position.y))
+	global_position.y = 1.01
 	if ray.is_colliding():
-		print("test2")
+		#print("test2")
 		var collision = ray.get_collider()
 		if collision.is_in_group("Floor"):
 			var floor_y = collision.y
