@@ -2,10 +2,10 @@ extends Control
 
 @onready var options_menu = $VBoxContainer
 @onready var pause_menu_script = get_parent()
-@onready var volume_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Volume_UI.tscn")
-@onready var resolution_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Screen_Resolution.tscn")
-@onready var volume_instance = volume_scene.instantiate()
-@onready var resolution_instance = resolution_scene.instantiate()
+var volume_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Volume_UI.tscn")
+var resolution_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Screen_Resolution.tscn")
+var volume_instance = volume_scene.instantiate()
+var resolution_instance = resolution_scene.instantiate()
 
 
 
