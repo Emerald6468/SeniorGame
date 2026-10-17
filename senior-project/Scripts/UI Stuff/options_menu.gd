@@ -2,6 +2,8 @@ extends Control
 
 @onready var options_menu = $VBoxContainer
 @onready var pause_menu_script = get_parent()
+@onready var parent_pause = $PauseMenu
+@onready var menu_script = get_parent()
 var volume_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Volume_UI.tscn")
 var resolution_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Screen_Resolution.tscn")
 var volume_instance = volume_scene.instantiate()
@@ -19,8 +21,13 @@ func _on_volume_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	visible = false
-	pause_menu_script.pause_menu.visible = true
+	if find_parent("PauseMenu"):
+		visible = false
+		pause_menu_script.pause_menu.visible = true
+	
+	else:
+		visible = false
+		menu_script.menu_show.visible = true
 	
 
 
