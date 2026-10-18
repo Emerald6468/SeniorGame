@@ -46,6 +46,8 @@
 [ext_resource type="Texture2D" uid="uid://cevxplog3uoh3" path="res://Assets/Textures/window1.png" id="42_fun0j"]
 [ext_resource type="Texture2D" uid="uid://dv6trihjwd6bd" path="res://Assets/Textures/decalwindow3.png" id="43_j6qja"]
 [ext_resource type="PackedScene" uid="uid://d20bamxgu5rol" path="res://Scenes/Prefabs/Enemies/Grunt.tscn" id="46_je24l"]
+[ext_resource type="PackedScene" uid="uid://drdahinbq8scx" path="res://Assets/Meshes/Flora/Leaf1.glb" id="47_jqou7"]
+[ext_resource type="Texture2D" uid="uid://bvley8s11thtd" path="res://Assets/Meshes/Flora/Leaf1_Untitled.png" id="48_1pjeb"]
 
 [sub_resource type="Environment" id="Environment_dyiuk"]
 background_mode = 2
@@ -1623,6 +1625,57 @@ points = PackedVector3Array(7.68, 6.72, 0, -7.68, 6.72, 0, 7.68, 7.04, 0, -7.68,
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rn33h"]
 points = PackedVector3Array(7.68, 5.44, 2.88, -7.68, 5.44, 2.88, 7.68, 5.12, 2.88, -7.68, 5.12, 2.88, 7.68, 7.04, 0, -7.68, 7.04, 0, 7.68, 6.72, 0, -7.68, 6.72, 0)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j518r"]
+resource_name = "openPBR_shader1"
+cull_mode = 2
+albedo_color = Color(0.20386362, 0.6484375, 0.043060303, 1)
+albedo_texture = ExtResource("48_1pjeb")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_kmxea"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ml8jo"]
+animation = &"IdleDown1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wv78p"]
+animation = &"Wind1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k2ibx"]
+animation = &"Idle1"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_i11bn"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_jqou7"]
+graph_offset = Vector2(-246.18231, 124.66412)
+nodes/output/position = Vector2(720, 120)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_k2ibx")
+nodes/Animation/position = Vector2(-160, 140)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ml8jo")
+"nodes/Animation 2/position" = Vector2(-160, 320)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_wv78p")
+"nodes/Animation 3/position" = Vector2(-160, -40)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_i11bn")
+nodes/Blend2/position = Vector2(120, 120)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_kmxea")
+nodes/Add2/position = Vector2(380, 20)
+node_connections = [&"output", 0, &"Add2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2", &"Add2", 0, &"Blend2", &"Add2", 1, &"Animation 3"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_bhunq"]
+graph_offset = Vector2(-238.29688, 175.21835)
+nodes/output/position = Vector2(720, 120)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_k2ibx")
+nodes/Animation/position = Vector2(-160, 140)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ml8jo")
+"nodes/Animation 2/position" = Vector2(-160, 320)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_wv78p")
+"nodes/Animation 3/position" = Vector2(-160, -40)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_i11bn")
+nodes/Blend2/position = Vector2(120, 120)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_kmxea")
+nodes/Add2/position = Vector2(380, 20)
+node_connections = [&"output", 0, &"Add2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2", &"Add2", 0, &"Blend2", &"Add2", 1, &"Animation 3"]
+
 [node name="Arena3" type="Node3D" unique_id=2014480433]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
@@ -2775,4 +2828,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.825596, 8.455002, 0.43981
 [node name="Grunt10" parent="." unique_id=1953831541 instance=ExtResource("46_je24l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4835744, 8.455002, 0.47894955)
 
+[node name="Leaf1" parent="." unique_id=1543880072 instance=ExtResource("47_jqou7")]
+transform = Transform3D(0.18410458, 0.26260746, -0.94717634, -0.20090927, 0.95335674, 0.22526987, 0.96215427, 0.14882332, 0.22827758, -19.308426, 6.487627, 5.7404757)
+
+[node name="Skeleton3D" parent="Leaf1/Armature_001" parent_id_path=PackedInt32Array(1543880072, 1685695452) index="0" unique_id=28483132]
+bones/1/rotation = Quaternion(-0.0012384779, 0, 0, 0.9999993)
+bones/2/rotation = Quaternion(-0.01508929, 0, 0, 0.99988616)
+bones/3/rotation = Quaternion(-0.014333107, 0, 0, 0.9998973)
+bones/4/rotation = Quaternion(-0.049777217, 0, 0, 0.99876034)
+bones/5/rotation = Quaternion(-0.04019055, 0, 0, 0.9991921)
+
+[node name="Leaf1_nostem" parent="Leaf1/Armature_001/Skeleton3D" index="0" unique_id=42887202]
+material_override = SubResource("StandardMaterial3D_j518r")
+
+[node name="AnimationTree" type="AnimationTree" parent="Leaf1/AnimationPlayer" parent_id_path=PackedInt32Array(1543880072, 385927574) index="0" unique_id=153407117]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeBlendTree_jqou7")
+anim_player = NodePath("..")
+parameters/Blend2/blend_amount = 0.0
+parameters/Add2/add_amount = 0.44
+
+[node name="Leaf2" parent="." unique_id=511685919 instance=ExtResource("47_jqou7")]
+transform = Transform3D(-0.5059113, 0.29722986, -0.80975807, -0.07176192, 0.9209998, 0.3828968, 0.8595952, 0.2518217, -0.4446144, -19.308426, 5.8147955, 6.422928)
+
+[node name="Skeleton3D" parent="Leaf2/Armature_001" parent_id_path=PackedInt32Array(511685919, 1685695452) index="0" unique_id=28483132]
+bones/0/rotation = Quaternion(-0.7225589, 0, 0, 0.6913094)
+bones/1/rotation = Quaternion(-0.31151348, 0, 0, 0.95024174)
+bones/2/rotation = Quaternion(-0.38991088, 0, 0, 0.9208526)
+bones/3/rotation = Quaternion(-0.30693364, 0, 0, 0.951731)
+bones/4/rotation = Quaternion(0.20658277, 0, 0, 0.97842914)
+bones/5/rotation = Quaternion(0.17138785, 0, 0, 0.9852037)
+
+[node name="Leaf1_nostem" parent="Leaf2/Armature_001/Skeleton3D" index="0" unique_id=42887202]
+material_override = SubResource("StandardMaterial3D_j518r")
+
+[node name="AnimationTree" type="AnimationTree" parent="Leaf2/AnimationPlayer" parent_id_path=PackedInt32Array(511685919, 385927574) index="0" unique_id=1381783281]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeBlendTree_bhunq")
+anim_player = NodePath("..")
+parameters/Blend2/blend_amount = 1.0
+parameters/Add2/add_amount = 1.0
+
 [editable path="Player"]
+[editable path="Leaf1"]
+[editable path="Leaf2"]
