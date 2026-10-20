@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="8_xrskk"]
 [ext_resource type="Material" uid="uid://c3r5f45advnws" path="res://Assets/Textures/grass1.tres" id="9_3l6i7"]
 [ext_resource type="Texture2D" uid="uid://drv8h1gxijfdi" path="res://Assets/Textures/frame.png" id="10_7f22h"]
+[ext_resource type="AudioStream" uid="uid://btf5uf6llwp6y" path="res://Assets/Audio/Old SFX/234568__mysterious__big-bell.wav" id="13_jqou7"]
 [ext_resource type="Texture2D" uid="uid://dixmknanqewlw" path="res://Assets/Textures/grasstrim.png" id="13_l75h5"]
 [ext_resource type="Texture2D" uid="uid://etwyoinend70" path="res://Assets/Textures/frame3.png" id="14_x7q6n"]
 [ext_resource type="Texture2D" uid="uid://i26anmpw7d0k" path="res://Assets/Textures/floortile6.png" id="15_fun0j"]
@@ -2247,12 +2248,15 @@ transform = Transform3D(1.9106857e-15, -1.0000001, 4.3711392e-08, -4.371138e-08,
 material_override = SubResource("StandardMaterial3D_clrhg")
 mesh = ExtResource("35_etx2t")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="props/TowerBell" unique_id=923240862]
+[node name="Bell" type="StaticBody3D" parent="props/TowerBell" unique_id=923240862 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 4.371139e-08, -4.371139e-08, -4.371139e-08, -4.371139e-08, -1, -4.371139e-08, 1, -4.3711385e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="props/TowerBell/StaticBody3D" unique_id=1282759834 groups=["Collidable_enviroment"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="props/TowerBell/Bell" unique_id=1282759834 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 1.174338e-23, 0, 0, 1, 1.9106895e-15, -0.28125, 4.3711225e-08)
 shape = SubResource("CylinderShape3D_riqys")
+
+[node name="Ring" type="AudioStreamPlayer3D" parent="props/TowerBell/Bell" unique_id=571766414]
+stream = ExtResource("13_jqou7")
 
 [node name="decals" type="Node3D" parent="." unique_id=1108548460]
 

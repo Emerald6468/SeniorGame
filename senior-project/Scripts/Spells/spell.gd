@@ -149,6 +149,8 @@ func _process(delta: float) -> void:
 					#rint("spell_pos")
 					ice_circle.global_position = global_position
 					ice_circle.find_floor()
+				elif str(collision).contains("Bell"):
+					collision.get_child(1).play()
 				dissapear()
 			elif collision is Enemy:
 				print("enemy")
