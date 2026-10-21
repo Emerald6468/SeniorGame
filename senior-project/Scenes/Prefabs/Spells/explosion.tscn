@@ -15,6 +15,6 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 shape = SubResource("SphereShape3D_sn0t7")
 debug_color = Color(0.9863978, 0, 0.32880265, 0.41960785)
 
-[node name="Boom" type="AudioStreamPlayer" parent="." unique_id=1197725806]
+[node name="Boom" type="AudioStreamPlayer" parent="." unique_id=440728105]
 stream = ExtResource("2_q3vcj")
 volume_db = -15.0

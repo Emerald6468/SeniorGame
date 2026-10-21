@@ -7,10 +7,10 @@
 [ext_resource type="Material" uid="uid://cw7bcghcy0sgq" path="res://Assets/Materials/Spells/GreenOrb.tres" id="4_ddrsn"]
 [ext_resource type="Material" uid="uid://cev8xw6mbfnqq" path="res://Assets/Materials/Spells/RedOrb.tres" id="5_4esxp"]
 [ext_resource type="CylinderMesh" uid="uid://n4kafh1ulx3p" path="res://Assets/Meshes/IceDart.tres" id="5_oaw1j"]
-[ext_resource type="AudioStream" uid="uid://c4ijkiw6pvc8g" path="res://Assets/Audio/Old SFX/cast.wav" id="6_oaw1j"]
-[ext_resource type="AudioStream" uid="uid://jttcnvc3qju5" path="res://Assets/Audio/Old SFX/pop.wav" id="7_raawd"]
 [ext_resource type="Material" uid="uid://d0qyu480cfghv" path="res://Assets/Materials/Spells/FireballOveride.tres" id="8_4esxp"]
 [ext_resource type="Material" uid="uid://ktgp6f6t8r20" path="res://Assets/Materials/Spells/IceDartShaded.tres" id="9_4esxp"]
+[ext_resource type="AudioStream" uid="uid://b1mt673ttrlx6" path="res://Assets/Audio/SFX/sfx_spell_magic_woosh.wav" id="10_xel26"]
+[ext_resource type="AudioStream" uid="uid://duocpaq0ymjpl" path="res://Assets/Audio/SFX/sfx_spell_ice_hit.wav" id="13_1j60a"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
 
@@ -74,8 +74,8 @@ fireball_CT = 0.8
 icedart_CT = 0.65
 green_orb_damage = 33.4
 red_orb_damage = 66.7
-fireball_damage = 10.0
-icedart_damage = 50.1
+fireball_damage = 50.1
+icedart_damage = 70.1
 red_orb_cost = 40.0
 fireball_cost = 30.0
 icedart_cost = 45.0
@@ -105,9 +105,9 @@ shape = SubResource("SphereShape3D_riqys")
 libraries/ = SubResource("AnimationLibrary_nqgcp")
 
 [node name="Cast" type="AudioStreamPlayer" parent="." unique_id=1794661807]
-stream = ExtResource("6_oaw1j")
+stream = ExtResource("10_xel26")
 volume_db = -2.0
 
-[node name="Pop" type="AudioStreamPlayer" parent="." unique_id=808768573]
-stream = ExtResource("7_raawd")
+[node name="Pop" type="AudioStreamPlayer" parent="." unique_id=817148342]
+stream = ExtResource("13_1j60a")
 volume_db = -10.0

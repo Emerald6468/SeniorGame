@@ -52,6 +52,7 @@ func _process(delta: float) -> void:
 			if body is Enemy or body is Player: found_collisions = true
 			if body is Enemy:
 				var point = body.global_position
+				body.got_hit("Explosion",25.1)
 				get_knockback(body,point)
 			if body is Player:
 				var point = body.get_node("Head").global_position

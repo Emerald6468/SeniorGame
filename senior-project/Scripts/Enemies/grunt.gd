@@ -17,7 +17,6 @@ func attack():
 		just_attacked = false
 
 func melee():
-	print("melee")
 	var slash = SLASH.instantiate()
 	get_tree().root.add_child(slash)
 	slash.global_position = slash_spawn_point.global_position

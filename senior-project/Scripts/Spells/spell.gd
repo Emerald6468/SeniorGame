@@ -11,6 +11,12 @@ var found_collisions = false
 @onready var pop: AudioStreamPlayer = $Pop
 @onready var mesh: MeshInstance3D = $Mesh
 
+#Audio
+const energy_pop = "res://Assets/Audio/SFX/sfx_spell_energy_hit.wav"
+const fire_pop = "res://Assets/Audio/SFX/sfx_spell_fire_hit.wav"
+const ice_pop = "res://Assets/Audio/SFX/sfx_spell_ice_disperse.wav"
+
+#Creates
 const EXPLOSION = preload("uid://c6f0gnsuxx2c6")
 const ICE_CIRCLE = preload("uid://ca2gqkttwwbrx")
 
@@ -54,6 +60,7 @@ var all_speeds: Array[float]
 var all_CT: Array[float]
 var all_damage: Array[float]
 var all_costs: Array[float]
+var all_pops: Array = [energy_pop,energy_pop,fire_pop,ice_pop]
 
 #spell variables
 var spell_num:int 
@@ -64,6 +71,7 @@ var spell_speed:float
 var cast_time:float
 var spell_damage:float
 var spell_cost:float
+var spell_pop
 
 #spell tags
 var explodes:bool = false
@@ -97,12 +105,14 @@ func setspell(spell:String):
 	cast_time = all_CT[spell_num]
 	spell_damage = all_damage[spell_num]
 	spell_cost = all_costs[spell_num]
+	spell_pop = all_pops[spell_num]
 
 func get_cooldown():
 	return cast_time
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pop.stream = ResourceLoader.load(spell_pop)
 	cast.play()
 	facing = global_rotation
 	apply_central_impulse(facing)
@@ -126,13 +136,13 @@ func dissapear():
 		print("hit")
 	else:
 		pop.play()
-		await get_tree().create_timer(.1).timeout
+		await get_tree().create_timer(1).timeout
 		s_done = true
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !exploding:
+	if !found_collisions:
 		var forward_dir = -global_transform.basis.z.normalized()
 		var speed = (forward_dir/3) * spell_speed
 		#print("Spell: " + spell_name + " speed " + str(spell_speed) + " at " + str(speed))

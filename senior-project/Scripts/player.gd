@@ -202,7 +202,7 @@ func roadrunner_time():
 func slide_lerp():
 	
 	if slide_start:
-		print("slide start")
+		#print("slide start")
 		slide_start = false
 		curve_x = 0.0
 		set_speed = cur_speed
@@ -211,8 +211,8 @@ func slide_lerp():
 		var set_diff = set_speed - (slide_threshold - 0.1)
 		slide_curve.set_point_value(2,-set_diff)
 		slide_start_audio.play()
-	if slide_curve.max_domain > curve_x: curve_x += .01;print("x:"+str(curve_x) + "slide" + str(Input.is_action_pressed("Slide")) + 
-	"is_slide: " + str(is_sliding))
+	if slide_curve.max_domain > curve_x: curve_x += .01;#print("x:"+str(curve_x) + "slide" + str(Input.is_action_pressed("Slide")) + 
+	#"is_slide: " + str(is_sliding))
 	else:return
 	if cur_speed < set_speed +5.0: 
 		#print("rise")
@@ -382,8 +382,8 @@ func _physics_process(delta: float) -> void:
 			var speed_diff = cur_speed - max_speed
 			if cur_speed > max_speed and !slide_start and !deccel_pause and !on_ice:
 				cur_speed = move_toward(cur_speed,max_speed,speed_diff/5)
-				print("test" + str(on_ice))
-			else:print(str(on_ice))
+				#print("test" + str(on_ice))
+			#else:print(str(on_ice))
 			if !running.playing:running.play()
 			#increase speed normally
 			if on_ice: max_speed = 100

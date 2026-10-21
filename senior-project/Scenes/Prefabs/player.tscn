@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://jonrbbhp01q5" path="res://Scripts/player.gd" id="1_sm2rp"]
 [ext_resource type="PackedScene" uid="uid://deqlkyw53gem7" path="res://Scripts/Shaders/border_shader.tscn" id="2_k7ict"]
-[ext_resource type="AudioStream" uid="uid://tp4khmc0ak8x" path="res://Assets/Audio/Old SFX/Running.wav" id="2_pv3ct"]
 [ext_resource type="AudioStream" uid="uid://bhhg8qfhgqspk" path="res://Assets/Audio/Old SFX/JumpLand.wav" id="3_cb7df"]
+[ext_resource type="AudioStream" uid="uid://c1luy4rwtdqma" path="res://Assets/Audio/SFX/sfx_player_steps_fast_tile.wav" id="3_k7ict"]
 [ext_resource type="PackedScene" uid="uid://o27u5krdqb62" path="res://Scenes/UI/UI.tscn" id="3_v1l4e"]
 [ext_resource type="AudioStream" uid="uid://dwujkuabp5ysk" path="res://Assets/Audio/Old SFX/Jump.wav" id="4_v34u6"]
 [ext_resource type="AudioStream" uid="uid://c6hbuyu8cokal" path="res://Assets/Audio/Old SFX/SFX_air_woosh(1).wav" id="5_v34u6"]
@@ -74,7 +74,7 @@ shape = SubResource("SphereShape3D_bhunq")
 debug_color = Color(0.90558654, 0.3048343, 0, 0.41960785)
 
 [node name="Running" type="AudioStreamPlayer" parent="." unique_id=1721402892]
-stream = ExtResource("2_pv3ct")
+stream = ExtResource("3_k7ict")
 volume_db = -8.0
 
 [node name="Jump" type="AudioStreamPlayer" parent="." unique_id=143305410]
