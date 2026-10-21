@@ -97,10 +97,10 @@ func check_for_player():
 
 func find_player():
 	if monitor.has_overlapping_bodies():
-		var bodies = monitor.get_overlapping_bodies()
-		for body in bodies:
-			if body is Player:
-				player_pos = body.global_position
+		var finds = monitor.get_overlapping_bodies()
+		for find in finds:
+			if find is Player:
+				player_pos = find.global_position
 	else: player_pos = Vector3.ZERO
 
 

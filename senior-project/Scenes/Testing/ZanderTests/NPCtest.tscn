@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_ti0q7"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="2_44tn4"]
 [ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="3_8di75"]
+[ext_resource type="PackedScene" uid="uid://cmknn1vvbkrq0" path="res://Scenes/Prefabs/NPC/NPC.tscn" id="4_44tn4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
 albedo_texture = ExtResource("2_44tn4")
@@ -17,12 +18,7 @@ sky = ExtResource("3_8di75")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qv700"]
 albedo_texture = ExtResource("2_44tn4")
 
-[node name="BasicMovementTest" type="Node3D" unique_id=1730153282]
-
-[node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_ti0q7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699963, 2.2951248, -24.407276)
-left_spell_type = 2
-right_spell_type = 3
+[node name="NPCtest" type="Node3D" unique_id=1730153282]
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=633388165 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45.62406)
@@ -162,3 +158,22 @@ material_override = SubResource("StandardMaterial3D_qv700")
 use_collision = true
 collision_mask = 15
 size = Vector3(1, 29.544174, 26.378)
+
+[node name="Greg" parent="." unique_id=689290376 instance=ExtResource("4_44tn4")]
+transform = Transform3D(0.0142737115, 0, 0.99989814, 0, 1, 0, -0.99989814, 0, 0.0142737115, 8.938166, 1.9999998, -26.02409)
+
+[node name="Steve" parent="." unique_id=378484724 instance=ExtResource("4_44tn4")]
+transform = Transform3D(0.0142737115, 0, 0.99989814, 0, 1, 0, -0.99989814, 0, 0.0142737115, -0.7758584, 1.9999998, -19.64233)
+
+[node name="Bill" parent="." unique_id=128475228 instance=ExtResource("4_44tn4")]
+transform = Transform3D(0.0142737115, 0, 0.99989814, 0, 1, 0, -0.99989814, 0, 0.0142737115, 16.775347, 1.9999995, -13.053082)
+
+[node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_ti0q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.501696, 2.346408, -20.812294)
+left_spell_type = 2
+right_spell_type = 3
+
+[node name="UI" parent="Player" index="11" unique_id=753733901]
+metadata/_edit_use_anchors_ = true
+
+[editable path="Player"]

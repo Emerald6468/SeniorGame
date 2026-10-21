@@ -78,6 +78,11 @@ var BOB_FREQ: float = 3
 var BOB_AMP: float = 0.03
 var t_bob:float = 0.0
 
+#NPC systems
+var near_npc = false
+var npc
+@onready var npc_checker: Area3D = $NPCChecker
+
 #MANA
 @export_category("MANA")
 @export var max_mana:float = 100.0
@@ -185,6 +190,10 @@ func check_floor():
 		for body in bodies:
 			if body.is_in_group("Ice"):on_ice = true
 			else: on_ice = false
+
+func check_npc():
+	if npc_checker.has_overlapping_areas(): near_npc = true
+	else: near_npc = false
 
 func coyote_time():
 	if !c_start:
@@ -459,6 +468,12 @@ func _physics_process(delta: float) -> void:
 	#fireball knockback
 	velocity += knockback_velocity
 
+#region NPC interactions
+	check_npc()
+	if near_npc and Input.is_action_just_pressed("Interact"):
+		npc.dialogue()
+	
+#endregion
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity

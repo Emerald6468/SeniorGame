@@ -27,6 +27,9 @@ height = 1.2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_k7ict"]
+radius = 1.209
+
 [node name="Player" type="CharacterBody3D" unique_id=469422006]
 collision_layer = 2
 collision_mask = 9
@@ -72,6 +75,15 @@ collision_mask = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6029131, 0)
 shape = SubResource("SphereShape3D_bhunq")
 debug_color = Color(0.90558654, 0.3048343, 0, 0.41960785)
+
+[node name="NPCChecker" type="Area3D" parent="." unique_id=808646089]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCChecker" unique_id=937070149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.068654925, 0)
+shape = SubResource("SphereShape3D_k7ict")
+debug_color = Color(1, 0.33364996, 0.596927, 0.41960785)
 
 [node name="Running" type="AudioStreamPlayer" parent="." unique_id=1721402892]
 stream = ExtResource("2_pv3ct")

@@ -5,7 +5,7 @@ var packed_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Options_Menu
 var options_instance = packed_scene.instantiate()
 
 @onready var pause_menu = $VBoxContainer
-@onready var options_menu_script = $PauseMenu
+#@onready var options_menu_script = $PauseMenu
 
 
 func _ready() -> void:
