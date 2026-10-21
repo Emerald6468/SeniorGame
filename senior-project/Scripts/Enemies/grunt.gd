@@ -8,6 +8,7 @@ var just_attacked = false
 var a_time = 1.0
 const SLASH = preload("uid://chl0451sq85fm")
 @onready var slash_spawn_point: Marker3D = $Body/Mesh/SlashSpawnPoint
+@onready var melee_sound: AudioStreamPlayer3D = $Melee
 
 func attack():
 	if !just_attacked:
@@ -17,6 +18,7 @@ func attack():
 		just_attacked = false
 
 func melee():
+	melee_sound.play()
 	var slash = SLASH.instantiate()
 	get_tree().root.add_child(slash)
 	slash.global_position = slash_spawn_point.global_position

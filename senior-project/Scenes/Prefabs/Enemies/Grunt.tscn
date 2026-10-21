@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cn52u1ymc5fx4" path="res://Scenes/UI/HealthBar.tscn" id="2_2yum5"]
 [ext_resource type="Shape3D" uid="uid://dksyqbkxgdt4q" path="res://Assets/Meshes/Collisions/EnemyMonitor.tres" id="3_2yum5"]
 [ext_resource type="CylinderMesh" uid="uid://n4kafh1ulx3p" path="res://Assets/Meshes/IceDart.tres" id="3_gcdnb"]
+[ext_resource type="AudioStream" uid="uid://dpapcu2e3nwjw" path="res://Assets/Audio/SFX/sfx_melee_hit.wav" id="5_gcdnb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0vkdb"]
 
@@ -51,3 +52,6 @@ character = NodePath("..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6219754, 0)
 billboard = 2
 text = "STATUS"
+
+[node name="Melee" type="AudioStreamPlayer3D" parent="." unique_id=1203561017]
+stream = ExtResource("5_gcdnb")
