@@ -4,21 +4,28 @@ const SPELL_RAY = preload("uid://8tqosv5tarkr")
 var explosion_time = 1
 @onready var boom: AudioStreamPlayer = $Boom
 var found_collisions = false
+var current_knockbacks = 0
+var ready_togo = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("test")
 	boom.play()
 	await get_tree().create_timer(explosion_time).timeout
-	queue_free()
+	ready_togo = true
+	print("ready")
 
 func get_knock(target,direction,force):
+	current_knockbacks += 1
 	var mod = 0.6
 	if target is Enemy: mod = 1.5
+	print("start")
 	target.knockback_velocity = direction * force * mod
 	await get_tree().create_timer(.1).timeout
 	var alive = true if target != null else false
 	if alive:
+		print("reset")
+		current_knockbacks -= 1
 		target.knockback_velocity = Vector3.ZERO
 
 func get_distance(point):
@@ -45,6 +52,7 @@ func get_knockback(target,point):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if ready_togo and current_knockbacks == 0: print("delete");queue_free()
 	var body_list
 	if has_overlapping_bodies() and !found_collisions:
 		body_list = get_overlapping_bodies()

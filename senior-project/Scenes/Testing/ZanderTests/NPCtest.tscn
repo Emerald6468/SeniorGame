@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://f66kxrry7m43"]
+
+[ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_ti0q7"]
+[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="2_44tn4"]
+[ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="3_8di75"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5sm"]
+albedo_texture = ExtResource("2_44tn4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05r2y"]
+albedo_texture = ExtResource("2_44tn4")
+
+[sub_resource type="Environment" id="Environment_bhunq"]
+background_mode = 2
+sky = ExtResource("3_8di75")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qv700"]
+albedo_texture = ExtResource("2_44tn4")
+
+[node name="BasicMovementTest" type="Node3D" unique_id=1730153282]
+
+[node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_ti0q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699963, 2.2951248, -24.407276)
+left_spell_type = 2
+right_spell_type = 3
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=633388165 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45.62406)
+material_override = SubResource("StandardMaterial3D_gl5sm")
+use_collision = true
+collision_mask = 15
+size = Vector3(100, 2, 100)
+
+[node name="Floor2" type="CSGBox3D" parent="." unique_id=1877117540 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60.75692)
+material_override = SubResource("StandardMaterial3D_05r2y")
+use_collision = true
+collision_mask = 15
+size = Vector3(100, 2, 100)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1229304955]
+environment = SubResource("Environment_bhunq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1615992708]
+transform = Transform3D(1, 0, 0, 0, 0.9882916, 0.15257694, 0, -0.15257694, 0.9882916, 0, 6.1631517, 0)
+
+[node name="Wall" type="CSGBox3D" parent="." unique_id=493814638 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 80.715294, 5.1952662, -18.624264)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(1, 7.815857, 62.933)
+
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=1209432615 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 80.715294, 5.1952662, -9.436257)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(1, 7.815857, 62.933)
+
+[node name="Wall3" type="CSGBox3D" parent="." unique_id=1514548959 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.33594, 16.059425, -33.50002)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(1, 29.544174, 26.378)
+
+[node name="Wall5" type="CSGBox3D" parent="." unique_id=536535639 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.73733, 4.4269257, -38.682655)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(5.4432373, 6.634392, 10.000524)
+
+[node name="Wall6" type="CSGBox3D" parent="." unique_id=1773317717 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.73733, 4.4269257, -49.378315)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(5.4432373, 6.634392, 10.000524)
+
+[node name="Wall7" type="CSGBox3D" parent="." unique_id=564230548 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.73733, 4.4269257, -61.80815)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(5.4432373, 6.634392, 10.000524)
+
+[node name="Wall8" type="CSGBox3D" parent="." unique_id=759970955 groups=["Collidable_enviroment"]]
+transform = Transform3D(-0.9956303, 0, -0.09338233, 0, 1, 0, 0.09338233, 0, -0.9956303, -9.070549, 4.4269257, -53.877865)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(1.4775507, 6.634392, 10.000524)
+
+[node name="Wall9" type="CSGBox3D" parent="." unique_id=963978455 groups=["Collidable_enviroment"]]
+transform = Transform3D(-0.9956303, 0, -0.09338233, 0, 1, 0, 0.09338233, 0, -0.9956303, 5.9771433, 4.4269257, -53.877865)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(1.4775507, 6.634392, 10.000524)
+
+[node name="Wall10" type="CSGBox3D" parent="." unique_id=1182792326 groups=["Collidable_enviroment"]]
+transform = Transform3D(-0.9956303, 0, -0.09338233, 0, 1, 0, 0.09338233, 0, -0.9956303, 22.001154, 4.4269257, -53.877865)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(1.4775507, 6.634392, 10.000524)
+
+[node name="Wall11" type="CSGBox3D" parent="." unique_id=2021039603 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 14.450462, 6.020536, -53.943985)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 16.551346, 10.000524)
+
+[node name="Wall12" type="CSGBox3D" parent="." unique_id=1862850519 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 15.755743, 5.293689, -53.97054)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 13.45906, 10.000524)
+
+[node name="Wall13" type="CSGBox3D" parent="." unique_id=1200751260 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 17.149353, 4.5462017, -53.959476)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 11.962196, 10.000524)
+
+[node name="Wall14" type="CSGBox3D" parent="." unique_id=1998662277 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 17.729382, 3.8588278, -53.94967)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 10.444773, 10.000524)
+
+[node name="Wall15" type="CSGBox3D" parent="." unique_id=677667256 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 18.433796, 3.1591403, -53.94967)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 8.677953, 10.000524)
+
+[node name="Wall16" type="CSGBox3D" parent="." unique_id=184804510 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 19.354342, 2.5888503, -53.94967)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 7.233996, 10.000524)
+
+[node name="Wall17" type="CSGBox3D" parent="." unique_id=888100222 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 20.305412, 1.8982604, -53.94967)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(0.74951756, 5.237115, 10.000524)
+
+[node name="Wall4" type="CSGBox3D" parent="." unique_id=1784821640 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.33594, 16.059425, -27.930752)
+material_override = SubResource("StandardMaterial3D_qv700")
+use_collision = true
+collision_mask = 15
+size = Vector3(1, 29.544174, 26.378)

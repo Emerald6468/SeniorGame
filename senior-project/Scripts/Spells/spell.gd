@@ -126,7 +126,8 @@ func dissapear():
 		exploding = true
 		if explodes:
 			var explosion = EXPLOSION.instantiate()
-			add_child(explosion)
+			add_sibling(explosion)
+			explosion.global_position = global_position
 		if !aplayer.is_playing(): 
 			pop.play()
 			aplayer.play("explode")

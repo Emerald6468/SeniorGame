@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cmknn1vvbkrq0"]
+
+[ext_resource type="Texture2D" uid="uid://6j8wn40eomn5" path="res://Assets/Placeholder/icon.svg" id="1_uu0mv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qbu83"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
+radius = 4.046
+
+[node name="Npc" type="MeshInstance3D" unique_id=689290376]
+mesh = SubResource("CapsuleMesh_qbu83")
+
+[node name="Decal" type="Decal" parent="." unique_id=1908319952]
+transform = Transform3D(1, 0, 0, 0, 0.017429737, -0.99984807, 0, 0.99984807, 0.017429737, 0, 0.594136, 0.62567484)
+size = Vector3(1, 1, 1)
+texture_albedo = ExtResource("1_uu0mv")
+
+[node name="TalkingZone" type="Area3D" parent="." unique_id=207865908]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TalkingZone" unique_id=2005672486]
+shape = SubResource("SphereShape3D_bhunq")
+debug_color = Color(0.8732466, 0.15210211, 0.7627312, 0.41960785)
