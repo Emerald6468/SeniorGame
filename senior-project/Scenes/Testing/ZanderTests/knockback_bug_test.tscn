@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dgg2q25bq2nx6"]
+
+[ext_resource type="Texture2D" uid="uid://i26anmpw7d0k" path="res://Assets/Textures/floortile6.png" id="1_fvd0i"]
+[ext_resource type="Texture2D" uid="uid://c652ejfuywhbm" path="res://Assets/Textures/floor1.png" id="2_kpofr"]
+[ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_2cowc"]
+[ext_resource type="Texture2D" uid="uid://tkycboofxkoc" path="res://Assets/Textures/floor3.png" id="3_d3aue"]
+[ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="4_kpofr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqys"]
+albedo_texture = ExtResource("1_fvd0i")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+size = Vector3(2, 0.5, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhunq"]
+albedo_color = Color(0.5546875, 0.5546875, 0.5546875, 1)
+albedo_texture = ExtResource("2_kpofr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_caj2v"]
+albedo_color = Color(0.91015625, 0.44441223, 0.44441223, 1)
+albedo_texture = ExtResource("3_d3aue")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2cowc"]
+size = Vector3(4, 0.5, 4)
+
+[sub_resource type="Environment" id="Environment_2cowc"]
+background_mode = 2
+sky = ExtResource("4_kpofr")
+glow_enabled = true
+
+[node name="KnockbackBugTest" type="Node3D" unique_id=345494884]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=271849263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.25, 0)
+collision_mask = 7
+size = Vector3(2, 0.5, 4)
+material = SubResource("StandardMaterial3D_riqys")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D" unique_id=471003718 groups=["Collidable_enviroment"]]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D" unique_id=1165291212 groups=["Collidable_enviroment"]]
+shape = SubResource("BoxShape3D_bhunq")
+debug_color = Color(0, 16.285297, 18.892157, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=876796879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.25, 0)
+collision_mask = 7
+size = Vector3(2, 0.5, 4)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="CSGBox3D2" unique_id=564078941 groups=["Collidable_enviroment"]]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D2/StaticBody3D2" unique_id=1179424688 groups=["Collidable_enviroment"]]
+shape = SubResource("BoxShape3D_bhunq")
+debug_color = Color(0, 16.285297, 18.892157, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=746940945]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.371139e-08, -0.25, -4)
+collision_mask = 7
+size = Vector3(4, 0.5, 4)
+material = SubResource("StandardMaterial3D_caj2v")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="CSGBox3D3" unique_id=866920501 groups=["Collidable_enviroment"]]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D3/StaticBody3D2" unique_id=680098636 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.684342e-14)
+shape = SubResource("BoxShape3D_2cowc")
+debug_color = Color(0, 16.285297, 18.892157, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=995794215]
+transform = Transform3D(-4.371139e-08, 0, 1, 1, -4.371139e-08, 4.371139e-08, 4.371139e-08, 1, 1.9106855e-15, -4.371139e-08, 2, -6.25)
+collision_mask = 7
+size = Vector3(4, 0.5, 4)
+material = SubResource("StandardMaterial3D_caj2v")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="CSGBox3D4" unique_id=740358846 groups=["Collidable_enviroment"]]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D4/StaticBody3D2" unique_id=1150289400 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.684342e-14)
+shape = SubResource("BoxShape3D_2cowc")
+debug_color = Color(0, 16.285297, 18.892157, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=902035841]
+transform = Transform3D(-4.3711385e-08, -1, -4.3711392e-08, 1, -4.371139e-08, 4.371139e-08, -4.3711392e-08, -4.371139e-08, 1, 2.25, 2, -4)
+collision_mask = 7
+size = Vector3(4, 0.5, 4)
+material = SubResource("StandardMaterial3D_caj2v")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="CSGBox3D5" unique_id=1400443971 groups=["Collidable_enviroment"]]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D5/StaticBody3D2" unique_id=1493285104 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.684342e-14)
+shape = SubResource("BoxShape3D_2cowc")
+debug_color = Color(0, 16.285297, 18.892157, 1)
+
+[node name="Player" parent="." unique_id=469422006 instance=ExtResource("3_2cowc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+left_spell_type = 3
+right_spell_type = 2
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1113817778]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1785862522]
+environment = SubResource("Environment_2cowc")
