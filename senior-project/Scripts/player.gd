@@ -470,8 +470,9 @@ func _physics_process(delta: float) -> void:
 
 #region NPC interactions
 	check_npc()
-	if near_npc and Input.is_action_just_pressed("Interact"):
-		npc.dialogue()
+	if Input.is_action_just_pressed("Interact"):
+		if near_npc: npc.dialogue()
+		if Global.TextboxOpen:get_node("UI/CanvasLayer/Chatbox").try_to_close()
 	
 #endregion
 func _input(event: InputEvent) -> void:

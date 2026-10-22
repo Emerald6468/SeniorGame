@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dhclixao7fow3"]
+
+[ext_resource type="Script" uid="uid://cr01kwwdienrl" path="res://Scripts/UI Stuff/chatbox.gd" id="1_5lbmm"]
+[ext_resource type="Texture2D" uid="uid://cspt8jdwa50sc" path="res://Assets/UI/Placeholder/ChatBoxes/CharacterPortraits.png" id="2_5fwnm"]
+
+[node name="Chatbox" type="Control" unique_id=214968853]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5lbmm")
+
+[node name="Chatbox_Containter" type="Control" parent="." unique_id=672231031]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.23
+anchor_top = 0.8
+anchor_right = 0.77300006
+anchor_bottom = 0.95300007
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="Chatbox_Containter" unique_id=86437152]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5409905, 0.5409905, 0.5409905, 1)
+
+[node name="Container" type="Control" parent="Chatbox_Containter" unique_id=1655937589]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeadIcon" type="AspectRatioContainer" parent="Chatbox_Containter/Container" unique_id=1995092292]
+layout_mode = 0
+offset_bottom = 165.0
+
+[node name="Sprite" type="Sprite2D" parent="Chatbox_Containter/Container/HeadIcon" unique_id=1787206870]
+unique_name_in_owner = true
+position = Vector2(109.399994, 78)
+texture = ExtResource("2_5fwnm")
+hframes = 2
+vframes = 5
+frame = 7
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="Text" type="AspectRatioContainer" parent="Chatbox_Containter/Container" unique_id=1395332156]
+layout_mode = 0
+offset_left = 345.4
+offset_top = 4.0
+offset_right = 977.4
+offset_bottom = 169.0
+size_flags_horizontal = 3
+ratio = 6.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Chatbox_Containter/Container/Text" unique_id=1043338148]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+fit_content = true
+scroll_active = false

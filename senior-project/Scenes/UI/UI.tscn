@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b8qlv4tx3ttk5" path="res://Scripts/Shaders/speed_lines_shader.tscn" id="7_w8wei"]
 [ext_resource type="Shader" uid="uid://d1bh80sj5446f" path="res://Scripts/Shaders/hurt.gdshader" id="8_y85ht"]
 [ext_resource type="Script" uid="uid://d3i0jm22o0ihh" path="res://Scripts/Shaders/hurt_shader.gd" id="9_nqsl3"]
+[ext_resource type="PackedScene" uid="uid://dhclixao7fow3" path="res://Scripts/UI Stuff/Chatbox.tscn" id="10_nqsl3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bhunq"]
 shader = ExtResource("8_y85ht")
@@ -248,6 +249,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.24477637, 0.2447764, 0.24477637, 1)
 script = ExtResource("9_nqsl3")
+
+[node name="Chatbox" parent="CanvasLayer" unique_id=214968853 instance=ExtResource("10_nqsl3")]
 
 [node name="RightHand" type="AnimationPlayer" parent="." unique_id=1741079159]
 libraries/ = SubResource("AnimationLibrary_b83rk")

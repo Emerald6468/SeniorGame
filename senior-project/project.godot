@@ -40,10 +40,13 @@ enabled=PackedStringArray("res://addons/func_godot/plugin.cfg")
 folder_colors={
 "res://Assets/": "orange",
 "res://Assets/Audio/": "red",
+"res://Assets/UI/": "pink",
 "res://Scenes/": "blue",
 "res://Scenes/Prefabs/": "purple",
 "res://Scenes/Prefabs/Enemies/": "purple",
+"res://Scenes/UI/": "pink",
 "res://Scripts/": "green",
+"res://Scripts/UI Stuff/": "pink",
 "res://addons/": "gray"
 }
 
