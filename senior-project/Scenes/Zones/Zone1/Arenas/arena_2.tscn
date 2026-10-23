@@ -1,22 +1,11 @@
 [gd_scene format=4 uid="uid://cjtx2jjncontf"]
 
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_y8kri"]
-[ext_resource type="Texture2D" uid="uid://cjxqwj44mpj7q" path="res://Assets/Textures/wood1.png" id="2_8bmhe"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_y84hh"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="5_8avfq"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="6_nyj3q"]
-[ext_resource type="Material" uid="uid://dldtn0twiaev7" path="res://Assets/Textures/frame7white.tres" id="7_7i4v3"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="8_td08v"]
 [ext_resource type="Material" uid="uid://c3r5f45advnws" path="res://Assets/Textures/grass1.tres" id="9_v8jaq"]
-[ext_resource type="Texture2D" uid="uid://drv8h1gxijfdi" path="res://Assets/Textures/frame.png" id="10_30qt5"]
-[ext_resource type="Material" uid="uid://d08jk6kbgksma" path="res://Assets/Textures/grasstrim.tres" id="11_uoy7x"]
-[ext_resource type="Material" uid="uid://hmejbu5ynfvh" path="res://Assets/Textures/floortile6.tres" id="12_pyonl"]
-[ext_resource type="Material" uid="uid://jyst3k23c4en" path="res://Assets/Textures/walltest5white.tres" id="13_eg40w"]
-[ext_resource type="Material" uid="uid://cd2ukyhdyycbd" path="res://Assets/Textures/frame3.tres" id="14_t6ytm"]
-[ext_resource type="Material" uid="uid://bbhfc0jw46c0x" path="res://Assets/Textures/floor1.tres" id="15_h428q"]
-[ext_resource type="Material" uid="uid://ccss46eio3xeh" path="res://Assets/Textures/wall1.tres" id="16_tgugj"]
-[ext_resource type="Material" uid="uid://bd54jseykqn4p" path="res://Assets/Textures/frame.tres" id="17_6on8h"]
-[ext_resource type="Material" uid="uid://blksf17rb7yfk" path="res://Assets/Textures/framemetal2.tres" id="18_5blbf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xhtoe"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -34,90 +23,6 @@ glow_enabled = true
 albedo_texture = ExtResource("1_y8kri")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaol8"]
-albedo_color = Color(0.73046875, 0.5938548, 0.40803528, 1)
-albedo_texture = ExtResource("2_8bmhe")
-uv1_scale = Vector3(0.2, 0.2, 0.2)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymwoq"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("8_td08v")
-metallic_specular = 0.0
-texture_filter = 2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8akdw"]
-albedo_color = Color(0.65882355, 0.6, 0.57254905, 1)
-albedo_texture = ExtResource("10_30qt5")
-metallic_specular = 0.0
-texture_filter = 2
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_nersi"]
-_surfaces = [{
-"aabb": AABB(-6, 0.5, -2, 6, 0.5, 4),
-"attribute_data": PackedByteArray("/P//vwAA8D/8//+/AAAAQPf/f78AAABA+P9/vwAA8D8BAIC/AAAAAP3/f78AAIA/////vwAAgD8BAADAAAAAAAAAQMEAAIAzAAAwwQAAgDMAADDBAACAPwAAQMEAAIA/AABAwQAAgDMAAEDBAACAPwAAMMEAAIA/AAAwwQAAgDP4/3+/AADwP/f/f78AAABA/P//vwAAAED8//+/AADwPwAAAMAAAAA/AAAAwAAAID///3+/AAAgPwAAgL8AAAA//f9/PwAAgD8uvTu0AACAPy69OzQAAAAAAQCAPwAAAAD9/38/AACAPwEAgD8AAAAALr07NAAAAAAuvTu0AACAPwEAAMAAAAAA////vwAAgD/9/3+/AACAPwEAgL8AAAAAAACAvwAAAD///3+/AAAgPwAAAMAAACA/AAAAwAAAAD8AAIBAAAAAwAAAgEAAAEC/AABAQAAAQL8AAEBAAAAAwPz/f8AAABBA/P8/wAAAEEAAAEDAAACAPwAAgMAAAIA///9/vwAAID/4/3+/AADwP/z//78AAPA/AAAAwAAAID8AAADAAAAgP/z//78AAPA/+P9/vwAA8D///3+/AAAgPwAAQMAAAADAAABAwAAAQL8AAIDAAABAvwAAgMAAAADAAABAwAAAAMAAAIDAAAAAwAAAgMAAAEC/AABAwAAAQL8="),
-"format": 34359742487,
-"index_count": 96,
-"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8A"),
-"material": ExtResource("7_7i4v3"),
-"name": "frame7white",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 64,
-"vertex_data": PackedByteArray("AACwwAAAgD8AAADAAADAwAAAgD8AAADAAADAwAAAAD8AAADAAACwwAAAAD8AAADAAADAwAAAAD8AAABAAADAwAAAAD8AAADAAADAwAAAgD8AAADAAADAwAAAgD8AAABAAADAwAAAAD8AAABAAACwwAAAAD8AAABAAACwwAAAAD8AAADAAADAwAAAAD8AAADAAADAwAAAgD8AAABAAADAwAAAgD8AAADAAACwwAAAgD8AAADAAACwwAAAgD8AAABAAACwwAAAAD8AAABAAADAwAAAAD8AAABAAADAwAAAgD8AAABAAACwwAAAgD8AAABAAAAAAAAAgD8AAADAAAAAvwAAgD8AAADAAAAAvwAAAD8AAADAAAAAAAAAAD8AAADAAAAAvwAAAD8AAABAAAAAAAAAAD8AAABAAAAAAAAAAD8AAADAAAAAvwAAAD8AAADAAAAAvwAAgD8AAABAAAAAvwAAgD8AAADAAAAAAAAAgD8AAADAAAAAAAAAgD8AAABAAAAAAAAAgD8AAABAAAAAAAAAgD8AAADAAAAAAAAAAD8AAADAAAAAAAAAAD8AAABAAAAAAAAAAD8AAABAAAAAvwAAAD8AAABAAAAAvwAAgD8AAABAAAAAAAAAgD8AAABAAACwwAAAAD8AAABAAAAAvwAAAD8AAABAAAAAvwAAAD8AAMA/AACwwAAAAD8AAMA/AACwwAAAgD8AAABAAACwwAAAgD8AAMA/AAAAvwAAgD8AAMA/AAAAvwAAgD8AAABAAAAAvwAAAD8AAABAAACwwAAAAD8AAABAAACwwAAAgD8AAABAAAAAvwAAgD8AAABAAAAAvwAAgD8AAADAAACwwAAAgD8AAADAAACwwAAAAD8AAADAAAAAvwAAAD8AAADAAACwwAAAAD8AAMC/AAAAvwAAAD8AAMC/AAAAvwAAAD8AAADAAACwwAAAAD8AAADAAACwwAAAgD8AAMC/AACwwAAAgD8AAADAAAAAvwAAgD8AAADAAAAAvwAAgD8AAMC//////5T8Sj7/////lPxKPv////+U/Eo+/////5T8Sj4AAP9//3+0wQAA/3//f7TBAAD/f/9/tMEAAP9//3+0wf9/AABqg/8//38AAGqD/z//fwAAaoP/P/9/AABqg/8//3///2qD/7//f///aoP/v/9///9qg/+//3///2qD/7//f/9/lPy0wf9//3+U/LTB/3//f5T8tMH/f/9/lPy0wf////+U/Eo+/////5T8Sj7/////lPxKPv////+U/Eo+/38AAJR8/z//fwAAlHz/P/9/AACUfP8//38AAJR8/z//f///lHz/v/9///+UfP+//3///5R8/7//f///lHz/v////3//f0o+////f/9/Sj7///9//39KPv///3//f0o+/3//f5T8tMH/f/9/lPy0wf9//3+U/LTB/3//f5T8tMH/fwAA/3//P/9/AAD/f/8//38AAP9//z//fwAA/3//P/9///+ohv+//3///6iG/7//f///qIb/v/9///+ohv+//3//f5T8tMH/f/9/lPy0wf9//3+U/LTB/3//f5T8tMH/////lPxKPv////+U/Eo+/////5T8Sj7/////lPxKPv9/AAD/f/8//38AAP9//z//fwAA/3//P/9/AAD/f/8//3////9//7//f////3//v/9/////f/+//3////9//78=")
-}, {
-"aabb": AABB(-5.875, 0, -2, 5.75, 1.5, 4),
-"attribute_data": PackedByteArray("AACAQAAA4L8AAIDAAADgvwAAgMAAAEC/AACAQAAAQL8AAIC/AADgvwAAMMEAAOC/AAAwwQAAQL8AAIC/AABAvwAAQEAAAEC/AABAwAAAQL8AAEDAAADgvwAAQEAAAOC/AABAQAAAMMEAAEBAAACAvwAAQMAAAIC/AABAwAAAMMEAAEBAAADgvwAAQMAAAOC/AABAwAAAQL8AAEBAAABAvwAAgL8AAEC/AAAwwQAAQL8AADDBAADgvwAAgL8AAOC/AACAwAYAQL8AAIBA+v8/vwAAgED9/9+///9/wAIA4L8AAIC/AADgvwAAMMEAAOC/AAAwwQAAQL8AAIC/AABAvwAAgMAGAEC/AABAwAQAQL///z/AAgDgv///f8ACAOC///9/wAIA4L///z/AAgDgvwAAQMAEAEC/AACAwAYAQL8AAEDAAABAvwAAgMAAAEC/AACAwAAA4L8AAEDAAADgvwAAQMAAAOC/AACAwAAA4L8AAIDAAABAvwAAQMAAAEC/AQCAP///P78AADBB8P8/vwAAMEH4/9+/AQCAP///378AAHBAAAA8wQAAcEAAAIC+AABwwAAAgL4AAHDAAAA8wQAAcEAAADzBAABwwAAAPMEAAHDAAACAvgAAcEAAAIC+AABAQAAAMMEAAEBAAACAvwAAQMAAAIC/AABAwAAAMMEAAEBAAAA0wQAAQMAAADTBAABAwAAAoL8AAEBAAACgvw=="),
-"format": 34359742487,
-"index_count": 102,
-"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8AQABBAEIAQABCAEMA"),
-"material": SubResource("StandardMaterial3D_ymwoq"),
-"name": "__TB_empty",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 68,
-"vertex_data": PackedByteArray("AACwwAAAgD8AAABAAACwwAAAgD8AAADAAACwwAAAAD8AAADAAACwwAAAAD8AAABAAAAAvwAAgD8AAMC/AACwwAAAgD8AAMC/AACwwAAAAD8AAMC/AAAAvwAAAD8AAMC/AACwwAAAAD8AAMA/AACwwAAAAD8AAMC/AACwwAAAgD8AAMC/AACwwAAAgD8AAMA/AACwwAAAAD8AAMA/AAAAvwAAAD8AAMA/AAAAvwAAAD8AAMC/AACwwAAAAD8AAMC/AAAAvwAAgD8AAMA/AAAAvwAAgD8AAMC/AAAAvwAAAD8AAMC/AAAAvwAAAD8AAMA/AAAAvwAAAD8AAMA/AACwwAAAAD8AAMA/AACwwAAAgD8AAMA/AAAAvwAAgD8AAMA/AAAAvwAAAD8AAABAAAAAvwAAAD8AAADAAAAAvwAAgD8AAADAAAAAvwAAgD8AAABAAAAAvwAAgD8AAMA/AACwwAAAgD8AAMA/AACwwAAAAD8AAMA/AAAAvwAAAD8AAMA/AACwwAAAAD8AAABAAACwwAAAAD8AAMA/AACwwAAAgD8AAMA/AACwwAAAgD8AAABAAAAAvwAAgD8AAABAAAAAvwAAgD8AAMA/AAAAvwAAAD8AAMA/AAAAvwAAAD8AAABAAACwwAAAAD8AAMC/AACwwAAAAD8AAADAAACwwAAAgD8AAADAAACwwAAAgD8AAMC/AAAAvwAAgD8AAMC/AAAAvwAAgD8AAADAAAAAvwAAAD8AAADAAAAAvwAAAD8AAMC/AAAAvwAAAD8AAMC/AACwwAAAAD8AAMC/AACwwAAAgD8AAMC/AAAAvwAAgD8AAMC/AAC8wAAAAAAAAPA/AAAAvgAAAAAAAPA/AAAAvgAAAAAAAPC/AAC8wAAAAAAAAPC/AAC8wAAAAD8AAPA/AAC8wAAAAD8AAPC/AAAAvgAAAD8AAPC/AAAAvgAAAD8AAPA/AACwwAAAgD8AAMA/AAAAvwAAgD8AAMA/AAAAvwAAgD8AAMC/AACwwAAAgD8AAMC/AACwwAAAwD8AAMA/AACwwAAAwD8AAMC/AAAAvwAAwD8AAMC/AAAAvwAAwD8AAMA/////f/9//z////9//3//P////3//f/8/////f/9//z//////////P/////////8//////////z//////////PwAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+//38AAP9//z//fwAA/3//P/9/AAD/f/8//38AAP9//z////9//3//P////3//f/8/////f/9//z////9//3//P/9//3////+//3//f////7//f/9/////v/9//3////+/AAD/f/9/VEMAAP9//39UQwAA/3//f1RDAAD/f/9/VEP/////////P/////////8//////////z//////////PwAA/3//f1RDAAD/f/9/VEMAAP9//39UQwAA/3//f1RD////f/9/qrz///9//3+qvP///3//f6q8////f/9/qrwAAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v////3//f/8/////f/9//z////9//3//P////3//f/8//3//f1b5VEP/f/9/VvlUQ/9//39W+VRD/3//f1b5VEP/fwAA/3//P/9/AAD/f/8//38AAP9//z//fwAA/3//P/9/////f/+//3////9//7//f////3//v/9/////f/+//38AAP9//z//fwAA/3//P/9/AAD/f/8//38AAP9//z//f////3//v/9/////f/+//3////9//7//f////3//vw==")
-}, {
-"aabb": AABB(-5.5, 1, -1.5, 5, 1e-05, 3),
-"attribute_data": PackedByteArray("AABgPwAAsL8AAAA+AACwvwAAAD4AAAC+AABgPwAAAL4="),
-"format": 34359742487,
-"index_count": 6,
-"index_data": PackedByteArray("AAABAAIAAAACAAMA"),
-"material": ExtResource("9_v8jaq"),
-"name": "grass1",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AACwwAAAgD8AAMA/AACwwAAAgD8AAMC/AAAAvwAAgD8AAMC/AAAAvwAAgD8AAMA//3////9//7//f////3//v/9/////f/+//3////9//78=")
-}, {
-"aabb": AABB(-5.875, 0, -1.875, 5.75, 0.5, 3.75),
-"attribute_data": PackedByteArray("AACAvwEAAD33/3+/AAC8P+7eCTUAALw/Lr07MgAAAD1bATC0AADwvlsBMDQAAPA+/f9/vwAA8D4BAIC/AADwvgEAgL8AAPC+/f9/vwAA8D5bATA0AADwPlsBMLQAAPC+Lr07MgAAAD3u3gk1AAC8P/f/f78AALw/AACAvwEAAD0="),
-"format": 34359742487,
-"index_count": 24,
-"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8A"),
-"material": SubResource("StandardMaterial3D_8akdw"),
-"name": "frame",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("AAAAvgAAAD8AAPC/AAC8wAAAAD8AAPC/AAC8wAAAAAAAAPC/AAAAvgAAAAAAAPC/AAC8wAAAAAAAAPA/AAC8wAAAAAAAAPC/AAC8wAAAAD8AAPC/AAC8wAAAAD8AAPA/AAAAvgAAAD8AAPA/AAAAvgAAAD8AAPC/AAAAvgAAAAAAAPC/AAAAvgAAAAAAAPA/AAAAvgAAAAAAAPA/AAC8wAAAAAAAAPA/AAC8wAAAAD8AAPA/AAAAvgAAAD8AAPA//////5T8Sj7/////lPxKPv////+U/Eo+/////5T8Sj4AAP9//3+0wQAA/3//f7TBAAD/f/9/tMEAAP9//3+0wf///3//f0o+////f/9/Sj7///9//39KPv///3//f0o+/3//f5T8tMH/f/9/lPy0wf9//3+U/LTB/3//f5T8tME=")
-}, {
-"aabb": AABB(-5.5, 1, -1.5, 5, 0.5, 3),
-"attribute_data": PackedByteArray("AAAAAAAAAL4AAKC/AAAAvgAAoL8AAAAAAAAAAAAAAAAAAMA+AAAAAAAAwL4AAAAAAADAvgAAAL4AAMA+AAAAvgAAQD8AAAC+AAAAAAAAAL4AAAAAAAAAAAAAQD8AAAAAAAAAvgAAAAAAALC/AAAAAAAAsL8AAAC+AAAAvgAAAL4="),
-"format": 34359742487,
-"index_count": 24,
-"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8A"),
-"material": ExtResource("11_uoy7x"),
-"name": "grasstrim",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("AAAAvwAAwD8AAMC/AACwwAAAwD8AAMC/AACwwAAAgD8AAMC/AAAAvwAAgD8AAMC/AACwwAAAgD8AAMA/AACwwAAAgD8AAMC/AACwwAAAwD8AAMC/AACwwAAAwD8AAMA/AAAAvwAAwD8AAMA/AAAAvwAAwD8AAMC/AAAAvwAAgD8AAMC/AAAAvwAAgD8AAMA/AAAAvwAAgD8AAMA/AACwwAAAgD8AAMA/AACwwAAAwD8AAMA/AAAAvwAAwD8AAMA//////////z//////////P/////////8//////////z8AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v////3//f/8/////f/9//z////9//3//P////3//f/8//3//f////7//f/9/////v/9//3////+//3//f////78=")
-}]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_itq52"]
 size = Vector3(6, 1, 4)
@@ -146,7 +51,6 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 30,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMA"),
-"material": ExtResource("12_pyonl"),
 "name": "floortile6",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -158,7 +62,6 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 6,
 "index_data": PackedByteArray("AAABAAIAAAACAAMA"),
-"material": ExtResource("13_eg40w"),
 "name": "walltest5white",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -170,7 +73,6 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 90,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsA"),
-"material": ExtResource("14_t6ytm"),
 "name": "frame3",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -194,7 +96,6 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 18,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsA"),
-"material": ExtResource("15_h428q"),
 "name": "floor1",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -233,7 +134,6 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 12,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcA"),
-"material": ExtResource("16_tgugj"),
 "name": "wall1",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -245,7 +145,6 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 96,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8A"),
-"material": ExtResource("17_6on8h"),
 "name": "frame",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -257,7 +156,6 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 18,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsA"),
-"material": ExtResource("18_5blbf"),
 "name": "framemetal2",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -282,34 +180,81 @@ use_collision = true
 
 [node name="Geo" type="Node3D" parent="." unique_id=1608795696]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geo" unique_id=1562124669 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0625, 0)
-visible = false
+[node name="Floor" type="CSGBox3D" parent="Geo" unique_id=1562124669 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0625, -17.5)
 use_collision = true
 collision_mask = 7
-size = Vector3(40, 0.125, 40)
+size = Vector3(40, 0.125, 75)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geo" unique_id=1123233531 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.710772, 0)
-visible = false
+[node name="Floor2" type="CSGBox3D" parent="Geo/Floor" unique_id=2009811986 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.091278)
 use_collision = true
-collision_mask = 2
-size = Vector3(40, 0.125, 40)
+collision_mask = 7
+size = Vector3(80.625, 0.125, 27.567444)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="Floor3" type="CSGBox3D" parent="Geo/Floor" unique_id=1592112967 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.018406, 0, -38.492752)
+use_collision = true
+collision_mask = 7
+size = Vector3(60.430244, 0.125, 13.997805)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="Geo" unique_id=1601229042 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 7.298503, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 7.298503, -0.9868164)
 use_collision = true
 collision_mask = 7
-size = Vector3(0.125, 15, 40)
+size = Vector3(0.125, 15, 41.973633)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="Geo" unique_id=743174198 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.128105, 7.298503, -38.481304)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 22.00293)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="Geo" unique_id=88632017 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.20009, 7.298503, -39.705914)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 24.452148)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Geo" unique_id=693123900 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.051968, 7.298503, -56.159836)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 13.683594)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Geo" unique_id=1258251929 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.839375, 7.298503, -60.263535)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 5.4761963)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Geo" unique_id=467320877 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 7.298503, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 7.298503, -2.4396362)
 use_collision = true
 collision_mask = 7
-size = Vector3(0.125, 15, 40)
+size = Vector3(0.125, 15, 44.879272)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Geo" unique_id=1927473443 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.37187, 7.298503, -26.240038)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 2.5540466)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Geo" unique_id=483784482 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.262943, 7.298503, -24.906845)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 2.5540466)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D29" type="CSGBox3D" parent="Geo" unique_id=1248463350 groups=["Collidable_enviroment"]]
@@ -326,25 +271,67 @@ collision_mask = 7
 size = Vector3(0.125, 15, 7.926758)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D31" type="CSGBox3D" parent="Geo" unique_id=2079674244 groups=["Collidable_enviroment"]]
-transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071068, 17.511486, 7.298503, -17.636484)
+[node name="CSGBox3D34" type="CSGBox3D" parent="Geo" unique_id=543211743 groups=["Collidable_enviroment"]]
+transform = Transform3D(-0.70710665, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, -0.70710665, 22.768778, 7.298503, -24.742561)
 use_collision = true
 collision_mask = 7
 size = Vector3(0.125, 15, 7.926758)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D32" type="CSGBox3D" parent="Geo" unique_id=727845975 groups=["Collidable_enviroment"]]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -17.613514, 7.298503, -17.636488)
+transform = Transform3D(0.8186055, 0, -0.57435626, 0, 1, 0, 0.57435626, 0, 0.8186055, -17.527458, 7.298503, -54.014736)
 use_collision = true
 collision_mask = 7
-size = Vector3(0.125, 15, 7.926758)
+size = Vector3(0.125, 15, 9.875)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Geo" unique_id=1367094701 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 7.298503, -20)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.083587766, 7.298503, -57.569355)
 use_collision = true
 collision_mask = 7
-size = Vector3(0.125, 15, 40)
+size = Vector3(0.125, 15, 29.870056)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="Geo" unique_id=869246368 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.178505, 2.9371748, -53.920204)
+use_collision = true
+collision_mask = 7
+size = Vector3(7.543457, 6.2773438, 30.477158)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Geo" unique_id=1396107472 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.224167, 7.298503, -49.376507)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 20.33104)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Geo" unique_id=1819354452 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.492823, 7.298503, -63.030968)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 5.3823166)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Geo" unique_id=1494408404 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30.34942, 7.298503, -49.990013)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 20.117157)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Geo" unique_id=1775832121 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32.942547, 7.298503, -27.538773)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 14.8942795)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Geo" unique_id=560179985 groups=["Collidable_enviroment"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -31.370863, 7.298503, -27.53877)
+use_collision = true
+collision_mask = 7
+size = Vector3(0.125, 15, 17.896847)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="Geo" unique_id=1957581108 groups=["Collidable_enviroment"]]
@@ -352,20 +339,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 7
 use_collision = true
 collision_mask = 7
 size = Vector3(0.125, 15, 40)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D20" type="CSGBox3D" parent="Geo" unique_id=1112910313 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.507421, 0.5322077, 16.188984)
-use_collision = true
-collision_mask = 7
-size = Vector3(7.621643, 1.2504272, 5.0395384)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D33" type="CSGBox3D" parent="Geo" unique_id=1736208487 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.507421, 0.5322077, -16.304592)
-use_collision = true
-collision_mask = 7
-size = Vector3(7.621643, 1.2504272, 5.0395384)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="Geo" unique_id=2087930335 groups=["Collidable_enviroment"]]
@@ -396,64 +369,29 @@ collision_mask = 7
 size = Vector3(0.25, 2.75, 5.25)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D21" type="CSGBox3D" parent="Geo" unique_id=894799963 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.029608727, 0.53516793, -16.21745)
-use_collision = true
-collision_mask = 7
-size = Vector3(7.621643, 1.2563477, 5.933838)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D35" type="CSGBox3D" parent="Geo" unique_id=204022821 groups=["Collidable_enviroment"]]
-transform = Transform3D(-3.7855173e-08, 0.5, 0.8660254, 2.1855694e-08, 0.8660254, -0.5, -1, 0, -4.371139e-08, 3.8121638, -0.0682565, -16.256962)
-use_collision = true
-collision_mask = 7
-size = Vector3(7.621643, 1.2563477, 2.7564697)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D36" type="CSGBox3D" parent="Geo" unique_id=283552789 groups=["Collidable_enviroment"]]
-transform = Transform3D(1.2527795e-07, -0.5, -0.8660254, 2.1855694e-08, 0.8660254, -0.5, 1, 4.371139e-08, 1.1942174e-07, -3.8828971, -0.0682565, -16.256962)
-use_collision = true
-collision_mask = 7
-size = Vector3(7.621643, 1.2563477, 2.7564697)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D12" type="CSGBox3D" parent="Geo" unique_id=241390272 groups=["Collidable_enviroment"]]
-transform = Transform3D(0.83596116, 0, 0.5487888, 0, 1, 0, -0.5487888, 0, 0.83596116, 6.5498977, 0.73356164, -2.7463186)
-use_collision = true
-collision_mask = 7
-size = Vector3(2.9609375, 1.5, 1.3498535)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D38" type="CSGBox3D" parent="Geo" unique_id=1776057062 groups=["Collidable_enviroment"]]
-transform = Transform3D(0.83596116, 0, 0.5487888, 0, 1, 0, -0.5487888, 0, 0.83596116, 4.7242737, 0.73356164, 17.421831)
-use_collision = true
-collision_mask = 7
-size = Vector3(2.9609375, 1.5, 1.3498535)
-material = SubResource("StandardMaterial3D_xhtoe")
-
 [node name="CSGBox3D39" type="CSGBox3D" parent="Geo" unique_id=2119599916 groups=["Collidable_enviroment"]]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.8125, 8.887573)
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.8125, -10.603902)
 use_collision = true
 collision_mask = 7
 size = Vector3(2.9609375, 0.125, 1.125)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D40" type="CSGBox3D" parent="Geo" unique_id=1936982769 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, 8.875, 0.8125, 0.012573242)
+transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, 8.875, 0.8125, -19.4789)
 use_collision = true
 collision_mask = 7
 size = Vector3(2.9609375, 0.125, 1.125)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D41" type="CSGBox3D" parent="Geo" unique_id=2146312680 groups=["Collidable_enviroment"]]
-transform = Transform3D(-1.0000001, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1.0000001, 0, 0.8125, -8.862427)
+transform = Transform3D(-1.0000001, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1.0000001, 0, 0.8125, -28.3539)
 use_collision = true
 collision_mask = 7
 size = Vector3(2.9609375, 0.125, 1.125)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D42" type="CSGBox3D" parent="Geo" unique_id=858154356 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711392e-08, -8.875, 0.8125, 0.012573242)
+transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711392e-08, -8.875, 0.8125, -19.4789)
 use_collision = true
 collision_mask = 7
 size = Vector3(2.9609375, 0.125, 1.125)
@@ -473,43 +411,8 @@ collision_mask = 7
 size = Vector3(0.25, 5.375, 0.25)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGBox3D25" type="CSGBox3D" parent="Geo" unique_id=1987973094 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9423513, 3.1901531, -12.927741)
-use_collision = true
-collision_mask = 7
-size = Vector3(0.5, 5.375, 0.5)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D27" type="CSGBox3D" parent="Geo" unique_id=1319470257 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.807951, 3.1901531, -12.927741)
-use_collision = true
-collision_mask = 7
-size = Vector3(0.5, 5.375, 0.5)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="Geo" unique_id=1692778722 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050445557, 6.033713, -16.403687)
-use_collision = true
-collision_mask = 7
-size = Vector3(6.463135, 0.49523926, 7.7930603)
-material = SubResource("StandardMaterial3D_xhtoe")
-
-[node name="CSGBox3D11" type="CSGBox3D" parent="Geo" unique_id=656882647 groups=["Collidable_enviroment"]]
-transform = Transform3D(0.84551513, 0.23667994, 0.4786301, 3.72529e-09, 0.89639246, -0.44326112, -0.5339516, 0.374784, 0.75791335, 7.3215594, 0.87843144, -1.1399678)
-use_collision = true
-collision_mask = 7
-size = Vector3(4.435547, 0.125, 5.041)
-material = SubResource("StandardMaterial3D_iaol8")
-
-[node name="CSGBox3D22" type="CSGBox3D" parent="Geo" unique_id=443294274 groups=["Collidable_enviroment"]]
-transform = Transform3D(-0.88517314, 0.14833245, 0.440983, 6.565711e-09, 0.94781697, -0.318815, -0.46526176, -0.28220648, -0.83898205, -15.294845, 0.60844207, 10.6140585)
-use_collision = true
-collision_mask = 7
-size = Vector3(3, 0.125, 5.041)
-material = SubResource("StandardMaterial3D_iaol8")
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geo" unique_id=1999448535]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="Fountain" type="CSGCylinder3D" parent="Geo" unique_id=1999448535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -19.503935)
 use_collision = true
 collision_mask = 7
 radius = 8.0
@@ -517,7 +420,7 @@ height = 1.0
 sides = 12
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Geo/CSGCylinder3D" unique_id=1217572468]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Geo/Fountain" unique_id=1217572468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1796875, 0)
 operation = 2
 radius = 7.75
@@ -525,26 +428,25 @@ height = 0.734375
 sides = 12
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Geo" unique_id=1083687265]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0)
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Geo/Fountain" unique_id=986426786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90234375, 0)
 use_collision = true
 collision_mask = 7
-radius = 4.25
-height = 0.5
+radius = 2.0
+height = 2.2421875
 sides = 12
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Geo" unique_id=700662685]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.75, 0)
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Geo/Fountain/CSGCylinder3D6" unique_id=545706304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3710938, 0)
 use_collision = true
 collision_mask = 7
-radius = 2.5
-height = 0.5
+height = 3.484375
 sides = 12
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Geo" unique_id=184099565]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.75, 0)
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Geo/Fountain/CSGCylinder3D6/CSGCylinder3D5" unique_id=184099565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9765625, 0)
 use_collision = true
 collision_mask = 7
 radius = 1.0
@@ -552,20 +454,21 @@ height = 0.5
 sides = 12
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Geo" unique_id=545706304]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7734375, 0)
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Geo/Fountain/CSGCylinder3D6/CSGCylinder3D5" unique_id=700662685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0234375, 0)
 use_collision = true
 collision_mask = 7
-height = 3.484375
+radius = 2.5
+height = 0.5
 sides = 12
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Geo" unique_id=986426786]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4023438, 0)
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Geo/Fountain/CSGCylinder3D6" unique_id=1083687265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3476563, 0)
 use_collision = true
 collision_mask = 7
-radius = 2.0
-height = 2.2421875
+radius = 4.25
+height = 0.5
 sides = 12
 material = SubResource("StandardMaterial3D_xhtoe")
 
@@ -617,15 +520,13 @@ metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 [node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=930798075]
 collision_mask = 7
 
-[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=973740735]
-mesh = SubResource("ArrayMesh_nersi")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=115429000]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000002, 0.5, 0)
 shape = SubResource("BoxShape3D_itq52")
 
 [node name="FuncGodotMap2" type="Node3D" parent="." unique_id=198075901]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 script = ExtResource("5_8avfq")
 global_map_file = "D:/Modding/TrenchBroom/maps/Arena1floor.map"
 map_settings = ExtResource("6_nyj3q")
