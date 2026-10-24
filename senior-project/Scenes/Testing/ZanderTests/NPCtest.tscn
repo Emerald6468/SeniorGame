@@ -162,7 +162,7 @@ size = Vector3(1, 29.544174, 26.378)
 [node name="Greg" parent="." unique_id=689290376 instance=ExtResource("4_44tn4")]
 transform = Transform3D(0.0142737115, 0, 0.99989814, 0, 1, 0, -0.99989814, 0, 0.0142737115, 8.938166, 1.9999998, -26.02409)
 
-[node name="Steve" parent="." unique_id=378484724 instance=ExtResource("4_44tn4")]
+[node name="kirk" parent="." unique_id=378484724 instance=ExtResource("4_44tn4")]
 transform = Transform3D(0.0142737115, 0, 0.99989814, 0, 1, 0, -0.99989814, 0, 0.0142737115, -0.7758584, 1.9999998, -19.64233)
 
 [node name="Bill" parent="." unique_id=128475228 instance=ExtResource("4_44tn4")]

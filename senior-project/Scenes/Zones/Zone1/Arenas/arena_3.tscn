@@ -51,6 +51,7 @@
 
 [sub_resource type="Environment" id="Environment_dyiuk"]
 background_mode = 2
+background_energy_multiplier = 0.95
 sky = ExtResource("1_267rv")
 glow_enabled = true
 
@@ -2032,7 +2033,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 17.125)
 left_spell_type = 2
 right_spell_type = 3
 
-[node name="UI" parent="Player" index="10" unique_id=753733901]
+[node name="UI" parent="Player" index="11" unique_id=753733901]
 metadata/_edit_use_anchors_ = true
 
 [node name="lights" type="Node3D" parent="." unique_id=1842736137]

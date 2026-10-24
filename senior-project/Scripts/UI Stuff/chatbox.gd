@@ -30,19 +30,32 @@ var mult_num = 0
 var mult_switch = false
 var character = 1
 var cdone = false
+
+#new shit
+
+
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	
 	hide_textbox()
 	state = READY
 	#add_multiple(test_array)
 	
 
+
 func try_to_close():
+	print(str(state))
 	if state == FINISHED: 
 		hide_textbox()
+		return true
+	return false
 
 func set_to_ready():
-	state = READY
+	if state == FINISHED: state = READY
 
 func _process(delta: float) -> void:
 	if on_switch:
@@ -54,6 +67,7 @@ func cuts():
 	cdone = true
 	
 func hide_textbox():
+	print("hide")
 	label.text = ""
 	textbox_container.hide()
 	on_switch = false
@@ -64,27 +78,25 @@ func show_textbox():
 	Global.TextboxOpen = true
 	on_switch = true
 	
+func multi_text():
+	pass
 	
-func add_text(next_text):
+func add_text(text):
 	if(state == READY):
-		
 		#texture = character
 		var tween = get_tree().create_tween()
 		state = READING
-		time = len(next_text) * CHAR_READ_RATE
+		time = len(text) * CHAR_READ_RATE
 		label.visible_ratio = 0.0
-		label.text = next_text
+		label.text = text
 		show_textbox()
 		tween.tween_property(label,"visible_ratio",1.0,time)
-		print(label.visible_ratio)
 		await get_tree().create_timer(time).timeout
 		state = FINISHED
-		print("test!")
-		print(next_text)
 	
 func add_multiple(array):
-	if mult_switch == false:
-		mult_num = 0
+	if !mult_switch:
+		mult_num = 0 # i = 0
 	current = array
 	mult_switch = true
 	add_text(array[mult_num])

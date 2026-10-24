@@ -529,20 +529,20 @@ spot_attenuation = 0.01
 
 [node name="enemies" type="Node3D" parent="." unique_id=374510159]
 
-[node name="FuncGodotMap" type="Node3D" parent="." unique_id=2011209370]
+[node name="FuncGodotMap" type="Node3D" parent="." unique_id=2011209370 groups=["Collidable_enviroment"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.125, 0, 1.125)
 script = ExtResource("4_eg5nu")
 global_map_file = "D:/Modding/TrenchBroom/maps/flowerbed1.map"
 map_settings = ExtResource("5_vtcy5")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
-[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=930798075]
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=930798075 groups=["Collidable_enviroment"]]
 collision_mask = 7
 
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=973740735]
 mesh = SubResource("ArrayMesh_nersi")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=115429000]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=115429000 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000002, 0.5, 0)
 shape = SubResource("BoxShape3D_itq52")
 

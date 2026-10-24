@@ -469,10 +469,14 @@ func _physics_process(delta: float) -> void:
 	velocity += knockback_velocity
 
 #region NPC interactions
+	var chatbox = get_node("UI/CanvasLayer/Chatbox")
 	check_npc()
 	if Input.is_action_just_pressed("Interact"):
+		chatbox.set_to_ready()
 		if near_npc: npc.dialogue()
-		if Global.TextboxOpen:get_node("UI/CanvasLayer/Chatbox").try_to_close()
+		if Global.TextboxOpen:
+			if npc.text_queue.is_empty():get_node("UI/CanvasLayer/Chatbox").hide_textbox();print("empty")
+			#if !closed npc.text_queue.pop_front
 	
 #endregion
 func _input(event: InputEvent) -> void:
