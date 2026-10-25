@@ -51,7 +51,7 @@
 
 [sub_resource type="Environment" id="Environment_dyiuk"]
 background_mode = 2
-background_energy_multiplier = 0.95
+background_energy_multiplier = 1.5
 sky = ExtResource("1_267rv")
 ambient_light_sky_contribution = 0.13
 glow_enabled = true
@@ -1630,7 +1630,11 @@ points = PackedVector3Array(7.68, 5.44, 2.88, -7.68, 5.44, 2.88, 7.68, 5.12, 2.8
 [node name="Arena3" type="Node3D" unique_id=2014480433]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301284, 0.24999997, 0.13974625, 0.27045453, 0.9525362, -0.4800741, 0.8598571, -0.17370857, 0, 0, -0.90342903)
+light_color = Color(0.90162456, 0.6075431, 0.3727849, 1)
+light_energy = 0.922
+light_indirect_energy = 1.606
+light_angular_distance = 0.92
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1046825363]
