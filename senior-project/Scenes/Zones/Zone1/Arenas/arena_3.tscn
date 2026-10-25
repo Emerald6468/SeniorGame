@@ -53,6 +53,7 @@
 background_mode = 2
 background_energy_multiplier = 0.95
 sky = ExtResource("1_267rv")
+ambient_light_sky_contribution = 0.13
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhtoe"]
