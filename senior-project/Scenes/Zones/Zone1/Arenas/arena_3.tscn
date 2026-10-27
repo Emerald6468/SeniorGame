@@ -1687,11 +1687,10 @@ points = PackedVector3Array(7.68, 5.44, 2.88, -7.68, 5.44, 2.88, 7.68, 5.12, 2.8
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
 transform = Transform3D(-0.8660254, -0.43301284, 0.24999997, 0.13974625, 0.27045453, 0.9525362, -0.4800741, 0.8598571, -0.17370857, 0, 0, -0.90342903)
-light_color = Color(0.90162456, 0.6075431, 0.3727849, 1)
-light_energy = 0.922
-light_indirect_energy = 1.606
-light_angular_distance = 0.92
+light_color = Color(0.68999875, 0.56769145, 0.37810874, 1)
+light_energy = 2.74
 shadow_enabled = true
+shadow_caster_mask = 4294443007
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1046825363]
 environment = SubResource("Environment_dyiuk")
@@ -2859,6 +2858,7 @@ metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 collision_mask = 7
 
 [node name="entity_0_mesh_instance" type="MeshInstance3D" parent="buildings/FuncGodotMap15/entity_0_worldspawn" unique_id=336134074]
+layers = 524288
 mesh = SubResource("ArrayMesh_bk61h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="buildings/FuncGodotMap15/entity_0_worldspawn" unique_id=461528741 groups=["Collidable_enviroment"]]

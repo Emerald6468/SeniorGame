@@ -138,6 +138,7 @@ Interact={
 
 [layer_names]
 
+3d_render/layer_20="No Shadow"
 3d_physics/layer_1="Enviroment"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Spells"

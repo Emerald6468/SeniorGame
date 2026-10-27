@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://dwp4x74k76jlm"]
 
 [ext_resource type="Script" uid="uid://lb7j4ubc6c6d" path="res://Scripts/UI Stuff/pause_screen.gd" id="1_a7t3f"]
+[ext_resource type="Texture2D" uid="uid://lhf3gahhkgge" path="res://Assets/UI/Pause Menu/Ratacadabra_Pause_UI-01.png" id="2_1ile8"]
+[ext_resource type="Texture2D" uid="uid://crrkswqsyuyqh" path="res://Assets/UI/Pause Menu/Ratacadabra_Pause_UI-06.png" id="3_08b7j"]
+[ext_resource type="Texture2D" uid="uid://butphdba7najq" path="res://Assets/UI/Pause Menu/Ratacadabra_Pause_UI-02.png" id="4_r0bbv"]
+[ext_resource type="Texture2D" uid="uid://bj0o4nrglecnr" path="res://Assets/UI/Pause Menu/Ratacadabra_Pause_UI-07.png" id="5_xa7o7"]
+[ext_resource type="Texture2D" uid="uid://cmnx6l5b1eiuq" path="res://Assets/UI/Pause Menu/Ratacadabra_Pause_UI-03.png" id="6_skb1n"]
+[ext_resource type="Texture2D" uid="uid://cwrfgqtq3p3fu" path="res://Assets/UI/Pause Menu/Ratacadabra_Pause_UI-08.png" id="7_d21x4"]
+[ext_resource type="Texture2D" uid="uid://bmafe6uul7j32" path="res://Assets/UI/Pause Menu/Ratacadabra_Pause_UI-04.png" id="8_vopx3"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=209076557]
 process_mode = 3
@@ -16,39 +23,63 @@ grow_vertical = 2
 offset_transform_enabled = true
 color = Color(0, 0, 0, 0.60784316)
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1131547853]
+offset_left = 472.0
+offset_top = -144.0
+offset_right = 1768.0
+offset_bottom = 2144.0
+scale = Vector2(0.71999973, 0.71999973)
+texture = ExtResource("2_1ile8")
+
+[node name="Resume" type="TextureButton" parent="." unique_id=1217336119]
+offset_left = 424.0
+offset_top = -832.0
+offset_right = 1720.0
+offset_bottom = 1456.0
+offset_transform_enabled = true
+texture_normal = ExtResource("3_08b7j")
+texture_pressed = ExtResource("4_r0bbv")
+texture_hover = ExtResource("4_r0bbv")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Options" type="TextureButton" parent="." unique_id=1953772224]
+offset_left = 400.0
+offset_top = -808.0
+offset_right = 1696.0
+offset_bottom = 1480.0
+offset_transform_enabled = true
+texture_normal = ExtResource("5_xa7o7")
+texture_pressed = ExtResource("6_skb1n")
+texture_hover = ExtResource("6_skb1n")
+stretch_mode = 4
+
+[node name="MainMenu" type="TextureButton" parent="." unique_id=1502695233]
+offset_left = 464.0
+offset_top = -776.0
+offset_right = 1760.0
+offset_bottom = 1512.0
+offset_transform_enabled = true
+texture_normal = ExtResource("7_d21x4")
+texture_pressed = ExtResource("8_vopx3")
+texture_hover = ExtResource("8_vopx3")
+stretch_mode = 4
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1867778982]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -134.5
-offset_top = -118.5
-offset_right = 134.5
-offset_bottom = 118.5
+offset_left = -176.0
+offset_top = -60.0
+offset_right = 93.0
+offset_bottom = 177.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Resume" type="Button" parent="VBoxContainer" unique_id=287783941]
-layout_mode = 2
-offset_transform_enabled = true
-theme_override_font_sizes/font_size = 50
-text = "Resume"
-
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=119232645]
-layout_mode = 2
-offset_transform_enabled = true
-theme_override_font_sizes/font_size = 50
-text = "Options"
-
-[node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=1737964576]
-layout_mode = 2
-offset_transform_enabled = true
-theme_override_font_sizes/font_size = 48
-text = "Main Menu"
-
-[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
