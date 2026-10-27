@@ -654,6 +654,7 @@ material = SubResource("StandardMaterial3D_j84jx")
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("3_y84hh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 17.125)
+left_spell_type = 3
 right_spell_type = 2
 
 [node name="lights" type="Node3D" parent="." unique_id=1842736137]
