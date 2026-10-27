@@ -4,20 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_y84hh"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="5_8avfq"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="6_nyj3q"]
+[ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="7_j84jx"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="8_td08v"]
 [ext_resource type="Material" uid="uid://c3r5f45advnws" path="res://Assets/Textures/grass1.tres" id="9_v8jaq"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xhtoe"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_fuqwi"]
-sky_material = SubResource("ProceduralSkyMaterial_xhtoe")
-
-[sub_resource type="Environment" id="Environment_dyiuk"]
-background_mode = 2
-sky = SubResource("Sky_fuqwi")
-glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhtoe"]
 albedo_texture = ExtResource("1_y8kri")
@@ -26,20 +15,7 @@ uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oj6lt"]
 transparency = 1
-albedo_color = Color(0, 0.92947316, 1, 0.54)
-albedo_texture = ExtResource("1_y8kri")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51glo"]
-transparency = 1
-albedo_color = Color(0, 0.92947316, 1, 0.54)
-albedo_texture = ExtResource("1_y8kri")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ixhd"]
-transparency = 1
+shading_mode = 0
 albedo_color = Color(0, 0.92947316, 1, 0.54)
 albedo_texture = ExtResource("1_y8kri")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
@@ -199,14 +175,14 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_8akdw"]
 size = Vector3(5.125, 0.625, 20.5)
 
+[sub_resource type="Environment" id="Environment_oj6lt"]
+background_mode = 2
+background_energy_multiplier = 1.5
+sky = ExtResource("7_j84jx")
+ambient_light_sky_contribution = 0.05
+glow_enabled = true
+
 [node name="Arena2" type="Node3D" unique_id=2014480433]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1046825363]
-environment = SubResource("Environment_dyiuk")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1885805812]
 use_collision = true
@@ -275,7 +251,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.20009, 7.298503, -39.7059
 use_collision = true
 collision_mask = 7
 size = Vector3(0.125, 15, 24.452148)
-material = SubResource("StandardMaterial3D_51glo")
+material = SubResource("StandardMaterial3D_oj6lt")
 
 [node name="CSGBox3D23" type="CSGBox3D" parent="Geo" unique_id=693123900 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.051968, 7.298503, -56.159836)
@@ -394,7 +370,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.4
 use_collision = true
 collision_mask = 7
 size = Vector3(0.125, 15, 5.3823166)
-material = SubResource("StandardMaterial3D_8ixhd")
+material = SubResource("StandardMaterial3D_oj6lt")
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="Geo" unique_id=1494408404 groups=["Collidable_enviroment"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30.34942, 7.298503, -49.990013)
@@ -746,3 +722,12 @@ mesh = SubResource("ArrayMesh_0k5nc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FuncGodotMap4/entity_0_worldspawn" unique_id=82700233]
 transform = Transform3D(1, 0, 0, 0, 1.0000012, 0, 0, 0, 1.0000012, -2.5625, -0.31250024, 0.15625)
 shape = SubResource("BoxShape3D_8akdw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2089518365]
+transform = Transform3D(-0.8660254, -0.43301284, 0.24999997, 0.13974625, 0.27045453, 0.9525362, -0.4800741, 0.8598571, -0.17370857, 0, 0, -0.90342903)
+light_color = Color(1, 0.95233333, 0.89, 1)
+shadow_enabled = true
+shadow_blur = 0.25
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=56733592]
+environment = SubResource("Environment_oj6lt")

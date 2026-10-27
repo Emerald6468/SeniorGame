@@ -8,7 +8,6 @@ resource_name = "openPBR_shader1"
 cull_mode = 2
 albedo_color = Color(0.20386362, 0.6484375, 0.043060303, 1)
 albedo_texture = ExtResource("2_gub27")
-roughness = 0.5
 metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="Animation" id="Animation_ax3mc"]
@@ -196,11 +195,11 @@ size = Vector3(2.25, 0.125, 3.375)
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Leaf1/Armature_001" parent_id_path=PackedInt32Array(1439000236, 179238747) index="0" unique_id=1155621053]
-bones/1/rotation = Quaternion(-0.00073073263, 0, 0, 0.9999998)
-bones/2/rotation = Quaternion(-0.0076206196, 0, 0, 0.99997103)
+bones/1/rotation = Quaternion(-0.0037677428, 0, 0, 0.9999929)
+bones/2/rotation = Quaternion(-0.015176407, 0, 0, 0.99988484)
 bones/3/rotation = Quaternion(-0.014864327, 0, 0, 0.99988955)
-bones/4/rotation = Quaternion(-0.033511706, 0, 0, 0.99943835)
-bones/5/rotation = Quaternion(-0.017379604, 0, 0, 0.999849)
+bones/4/rotation = Quaternion(-0.053824227, 0, 0, 0.9985504)
+bones/5/rotation = Quaternion(-0.024093779, 0, 0, 0.9997098)
 
 [node name="Leaf1_nostem" parent="Leaf1/Armature_001/Skeleton3D" index="0" unique_id=1697516300]
 material_override = SubResource("StandardMaterial3D_jtapm")

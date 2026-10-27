@@ -21,12 +21,12 @@
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_fuqwi"]
+[sub_resource type="Sky" id="Sky_rx1xj"]
 sky_material = SubResource("ProceduralSkyMaterial_xhtoe")
 
 [sub_resource type="Environment" id="Environment_dyiuk"]
 background_mode = 2
-sky = SubResource("Sky_fuqwi")
+sky = SubResource("Sky_rx1xj")
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhtoe"]
@@ -779,7 +779,7 @@ size = Vector3(5.149414, 0.25, 19.104492)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="Awning4" type="CSGBox3D" parent="Geo" unique_id=895779561 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 78.963234, 7.9099483, -62.60606)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 78.963234, 8.969633, -62.60606)
 use_collision = true
 collision_mask = 7
 size = Vector3(5.149414, 2.9257813, 0.99121094)
