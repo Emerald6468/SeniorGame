@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b7lp5vpuh5hc0"]
+
+[ext_resource type="Script" uid="uid://rbbuagyk7v8v" path="res://Scenes/UI/splash_screen_manager.gd" id="1_dfnfq"]
+[ext_resource type="VideoStream" uid="uid://6bjraudtq0f" path="res://Assets/UI/Splash Screens/Green_Panda_Splash.ogv" id="2_g31or"]
+[ext_resource type="VideoStream" uid="uid://cqk8jamdkbful" path="res://Assets/UI/Splash Screens/Ratacadabra Intro_1.ogv" id="3_ywp7h"]
+
+[node name="SplashScreenManager" type="Control" unique_id=361214305]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dfnfq")
+
+[node name="SplashScreenContainer" type="CenterContainer" parent="." unique_id=483877038]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GreenPanda" type="VideoStreamPlayer" parent="SplashScreenContainer" unique_id=2089200831]
+layout_mode = 2
+stream = ExtResource("2_g31or")
+
+[node name="Ratacadabra" type="VideoStreamPlayer" parent="SplashScreenContainer" unique_id=1164197461]
+layout_mode = 2
+stream = ExtResource("3_ywp7h")
