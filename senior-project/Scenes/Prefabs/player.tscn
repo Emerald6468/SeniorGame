@@ -56,6 +56,7 @@ mesh = SubResource("CapsuleMesh_68wta")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1910088690]
+near = 0.01
 
 [node name="Right_Spell_Spawn" type="Marker3D" parent="Head/Camera3D" unique_id=1385046776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3901411, -0.115736246, -0.505494)

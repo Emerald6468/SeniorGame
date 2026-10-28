@@ -66,6 +66,8 @@ var on_wall = false
 var mouse_sensitivity = 0.4
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
+var camera_fov = 75.0
+var cur_camera_fov = camera_fov
 
 #camera tilt
 @export var tilt_degrees = 2.0
@@ -129,6 +131,7 @@ var hurt_time = 3.0
 
 
 func _ready() -> void:
+	camera.fov = camera_fov
 	set_collision()
 	set_spell_type()
 	cur_speed = SPEED
@@ -356,6 +359,10 @@ func _physics_process(delta: float) -> void:
 #endregion
 
 #region Movement
+	#FOV
+	
+	cur_camera_fov = camera_fov + cur_speed
+	camera.fov = cur_camera_fov
 	#controls colision
 	set_collision()
 	check_floor()
@@ -434,7 +441,6 @@ func _physics_process(delta: float) -> void:
 		$Head.position.y = move_toward(head_level,$Head.position.y,.2)
 		slide.stop()
 		running.stop()
-
 	#Head bob
 	t_bob += delta * velocity.length() * float(is_on_floor()) * float(!is_sliding)
 	camera.transform.origin = _headbob(t_bob)
