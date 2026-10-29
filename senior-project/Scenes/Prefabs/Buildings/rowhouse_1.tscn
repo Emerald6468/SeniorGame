@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://c54sjqmva64y"]
+
+[ext_resource type="ArrayMesh" uid="uid://bagpjmtsciyig" path="res://Assets/Meshes/Buildings/rowhouse1.tres" id="1_ogpqt"]
+[ext_resource type="Texture2D" uid="uid://bhntu1vko78qi" path="res://Assets/Textures/decalwindow.png" id="2_ecrx7"]
+[ext_resource type="Texture2D" uid="uid://ch1b4i8snto6x" path="res://Assets/Textures/decalwindow2.png" id="3_0dm4f"]
+[ext_resource type="ArrayMesh" uid="uid://diok4w3v6goxy" path="res://Assets/Meshes/Buildings/stairs1.tres" id="4_21ra5"]
+[ext_resource type="Texture2D" uid="uid://hw2qdxnc1dkj" path="res://Assets/Meshes/Buildings/Trims/Trim02_main_Trim02_main.png" id="5_ad2ht"]
+[ext_resource type="ArrayMesh" uid="uid://dwr0pw1t4nuve" path="res://Assets/Meshes/Buildings/Trims/Trim02_main.glb" id="6_51wsi"]
+[ext_resource type="Texture2D" uid="uid://dbwinimctemdc" path="res://Assets/Meshes/Buildings/Trims/Trim02_post_Untitled.png" id="7_rdsyh"]
+[ext_resource type="ArrayMesh" uid="uid://c1l3yuawxa5ur" path="res://Assets/Meshes/Buildings/Trims/Trim02_post.glb" id="8_u7ugk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qkp64"]
+size = Vector3(2, 1.5, 2.5405273)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfk5s"]
+resource_name = "openPBR_shader1.001"
+cull_mode = 2
+albedo_color = Color(1, 0.9372549, 0.8392157, 1)
+albedo_texture = ExtResource("5_ad2ht")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxrnd"]
+resource_name = "openPBR_shader1.001"
+cull_mode = 2
+albedo_color = Color(1, 0.9372549, 0.8392157, 1)
+albedo_texture = ExtResource("5_ad2ht")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3han"]
+resource_name = "openPBR_shader1"
+cull_mode = 2
+albedo_color = Color(1, 0.9372549, 0.8392157, 1)
+albedo_texture = ExtResource("7_rdsyh")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wq6b"]
+resource_name = "openPBR_shader1"
+cull_mode = 2
+albedo_color = Color(1, 0.9372549, 0.8392157, 1)
+albedo_texture = ExtResource("7_rdsyh")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_anvcn"]
+size = Vector3(6.6875, 22.50001, 13.34376)
+
+[node name="rowhouse1" type="MeshInstance3D" unique_id=1621268391]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_ogpqt")
+
+[node name="Decal3" type="Decal" parent="." unique_id=626885333]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3.5, 0)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal4" type="Decal" parent="." unique_id=995834240]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 7.5, 0)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal5" type="Decal" parent="." unique_id=386738746]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 11.5, 0)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal6" type="Decal" parent="." unique_id=903475882]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 15.5, 0)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal2" type="Decal" parent="." unique_id=520226474]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 19.5, 0)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal7" type="Decal" parent="." unique_id=969454380]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 3.5, -8.742278e-08)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal12" type="Decal" parent="." unique_id=449498238]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.75, -1.2020631e-07)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("3_0dm4f")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal17" type="Decal" parent="." unique_id=1229040765]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 0.75, -2.0762909e-07)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("3_0dm4f")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal8" type="Decal" parent="." unique_id=62206975]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 7.5, -8.742278e-08)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal9" type="Decal" parent="." unique_id=1868748729]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 11.5, -8.742278e-08)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal10" type="Decal" parent="." unique_id=1650835092]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 15.5, -8.742278e-08)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal11" type="Decal" parent="." unique_id=1650827772]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 19.5, -8.742278e-08)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal13" type="Decal" parent="." unique_id=1989111443]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 7.5, 8.742278e-08)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal14" type="Decal" parent="." unique_id=276790309]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 11.5, 8.742278e-08)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal15" type="Decal" parent="." unique_id=286442219]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 15.5, 8.742278e-08)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Decal16" type="Decal" parent="." unique_id=664817471]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 19.5, 8.742278e-08)
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_ecrx7")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=173284002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = ExtResource("4_21ra5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=2013946901 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1191947580]
+transform = Transform3D(1, 0, 0, 0, 0.7986355, -0.6018149, 0, 0.6018149, 0.7986355, 0, -0.61187506, -0.104490876)
+shape = SubResource("BoxShape3D_qkp64")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=579327281]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1, 21.5, -1.0927847e-08)
+material_override = SubResource("StandardMaterial3D_qfk5s")
+mesh = ExtResource("6_51wsi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=412166152]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.1996522, 21.5, -1.0927847e-08)
+material_override = SubResource("StandardMaterial3D_gxrnd")
+mesh = ExtResource("6_51wsi")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=2033876261]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1, 21.5, -1.0927847e-08)
+material_override = SubResource("StandardMaterial3D_t3han")
+mesh = ExtResource("8_u7ugk")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=582944488]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.1996522, 21.5, -1.0927847e-08)
+material_override = SubResource("StandardMaterial3D_5wq6b")
+mesh = ExtResource("8_u7ugk")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1609890836]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.1953121, 21.5, -1.0927847e-08)
+material_override = SubResource("StandardMaterial3D_t3han")
+mesh = ExtResource("8_u7ugk")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1329194156]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.193109, 21.5, -1.0927847e-08)
+material_override = SubResource("StandardMaterial3D_qfk5s")
+mesh = ExtResource("6_51wsi")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=1821506218]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.388421, 21.5, -1.0927847e-08)
+material_override = SubResource("StandardMaterial3D_t3han")
+mesh = ExtResource("8_u7ugk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=612517110 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.250005, -6.67187)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1142382604]
+shape = SubResource("BoxShape3D_anvcn")
