@@ -29,21 +29,22 @@ mouse_filter = 2
 texture = ExtResource("5_xgoif")
 expand_mode = 1
 
-[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1798506607]
-custom_minimum_size = Vector2(200, 0)
-offset_left = 38.000004
-offset_top = 787.0
-offset_right = 348.0
-offset_bottom = 1097.0
-scale = Vector2(5.753134, 5.753134)
-theme_override_constants/separation = 50
-alignment = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=990428672]
+anchors_preset = -1
+anchor_right = 0.36
+anchor_bottom = 0.998
+offset_left = 70.0
+offset_top = 43.0
+offset_right = -170.20001
+offset_bottom = -39.840088
 
 [node name="Play" type="TextureButton" parent="CanvasLayer/VBoxContainer" unique_id=1324171999]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_rotation = -0.14835298
 texture_normal = ExtResource("2_fpci6")
 ignore_texture_size = true
 stretch_mode = 4
@@ -53,6 +54,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_rotation = 0.04886922
 texture_normal = ExtResource("3_xgoif")
 ignore_texture_size = true
 stretch_mode = 4
@@ -62,6 +65,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_rotation = -0.099483766
 texture_normal = ExtResource("4_5m7x0")
 ignore_texture_size = true
 stretch_mode = 4
