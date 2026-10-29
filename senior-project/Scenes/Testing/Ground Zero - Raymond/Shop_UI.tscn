@@ -37,17 +37,14 @@ grow_vertical = 2
 [node name="Food" type="Button" parent="HBoxContainer" unique_id=1924183421]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Apple"
 
 [node name="Drug" type="Button" parent="HBoxContainer" unique_id=1555627211]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Meth"
 
 [node name="Phamplet" type="Button" parent="HBoxContainer" unique_id=988118538]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Tourist Guide to City"
 
 [node name="Label" type="Label" parent="." unique_id=1934626973]
 layout_mode = 0

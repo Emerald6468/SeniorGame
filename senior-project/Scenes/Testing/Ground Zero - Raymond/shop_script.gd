@@ -11,19 +11,33 @@ var shop_items = {
 	"meth": 70,
 	"phamplet": 5
 }
+
+var items = shop_items.keys()
+
+
+
+
 func _ready() -> void:
 	money_label.text = "Money: $" + str(money)
+	items.shuffle()
 	update_buttons()
+	food_button.text = items[0]
+	drug_button.text = items[1]
+	phamplet_button.text = items[2]
+	
 	
 
 func update_buttons() -> void:
-	food_button.disabled = money < 20
-	drug_button.disabled = money < 70
-	phamplet_button.disabled = money < 5
+	food_button.disabled = money < shop_items[items[0]]
+	drug_button.disabled = money < shop_items[items[1]]
+	phamplet_button.disabled = money < shop_items[items[2]]
 
 func _on_food_pressed() -> void:
-	if money >= shop_items["apple"]:
-		money -= shop_items["apple"]
+	var item = items[0]
+	var price = shop_items[item]
+	
+	if money >= price:
+		money -= price
 		money_label.text = "Money: $" + str(money)
 		update_buttons()
 	
@@ -34,9 +48,11 @@ func _on_food_pressed() -> void:
 
 
 func _on_drug_pressed() -> void:
+	var item = items[1]
+	var price = shop_items[item]
 	
-	if money >= shop_items["meth"]:
-		money -= shop_items["meth"]
+	if money >= price:
+		money -= price
 		money_label.text = "Money: $" + str(money)
 		update_buttons()
 	
@@ -47,9 +63,11 @@ func _on_drug_pressed() -> void:
 
 
 func _on_phamplet_pressed() -> void:
+	var item = items[2]
+	var price = shop_items[item]
 	
-	if money >= shop_items["phamplet"]:
-		money -= shop_items["phamplet"]
+	if money >= price:
+		money -= price
 		money_label.text = "Money: $" + str(money)
 		update_buttons()
 	
