@@ -6,7 +6,11 @@ extends Control
 @onready var phamplet_button = $HBoxContainer/Phamplet
 var money = 80
 
-
+var shop_items = {
+	"apple": 20,
+	"meth": 70,
+	"phamplet": 5
+}
 func _ready() -> void:
 	money_label.text = "Money: $" + str(money)
 	update_buttons()
@@ -18,8 +22,8 @@ func update_buttons() -> void:
 	phamplet_button.disabled = money < 5
 
 func _on_food_pressed() -> void:
-	if money >= 20:
-		money -= 20
+	if money >= shop_items["apple"]:
+		money -= shop_items["apple"]
 		money_label.text = "Money: $" + str(money)
 		update_buttons()
 	
@@ -31,8 +35,8 @@ func _on_food_pressed() -> void:
 
 func _on_drug_pressed() -> void:
 	
-	if money >= 70:
-		money -= 70
+	if money >= shop_items["meth"]:
+		money -= shop_items["meth"]
 		money_label.text = "Money: $" + str(money)
 		update_buttons()
 	
@@ -44,8 +48,8 @@ func _on_drug_pressed() -> void:
 
 func _on_phamplet_pressed() -> void:
 	
-	if money >= 5:
-		money -= 5
+	if money >= shop_items["phamplet"]:
+		money -= shop_items["phamplet"]
 		money_label.text = "Money: $" + str(money)
 		update_buttons()
 	
