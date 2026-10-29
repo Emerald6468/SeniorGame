@@ -4,7 +4,7 @@ extends CanvasLayer
 var packed_scene = load("res://Scenes/Testing/Ground Zero - Raymond/Options_Menu.tscn")
 var options_instance = packed_scene.instantiate()
 
-@onready var pause_menu = $VBoxContainer
+@onready var pause_menu = $Phone/VBoxContainer
 #@onready var options_menu_script = $PauseMenu
 
 
