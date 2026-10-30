@@ -8,6 +8,9 @@
 [ext_resource type="ArrayMesh" uid="uid://dwr0pw1t4nuve" path="res://Assets/Meshes/Buildings/Trims/Trim02_main.glb" id="6_51wsi"]
 [ext_resource type="Texture2D" uid="uid://dbwinimctemdc" path="res://Assets/Meshes/Buildings/Trims/Trim02_post_Untitled.png" id="7_rdsyh"]
 [ext_resource type="ArrayMesh" uid="uid://c1l3yuawxa5ur" path="res://Assets/Meshes/Buildings/Trims/Trim02_post.glb" id="8_u7ugk"]
+[ext_resource type="Texture2D" uid="uid://br3gjip2o5et8" path="res://Assets/Meshes/Buildings/Trims/Trim2_door_Untitled.png" id="9_0dm4f"]
+[ext_resource type="ArrayMesh" uid="uid://dy71kpuoph082" path="res://Assets/Meshes/Buildings/Trims/Trim2_door.glb" id="10_21ra5"]
+[ext_resource type="Texture2D" uid="uid://ddcfsmkq4xplc" path="res://Assets/Textures/decaldoor1.png" id="11_21ra5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qkp64"]
 size = Vector3(2, 1.5, 2.5405273)
@@ -46,6 +49,25 @@ metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_anvcn"]
 size = Vector3(6.6875, 22.50001, 13.34376)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ad2ht"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(1, 0.9372549, 0.8392157, 1)
+albedo_texture = ExtResource("9_0dm4f")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqys"]
+albedo_color = Color(1, 0.9372549, 0.8392157, 1)
+albedo_texture = ExtResource("11_21ra5")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_offset = Vector3(0.5, 0, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bhunq"]
+material = SubResource("StandardMaterial3D_riqys")
+size = Vector2(1, 2)
 
 [node name="rowhouse1" type="MeshInstance3D" unique_id=1621268391]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
@@ -198,3 +220,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.250005, -6.67187)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1142382604]
 shape = SubResource("BoxShape3D_anvcn")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=960429351]
+transform = Transform3D(1.4, 0, 0, 0, -6.119594e-08, -1.4, 0, 1.4, -6.119594e-08, 2, 1.5, 0)
+material_override = SubResource("StandardMaterial3D_ad2ht")
+mesh = ExtResource("10_21ra5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D9" unique_id=1640517483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0053774673, -1)
+mesh = SubResource("PlaneMesh_bhunq")
