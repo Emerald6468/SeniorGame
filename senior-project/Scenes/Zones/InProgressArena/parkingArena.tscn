@@ -325,3 +325,15 @@ transform = Transform3D(-0.42254406, 0, 0.9063424, 0, 1, 0, -0.9063424, 0, -0.42
 use_collision = true
 size = Vector3(7.8259373, 3.307047, 5.0707073)
 material = SubResource("StandardMaterial3D_td3l8")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="." unique_id=188936540]
+transform = Transform3D(-0.3360049, 0, -0.9418602, 0, 1, 0, 0.9418602, 0, -0.3360049, -11.977917, -12.456453, -40.27973)
+use_collision = true
+size = Vector3(7.8259373, 3.307047, 5.0707073)
+material = SubResource("StandardMaterial3D_td3l8")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="." unique_id=155264587]
+transform = Transform3D(0.019681469, 0, -0.9998062, 0, 1, 0, 0.9998062, 0, 0.019681469, -12.670613, -12.456453, -21.89117)
+use_collision = true
+size = Vector3(7.8259373, 3.307047, 5.0707073)
+material = SubResource("StandardMaterial3D_td3l8")
