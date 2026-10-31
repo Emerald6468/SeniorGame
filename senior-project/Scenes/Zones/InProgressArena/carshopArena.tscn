@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://kl11sje4irrn"]
+
+[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_dnn8g"]
+[ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="2_g0jqv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lywaq"]
+albedo_texture = ExtResource("1_dnn8g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0jqv"]
+albedo_texture = ExtResource("1_dnn8g")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3v032"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_fuqwi"]
+sky_material = SubResource("ProceduralSkyMaterial_3v032")
+
+[sub_resource type="Environment" id="Environment_hhkvs"]
+background_mode = 2
+sky = SubResource("Sky_fuqwi")
+glow_enabled = true
+
+[node name="carshopArena" type="Node3D" unique_id=790710978]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1663361898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_lywaq")
+
+[node name="Building" type="CSGBox3D" parent="." unique_id=1434800512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.203125, 7.5, 0)
+use_collision = true
+size = Vector3(37.40625, 15, 25)
+material = SubResource("StandardMaterial3D_lywaq")
+
+[node name="MainShopSub" type="CSGBox3D" parent="Building" unique_id=1736352177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3021345, -0.47449684, 0.45252323)
+operation = 2
+use_collision = true
+size = Vector3(23, 14.377441, 23.24707)
+material = SubResource("StandardMaterial3D_lywaq")
+
+[node name="UnderOfficeSub" type="CSGBox3D" parent="Building" unique_id=546080447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.483788, -3.7144165, -1.0851135)
+operation = 2
+use_collision = true
+size = Vector3(12.950256, 7.571167, 29.096252)
+material = SubResource("StandardMaterial3D_lywaq")
+
+[node name="OfficeSub" type="CSGBox3D" parent="Building" unique_id=214823851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.509964, 3.7973166, 0.17904091)
+operation = 2
+use_collision = true
+size = Vector3(13.201553, 6.184067, 23.837986)
+material = SubResource("StandardMaterial3D_lywaq")
+
+[node name="OfficeWindowSub" type="CSGBox3D" parent="Building" unique_id=666200389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.69412, 4.363415, 13.115446)
+operation = 2
+use_collision = true
+size = Vector3(12.568211, 4.6641827, 2.4863758)
+material = SubResource("StandardMaterial3D_lywaq")
+
+[node name="DoorSub" type="CSGBox3D" parent="Building" unique_id=1011501836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0227413, -5.998786, 12.348589)
+operation = 2
+use_collision = true
+size = Vector3(1.8298764, 3.2265775, 0.95266056)
+material = SubResource("StandardMaterial3D_lywaq")
+
+[node name="GarageDoorSub" type="CSGBox3D" parent="Building" unique_id=14770816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.220354, -4.8230433, 3.6785164)
+operation = 2
+use_collision = true
+size = Vector3(2.1940546, 5.578063, 10.187267)
+material = SubResource("StandardMaterial3D_lywaq")
+
+[node name="Pillars" type="CSGBox3D" parent="Building" unique_id=1131277398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.962566, -3.739685, -11.681641)
+use_collision = true
+size = Vector3(1.4521484, 7.47937, 1.6367188)
+material = SubResource("StandardMaterial3D_lywaq")
+
+[node name="Pillars2" type="CSGBox3D" parent="Building" unique_id=673056560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.962566, -3.739685, 11.682903)
+use_collision = true
+size = Vector3(1.4521484, 7.47937, 1.6367188)
+material = SubResource("StandardMaterial3D_lywaq")
+
+[node name="Stairs" type="CSGBox3D" parent="Building" unique_id=578693961]
+transform = Transform3D(1, 0, 0, 0, 0.9077775, 0.4194521, 0, -0.4194521, 0.9077775, -3.1692915, -3.5475254, -0.8171238)
+use_collision = true
+size = Vector3(4.065674, 0.11706543, 20.258362)
+material = SubResource("StandardMaterial3D_g0jqv")
+
+[node name="StairLanding" type="CSGBox3D" parent="Building" unique_id=918345490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1692915, 0.6730232, 10.263079)
+use_collision = true
+size = Vector3(4.065674, 0.11706543, 3.772974)
+material = SubResource("StandardMaterial3D_g0jqv")
+
+[node name="StairsLandingRail" type="CSGBox3D" parent="Building" unique_id=1624437393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1911726, 1.6107826, 10.263079)
+use_collision = true
+size = Vector3(0.109436035, 1.9925842, 3.772974)
+material = SubResource("StandardMaterial3D_g0jqv")
+
+[node name="StairsRail" type="CSGBox3D" parent="Building" unique_id=899924357]
+transform = Transform3D(1, 0, 0, 0, 0.9077775, 0.4194521, 0, -0.4194521, 0.9077775, -1.213542, -2.0954857, 0.22205555)
+use_collision = true
+size = Vector3(0.154, 1.7614492, 18.414644)
+material = SubResource("StandardMaterial3D_g0jqv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=412540554]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1541693770]
+environment = SubResource("Environment_hhkvs")
+
+[node name="Player" parent="." unique_id=469422006 instance=ExtResource("2_g0jqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.50005, 1, 3.8966904)
+left_spell_type = 3
+right_spell_type = 2
