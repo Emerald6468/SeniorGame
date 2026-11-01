@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://g667snc5tigf"]
+
+[ext_resource type="ArrayMesh" uid="uid://dhxhxw88jntui" path="res://Assets/Meshes/Buildings/timber1.tres" id="1_oyu8a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+size = Vector3(5.875, 2.75, 5.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ccma"]
+size = Vector3(6.75, 8.625, 5.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fxrt7"]
+size = Vector3(5.5, 5.5, 5.75)
+
+[node name="timber1" type="MeshInstance3D" unique_id=172679901]
+mesh = ExtResource("1_oyu8a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=301010621 groups=["Collidable_enviroment"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1760266207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9375, 1.375, 0)
+shape = SubResource("BoxShape3D_bhunq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=960869460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 7.0625, 0)
+shape = SubResource("BoxShape3D_5ccma")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=681588658]
+transform = Transform3D(0.68243444, -0.7309468, 0, 0.7309468, 0.68243444, 0, 0, 0, 1, 3.0150847, 11.486373, 0)
+shape = SubResource("BoxShape3D_fxrt7")
+debug_color = Color(0, 0.85000014, 1, 1)

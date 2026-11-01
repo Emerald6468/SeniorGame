@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bw3mfmvigamss" path="res://Assets/Textures/fencetest1.png" id="14_dtjo1"]
 [ext_resource type="PackedScene" uid="uid://bjl1p1fviswuf" path="res://Scenes/Prefabs/Enemies/Wisp.tscn" id="15_rx1xj"]
 [ext_resource type="PackedScene" uid="uid://d20bamxgu5rol" path="res://Scenes/Prefabs/Enemies/Grunt.tscn" id="16_wsy6g"]
+[ext_resource type="PackedScene" uid="uid://g667snc5tigf" path="res://Scenes/Prefabs/Buildings/timber1.tscn" id="22_mvblb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xhtoe"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,6 +33,14 @@ sky = SubResource("Sky_rx1xj")
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhtoe"]
+albedo_texture = ExtResource("1_0guxe")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8c7vf"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0.92947316, 1, 0.54)
 albedo_texture = ExtResource("1_0guxe")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
@@ -324,11 +333,11 @@ size = Vector3(0.125, 22.537964, 18.705692)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D33" type="CSGBox3D" parent="Geo" unique_id=1743895882 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 58.599, 11.29124, -89.375)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 58.599, 11.29124, -94.24176)
 use_collision = true
 collision_mask = 7
 size = Vector3(0.125, 22.985474, 59.997314)
-material = SubResource("StandardMaterial3D_xhtoe")
+material = SubResource("StandardMaterial3D_8c7vf")
 
 [node name="CSGBox3D46" type="CSGBox3D" parent="Geo" unique_id=530312755 groups=["Collidable_enviroment"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 101.10403, 11.29124, -127.70219)
@@ -988,9 +997,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.527725, 0, -88.62533)
 [node name="rowhouse18" parent="buildings" unique_id=1288994618 instance=ExtResource("4_wsy6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.527725, 0, -89.12533)
 
-[node name="rowhouse15" parent="buildings" unique_id=341593925 instance=ExtResource("4_wsy6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.277725, 0, -88.87533)
-
 [node name="rowhouse9" parent="buildings" unique_id=1251127004 instance=ExtResource("4_wsy6g")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 89.277725, 0, -98.12533)
 
@@ -1269,3 +1275,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2855616, 0.34612846, -98.60
 
 [node name="Wisp6" parent="." unique_id=1775640411 instance=ExtResource("15_rx1xj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.189595, 8.051934, -9.699628)
+
+[node name="MeshInstance3D" parent="." unique_id=172679901 instance=ExtResource("22_mvblb")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.298935, 0, -87.98265)
