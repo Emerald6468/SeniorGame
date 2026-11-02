@@ -20,7 +20,7 @@ size = Vector3(2, 1.5, 2.5405273)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5gp8"]
 resource_name = "openPBR_shader1.001"
 cull_mode = 2
-albedo_color = Color(0.25490198, 0.28235295, 0.34117648, 1)
+albedo_color = Color(1, 0.9372549, 0.8392157, 1)
 albedo_texture = ExtResource("4_jt7bw")
 metallic_specular = 0.0
 metadata/_gltf_primary_texture_coord = 0
@@ -28,7 +28,7 @@ metadata/_gltf_primary_texture_coord = 0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybrbr"]
 resource_name = "openPBR_shader1"
 cull_mode = 2
-albedo_color = Color(0.25490198, 0.28235295, 0.34117648, 1)
+albedo_color = Color(1, 0.9372549, 0.8392157, 1)
 albedo_texture = ExtResource("6_q4ben")
 metallic_specular = 0.0
 metadata/_gltf_primary_texture_coord = 0
@@ -39,7 +39,7 @@ size = Vector3(6.6875, 22.50001, 13.34376)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmbic"]
 resource_name = "openPBR_shader1"
 cull_mode = 2
-albedo_color = Color(0.25490198, 0.28235295, 0.34117648, 1)
+albedo_color = Color(1, 0.9372549, 0.8392157, 1)
 albedo_texture = ExtResource("8_uyr3q")
 metallic_specular = 0.0
 metadata/_gltf_primary_texture_coord = 0
@@ -70,75 +70,89 @@ size = Vector2(1, 2)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 mesh = ExtResource("1_6yo8j")
 
-[node name="Decal13" type="Decal" parent="." unique_id=336185653]
+[node name="Window_decal1" type="Decal" parent="." unique_id=336185653]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 7.5, 8.742278e-08)
 size = Vector3(4, 0.1, 4)
 texture_albedo = ExtResource("2_uyr3q")
 modulate = Color(1, 0.9372549, 0.8392157, 1)
 
-[node name="Decal14" type="Decal" parent="." unique_id=1088788053]
+[node name="Window_decal2" type="Decal" parent="." unique_id=1088788053]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 11.5, 8.742278e-08)
 size = Vector3(4, 0.1, 4)
 texture_albedo = ExtResource("2_uyr3q")
 modulate = Color(1, 0.9372549, 0.8392157, 1)
 
-[node name="Decal15" type="Decal" parent="." unique_id=121375680]
+[node name="Window_decal3" type="Decal" parent="." unique_id=121375680]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 15.5, 8.742278e-08)
 size = Vector3(4, 0.1, 4)
 texture_albedo = ExtResource("2_uyr3q")
 modulate = Color(1, 0.9372549, 0.8392157, 1)
 
-[node name="Decal16" type="Decal" parent="." unique_id=798167650]
+[node name="Window_decal4" type="Decal" parent="." unique_id=623597140]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 19.5, -8.742278e-08)
+visible = false
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_uyr3q")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Window_decal5" type="Decal" parent="." unique_id=1275387745]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 19.5, 0)
+visible = false
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("2_uyr3q")
+modulate = Color(1, 0.9372549, 0.8392157, 1)
+
+[node name="Window_decal6" type="Decal" parent="." unique_id=798167650]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 19.5, 8.742278e-08)
 size = Vector3(4, 0.1, 4)
 texture_albedo = ExtResource("2_uyr3q")
 modulate = Color(1, 0.9372549, 0.8392157, 1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=851888391]
+[node name="Stairs" type="MeshInstance3D" parent="." unique_id=851888391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 mesh = ExtResource("3_kxypq")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=932832490 groups=["Collidable_enviroment"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="Stairs" unique_id=932832490 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1149495620]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs/StaticBody3D" unique_id=1149495620]
 transform = Transform3D(1, 0, 0, 0, 0.7986355, -0.6018149, 0, 0.6018149, 0.7986355, 0, -0.61187506, -0.104490876)
 shape = SubResource("BoxShape3D_qkp64")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1876353561]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1, 21.5, -1.0927847e-08)
-material_override = SubResource("StandardMaterial3D_a5gp8")
+[node name="Trim_main1" type="MeshInstance3D" parent="." unique_id=56266827]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.1996522, 21.5, -1.0927849e-08)
 mesh = ExtResource("5_4yfwc")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5gp8")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=56266827]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.1996522, 21.5, -1.0927847e-08)
-material_override = SubResource("StandardMaterial3D_a5gp8")
-mesh = ExtResource("5_4yfwc")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=755442722]
+[node name="Trim_main2" type="MeshInstance3D" parent="." unique_id=1876353561]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1, 21.5, -1.0927847e-08)
-material_override = SubResource("StandardMaterial3D_ybrbr")
-mesh = ExtResource("7_k54ta")
+mesh = ExtResource("5_4yfwc")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5gp8")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=250733728]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.1996522, 21.5, -1.0927847e-08)
-material_override = SubResource("StandardMaterial3D_ybrbr")
-mesh = ExtResource("7_k54ta")
+[node name="Trim_main3" type="MeshInstance3D" parent="." unique_id=799278013]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.193109, 21.5, -1.0927849e-08)
+mesh = ExtResource("5_4yfwc")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5gp8")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=20418402]
+[node name="Trim_post1" type="MeshInstance3D" parent="." unique_id=250733728]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.1996522, 21.5, -1.0927849e-08)
+mesh = ExtResource("7_k54ta")
+surface_material_override/0 = SubResource("StandardMaterial3D_ybrbr")
+
+[node name="Trim_post2" type="MeshInstance3D" parent="." unique_id=755442722]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1, 21.5, -1.0927847e-08)
+mesh = ExtResource("7_k54ta")
+surface_material_override/0 = SubResource("StandardMaterial3D_ybrbr")
+
+[node name="Trim_post3" type="MeshInstance3D" parent="." unique_id=20418402]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.1953121, 21.5, -1.0927847e-08)
-material_override = SubResource("StandardMaterial3D_ybrbr")
 mesh = ExtResource("7_k54ta")
+surface_material_override/0 = SubResource("StandardMaterial3D_ybrbr")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=799278013]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.193109, 21.5, -1.0927847e-08)
-material_override = SubResource("StandardMaterial3D_a5gp8")
-mesh = ExtResource("5_4yfwc")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=325502495]
+[node name="Trim_post4" type="MeshInstance3D" parent="." unique_id=325502495]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.388421, 21.5, -1.0927847e-08)
-material_override = SubResource("StandardMaterial3D_ybrbr")
 mesh = ExtResource("7_k54ta")
+surface_material_override/0 = SubResource("StandardMaterial3D_ybrbr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1807095710 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.250005, -6.67187)
@@ -146,10 +160,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.250005, -6.67187)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1592142059]
 shape = SubResource("BoxShape3D_anvcn")
 
+[node name="BayWindow_s" type="MeshInstance3D" parent="." unique_id=280203261]
+transform = Transform3D(0.35, 3.0597967e-08, -1.3374798e-15, 0, -1.5298985e-08, -0.35, -3.0597967e-08, 0.35, -1.5298985e-08, -1.125, -0.5725036, 3.715469e-08)
+mesh = ExtResource("10_kxypq")
+surface_material_override/0 = SubResource("StandardMaterial3D_fmbic")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BayWindow_s" unique_id=1094337399 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BayWindow_s/StaticBody3D" unique_id=1922321136 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 5.75, 1.8125)
+shape = SubResource("BoxShape3D_n4gs1")
+debug_color = Color(0, 0.8548469, 1, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BayWindow_s/StaticBody3D" unique_id=402583138 groups=["Collidable_enviroment"]]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -1.5929627, 5.75, 0.631649)
+shape = SubResource("BoxShape3D_n4gs1")
+debug_color = Color(0, 0.8548469, 1, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BayWindow_s/StaticBody3D" unique_id=315825291 groups=["Collidable_enviroment"]]
+transform = Transform3D(-0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.258819, 1.6570373, 5.75, 0.631649)
+shape = SubResource("BoxShape3D_n4gs1")
+debug_color = Color(0, 0.8548469, 1, 1)
+
 [node name="BayWindow1" type="MeshInstance3D" parent="." unique_id=272502804]
 transform = Transform3D(0.35, 3.059797e-08, -1.3374798e-15, 0, -1.5298985e-08, -0.35, -3.059797e-08, 0.35, -1.5298985e-08, -1.125, 1.4999995, 3.715469e-08)
-material_override = SubResource("StandardMaterial3D_fmbic")
 mesh = ExtResource("9_pefxm")
+surface_material_override/0 = SubResource("StandardMaterial3D_fmbic")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BayWindow1" unique_id=1738198366 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
@@ -170,34 +208,10 @@ transform = Transform3D(-0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.2588
 shape = SubResource("BoxShape3D_n4gs1")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="BayWindow6" type="MeshInstance3D" parent="." unique_id=280203261]
-transform = Transform3D(0.35, 3.0597967e-08, -1.3374798e-15, 0, -1.5298985e-08, -0.35, -3.0597967e-08, 0.35, -1.5298985e-08, -1.125, -0.5725036, 3.715469e-08)
-material_override = SubResource("StandardMaterial3D_fmbic")
-mesh = ExtResource("10_kxypq")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="BayWindow6" unique_id=1094337399 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
-collision_mask = 7
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BayWindow6/StaticBody3D" unique_id=1922321136 groups=["Collidable_enviroment"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 5.75, 1.8125)
-shape = SubResource("BoxShape3D_n4gs1")
-debug_color = Color(0, 0.8548469, 1, 1)
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="BayWindow6/StaticBody3D" unique_id=402583138 groups=["Collidable_enviroment"]]
-transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -1.5929627, 5.75, 0.631649)
-shape = SubResource("BoxShape3D_n4gs1")
-debug_color = Color(0, 0.8548469, 1, 1)
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="BayWindow6/StaticBody3D" unique_id=315825291 groups=["Collidable_enviroment"]]
-transform = Transform3D(-0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.258819, 1.6570373, 5.75, 0.631649)
-shape = SubResource("BoxShape3D_n4gs1")
-debug_color = Color(0, 0.8548469, 1, 1)
-
 [node name="BayWindow2" type="MeshInstance3D" parent="." unique_id=871362515]
 transform = Transform3D(0.35, 3.059797e-08, -1.3374798e-15, 0, -1.5298985e-08, -0.35, -3.059797e-08, 0.35, -1.5298985e-08, -1.125, 5.5, 1.5298985e-08)
-material_override = SubResource("StandardMaterial3D_fmbic")
 mesh = ExtResource("9_pefxm")
+surface_material_override/0 = SubResource("StandardMaterial3D_fmbic")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BayWindow2" unique_id=1962967664 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
@@ -220,8 +234,8 @@ debug_color = Color(0, 0.8548469, 1, 1)
 
 [node name="BayWindow3" type="MeshInstance3D" parent="." unique_id=1468110056]
 transform = Transform3D(0.35, 3.059797e-08, -1.3374798e-15, 0, -1.5298985e-08, -0.35, -3.059797e-08, 0.35, -1.5298985e-08, -1.125, 9.5, 1.5298985e-08)
-material_override = SubResource("StandardMaterial3D_fmbic")
 mesh = ExtResource("9_pefxm")
+surface_material_override/0 = SubResource("StandardMaterial3D_fmbic")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BayWindow3" unique_id=776757281 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
@@ -244,8 +258,8 @@ debug_color = Color(0, 0.8548469, 1, 1)
 
 [node name="BayWindow4" type="MeshInstance3D" parent="." unique_id=128895483]
 transform = Transform3D(0.35, 3.059797e-08, -1.3374798e-15, 0, -1.5298985e-08, -0.35, -3.059797e-08, 0.35, -1.5298985e-08, -1.125, 13.5, 1.5298985e-08)
-material_override = SubResource("StandardMaterial3D_fmbic")
 mesh = ExtResource("9_pefxm")
+surface_material_override/0 = SubResource("StandardMaterial3D_fmbic")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BayWindow4" unique_id=1383651169 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
@@ -268,8 +282,8 @@ debug_color = Color(0, 0.8548469, 1, 1)
 
 [node name="BayWindow5" type="MeshInstance3D" parent="." unique_id=1218746371]
 transform = Transform3D(0.35, 3.059797e-08, -1.3374798e-15, 0, -1.5298985e-08, -0.35, -3.059797e-08, 0.35, -1.5298985e-08, -1.125, 17.5, 1.5298985e-08)
-material_override = SubResource("StandardMaterial3D_fmbic")
 mesh = ExtResource("9_pefxm")
+surface_material_override/0 = SubResource("StandardMaterial3D_fmbic")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BayWindow5" unique_id=1617707842 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, -1.509958e-07, -1.509958e-07, 1.509958e-07, -4.371139e-08, 1, -1.509958e-07, -1, -4.3711367e-08, 0, 0, 0)
@@ -290,25 +304,11 @@ transform = Transform3D(-0.258819, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.2588
 shape = SubResource("BoxShape3D_n4gs1")
 debug_color = Color(0, 0.8548469, 1, 1)
 
-[node name="Decal2" type="Decal" parent="." unique_id=1275387745]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 19.5, 0)
-visible = false
-size = Vector3(4, 0.1, 4)
-texture_albedo = ExtResource("2_uyr3q")
-modulate = Color(1, 0.9372549, 0.8392157, 1)
-
-[node name="Decal11" type="Decal" parent="." unique_id=623597140]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 19.5, -8.742278e-08)
-visible = false
-size = Vector3(4, 0.1, 4)
-texture_albedo = ExtResource("2_uyr3q")
-modulate = Color(1, 0.9372549, 0.8392157, 1)
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=836249478]
+[node name="Doorframe" type="MeshInstance3D" parent="." unique_id=836249478]
 transform = Transform3D(1.4, 0, 0, 0, -6.119594e-08, -1.4, 0, 1.4, -6.119594e-08, 2, 1.5, 0)
-material_override = SubResource("StandardMaterial3D_4yfwc")
 mesh = ExtResource("12_4yfwc")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yfwc")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D9" unique_id=843767484]
+[node name="Doorplane" type="MeshInstance3D" parent="Doorframe" unique_id=843767484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0053774673, -1)
 mesh = SubResource("PlaneMesh_4yfwc")

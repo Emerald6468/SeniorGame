@@ -8,9 +8,12 @@
 [ext_resource type="ArrayMesh" uid="uid://dqnxdahmvae7j" path="res://Assets/Meshes/Buildings/Building2a.tres" id="5_k4306"]
 [ext_resource type="PackedScene" uid="uid://nq1u3l6y5ysq" path="res://Scenes/Prefabs/Buildings/rowhouse_2.tscn" id="5_xumb4"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="6_4bq0m"]
+[ext_resource type="Texture2D" uid="uid://ycu4bqadrw1p" path="res://Assets/Textures/wallbrick1.png" id="6_5ubb3"]
+[ext_resource type="Texture2D" uid="uid://dlbdb4jgsrgna" path="res://Assets/Textures/wall4.png" id="7_8xkb6"]
 [ext_resource type="Texture2D" uid="uid://c652ejfuywhbm" path="res://Assets/Textures/floor1.png" id="7_dtjo1"]
 [ext_resource type="Texture2D" uid="uid://tkycboofxkoc" path="res://Assets/Textures/floor3.png" id="8_1kytf"]
 [ext_resource type="Texture2D" uid="uid://cxi8hbo1o7mqp" path="res://Assets/Textures/frame2.png" id="9_rx1xj"]
+[ext_resource type="Texture2D" uid="uid://odh1usgvll4h" path="res://Assets/Meshes/BayWindow01_s_Untitled.png" id="10_a5gp8"]
 [ext_resource type="Texture2D" uid="uid://dc06at4el0vtp" path="res://Assets/Textures/wall2.png" id="10_wsy6g"]
 [ext_resource type="Texture2D" uid="uid://cjxqwj44mpj7q" path="res://Assets/Textures/wood1.png" id="11_xumb4"]
 [ext_resource type="Texture2D" uid="uid://drv8h1gxijfdi" path="res://Assets/Textures/frame.png" id="12_8c7vf"]
@@ -49,6 +52,42 @@ uv1_triplanar = true
 albedo_texture = ExtResource("1_0guxe")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvblb"]
+albedo_color = Color(0.453125, 0.3007494, 0.27789307, 1)
+albedo_texture = ExtResource("6_5ubb3")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkp64"]
+albedo_color = Color(0.59607846, 0.7490196, 0.6313726, 1)
+albedo_texture = ExtResource("7_8xkb6")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xkb6"]
+resource_local_to_scene = true
+resource_name = "openPBR_shader1"
+cull_mode = 2
+albedo_color = Color(1, 0.9372549, 0.8392157, 1)
+albedo_texture = ExtResource("10_a5gp8")
+metallic_specular = 0.0
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_anvcn"]
+resource_local_to_scene = true
+resource_name = "openPBR_shader1"
+cull_mode = 2
+albedo_color = Color(0.59607846, 0.7490196, 0.6313726, 1)
+albedo_texture = ExtResource("10_a5gp8")
+metallic_specular = 0.0
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybrbr"]
+albedo_color = Color(0.5390625, 0.37927604, 0.3579712, 1)
+albedo_texture = ExtResource("6_5ubb3")
+metallic_specular = 0.0
+texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6qja"]
 albedo_texture = ExtResource("6_4bq0m")
@@ -248,10 +287,10 @@ size = Vector3(37.65863, 0.125, 119.84131)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Geo" unique_id=2085934395 groups=["Collidable_enviroment"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 71.302605, -0.062503815, -74.28473)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 71.302605, -0.062503815, -80.73248)
 use_collision = true
 collision_mask = 7
-size = Vector3(31.375, 0.125, 85.15344)
+size = Vector3(44.270508, 0.125, 85.15344)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Geo" unique_id=577629816 groups=["Collidable_enviroment"]]
@@ -1026,12 +1065,34 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 115.
 
 [node name="rowhouse13" parent="buildings" unique_id=1384205191 instance=ExtResource("5_xumb4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.749992, 0, -89)
+surface_material_override/1 = SubResource("StandardMaterial3D_mvblb")
+surface_material_override/3 = SubResource("StandardMaterial3D_qkp64")
+
+[node name="BayWindow_s" parent="buildings/rowhouse13" index="15" unique_id=280203261]
+surface_material_override/0 = SubResource("StandardMaterial3D_8xkb6")
+
+[node name="BayWindow1" parent="buildings/rowhouse13" index="16" unique_id=272502804]
+surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
+
+[node name="BayWindow2" parent="buildings/rowhouse13" index="17" unique_id=871362515]
+surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
+
+[node name="BayWindow3" parent="buildings/rowhouse13" index="18" unique_id=1468110056]
+surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
+
+[node name="BayWindow4" parent="buildings/rowhouse13" index="19" unique_id=128895483]
+surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
+
+[node name="BayWindow5" parent="buildings/rowhouse13" index="20" unique_id=1218746371]
+surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
 
 [node name="rowhouse16" parent="buildings" unique_id=888859191 instance=ExtResource("5_xumb4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.999992, 0, -88.5)
+surface_material_override/3 = SubResource("StandardMaterial3D_ybrbr")
 
 [node name="rowhouse17" parent="buildings" unique_id=44074014 instance=ExtResource("5_xumb4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.749992, 0, -88.5)
+surface_material_override/3 = SubResource("StandardMaterial3D_ybrbr")
 
 [node name="rowhouse4" parent="buildings" unique_id=436804087 instance=ExtResource("5_xumb4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 115.12499, 0, -144.25)
@@ -1278,3 +1339,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.189595, 8.051934, -9.69962
 
 [node name="MeshInstance3D" parent="." unique_id=172679901 instance=ExtResource("22_mvblb")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.298935, 0, -87.98265)
+
+[editable path="buildings/rowhouse13"]
