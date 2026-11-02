@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bnnsj3o2scfrs"]
+
+[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_wtt6p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awcnr"]
+albedo_texture = ExtResource("1_wtt6p")
+
+[node name="BlockoutDesk" type="Node3D" unique_id=81517425]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=800654808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002128601, 0, 0.09184003)
+use_collision = true
+size = Vector3(2.1479492, 1.6469727, 3.855957)
+material = SubResource("StandardMaterial3D_awcnr")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=2056175968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13195801, 0.038617253, 0.11654663)
+operation = 2
+use_collision = true
+size = Vector3(2.2453613, 1.7355957, 3.9042358)
+material = SubResource("StandardMaterial3D_awcnr")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=487737450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0076828003, 0, 0.076764345)
+use_collision = true
+size = Vector3(2.0230713, 0.11993408, 3.7608643)
+material = SubResource("StandardMaterial3D_awcnr")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D2" unique_id=1801843173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50320625, -0.027086973, 0.5199001)
+operation = 2
+use_collision = true
+size = Vector3(1.5944824, 0.2850647, 3.4622803)
+material = SubResource("StandardMaterial3D_awcnr")

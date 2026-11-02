@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bojj3uobvs0gu"]
+
+[ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_wasn5"]
+[ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="2_fots5"]
+[ext_resource type="PackedScene" uid="uid://bnnsj3o2scfrs" path="res://Scenes/Prefabs/PlaceHolder/blockoutDesk.tscn" id="3_fots5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdt5f"]
+albedo_texture = ExtResource("1_wasn5")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t6hbs"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_fuqwi"]
+sky_material = SubResource("ProceduralSkyMaterial_t6hbs")
+
+[sub_resource type="Environment" id="Environment_hq5xt"]
+background_mode = 2
+sky = SubResource("Sky_fuqwi")
+glow_enabled = true
+
+[node name="OfficeArena" type="Node3D" unique_id=706839337]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=824687715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_fdt5f")
+
+[node name="Building" type="CSGBox3D" parent="." unique_id=1502972189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052734375, 7.5, 0)
+use_collision = true
+size = Vector3(50, 15, 50)
+material = SubResource("StandardMaterial3D_fdt5f")
+
+[node name="BuildingSub" type="CSGBox3D" parent="Building" unique_id=1045832757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+operation = 2
+use_collision = true
+size = Vector3(48, 14, 48)
+material = SubResource("StandardMaterial3D_fdt5f")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1349660574]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=604383620]
+environment = SubResource("Environment_hq5xt")
+
+[node name="Player" parent="." unique_id=469422006 instance=ExtResource("2_fots5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.300468, 1, 0.9894562)
+left_spell_type = 3
+right_spell_type = 2
+
+[node name="Floor2" type="CSGBox3D" parent="." unique_id=2030663639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4005084, 0)
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_fdt5f")
+
+[node name="Floor3" type="CSGBox3D" parent="." unique_id=2037307837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.249014, 0)
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_fdt5f")
+
+[node name="BlockoutDesk" parent="." unique_id=81517425 instance=ExtResource("3_fots5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.069757, 0.8291806, 3.3989403)
+
+[node name="BlockoutDesk2" parent="." unique_id=1791918963 instance=ExtResource("3_fots5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.904856, 0.8291806, 3.5878117)
+
+[node name="BlockoutDesk3" parent="." unique_id=475661525 instance=ExtResource("3_fots5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16.077038, 0.8291806, -3.380836)
+
+[node name="BlockoutDesk4" parent="." unique_id=1805860162 instance=ExtResource("3_fots5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.897576, 0.8291806, -5.546538)
+
+[node name="BlockoutDesk5" parent="." unique_id=2114518863 instance=ExtResource("3_fots5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.313546, 0.8291806, -3.380836)
+
+[node name="BlockoutDesk6" parent="." unique_id=17903381 instance=ExtResource("3_fots5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.134085, 0.8291806, -5.546538)
