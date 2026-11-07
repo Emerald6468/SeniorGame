@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://vcnu34w0eb7s"]
+
+[ext_resource type="Script" uid="uid://derd45lshhssw" path="res://Scripts/LevelStuff/level_gen.gd" id="1_haxsg"]
+
+[node name="LevelGenTest" type="Node3D" unique_id=1377752166]
+script = ExtResource("1_haxsg")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=704607667]
+transform = Transform3D(1, 0, 0, 0, 0.89044696, 0.45508707, 0, -0.45508707, 0.89044696, 0, 1.6605653, 2.2526507)
+fov = 125.3

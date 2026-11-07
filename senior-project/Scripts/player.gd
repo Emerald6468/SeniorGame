@@ -361,7 +361,7 @@ func _physics_process(delta: float) -> void:
 #region Movement
 	#FOV
 	
-	cur_camera_fov = camera_fov + cur_speed
+	cur_camera_fov = camera_fov + (cur_speed *.6)
 	camera.fov = cur_camera_fov
 	#controls colision
 	set_collision()

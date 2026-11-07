@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2jjfplp7cmno" path="res://Scripts/Enemies/wisp.gd" id="1_16pg6"]
 [ext_resource type="PackedScene" uid="uid://cn52u1ymc5fx4" path="res://Scenes/UI/HealthBar.tscn" id="2_5g17a"]
-[ext_resource type="CylinderMesh" uid="uid://n4kafh1ulx3p" path="res://Assets/Meshes/IceDart.tres" id="3_qmjd6"]
+[ext_resource type="CylinderMesh" uid="uid://n4kafh1ulx3p" path="res://Assets/Meshes/Spells/IceDart.tres" id="3_qmjd6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0vkdb"]
 height = 1.0
