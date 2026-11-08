@@ -11,21 +11,26 @@ const YELLOW_LEVEL = preload("uid://b1v7cs16p6l4u")
 var all_zone1_levels: Array[PackedScene]
 var all_zone1_hallways: Array[PackedScene]
 var all_zone1_arenas: Array[PackedScene]
+var cur_hall_choices: Array[PackedScene]
+var cur_arena_choices: Array[PackedScene]
 
 #to control level gen
+@export var level_length = 4
 var current_room = 0
 var current_zone = 1
 var gen_num = 0
 var zone_array: Array[PackedScene]
 
 func pick_zone_layout():
-	if gen_num < 6:
+	if gen_num < level_length:
 		if gen_num % 2 != 0:
-			all_zone1_arenas.shuffle()
-			zone_array.append(all_zone1_arenas[0])
+			cur_arena_choices.shuffle()
+			zone_array.append(cur_arena_choices[0])
+			cur_arena_choices.pop_front()
 		else:
-			all_zone1_hallways.shuffle()
-			zone_array.append(all_zone1_hallways[0])
+			cur_hall_choices.shuffle()
+			zone_array.append(cur_hall_choices[0])
+			cur_hall_choices.pop_front()
 		gen_num+=1
 	else: return true
 	return false
@@ -36,9 +41,26 @@ func _ready() -> void:
 	all_zone1_levels = [BLUE_LEVEL,GREEN_LEVEL,RED_LEVEL,YELLOW_LEVEL]
 	all_zone1_hallways = [BLUE_LEVEL,GREEN_LEVEL]
 	all_zone1_arenas = [RED_LEVEL,YELLOW_LEVEL]
+	match current_zone:
+		1:
+			cur_hall_choices = all_zone1_hallways
+			cur_arena_choices = all_zone1_arenas
 	
+var s_num = 0
+func spawn_levels():
+	if s_num < level_length:
+		var new_level = zone_array[s_num].instantiate()
+		add_child(new_level)
+		match s_num:
+			0: new_level.global_position.x = 0; print(str(new_level.name))
+			1: new_level.global_position.x = 5; print(str(new_level.name))
+			2: new_level.global_position.x = 10; print(str(new_level.name))
+			3: new_level.global_position.x = 15; print(str(new_level.name))
+		s_num += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("DevQuit"):get_tree().quit()
+	if Input.is_action_just_pressed("Restart"):get_tree().reload_current_scene()
 	var picks_done = pick_zone_layout()
-	if picks_done: print(str(zone_array))
+	if picks_done:spawn_levels()
