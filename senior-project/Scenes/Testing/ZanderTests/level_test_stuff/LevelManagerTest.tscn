@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://8g7tp85pg1p0"]
+
+[ext_resource type="PackedScene" uid="uid://vcnu34w0eb7s" path="res://Scenes/Testing/ZanderTests/level_test_stuff/level_gen_test.tscn" id="1_ug7ce"]
+
+[node name="LevelManagerTest" type="Node3D" unique_id=1318538575]
+
+[node name="LevelGenTest" parent="." unique_id=1377752166 instance=ExtResource("1_ug7ce")]

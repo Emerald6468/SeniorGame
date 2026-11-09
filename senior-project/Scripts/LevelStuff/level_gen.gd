@@ -20,6 +20,8 @@ var current_room = 0
 var current_zone = 1
 var gen_num = 0
 var zone_array: Array[PackedScene]
+var next_position = Vector3(0,0,0)
+var next_rotation = Vector3(0,0,0)
 
 func pick_zone_layout():
 	if gen_num < level_length:
@@ -51,11 +53,15 @@ func spawn_levels():
 	if s_num < level_length:
 		var new_level = zone_array[s_num].instantiate()
 		add_child(new_level)
-		match s_num:
-			0: new_level.global_position.x = 0; print(str(new_level.name))
-			1: new_level.global_position.x = 5; print(str(new_level.name))
-			2: new_level.global_position.x = 10; print(str(new_level.name))
-			3: new_level.global_position.x = 15; print(str(new_level.name))
+		new_level.global_position = next_position
+		new_level.global_rotation = next_rotation
+		#match s_num:
+			#0: new_level.global_position.x = 0; print(str(new_level.name))
+			#1: new_level.global_position.x = 5; print(str(new_level.name))
+			#2: new_level.global_position.x = 10; print(str(new_level.name))
+			#3: new_level.global_position.x = 15; print(str(new_level.name))
+		next_position = new_level.get_node("EndPoint").global_position
+		next_rotation = new_level.get_node("EndPoint").global_rotation
 		s_num += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
