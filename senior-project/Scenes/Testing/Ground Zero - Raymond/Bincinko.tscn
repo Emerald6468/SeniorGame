@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cqv40hrfy0tsh"]
+
+[ext_resource type="Texture2D" uid="uid://drrm5smqwh4yh" path="res://Scenes/Testing/Ground Zero - Raymond/makebead-32x32 (1).png" id="1_l3xo2"]
+[ext_resource type="Texture2D" uid="uid://dynyoumu727x1" path="res://Scenes/Testing/Ground Zero - Raymond/makebead-32x32.png" id="1_m6x46"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_udmuc"]
+radius = 11.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3xo2"]
+size = Vector2(3.330423, 31.776163)
+
+[node name="Bincinko" type="Control" unique_id=263107220]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Ball" type="Sprite2D" parent="." unique_id=14074179]
+position = Vector2(875, 129)
+scale = Vector2(3.1010516, 2.7271588)
+texture = ExtResource("1_l3xo2")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Ball" unique_id=2046594620]
+
+[node name="Area2D" type="CollisionShape2D" parent="Ball/RigidBody2D" unique_id=2136606031]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_udmuc")
+metadata/_edit_lock_ = true
+
+[node name="Wall_1" type="Sprite2D" parent="." unique_id=1724523323]
+position = Vector2(642.89246, 404.50003)
+scale = Vector2(2.0625, 16.656252)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="Area2D" parent="Wall_1" unique_id=1413035543]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_1/Wall" unique_id=2066982144]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Wall_2" type="Sprite2D" parent="." unique_id=1991128082]
+position = Vector2(1150.8926, 405.5001)
+scale = Vector2(2.0625, 16.656252)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="Area2D" parent="Wall_2" unique_id=1902394807]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_2/Wall" unique_id=1635916475]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="L_Bumper" type="Sprite2D" parent="." unique_id=1454544609]
+position = Vector2(727.2274, 721.5928)
+rotation = -0.8471928
+scale = Vector2(2.0625, 8.371295)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="Area2D" parent="L_Bumper" unique_id=501335142]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="L_Bumper/Wall" unique_id=2032554136]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="R_Bumper" type="Sprite2D" parent="." unique_id=1434401037]
+position = Vector2(1061.8925, 725.5002)
+rotation = 0.88531756
+scale = Vector2(2.0625, 8.371295)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="Area2D" parent="R_Bumper" unique_id=1991554256]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R_Bumper/Wall" unique_id=201600474]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
