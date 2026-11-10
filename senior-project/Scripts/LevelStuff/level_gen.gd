@@ -5,6 +5,9 @@ const BLUE_LEVEL = preload("uid://3aa0r21ha8ah")
 const GREEN_LEVEL = preload("uid://jyuotl0htmha")
 const RED_LEVEL = preload("uid://dkn1pns4yx8p4")
 const YELLOW_LEVEL = preload("uid://b1v7cs16p6l4u")
+const PURPLE_LEVEL = preload("uid://cnxhphcxjtvje")
+const ORANGE_LEVEL = preload("uid://dqch6kl6gskip")
+
 
 #Lists of levels
 #Zone 1
@@ -15,7 +18,7 @@ var cur_hall_choices: Array[PackedScene]
 var cur_arena_choices: Array[PackedScene]
 
 #to control level gen
-@export var level_length = 4
+@export var level_length = 6
 var current_room = 0
 var current_zone = 1
 var gen_num = 0
@@ -40,9 +43,9 @@ func pick_zone_layout():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	all_zone1_levels = [BLUE_LEVEL,GREEN_LEVEL,RED_LEVEL,YELLOW_LEVEL]
-	all_zone1_hallways = [BLUE_LEVEL,GREEN_LEVEL]
-	all_zone1_arenas = [RED_LEVEL,YELLOW_LEVEL]
+	all_zone1_levels = [BLUE_LEVEL,GREEN_LEVEL,RED_LEVEL,YELLOW_LEVEL,ORANGE_LEVEL,PURPLE_LEVEL]
+	all_zone1_hallways = [YELLOW_LEVEL,GREEN_LEVEL,PURPLE_LEVEL]
+	all_zone1_arenas = [RED_LEVEL,BLUE_LEVEL,ORANGE_LEVEL]
 	match current_zone:
 		1:
 			cur_hall_choices = all_zone1_hallways

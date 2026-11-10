@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://jyuotl0htmha"]
 
 [ext_resource type="Texture2D" uid="uid://6j8wn40eomn5" path="res://Assets/Placeholder/icon.svg" id="1_olede"]
-[ext_resource type="Material" uid="uid://c3r5f45advnws" path="res://Assets/Textures/grass1.tres" id="2_3bl66"]
+[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="2_3bl66"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhunq"]
 albedo_color = Color(0, 0.71909624, 0.14894632, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_c7kpc"]
-material = ExtResource("2_3bl66")
-radius = 0.2
-height = 0.4
 
 [node name="GreenLevel" type="Node3D" unique_id=519722274]
 
@@ -25,9 +20,5 @@ modulate = Color(0.86602014, 0.57775074, 0.38954592, 1)
 billboard = 2
 texture = ExtResource("1_olede")
 
-[node name="EndPoint" type="Marker3D" parent="." unique_id=1730279536]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.904975)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="EndPoint" unique_id=334088140]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3226322, 0)
-mesh = SubResource("SphereMesh_c7kpc")
+[node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("2_3bl66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14681077, 1.1920929e-07, 4.8940816)

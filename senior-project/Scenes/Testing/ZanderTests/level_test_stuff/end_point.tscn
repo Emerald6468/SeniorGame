@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ckngpwo4l44fc"]
+
+[ext_resource type="Script" uid="uid://dn5v7ua1amngq" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.gd" id="1_23h7o"]
+[ext_resource type="Material" uid="uid://c3r5f45advnws" path="res://Assets/Textures/grass1.tres" id="1_jpijy"]
+[ext_resource type="Texture2D" uid="uid://c37f3rvwf7078" path="res://Assets/UI/InEditor/ArrowSign_1.png" id="2_qghs2"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bhunq"]
+material = ExtResource("1_jpijy")
+radius = 0.2
+height = 0.4
+
+[node name="EndPoint" type="Marker3D" unique_id=401920304]
+script = ExtResource("1_23h7o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=597749756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3226322, 0)
+mesh = SubResource("SphereMesh_bhunq")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2129379279]
+transform = Transform3D(0.5038422, 0, 0, 0, -1.8571072e-08, 1, 0, -0.4248566, -4.371139e-08, 0, 0.37409455, 0.5572499)
+texture = ExtResource("2_qghs2")

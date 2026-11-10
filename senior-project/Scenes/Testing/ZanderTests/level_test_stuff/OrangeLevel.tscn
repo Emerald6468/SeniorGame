@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dqch6kl6gskip"]
+
+[ext_resource type="Texture2D" uid="uid://6j8wn40eomn5" path="res://Assets/Placeholder/icon.svg" id="1_g5aih"]
+[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="2_186h7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhunq"]
+albedo_color = Color(0.8644514, 0.4143798, 0.10262283, 1)
+
+[node name="BlueLevel" type="Node3D" unique_id=519722274]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=229252814]
+transform = Transform3D(2.5100632, 0, 0, 0, 0.5151402, 0, 0, 0, 2.5100632, 0, 0, 1.2432594)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="Door" type="Sprite3D" parent="." unique_id=1101499501]
+transform = Transform3D(0.48309708, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78242934, 0)
+cast_shadow = 0
+modulate = Color(0.86602014, 0.57775074, 0.38954592, 1)
+billboard = 2
+texture = ExtResource("1_g5aih")
+
+[node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("2_186h7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.2645347, 0, 1.1942585)

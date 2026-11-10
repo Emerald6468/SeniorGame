@@ -14,7 +14,7 @@ glow_enabled = true
 script = ExtResource("1_haxsg")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=704607667]
-transform = Transform3D(-0.9891062, -0.13593431, 0.05648845, -0.061040346, 0.7279418, 0.68291634, -0.13395208, 0.67202866, -0.7283092, -1.6274481, 3.3902493, -3.9001265)
+transform = Transform3D(-0.9891062, -0.13593432, 0.05648847, -0.033563673, 0.5818918, 0.8125734, -0.14332677, 0.80182534, -0.5801152, -1.6274481, 7.6293015, -7.1453757)
 fov = 125.3
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=93050006]

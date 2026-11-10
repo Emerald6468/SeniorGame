@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cnxhphcxjtvje"]
+
+[ext_resource type="Texture2D" uid="uid://6j8wn40eomn5" path="res://Assets/Placeholder/icon.svg" id="1_v8nmf"]
+[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="2_hxnh5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhunq"]
+albedo_color = Color(0.6660263, 0.56298155, 0.86927503, 1)
+
+[node name="YellowLevel" type="Node3D" unique_id=519722274]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=229252814]
+transform = Transform3D(2.5100632, 0, 0, 0, 0.5151402, 0, 0, 0, 2.5100632, 0, 0, 1.2359197)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="Floor2" type="CSGBox3D" parent="." unique_id=521298572]
+transform = Transform3D(2.5100632, 0, 0, 0, 0.5151402, 0, 0, 0, 2.5100632, 0, 0, 3.7099354)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="Floor3" type="CSGBox3D" parent="." unique_id=2044058572]
+transform = Transform3D(2.5100632, 0, 0, 0, 0.5151402, 0, 0, 0, 2.5100632, 2.5015197, 0, 3.7023447)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="Floor4" type="CSGBox3D" parent="." unique_id=1058440454]
+transform = Transform3D(2.5100632, 0, 0, 0, 0.5151402, 0, 0, 0, 2.5100632, 2.5015197, 0, 6.2075233)
+material = SubResource("StandardMaterial3D_bhunq")
+
+[node name="Door" type="Sprite3D" parent="." unique_id=1101499501]
+transform = Transform3D(0.48309708, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78242934, 0)
+cast_shadow = 0
+modulate = Color(0.86602014, 0.57775074, 0.38954592, 1)
+billboard = 2
+texture = ExtResource("1_v8nmf")
+
+[node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("2_hxnh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6277027, 0, 7.5142775)
