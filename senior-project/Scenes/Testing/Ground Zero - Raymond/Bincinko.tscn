@@ -1,27 +1,32 @@
 [gd_scene format=3 uid="uid://cqv40hrfy0tsh"]
 
-[ext_resource type="Texture2D" uid="uid://drrm5smqwh4yh" path="res://Scenes/Testing/Ground Zero - Raymond/makebead-32x32 (1).png" id="1_l3xo2"]
-[ext_resource type="Texture2D" uid="uid://dynyoumu727x1" path="res://Scenes/Testing/Ground Zero - Raymond/makebead-32x32.png" id="1_m6x46"]
+[ext_resource type="Texture2D" uid="uid://drrm5smqwh4yh" path="res://Assets/Materials/Sprites/Test_Ball_Sprite.png" id="1_l3xo2"]
+[ext_resource type="Texture2D" uid="uid://dynyoumu727x1" path="res://Assets/Materials/Sprites/Test_Wall_Sprite.png" id="1_m6x46"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_udmuc"]
 radius = 11.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3xo2"]
-size = Vector2(3.330423, 31.776163)
+size = Vector2(3.4214551, 32.270454)
 
 [node name="Bincinko" type="Control" unique_id=263107220]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Ball" type="Sprite2D" parent="." unique_id=14074179]
-position = Vector2(875, 129)
-scale = Vector2(3.1010516, 2.7271588)
+[node name="Ball" type="RigidBody2D" parent="." unique_id=2012783804]
+position = Vector2(182, -5)
+
+[node name="Ball" type="Sprite2D" parent="Ball" unique_id=14074179]
+position = Vector2(698, 59)
+rotation = -3.1415925
+scale = Vector2(2.9913564, 2.9913564)
 texture = ExtResource("1_l3xo2")
+metadata/_edit_lock_ = true
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Ball" unique_id=2046594620]
-
-[node name="Area2D" type="CollisionShape2D" parent="Ball/RigidBody2D" unique_id=2136606031]
-position = Vector2(0, -1)
+[node name="Area2D" type="CollisionShape2D" parent="Ball" unique_id=2136606031]
+position = Vector2(698, 61.991356)
+rotation = -3.1415925
+scale = Vector2(2.9913566, 2.9913566)
 shape = SubResource("CircleShape2D_udmuc")
 metadata/_edit_lock_ = true
 
@@ -30,14 +35,14 @@ position = Vector2(642.89246, 404.50003)
 scale = Vector2(2.0625, 16.656252)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="Area2D" parent="Wall_1" unique_id=1413035543]
+[node name="Wall" type="StaticBody2D" parent="Wall_1" unique_id=524598192]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_1/Wall" unique_id=2066982144]
-position = Vector2(-3.3304214, -4.4313774)
+position = Vector2(-3.3240242, -4.3313293)
 shape = SubResource("RectangleShape2D_l3xo2")
 metadata/_edit_lock_ = true
 
@@ -46,7 +51,7 @@ position = Vector2(1150.8926, 405.5001)
 scale = Vector2(2.0625, 16.656252)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="Area2D" parent="Wall_2" unique_id=1902394807]
+[node name="Wall" type="StaticBody2D" parent="Wall_2" unique_id=352062946]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
@@ -57,20 +62,208 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 metadata/_edit_lock_ = true
 
+[node name="Bumper" type="Sprite2D" parent="." unique_id=1734214889]
+position = Vector2(762.99994, 287)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper" unique_id=73388006]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper/Wall" unique_id=274073919]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Bumper2" type="Sprite2D" parent="." unique_id=1497937666]
+position = Vector2(917.99994, 337.99994)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper2" unique_id=177306406]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper2/Wall" unique_id=1692592947]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Bumper3" type="Sprite2D" parent="." unique_id=1434977899]
+position = Vector2(813.99994, 403.99994)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper3" unique_id=1046866060]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper3/Wall" unique_id=1580855924]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Bumper4" type="Sprite2D" parent="." unique_id=1850709840]
+position = Vector2(906.99994, 505)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper4" unique_id=220045162]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper4/Wall" unique_id=832891610]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Bumper7" type="Sprite2D" parent="." unique_id=126777355]
+position = Vector2(945.99994, 607.00006)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper7" unique_id=1550932676]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper7/Wall" unique_id=988190857]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Bumper8" type="Sprite2D" parent="." unique_id=445164532]
+position = Vector2(842.99994, 652)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper8" unique_id=2082962307]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper8/Wall" unique_id=2007374048]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Bumper9" type="Sprite2D" parent="." unique_id=95149699]
+position = Vector2(772.00006, 562.00006)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper9" unique_id=523041680]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper9/Wall" unique_id=694556951]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Bumper11" type="Sprite2D" parent="." unique_id=639540175]
+position = Vector2(997.99994, 268)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper11" unique_id=877106843]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper11/Wall" unique_id=966815626]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Bumper12" type="Sprite2D" parent="." unique_id=1733604617]
+position = Vector2(1076, 422)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper12" unique_id=1670514142]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper12/Wall" unique_id=609022623]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Bumper13" type="Sprite2D" parent="." unique_id=1942823505]
+position = Vector2(996, 427.00003)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper13" unique_id=710953902]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper13/Wall" unique_id=1807290708]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
+[node name="Bumper14" type="Sprite2D" parent="." unique_id=1014295988]
+position = Vector2(1038, 614.00006)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper14" unique_id=443202732]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper14/Wall" unique_id=1277229814]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+metadata/_edit_lock_ = true
+
 [node name="L_Bumper" type="Sprite2D" parent="." unique_id=1454544609]
 position = Vector2(727.2274, 721.5928)
 rotation = -0.8471928
 scale = Vector2(2.0625, 8.371295)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="Area2D" parent="L_Bumper" unique_id=501335142]
+[node name="Wall" type="StaticBody2D" parent="L_Bumper" unique_id=938907099]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="L_Bumper/Wall" unique_id=2032554136]
-position = Vector2(-3.3304214, -4.4313774)
+position = Vector2(-3.3304214, -4.2843018)
+scale = Vector2(1, 1.0000001)
 shape = SubResource("RectangleShape2D_l3xo2")
 metadata/_edit_lock_ = true
 
@@ -80,7 +273,7 @@ rotation = 0.88531756
 scale = Vector2(2.0625, 8.371295)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="Area2D" parent="R_Bumper" unique_id=1991554256]
+[node name="Wall" type="StaticBody2D" parent="R_Bumper" unique_id=941766672]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)

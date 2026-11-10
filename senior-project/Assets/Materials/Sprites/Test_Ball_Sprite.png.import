@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dynyoumu727x1"
-path="res://.godot/imported/makebead-32x32.png-278c7aa104e0251b2b0ae421aaf5797d.ctex"
+uid="uid://drrm5smqwh4yh"
+path="res://.godot/imported/Test_Ball_Sprite.png-7ebda9d3efc5dddf5cd72094176b4b32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Testing/Ground Zero - Raymond/makebead-32x32.png"
-dest_files=["res://.godot/imported/makebead-32x32.png-278c7aa104e0251b2b0ae421aaf5797d.ctex"]
+source_file="res://Assets/Materials/Sprites/Test_Ball_Sprite.png"
+dest_files=["res://.godot/imported/Test_Ball_Sprite.png-7ebda9d3efc5dddf5cd72094176b4b32.ctex"]
 
 [params]
 

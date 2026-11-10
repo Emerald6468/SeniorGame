@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drrm5smqwh4yh"
-path="res://.godot/imported/makebead-32x32 (1).png-ba7c27433818a6d09df518553e05e17a.ctex"
+uid="uid://dynyoumu727x1"
+path="res://.godot/imported/Test_Wall_Sprite.png-b7be19ffcbd9b973ea448b83be6e7679.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Testing/Ground Zero - Raymond/makebead-32x32 (1).png"
-dest_files=["res://.godot/imported/makebead-32x32 (1).png-ba7c27433818a6d09df518553e05e17a.ctex"]
+source_file="res://Assets/Materials/Sprites/Test_Wall_Sprite.png"
+dest_files=["res://.godot/imported/Test_Wall_Sprite.png-b7be19ffcbd9b973ea448b83be6e7679.ctex"]
 
 [params]
 
