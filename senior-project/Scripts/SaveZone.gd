@@ -29,4 +29,5 @@ func load_game():
 		var parse_result = json.parse(json_string)
 		var node_data = json.get_data()
 		
+		
 		print(node_data)

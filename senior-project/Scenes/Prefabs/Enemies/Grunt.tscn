@@ -55,3 +55,7 @@ text = "STATUS"
 
 [node name="Melee" type="AudioStreamPlayer3D" parent="." unique_id=1203561017]
 stream = ExtResource("5_gcdnb")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1096228543]
+debug_enabled = true
+debug_path_custom_color = Color(0.47248608, 0.00017177865, 0.4784382, 1)

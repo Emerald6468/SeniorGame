@@ -5,6 +5,7 @@ var spawn_time = 4.0
 const GRUNT = preload("uid://d20bamxgu5rol")
 const WISP = preload("uid://bjl1p1fviswuf")
 var enemy_list = ["Grunt","Wisp"]
+@export var spawn_on = true
 func spawn(enemy:String):
 	var enemy_type
 	match enemy:
@@ -32,4 +33,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	spawner()
+	if spawn_on:spawner()

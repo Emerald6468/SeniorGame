@@ -30,9 +30,8 @@ func firelaser():
 func keep_off_ground():
 	var touching_null = str(ground_check.get_collider()) == "<Object#null>"
 	if ground_check.collide_with_bodies and !touching_null:
-		#print("near floor")
-		#print(str(ground_check.get_collider()))
-		position.y += 0.1
+		print(str(ground_check.get_collider()))
+		position.y = nav_agent.get_next_path_position().y + 5.0
 
 func _physics_process(delta: float) -> void:
 	super(delta)

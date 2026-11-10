@@ -18,6 +18,10 @@ enum ENEMY_STATES{
 }
 @export var enemy_state: ENEMY_STATES
 
+#Navigation
+var player = null
+@export var player_path:NodePath
+@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 
 
 #Monitor
@@ -126,7 +130,10 @@ func chase_player():
 		#print(str(knockback_velocity))
 		mesh.look_at(player_pos,Vector3(0, 1, 0),false)
 		if knockback_velocity == Vector3.ZERO or !knockback_velocity:
-			velocity = (look_pos - global_position).normalized() * cur_speed #move toward player
+			nav_agent.set_target_position(player.global_position)
+			var next_nav_point = nav_agent.get_next_path_position()
+			velocity = (next_nav_point - global_position).normalized() * SPEED
+			#velocity = (look_pos - global_position).normalized() * cur_speed #move toward player
 	else: pass;#print(str(knockback_velocity))
 #endregion
 
@@ -135,6 +142,9 @@ func chase_player():
 func got_hit(spell: String,damage: float):
 	health -= damage
 	print("ouch a " + spell + " "  + str(health))
+
+func _ready() -> void:
+	player = get_node(player_path)
 
 func _physics_process(delta: float) -> void:
 	#falling

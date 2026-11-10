@@ -50,3 +50,7 @@ character = NodePath("..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6219754, 0)
 billboard = 2
 text = "STATUS"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=717259661]
+debug_enabled = true
+debug_path_custom_color = Color(0.53190726, 0.45808935, 0.9949319, 1)
