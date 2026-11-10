@@ -12,6 +12,8 @@ config_version=5
 
 config/name="SeniorProject"
 run/main_scene="uid://bxq2qvjocv2hs"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Ratacadabra"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/Placeholder/icon.svg"
 
