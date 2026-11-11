@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_0guxe"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="2_2auyt"]
+[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="3_mvblb"]
 [ext_resource type="ArrayMesh" uid="uid://dhdls6bl8vyx5" path="res://Assets/Meshes/Buildings/Building1.tres" id="3_tq8lq"]
 [ext_resource type="ArrayMesh" uid="uid://bipmqocgib42k" path="res://Assets/Meshes/Buildings/Building3.tres" id="4_u0578"]
 [ext_resource type="PackedScene" uid="uid://c54sjqmva64y" path="res://Scenes/Prefabs/Buildings/rowhouse_1.tscn" id="4_wsy6g"]
@@ -48,6 +49,11 @@ albedo_texture = ExtResource("1_0guxe")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xkb6"]
+albedo_texture = ExtResource("1_0guxe")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bq0m"]
 albedo_texture = ExtResource("1_0guxe")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
@@ -65,7 +71,7 @@ albedo_texture = ExtResource("7_8xkb6")
 metallic_specular = 0.0
 texture_filter = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xkb6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_anvcn"]
 resource_local_to_scene = true
 resource_name = "openPBR_shader1"
 cull_mode = 2
@@ -74,7 +80,7 @@ albedo_texture = ExtResource("10_a5gp8")
 metallic_specular = 0.0
 metadata/_gltf_primary_texture_coord = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_anvcn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5gp8"]
 resource_local_to_scene = true
 resource_name = "openPBR_shader1"
 cull_mode = 2
@@ -263,21 +269,23 @@ size = Vector2(5, 15.5)
 [node name="Hall1" type="Node3D" unique_id=2014480433]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(0.8660253, 0.43301284, -0.25000006, 2.780595e-08, 0.49999994, 0.86602545, 0.5000001, -0.75, 0.43301257, 12.2742195, 0, 35.73214)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1046825363]
 environment = SubResource("Environment_dyiuk")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1885805812]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.2742195, 0, 35.73214)
 use_collision = true
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("2_2auyt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9339905, 1, 17.080597)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.340231, 1, 18.651535)
 left_spell_type = 3
 right_spell_type = 2
 
 [node name="Geo" type="Node3D" parent="." unique_id=1608795696]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.2742195, 0, 35.73214)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Geo" unique_id=1562124669 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.925446, -0.0625, -39.920654)
@@ -413,6 +421,21 @@ collision_mask = 7
 size = Vector3(0.125, 22.896484, 40.171753)
 material = SubResource("StandardMaterial3D_xhtoe")
 
+[node name="CSGBox3D17" type="CSGBox3D" parent="Geo/CSGBox3D16" unique_id=1044879799 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.252563, -7.4063654, 3.426628)
+use_collision = true
+collision_mask = 7
+size = Vector3(16.661621, 8, 8)
+material = SubResource("StandardMaterial3D_8xkb6")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Geo/CSGBox3D16" unique_id=1117155863 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.252563, -7.4063654, 3.426628)
+operation = 2
+use_collision = true
+collision_mask = 7
+size = Vector3(17.527344, 7.5, 7.5)
+material = SubResource("StandardMaterial3D_8xkb6")
+
 [node name="CSGBox3D17" type="CSGBox3D" parent="Geo" unique_id=345451951 groups=["Collidable_enviroment"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.710876, 11.139262, -99.612274)
 use_collision = true
@@ -447,6 +470,24 @@ use_collision = true
 collision_mask = 7
 size = Vector3(0.125, 22.82434, 64.63049)
 material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Geo/CSGBox3D48" unique_id=2107602445 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.195671, -7.39194, 18.787003)
+use_collision = true
+collision_mask = 7
+size = Vector3(16.661621, 8, 8)
+material = SubResource("StandardMaterial3D_8xkb6")
+
+[node name="EndPoint" parent="Geo/CSGBox3D48/CSGBox3D17" unique_id=401920304 instance=ExtResource("3_mvblb")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.2504425, -4.0812454, -0.0004272461)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Geo/CSGBox3D48" unique_id=105659631 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.195671, -7.39194, 18.787003)
+operation = 2
+use_collision = true
+collision_mask = 7
+size = Vector3(17.527344, 7.5, 7.5)
+material = SubResource("StandardMaterial3D_8xkb6")
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="Geo" unique_id=2087930335 groups=["Collidable_enviroment"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.203326, 0.35870004, 4.219708)
@@ -997,6 +1038,7 @@ size = Vector3(8.167236, 3.293457, 4.3897705)
 material = SubResource("StandardMaterial3D_4bq0m")
 
 [node name="lights" type="Node3D" parent="." unique_id=1842736137]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.2742195, 0, 35.73214)
 visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="lights" unique_id=1656052007]
@@ -1020,8 +1062,10 @@ spot_range = 17.0
 spot_attenuation = 0.01
 
 [node name="enemies" type="Node3D" parent="." unique_id=374510159]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.2742195, 0, 35.73214)
 
 [node name="buildings" type="Node3D" parent="." unique_id=669202437]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.2742195, 0, 35.73214)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="buildings" unique_id=177955339]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.605385, 0, 4.504093)
@@ -1069,22 +1113,22 @@ surface_material_override/1 = SubResource("StandardMaterial3D_mvblb")
 surface_material_override/3 = SubResource("StandardMaterial3D_qkp64")
 
 [node name="BayWindow_s" parent="buildings/rowhouse13" index="15" unique_id=280203261]
-surface_material_override/0 = SubResource("StandardMaterial3D_8xkb6")
+surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
 
 [node name="BayWindow1" parent="buildings/rowhouse13" index="16" unique_id=272502804]
-surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5gp8")
 
 [node name="BayWindow2" parent="buildings/rowhouse13" index="17" unique_id=871362515]
-surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5gp8")
 
 [node name="BayWindow3" parent="buildings/rowhouse13" index="18" unique_id=1468110056]
-surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5gp8")
 
 [node name="BayWindow4" parent="buildings/rowhouse13" index="19" unique_id=128895483]
-surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5gp8")
 
 [node name="BayWindow5" parent="buildings/rowhouse13" index="20" unique_id=1218746371]
-surface_material_override/0 = SubResource("StandardMaterial3D_anvcn")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5gp8")
 
 [node name="rowhouse16" parent="buildings" unique_id=888859191 instance=ExtResource("5_xumb4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.999992, 0, -88.5)
@@ -1314,30 +1358,30 @@ size = Vector3(0.25, 5, 15.5)
 material = SubResource("StandardMaterial3D_rx1xj")
 
 [node name="Wisp" parent="." unique_id=1065493351 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27946854, 6.281332, -17.797102)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.553688, 6.281332, 53.529236)
 
 [node name="Wisp2" parent="." unique_id=1475125276 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.454449, 0, -16.233034)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -13.180229, 0, 51.96517)
 
 [node name="Wisp3" parent="." unique_id=780518935 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.916336, 8.7446785, -21.881983)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.6421185, 8.7446785, 57.61412)
 
 [node name="Wisp4" parent="." unique_id=950435801 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17899132, 5.0215607, 14.578688)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.09523, 5.0215607, 21.15345)
 
 [node name="Grunt" parent="." unique_id=676758711 instance=ExtResource("16_wsy6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.285196, 1.000001, -4.092325)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -11.010977, 1.000001, 39.824463)
 
 [node name="Grunt2" parent="." unique_id=1243110435 instance=ExtResource("16_wsy6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.446552, 1.000001, -1.3056564)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -10.172333, 1.000001, 37.037792)
 
 [node name="Wisp5" parent="." unique_id=1261338998 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2855616, 0.34612846, -98.60901)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.98865, 0.34612846, 134.34114)
 
 [node name="Wisp6" parent="." unique_id=1775640411 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.189595, 8.051934, -9.699628)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.463814, 8.051934, 45.431763)
 
 [node name="MeshInstance3D" parent="." unique_id=172679901 instance=ExtResource("22_mvblb")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.298935, 0, -87.98265)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -33.024727, 0, 123.71478)
 
 [editable path="buildings/rowhouse13"]

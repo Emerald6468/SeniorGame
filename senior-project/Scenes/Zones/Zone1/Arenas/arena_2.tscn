@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cjtx2jjncontf"]
 
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_y8kri"]
+[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="2_oj6lt"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_y84hh"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="5_8avfq"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="6_nyj3q"]
@@ -190,11 +191,11 @@ glow_enabled = true
 [node name="Arena2" type="Node3D" unique_id=2014480433]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1885805812]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.407566)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.021217108, 0, 36.24103)
 use_collision = true
 
 [node name="Geo" type="Node3D" parent="." unique_id=1608795696]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.407566)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.021217108, 0, 36.24103)
 
 [node name="Floor" type="CSGBox3D" parent="Geo" unique_id=1562124669 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0625, -17.5)
@@ -336,6 +337,9 @@ use_collision = true
 collision_mask = 7
 size = Vector3(16.661621, 8, 8)
 material = SubResource("StandardMaterial3D_51glo")
+
+[node name="EndPoint" parent="Geo/CSGBox3D15/CSGBox3D17" unique_id=401920304 instance=ExtResource("2_oj6lt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.2504425, -4.0812454, -0.0004272461)
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="Geo/CSGBox3D15" unique_id=85375629 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.237354, -3.3886805, 7.104629)
@@ -666,12 +670,12 @@ radius = 1.8665508
 material = SubResource("StandardMaterial3D_j84jx")
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("3_y84hh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -19.282566)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.021215677, 1, 19.116032)
 left_spell_type = 3
 right_spell_type = 2
 
 [node name="lights" type="Node3D" parent="." unique_id=1842736137]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.407566)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.021217108, 0, 36.24103)
 visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="lights" unique_id=1656052007]
@@ -695,10 +699,10 @@ spot_range = 17.0
 spot_attenuation = 0.01
 
 [node name="enemies" type="Node3D" parent="." unique_id=374510159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.407566)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.021217108, 0, 36.24103)
 
 [node name="FuncGodotMap" type="Node3D" parent="." unique_id=2011209370]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.36747, 0, -22.964203)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.346254, 0, 22.797668)
 script = ExtResource("5_8avfq")
 global_map_file = "D:/Modding/TrenchBroom/maps/flowerbed1.map"
 map_settings = ExtResource("6_nyj3q")
@@ -712,7 +716,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000002, 0.5, 0)
 shape = SubResource("BoxShape3D_itq52")
 
 [node name="FuncGodotMap2" type="Node3D" parent="." unique_id=198075901]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -36.407566)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.021217108, 0, 36.24103)
 visible = false
 script = ExtResource("5_8avfq")
 global_map_file = "D:/Modding/TrenchBroom/maps/Arena1floor.map"
@@ -730,7 +734,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156245, 0)
 shape = SubResource("BoxShape3D_vsnhd")
 
 [node name="FuncGodotMap3" type="Node3D" parent="." unique_id=463301855]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 20, 5.375, -36.407566)
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1.0000001, 0, -8.742278e-08, 0, -1.0000001, -20.021217, 5.375, 36.241028)
 script = ExtResource("5_8avfq")
 global_map_file = "D:/Modding/TrenchBroom/maps/awning1.map"
 map_settings = ExtResource("6_nyj3q")
@@ -747,7 +751,7 @@ transform = Transform3D(1, 0, 0, 0, 1.0000012, 0, 0, 0, 1.0000012, -2.5625, -0.3
 shape = SubResource("BoxShape3D_8akdw")
 
 [node name="FuncGodotMap4" type="Node3D" parent="." unique_id=2102190332]
-transform = Transform3D(-1, 0, -8.7422784e-08, 0, 1.0000001, 0, 8.742278e-08, 0, -1.0000001, -20, 5.375, -36.407566)
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1.0000001, 0, -7.1054274e-15, 0, 1.0000001, 19.978783, 5.375, 36.241035)
 script = ExtResource("5_8avfq")
 global_map_file = "D:/Modding/TrenchBroom/maps/awning1.map"
 map_settings = ExtResource("6_nyj3q")
@@ -764,7 +768,7 @@ transform = Transform3D(1, 0, 0, 0, 1.0000012, 0, 0, 0, 1.0000012, -2.5625, -0.3
 shape = SubResource("BoxShape3D_8akdw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2089518365]
-transform = Transform3D(-0.8660254, -0.43301284, 0.24999999, 0.13974625, 0.27045453, 0.9525363, -0.4800741, 0.8598571, -0.17370856, 0, 0, -37.310993)
+transform = Transform3D(0.8660253, 0.43301293, -0.25000003, 0.13974626, 0.27045456, 0.9525363, 0.48007417, -0.8598571, 0.17370856, -0.021217346, 0, 37.14446)
 light_color = Color(1, 0.95233333, 0.89, 1)
 shadow_enabled = true
 shadow_blur = 0.25
