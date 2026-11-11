@@ -431,16 +431,18 @@ _surfaces = [{
 [node name="Arena1" type="Node3D" unique_id=2014480433]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, -36.38614)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1046825363]
 environment = SubResource("Environment_dyiuk")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1885805812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.38614)
 use_collision = true
 
 [node name="Geo" type="Node3D" parent="." unique_id=1608795696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.38614)
 
 [node name="Floor" type="CSGBox3D" parent="Geo" unique_id=1562124669 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0625, -5)
@@ -519,6 +521,21 @@ collision_mask = 7
 size = Vector3(0.125, 15, 31.412598)
 material = SubResource("StandardMaterial3D_xhtoe")
 
+[node name="CSGBox3D17" type="CSGBox3D" parent="Geo/CSGBox3D25" unique_id=1426913082 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9534225, -3.2349424, -9.421444)
+use_collision = true
+collision_mask = 7
+size = Vector3(16.661621, 8, 8)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Geo/CSGBox3D25" unique_id=1987612554 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9534225, -3.2349424, -9.421444)
+operation = 2
+use_collision = true
+collision_mask = 7
+size = Vector3(17.527344, 7.5, 7.5)
+material = SubResource("StandardMaterial3D_xhtoe")
+
 [node name="CSGBox3D27" type="CSGBox3D" parent="Geo" unique_id=1102181611 groups=["Collidable_enviroment"]]
 transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, 30.973879, 7.298503, -20.001678)
 use_collision = true
@@ -531,6 +548,21 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 7
 use_collision = true
 collision_mask = 7
 size = Vector3(0.125, 15, 40)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Geo/CSGBox3D16" unique_id=499320536 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7058105, -3.2349424, 3.7303494e-14)
+use_collision = true
+collision_mask = 7
+size = Vector3(16.661621, 8, 8)
+material = SubResource("StandardMaterial3D_xhtoe")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Geo/CSGBox3D16" unique_id=1830701378 groups=["Collidable_enviroment"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7058105, -3.2349424, 3.7303494e-14)
+operation = 2
+use_collision = true
+collision_mask = 7
+size = Vector3(17.527344, 7.5, 7.5)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="Geo" unique_id=2087930335 groups=["Collidable_enviroment"]]
@@ -728,10 +760,11 @@ size = Vector3(4, 0.25, 19.104492)
 material = SubResource("StandardMaterial3D_xhtoe")
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("2_xhtoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -36.38614)
 right_spell_type = 2
 
 [node name="lights" type="Node3D" parent="." unique_id=1842736137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.38614)
 visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="lights" unique_id=1656052007]
@@ -755,9 +788,10 @@ spot_range = 17.0
 spot_attenuation = 0.01
 
 [node name="enemies" type="Node3D" parent="." unique_id=374510159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.38614)
 
 [node name="FuncGodotMap2" type="Node3D" parent="." unique_id=198075901]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -36.38614)
 visible = false
 script = ExtResource("4_eg5nu")
 global_map_file = "D:/Modding/TrenchBroom/maps/Arena1floor.map"
@@ -775,7 +809,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156245, 0)
 shape = SubResource("BoxShape3D_vsnhd")
 
 [node name="FuncGodotMap3" type="Node3D" parent="." unique_id=859018776]
-transform = Transform3D(0.26017454, 0, 0.9655615, 0, 1, 0, -0.9655615, 0, 0.26017454, 7.7140527, 0.15150881, -5.28327)
+transform = Transform3D(0.26017454, 0, 0.9655615, 0, 1, 0, -0.9655615, 0, 0.26017454, 7.7140527, 0.15150881, -41.66941)
 script = ExtResource("4_eg5nu")
 global_map_file = "D:/Modding/TrenchBroom/maps/gazebo1.map"
 map_settings = ExtResource("5_vtcy5")
@@ -893,7 +927,7 @@ shape = SubResource("ConvexPolygonShape3D_4j3ya")
 shape = SubResource("ConvexPolygonShape3D_fmq2a")
 
 [node name="FuncGodotMap4" type="Node3D" parent="." unique_id=59824048]
-transform = Transform3D(-0.14943703, 0, 0.9887711, 0, 1, 0, -0.9887711, 0, -0.14943703, -7.960321, 0.15150881, 5.6208477)
+transform = Transform3D(-0.14943703, 0, 0.9887711, 0, 1, 0, -0.9887711, 0, -0.14943703, -7.960321, 0.15150881, -30.765291)
 script = ExtResource("4_eg5nu")
 global_map_file = "D:/Modding/TrenchBroom/maps/gazebo1.map"
 map_settings = ExtResource("5_vtcy5")
@@ -1011,6 +1045,7 @@ shape = SubResource("ConvexPolygonShape3D_4j3ya")
 shape = SubResource("ConvexPolygonShape3D_fmq2a")
 
 [node name="props" type="Node3D" parent="." unique_id=219433031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.38614)
 
 [node name="LeafPlatform1" parent="props" unique_id=1603379574 groups=["Collidable_enviroment"] instance=ExtResource("15_km03g")]
 transform = Transform3D(-0.1737339, -0.31037113, 0.9346051, -0.13653569, 0.94746315, 0.28926054, -0.9752818, -0.07735264, -0.20698321, 19.542967, 6.8336296, -7.1490583)
@@ -1031,7 +1066,7 @@ transform = Transform3D(0.14436506, -0.5080082, 1.4039538, 0.29888585, 1.3917831
 transform = Transform3D(0.61125135, -0.21566196, 0.7614867, -0.058536977, 0.94720244, 0.31524715, -0.7892687, -0.23727046, 0.56635517, 20.834976, 3.0038843, -10.408261)
 
 [node name="Surface1" type="MeshInstance3D" parent="." unique_id=1281396315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5715382, -0.021717548, -0.19131172)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5715382, -0.021717548, -36.57745)
 material_override = SubResource("StandardMaterial3D_a4nlp")
 mesh = SubResource("ArrayMesh_0k5nc")
 script = ExtResource("16_iaol8")
@@ -1046,7 +1081,7 @@ map = ExtResource("18_8akdw")
 shape = SubResource("ConcavePolygonShape3D_jhc63")
 
 [node name="Surface2" type="MeshInstance3D" parent="." unique_id=1793484675]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.659549, -0.021717548, 0.92547417)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.659549, -0.021717548, -35.460663)
 material_override = SubResource("StandardMaterial3D_a4nlp")
 mesh = SubResource("ArrayMesh_vsnhd")
 script = ExtResource("16_iaol8")
