@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bh4fql00tq6rh"
+path="res://.godot/imported/RAT_Start_UI_Hover.wav-6fa5f92f6d5643292a80eb26040705af.sample"
+
+[deps]
+
+source_file="res://Assets/UI/Start Menu Sounds/RAT_Start_UI_Hover.wav"
+dest_files=["res://.godot/imported/RAT_Start_UI_Hover.wav-6fa5f92f6d5643292a80eb26040705af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

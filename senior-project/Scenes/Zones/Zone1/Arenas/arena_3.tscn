@@ -3182,7 +3182,7 @@ multimesh = SubResource("MultiMesh_rn33h")
 [node name="EnemyWalker012" parent="." unique_id=1586207629 instance=ExtResource("64_7a606")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 11.093477, 1.820109, 24.063663)
 
-[node name="EnemyWalker01" parent="EnemyWalker012" index="0" unique_id=23727546]
+[node name="EnemyWalker01" parent="EnemyWalker012" index="0" unique_id=493678689]
 surface_material_override/0 = SubResource("StandardMaterial3D_uv4q0")
 
 [node name="Eye2" type="MeshInstance3D" parent="EnemyWalker012" unique_id=1503389581]
@@ -3192,7 +3192,7 @@ mesh = SubResource("SphereMesh_uv4q0")
 
 [node name="EnemyEye02" parent="EnemyWalker012" unique_id=1144441611 instance=ExtResource("65_c0jc6")]
 
-[node name="Sphere_001" parent="EnemyWalker012/EnemyEye02" index="0" unique_id=848458290]
+[node name="Sphere_001" parent="EnemyWalker012/EnemyEye02" index="0" unique_id=1939849984]
 surface_material_override/0 = SubResource("ShaderMaterial_sn0t7")
 
 [node name="ropes" type="Node3D" parent="." unique_id=2138254130]
