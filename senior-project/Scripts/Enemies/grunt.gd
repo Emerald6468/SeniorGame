@@ -26,4 +26,5 @@ func melee():
 
 func _physics_process(delta: float) -> void:
 	super(delta)
+	print("grunt" + str(velocity))
 	if close_enough: attack()

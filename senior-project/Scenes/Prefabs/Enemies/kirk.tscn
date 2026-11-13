@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://buxu8okm8mbjs"]
+
+[ext_resource type="Script" uid="uid://dceitiycu8quo" path="res://Scripts/Enemies/Gimbal.gd" id="1_1p6c3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_riqys"]
+
+[node name="Kirk" type="CharacterBody3D" unique_id=524083804]
+script = ExtResource("1_1p6c3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1967311575]
+unique_name_in_owner = true
+use_3d_avoidance = true
+debug_enabled = true
+debug_path_custom_color = Color(0.6189695, 0.37898517, 0.13122854, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=121136541]
+shape = SubResource("SphereShape3D_bhunq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=206728518]
+mesh = SubResource("SphereMesh_riqys")

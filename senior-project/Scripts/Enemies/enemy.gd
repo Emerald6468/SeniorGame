@@ -7,7 +7,7 @@ var deccel = .1
 var SPEED:float = 4.0
 var cur_speed:float = SPEED
 @onready var body: CollisionShape3D = $Body
-@onready var mesh: MeshInstance3D = $Body/Mesh
+@onready var mesh: MeshInstance3D = %Mesh
 
 
 
@@ -21,11 +21,11 @@ enum ENEMY_STATES{
 #Navigation
 var player = null
 @export var player_path:NodePath
-@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var nav_agent: NavigationAgent3D = %NavigationAgent3D
 
 
 #Monitor
-@onready var monitor: Area3D = $Monitor
+@onready var monitor: Area3D = %Monitor
 var player_pos: Vector3
 var look_pos: Vector3
 @onready var enemy_head: Marker3D = $Body/EnemyHead
@@ -130,11 +130,34 @@ func chase_player():
 		#print(str(knockback_velocity))
 		mesh.look_at(player_pos,Vector3(0, 1, 0),false)
 		if knockback_velocity == Vector3.ZERO or !knockback_velocity:
-			nav_agent.set_target_position(player.global_position)
-			var next_nav_point = nav_agent.get_next_path_position()
-			velocity = (next_nav_point - global_position).normalized() * SPEED
+			navigate()
+			
 			#velocity = (look_pos - global_position).normalized() * cur_speed #move toward player
 	else: pass;#print(str(knockback_velocity))
+
+func navigate():
+	nav_agent.set_target_position(player.global_position)
+	var next_nav_point = nav_agent.get_next_path_position()
+	#if floats: next_nav_point.y = next_nav_point.y + 5
+	#next_nav_point = keep_angle(next_nav_point,player.global_position)
+	velocity = (next_nav_point - global_position).normalized() * SPEED
+#for wisp
+var desired_angle = 35
+func keep_angle(point,player):
+	#var f_length = sqrt(pow(player.x-point.x,2)+pow(player.z-point.z,2))
+	#var length = f_length
+	#var floor_angle = 0
+	#if point.y != player.y:
+		#var opp = abs(player.y-point.y)
+		#length = sqrt(pow(f_length,2) + pow(opp,2))
+		#floor_angle = 90-atan2(opp,length)
+	#else:floor_angle = 90
+	#var player_angle = 180 - (floor_angle + desired_angle)
+	#var desired_height = length/cos(floor_angle)
+	#var desired_y = point.y + desired_height
+	#point.y = desired_y
+	point.y = player.y + 5
+	return point
 #endregion
 
 
@@ -180,6 +203,7 @@ func _process(delta: float) -> void:
 			else: health = max_health
 	else:
 		print("i die :(")
+		if floats: get_parent().queue_free()
 		queue_free()
 		
 		

@@ -46,6 +46,9 @@ uv1_triplanar = true
 
 [node name="Hall3" type="Node3D" unique_id=851948298]
 
+[node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("3_vgpiy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 173.488, 0, 304.927)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1517803115]
 transform = Transform3D(0.8660253, 0.43301284, -0.25000006, 2.780595e-08, 0.49999994, 0.86602545, 0.5000001, -0.75, 0.43301257, 11.087933, 0, 34.41295)
 shadow_enabled = true

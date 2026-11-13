@@ -8,6 +8,15 @@ const YELLOW_LEVEL = preload("uid://b1v7cs16p6l4u")
 const PURPLE_LEVEL = preload("uid://cnxhphcxjtvje")
 const ORANGE_LEVEL = preload("uid://dqch6kl6gskip")
 
+#Zone 1
+const ARENA_1 = preload("uid://co8q4ra67bsci")
+const ARENA_2 = preload("uid://cjtx2jjncontf")
+const ARENA_3 = preload("uid://cbe6ru80h2jus")
+
+const HALL_1 = preload("uid://ddc4ekte7mymd")
+const HALL_2 = preload("uid://c2n3fl1m24dy1")
+const HALL_3 = preload("uid://bvb3cli4cxmvb")
+
 
 #Lists of levels
 #Zone 1
@@ -43,9 +52,12 @@ func pick_zone_layout():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	all_zone1_levels = [BLUE_LEVEL,GREEN_LEVEL,RED_LEVEL,YELLOW_LEVEL,ORANGE_LEVEL,PURPLE_LEVEL]
-	all_zone1_hallways = [YELLOW_LEVEL,GREEN_LEVEL,PURPLE_LEVEL]
-	all_zone1_arenas = [RED_LEVEL,BLUE_LEVEL,ORANGE_LEVEL]
+	#all_zone1_levels = [BLUE_LEVEL,GREEN_LEVEL,RED_LEVEL,YELLOW_LEVEL,ORANGE_LEVEL,PURPLE_LEVEL]
+	#all_zone1_hallways = [YELLOW_LEVEL,GREEN_LEVEL,PURPLE_LEVEL]
+	#all_zone1_arenas = [RED_LEVEL,BLUE_LEVEL,ORANGE_LEVEL]
+	all_zone1_levels = [ARENA_1,ARENA_2,ARENA_3,HALL_1,HALL_2,HALL_3]
+	all_zone1_hallways = [HALL_1,HALL_2,HALL_3]
+	all_zone1_arenas = [ARENA_1,ARENA_2,ARENA_3]
 	match current_zone:
 		1:
 			cur_hall_choices = all_zone1_hallways

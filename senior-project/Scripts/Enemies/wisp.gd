@@ -1,4 +1,5 @@
 extends Enemy
+@onready var gimbal: CharacterBody3D = $GroundCheck/Gimbal
 
 #this enemy is going to be airborn and be a quick fodder enemy that dies quickly
 #only attack is laser
@@ -18,7 +19,7 @@ func attack():
 		just_attacked = false
 
 func firelaser():
-	print("laser")
+	#print("laser")
 	var laser = LASER.instantiate()
 	#laser.angle = basis
 	laser.target = player_pos
@@ -28,12 +29,19 @@ func firelaser():
 	
 
 func keep_off_ground():
-	var touching_null = str(ground_check.get_collider()) == "<Object#null>"
-	if ground_check.collide_with_bodies and !touching_null:
-		print(str(ground_check.get_collider()))
-		position.y = nav_agent.get_next_path_position().y + 5.0
+	position.y = gimbal.position.y + 5
+	#var touching_null = str(ground_check.get_collider()) == "<Object#null>"
+	#if ground_check.collide_with_bodies and !touching_null:
+		#print(str(ground_check.get_collider()))
+		#position.y = nav_agent.get_next_path_position().y + 5.0
+
+func navigate():
+	get_parent().navigate()
 
 func _physics_process(delta: float) -> void:
 	super(delta)
-	keep_off_ground()
-	if enemy_state == ENEMY_STATES.Chasing: attack()
+	print("wisp" + str(velocity))
+	#keep_off_ground()
+	#if nav_agent.get_next_path_position().y >= global_position.y: position.y += 5
+	
+	#if enemy_state == ENEMY_STATES.Chasing: attack()

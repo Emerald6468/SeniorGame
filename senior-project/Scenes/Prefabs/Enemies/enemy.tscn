@@ -24,6 +24,7 @@ script = ExtResource("1_dccm2")
 shape = SubResource("CapsuleShape3D_bhunq")
 
 [node name="Mesh" type="MeshInstance3D" parent="Body" unique_id=1530752893]
+unique_name_in_owner = true
 mesh = SubResource("CapsuleMesh_riqys")
 
 [node name="Nose" type="MeshInstance3D" parent="Body/Mesh" unique_id=116420774]
@@ -34,6 +35,7 @@ mesh = ExtResource("3_pe7bt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 1.7164066, -0.034263775)
 
 [node name="Monitor" type="Area3D" parent="." unique_id=1113326534]
+unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 
@@ -52,5 +54,6 @@ billboard = 2
 text = "STATUS"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=717259661]
+unique_name_in_owner = true
 debug_enabled = true
 debug_path_custom_color = Color(0.53190726, 0.45808935, 0.9949319, 1)
