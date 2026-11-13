@@ -14,7 +14,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Ball" type="RigidBody2D" parent="." unique_id=2012783804]
-position = Vector2(182, -5)
+position = Vector2(288, 0)
 
 [node name="Ball" type="Sprite2D" parent="Ball" unique_id=14074179]
 position = Vector2(698, 59)
@@ -29,8 +29,8 @@ scale = Vector2(2.9913566, 2.9913566)
 shape = SubResource("CircleShape2D_udmuc")
 
 [node name="Wall_1" type="Sprite2D" parent="." unique_id=1724523323]
-position = Vector2(642.89246, 404.50003)
-scale = Vector2(2.0625, 16.656252)
+position = Vector2(544.00006, 528)
+scale = Vector2(2.0625, 25.328125)
 texture = ExtResource("1_m6x46")
 
 [node name="Wall" type="StaticBody2D" parent="Wall_1" unique_id=524598192]
@@ -42,9 +42,24 @@ scale = Vector2(9.387839, 1)
 position = Vector2(-3.3240242, -4.3313293)
 shape = SubResource("RectangleShape2D_l3xo2")
 
+[node name="Wall_3" type="Sprite2D" parent="." unique_id=227996033]
+position = Vector2(968, 1000)
+rotation = 1.5707964
+scale = Vector2(2.0625, 25.328125)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Wall_3" unique_id=1905772065]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_3/Wall" unique_id=652473446]
+position = Vector2(-3.3240242, -4.3313293)
+shape = SubResource("RectangleShape2D_l3xo2")
+
 [node name="Wall_2" type="Sprite2D" parent="." unique_id=1991128082]
-position = Vector2(1150.8926, 405.5001)
-scale = Vector2(2.0625, 16.656252)
+position = Vector2(1384.0001, 528)
+scale = Vector2(2.0625, 25.078127)
 texture = ExtResource("1_m6x46")
 
 [node name="Wall" type="StaticBody2D" parent="Wall_2" unique_id=352062946]
@@ -57,7 +72,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper" type="Sprite2D" parent="." unique_id=1734214889]
-position = Vector2(762.99994, 287)
+position = Vector2(703.99994, 230.17224)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -72,7 +87,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper2" type="Sprite2D" parent="." unique_id=1497937666]
-position = Vector2(917.99994, 337.99994)
+position = Vector2(808, 230.17215)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -87,7 +102,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper3" type="Sprite2D" parent="." unique_id=1434977899]
-position = Vector2(813.99994, 403.99994)
+position = Vector2(912, 230.17218)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -102,7 +117,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper4" type="Sprite2D" parent="." unique_id=1850709840]
-position = Vector2(906.99994, 505)
+position = Vector2(1015.99994, 230.17218)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -117,7 +132,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper7" type="Sprite2D" parent="." unique_id=126777355]
-position = Vector2(945.99994, 607.00006)
+position = Vector2(1120, 230.17218)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -131,125 +146,422 @@ scale = Vector2(9.387839, 1)
 position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
-[node name="Bumper8" type="Sprite2D" parent="." unique_id=445164532]
-position = Vector2(842.99994, 652)
+[node name="Bumper8" type="Sprite2D" parent="." unique_id=202906889]
+position = Vector2(1224, 230.17221)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="StaticBody2D" parent="Bumper8" unique_id=2082962307]
+[node name="Wall" type="StaticBody2D" parent="Bumper8" unique_id=1879166377]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper8/Wall" unique_id=2007374048]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper8/Wall" unique_id=1028437371]
 position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
-[node name="Bumper9" type="Sprite2D" parent="." unique_id=95149699]
-position = Vector2(772.00006, 562.00006)
+[node name="Bumper12" type="Sprite2D" parent="." unique_id=880015382]
+position = Vector2(702.1464, 444.34442)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="StaticBody2D" parent="Bumper9" unique_id=523041680]
+[node name="Wall" type="StaticBody2D" parent="Bumper12" unique_id=70611692]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper9/Wall" unique_id=694556951]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper12/Wall" unique_id=1800145808]
 position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
-[node name="Bumper11" type="Sprite2D" parent="." unique_id=639540175]
-position = Vector2(997.99994, 268)
+[node name="Bumper13" type="Sprite2D" parent="." unique_id=85911769]
+position = Vector2(806.1465, 444.34433)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="StaticBody2D" parent="Bumper11" unique_id=877106843]
+[node name="Wall" type="StaticBody2D" parent="Bumper13" unique_id=2051676026]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper11/Wall" unique_id=966815626]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper13/Wall" unique_id=1270017335]
 position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
-[node name="Bumper12" type="Sprite2D" parent="." unique_id=1733604617]
-position = Vector2(1076, 422)
+[node name="Bumper14" type="Sprite2D" parent="." unique_id=266359912]
+position = Vector2(910.1465, 444.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="StaticBody2D" parent="Bumper12" unique_id=1670514142]
+[node name="Wall" type="StaticBody2D" parent="Bumper14" unique_id=899466895]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper12/Wall" unique_id=609022623]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper14/Wall" unique_id=1492004343]
 position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
-[node name="Bumper13" type="Sprite2D" parent="." unique_id=1942823505]
-position = Vector2(996, 427.00003)
+[node name="Bumper15" type="Sprite2D" parent="." unique_id=1559594841]
+position = Vector2(1014.14636, 444.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="StaticBody2D" parent="Bumper13" unique_id=710953902]
+[node name="Wall" type="StaticBody2D" parent="Bumper15" unique_id=1172869995]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper13/Wall" unique_id=1807290708]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper15/Wall" unique_id=633000034]
 position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
-[node name="Bumper14" type="Sprite2D" parent="." unique_id=1014295988]
-position = Vector2(1038, 614.00006)
+[node name="Bumper16" type="Sprite2D" parent="." unique_id=403892213]
+position = Vector2(1118.1465, 444.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="StaticBody2D" parent="Bumper14" unique_id=443202732]
+[node name="Wall" type="StaticBody2D" parent="Bumper16" unique_id=999180492]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper14/Wall" unique_id=1277229814]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper16/Wall" unique_id=480986420]
 position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
-[node name="L_Bumper" type="Sprite2D" parent="." unique_id=1454544609]
-position = Vector2(727.2274, 721.5928)
-rotation = -0.8471928
-scale = Vector2(2.0625, 8.371295)
+[node name="Bumper17" type="Sprite2D" parent="." unique_id=758850776]
+position = Vector2(1222.1465, 444.3444)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="StaticBody2D" parent="L_Bumper" unique_id=938907099]
+[node name="Wall" type="StaticBody2D" parent="Bumper17" unique_id=1406774181]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="L_Bumper/Wall" unique_id=2032554136]
-position = Vector2(-3.3304214, -4.2843018)
-scale = Vector2(1, 1.0000001)
-shape = SubResource("RectangleShape2D_l3xo2")
-metadata/_edit_lock_ = true
-
-[node name="R_Bumper" type="Sprite2D" parent="." unique_id=1434401037]
-position = Vector2(1061.8925, 725.5002)
-rotation = 0.88531756
-scale = Vector2(2.0625, 8.371295)
-texture = ExtResource("1_m6x46")
-
-[node name="Wall" type="StaticBody2D" parent="R_Bumper" unique_id=941766672]
-position = Vector2(4.395344, -31.265442)
-rotation = -1.5707964
-scale = Vector2(9.387839, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="R_Bumper/Wall" unique_id=201600474]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper17/Wall" unique_id=394427757]
 position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
-metadata/_edit_lock_ = true
+
+[node name="Bumper5" type="Sprite2D" parent="." unique_id=1810157054]
+position = Vector2(750.1464, 340.34442)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper5" unique_id=1789006560]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper5/Wall" unique_id=1180301926]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper6" type="Sprite2D" parent="." unique_id=1392340927]
+position = Vector2(854.1465, 340.34433)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper6" unique_id=1941510184]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper6/Wall" unique_id=1767611731]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper9" type="Sprite2D" parent="." unique_id=614932934]
+position = Vector2(958.1465, 340.34436)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper9" unique_id=654116415]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper9/Wall" unique_id=656061890]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper10" type="Sprite2D" parent="." unique_id=1542499208]
+position = Vector2(1062.1464, 340.34436)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper10" unique_id=2141810124]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper10/Wall" unique_id=2138891124]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper11" type="Sprite2D" parent="." unique_id=417055604]
+position = Vector2(1166.1465, 340.34436)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper11" unique_id=1451684710]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper11/Wall" unique_id=1642021039]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper18" type="Sprite2D" parent="." unique_id=548602479]
+position = Vector2(702.1464, 662.17224)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper18" unique_id=621292230]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper18/Wall" unique_id=316356170]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper19" type="Sprite2D" parent="." unique_id=520414117]
+position = Vector2(806.1465, 662.1721)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper19" unique_id=1812756405]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper19/Wall" unique_id=359349538]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper20" type="Sprite2D" parent="." unique_id=606455178]
+position = Vector2(910.1465, 662.1722)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper20" unique_id=1642129548]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper20/Wall" unique_id=1288998535]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper21" type="Sprite2D" parent="." unique_id=2141788546]
+position = Vector2(1014.14636, 662.1722)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper21" unique_id=534214350]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper21/Wall" unique_id=1601916487]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper22" type="Sprite2D" parent="." unique_id=1095577003]
+position = Vector2(1118.1465, 662.1722)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper22" unique_id=1818464097]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper22/Wall" unique_id=922342426]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper23" type="Sprite2D" parent="." unique_id=38820273]
+position = Vector2(1222.1465, 662.17224)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper23" unique_id=1945857545]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper23/Wall" unique_id=1599948995]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper24" type="Sprite2D" parent="." unique_id=1466948341]
+position = Vector2(750.1464, 558.17224)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper24" unique_id=522513220]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper24/Wall" unique_id=682463152]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper25" type="Sprite2D" parent="." unique_id=1681199253]
+position = Vector2(854.1465, 558.1721)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper25" unique_id=1158752844]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper25/Wall" unique_id=1661967022]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper26" type="Sprite2D" parent="." unique_id=468806661]
+position = Vector2(958.1465, 558.1722)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper26" unique_id=950611770]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper26/Wall" unique_id=606243689]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper27" type="Sprite2D" parent="." unique_id=202916908]
+position = Vector2(1062.1464, 558.1722)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper27" unique_id=173577178]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper27/Wall" unique_id=201208276]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper28" type="Sprite2D" parent="." unique_id=554655256]
+position = Vector2(1166.1465, 558.1722)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper28" unique_id=1311658370]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper28/Wall" unique_id=735378470]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper35" type="Sprite2D" parent="." unique_id=722568145]
+position = Vector2(750.1464, 790.17224)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper35" unique_id=2145063346]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper35/Wall" unique_id=1345225677]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper36" type="Sprite2D" parent="." unique_id=479510456]
+position = Vector2(854.1465, 790.1721)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper36" unique_id=725506494]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper36/Wall" unique_id=852361136]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper37" type="Sprite2D" parent="." unique_id=1512899125]
+position = Vector2(958.1465, 790.1722)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper37" unique_id=1549022066]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper37/Wall" unique_id=1906918211]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper38" type="Sprite2D" parent="." unique_id=1510454669]
+position = Vector2(1062.1464, 790.1722)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper38" unique_id=786130614]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper38/Wall" unique_id=818436712]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
+
+[node name="Bumper39" type="Sprite2D" parent="." unique_id=1264272178]
+position = Vector2(1166.1465, 790.1722)
+rotation = -0.5493705
+scale = Vector2(0.6411737, 0.6460312)
+texture = ExtResource("1_m6x46")
+
+[node name="Wall" type="StaticBody2D" parent="Bumper39" unique_id=112519253]
+position = Vector2(4.395344, -31.265442)
+rotation = -1.5707964
+scale = Vector2(9.387839, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper39/Wall" unique_id=310634205]
+position = Vector2(-3.3304214, -4.4313774)
+shape = SubResource("RectangleShape2D_l3xo2")
