@@ -268,6 +268,9 @@ size = Vector2(5, 15.5)
 
 [node name="Hall1" type="Node3D" unique_id=2014480433]
 
+[node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("3_mvblb")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -85.016106, -0.2625084, 214.56194)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
 transform = Transform3D(0.8660253, 0.43301284, -0.25000006, 2.780595e-08, 0.49999994, 0.86602545, 0.5000001, -0.75, 0.43301257, 12.2742195, 0, 35.73214)
 shadow_enabled = true
@@ -477,9 +480,6 @@ use_collision = true
 collision_mask = 7
 size = Vector3(16.661621, 8, 8)
 material = SubResource("StandardMaterial3D_8xkb6")
-
-[node name="EndPoint" parent="Geo/CSGBox3D48/CSGBox3D17" unique_id=401920304 instance=ExtResource("3_mvblb")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.2504425, -4.0812454, -0.0004272461)
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="Geo/CSGBox3D48" unique_id=105659631 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.195671, -7.39194, 18.787003)

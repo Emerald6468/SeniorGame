@@ -219,9 +219,6 @@ collision_mask = 7
 size = Vector3(16.661621, 8, 8)
 material = SubResource("StandardMaterial3D_x5emf")
 
-[node name="EndPoint" parent="Geo/CSGBox3D49/CSGBox3D17" unique_id=401920304 instance=ExtResource("3_vgpiy")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.2504425, -4.0812454, -0.0004272461)
-
 [node name="CSGBox3D18" type="CSGBox3D" parent="Geo/CSGBox3D49" unique_id=1942554616 groups=["Collidable_enviroment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.104965, -7.0542803, 27.415207)
 operation = 2
@@ -489,3 +486,6 @@ use_collision = true
 collision_mask = 7
 size = Vector3(4.223709, 4.6309814, 12.637451)
 material = SubResource("StandardMaterial3D_8kr7a")
+
+[node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("3_vgpiy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 173.488, 0, 304.927)
