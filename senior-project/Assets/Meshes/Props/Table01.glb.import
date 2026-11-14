@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://cc76gnqpcds3o"
-path="res://.godot/imported/Table01.glb-4e7bdfe34467c278c2c914bdfab3e5ea.scn"
+path="res://.godot/imported/Table01.glb-4e7bdfe34467c278c2c914bdfab3e5ea.res"
 
 [deps]
 
 source_file="res://Assets/Meshes/Props/Table01.glb"
-dest_files=["res://.godot/imported/Table01.glb-4e7bdfe34467c278c2c914bdfab3e5ea.scn"]
+dest_files=["res://.godot/imported/Table01.glb-4e7bdfe34467c278c2c914bdfab3e5ea.res"]
 
 [params]
 
