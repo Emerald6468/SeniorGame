@@ -70,6 +70,7 @@
 [ext_resource type="Texture2D" uid="uid://dvbu8j7a5og8" path="res://Assets/Textures/Rope03.png" id="67_wpv30"]
 [ext_resource type="Texture2D" uid="uid://bpyrklals6n8q" path="res://Assets/Textures/Rope02.png" id="68_wpv30"]
 [ext_resource type="MultiMesh" uid="uid://cc0bpl8oy5ugs" path="res://Assets/MultiMeshes/Grass1.tres" id="71_r7sbx"]
+[ext_resource type="ArrayMesh" uid="uid://bmj15bynv2dxg" path="res://Assets/Meshes/Props/Bench1a.glb" id="72_a08ac"]
 [ext_resource type="MultiMesh" uid="uid://cpe3wx3fsqsta" path="res://Assets/MultiMeshes/Grass2.tres" id="73_o7sq3"]
 
 [sub_resource type="Environment" id="Environment_dyiuk"]
@@ -2940,6 +2941,10 @@ multimesh = ExtResource("73_o7sq3")
 
 [node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("3_wpv30")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4132284, -0.16530609, 72.5797)
+
+[node name="Bench1a" type="MeshInstance3D" parent="." unique_id=1922205382]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -6.5725403, 0.00016513467, 24.92198)
+mesh = ExtResource("72_a08ac")
 
 [editable path="Player"]
 [editable path="EnemyWalker012"]
