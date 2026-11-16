@@ -69,6 +69,7 @@ func spawn_levels():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Camera3D.make_current()
 	if Input.is_action_just_pressed("DevQuit"):get_tree().quit()
 	if Input.is_action_just_pressed("Restart"):get_tree().reload_current_scene()
 	var picks_done = pick_zone_layout()

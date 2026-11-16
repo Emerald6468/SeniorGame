@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="SeniorProject"
+config/name="Ratacadabra"
 run/main_scene="uid://bxq2qvjocv2hs"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Ratacadabra"
