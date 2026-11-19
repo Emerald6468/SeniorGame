@@ -314,7 +314,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Restart"):get_tree().reload_current_scene();Global.reset_all()
 	#controlls mouse
 	if !Global.InsideMenu: Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	#camera.make_current()
 #region Gravity and Jumping
 	# Add the gravity.
 	if not is_on_floor():

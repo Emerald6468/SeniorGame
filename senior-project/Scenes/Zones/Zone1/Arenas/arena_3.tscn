@@ -1786,7 +1786,7 @@ uv1_offset = Vector3(-1, -2, 0)
 texture_repeat = false
 billboard_mode = 2
 
-[node name="Arena3" type="Node3D" unique_id=2014480433]
+[node name="NavigationRegion3D" type="Node3D" unique_id=2014480433]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
 transform = Transform3D(0.8660253, 0.43301293, -0.25000003, 0.13974626, 0.27045456, 0.9525363, 0.48007417, -0.8598571, 0.17370856, 12.267813, 0, 37.213654)
@@ -1803,10 +1803,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.2
 left_spell_type = 2
 right_spell_type = 3
 
-[node name="UI" parent="Player" index="11" unique_id=753733901]
-metadata/_edit_use_anchors_ = true
-
-[node name="Geo" type="Node" parent="." unique_id=1466927716]
+[node name="Geo" type="Node3D" parent="." unique_id=1471197082]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Geo" unique_id=2115707413]
 navigation_mesh = SubResource("NavigationMesh_riqys")
@@ -2101,7 +2098,7 @@ collision_mask = 0
 size = Vector3(40, 0.125, 40)
 material = SubResource("StandardMaterial3D_xhtoe")
 
-[node name="enemies" type="Node" parent="." unique_id=852040261]
+[node name="enemies" type="Node3D" parent="." unique_id=1032086281]
 
 [node name="Grunt" parent="enemies" unique_id=1065493351 instance=ExtResource("46_je24l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 29.255398, 2.276349, 52.338326)
@@ -2133,9 +2130,9 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 29.0
 [node name="Grunt10" parent="enemies" unique_id=1953831541 instance=ExtResource("46_je24l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 17.751387, 8.455002, 35.831276)
 
-[node name="props" type="Node" parent="." unique_id=1354039820]
+[node name="props" type="Node3D" parent="." unique_id=1770191462]
 
-[node name="Pipes" type="Node" parent="props" unique_id=1291440454]
+[node name="Pipes" type="Node3D" parent="props" unique_id=725527389]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="props/Pipes" unique_id=1755575040]
 transform = Transform3D(-1.9999999, -2.842171e-14, 1.6940659e-21, 0, -8.7422805e-08, -2.0000005, 5.684342e-14, -2, 8.742278e-08, 16.017813, 0, 36.685226)
@@ -2383,7 +2380,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5147142, 0, 27.566423)
 [node name="Table01" parent="props/physics" unique_id=324626757 instance=ExtResource("23_glrhv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9020696, 0, 27.443823)
 
-[node name="decals" type="Node" parent="." unique_id=1662367327]
+[node name="decals" type="Node3D" parent="." unique_id=625401704]
 
 [node name="Decal" type="Decal" parent="decals" unique_id=692308754]
 transform = Transform3D(1, -8.742277e-08, -8.7422784e-08, -8.742278e-08, 4.371139e-08, -1, 8.742278e-08, 1, 4.371138e-08, 7.0178146, 14.125, 16.560226)
@@ -2618,7 +2615,7 @@ size = Vector3(6, 2, 6)
 texture_albedo = ExtResource("41_x7q6n")
 cull_mask = 1048569
 
-[node name="buildings" type="Node" parent="." unique_id=1894599884]
+[node name="buildings" type="Node3D" parent="." unique_id=990330075]
 
 [node name="entity_0_worldspawn" type="StaticBody3D" parent="buildings" unique_id=793787266 groups=["Collidable_enviroment"]]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.267813, 0, 36.310226)
@@ -2849,7 +2846,7 @@ debug_color = Color(0.7021107, 0, 0, 1)
 [node name="EnemyWalker012" parent="." unique_id=1586207629 instance=ExtResource("64_7a606")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 11.093477, 1.820109, 24.063663)
 
-[node name="EnemyWalker01" parent="EnemyWalker012" index="0" unique_id=23727546]
+[node name="EnemyWalker01" parent="EnemyWalker012" index="0" unique_id=275827571]
 surface_material_override/0 = SubResource("StandardMaterial3D_uv4q0")
 
 [node name="Eye2" type="MeshInstance3D" parent="EnemyWalker012" unique_id=1503389581]
@@ -2859,10 +2856,10 @@ mesh = SubResource("SphereMesh_uv4q0")
 
 [node name="EnemyEye02" parent="EnemyWalker012" unique_id=1144441611 instance=ExtResource("65_c0jc6")]
 
-[node name="Sphere_001" parent="EnemyWalker012/EnemyEye02" index="0" unique_id=848458290]
+[node name="Sphere_001" parent="EnemyWalker012/EnemyEye02" index="0" unique_id=2115070807]
 surface_material_override/0 = SubResource("ShaderMaterial_sn0t7")
 
-[node name="ropes" type="Node" parent="." unique_id=1850730191]
+[node name="ropes" type="Node3D" parent="." unique_id=972078859]
 
 [node name="Catenary" type="Node3D" parent="ropes" unique_id=1763273459 node_paths=PackedStringArray("target_node")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.5001059, 15.243556, 25.514877)
@@ -2909,7 +2906,7 @@ metadata/_custom_type_script = "uid://l7kflms2opyh"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.683186, 2.3826752, 2.1749964)
 gizmo_extents = 5.0
 
-[node name="multimeshes" type="Node" parent="." unique_id=1667744966]
+[node name="multimeshes" type="Node3D" parent="." unique_id=203843098]
 
 [node name="SmallLeaves1" type="MultiMeshInstance3D" parent="multimeshes" unique_id=551620976]
 transform = Transform3D(-1, 7.571034e-08, -4.371139e-08, 7.571035e-08, 0.9999999, -8.940696e-08, 4.371138e-08, -8.940695e-08, -0.9999999, 32.03805, 6.915581, 22.949295)
@@ -2946,6 +2943,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4132284, -0.16530609, 72.57
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -6.5725403, 0.00016513467, 24.92198)
 mesh = ExtResource("72_a08ac")
 
-[editable path="Player"]
 [editable path="EnemyWalker012"]
 [editable path="EnemyWalker012/EnemyEye02"]
