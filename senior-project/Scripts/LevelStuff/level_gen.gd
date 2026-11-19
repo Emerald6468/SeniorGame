@@ -70,6 +70,8 @@ func spawn_levels():
 		add_child(new_level)
 		if s_num != 0:
 			new_level.get_node("Player").queue_free()
+			new_level.get_node("DirectionalLight3D").queue_free()
+			new_level.get_node("WorldEnvironment").queue_free()
 		new_level.global_position = next_position
 		new_level.global_rotation = next_rotation
 		#match s_num:
