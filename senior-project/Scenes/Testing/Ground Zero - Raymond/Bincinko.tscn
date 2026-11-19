@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://drrm5smqwh4yh" path="res://Assets/Materials/Sprites/Test_Ball_Sprite.png" id="1_l3xo2"]
 [ext_resource type="Texture2D" uid="uid://dynyoumu727x1" path="res://Assets/Materials/Sprites/Test_Wall_Sprite.png" id="1_m6x46"]
+[ext_resource type="Script" uid="uid://b8tnopunstk3m" path="res://Scenes/Testing/Ground Zero - Raymond/ball_script.gd" id="1_xo7ov"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_udmuc"]
 radius = 11.0
@@ -12,24 +13,37 @@ size = Vector2(3.4214551, 32.270454)
 [node name="Bincinko" type="Control" unique_id=263107220]
 layout_mode = 3
 anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Ball" type="RigidBody2D" parent="." unique_id=2012783804]
-position = Vector2(288, 0)
+position = Vector2(961, 38)
+input_pickable = true
+gravity_scale = 0.0
+script = ExtResource("1_xo7ov")
 
-[node name="Ball" type="Sprite2D" parent="Ball" unique_id=14074179]
-position = Vector2(698, 59)
+[node name="Ball" type="TextureButton" parent="Ball" unique_id=480369838]
+offset_left = 32.799015
+offset_top = 34.73204
+offset_right = 68.195404
+offset_bottom = 70.977585
 rotation = -3.1415925
-scale = Vector2(2.9913564, 2.9913564)
-texture = ExtResource("1_l3xo2")
+scale = Vector2(1.831357, 1.831357)
+offset_transform_enabled = true
 
 [node name="Area2D" type="CollisionShape2D" parent="Ball" unique_id=2136606031]
-position = Vector2(698, 61.991356)
+position = Vector2(5.9604645e-08, 1.0000004)
 rotation = -3.1415925
 scale = Vector2(2.9913566, 2.9913566)
 shape = SubResource("CircleShape2D_udmuc")
 
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=1601213361]
+position = Vector2(0, 4)
+scale = Vector2(3.0288846, 3.0288846)
+texture = ExtResource("1_l3xo2")
+
 [node name="Wall_1" type="Sprite2D" parent="." unique_id=1724523323]
-position = Vector2(544.00006, 528)
+position = Vector2(592.00006, 528)
 scale = Vector2(2.0625, 25.328125)
 texture = ExtResource("1_m6x46")
 
@@ -43,9 +57,9 @@ position = Vector2(-3.3240242, -4.3313293)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Wall_3" type="Sprite2D" parent="." unique_id=227996033]
-position = Vector2(968, 1000)
+position = Vector2(964.6833, 962)
 rotation = 1.5707964
-scale = Vector2(2.0625, 25.328125)
+scale = Vector2(2.0625, 25.358713)
 texture = ExtResource("1_m6x46")
 
 [node name="Wall" type="StaticBody2D" parent="Wall_3" unique_id=1905772065]
@@ -58,7 +72,7 @@ position = Vector2(-3.3240242, -4.3313293)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Wall_2" type="Sprite2D" parent="." unique_id=1991128082]
-position = Vector2(1384.0001, 528)
+position = Vector2(1337.0001, 528)
 scale = Vector2(2.0625, 25.078127)
 texture = ExtResource("1_m6x46")
 
@@ -565,3 +579,6 @@ scale = Vector2(9.387839, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper39/Wall" unique_id=310634205]
 position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
+
+[connection signal="button_down" from="Ball/Ball" to="Ball" method="_on_ball_button_down"]
+[connection signal="button_up" from="Ball/Ball" to="Ball" method="_on_ball_button_up"]
