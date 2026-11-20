@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 6.0
 var knockback_velocity:Vector3
 
 #Flexible Speed
+@export var in_hub = false
 var cur_speed
 var max_speed = 17.0
 var og_max = max_speed
@@ -360,7 +361,7 @@ func _physics_process(delta: float) -> void:
 
 #region Movement
 	#FOV
-	
+	if in_hub: cur_speed = SPEED
 	cur_camera_fov = camera_fov + (cur_speed *.6)
 	camera.fov = cur_camera_fov
 	#controls colision

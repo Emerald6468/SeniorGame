@@ -92,6 +92,7 @@ environment = SubResource("Environment_5waq0")
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("1_css6i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8631, 1, 1.797382)
+in_hub = true
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=164969397]
 
