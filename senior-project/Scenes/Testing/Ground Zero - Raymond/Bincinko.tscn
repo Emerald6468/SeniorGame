@@ -2,7 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://drrm5smqwh4yh" path="res://Assets/Materials/Sprites/Test_Ball_Sprite.png" id="1_l3xo2"]
 [ext_resource type="Texture2D" uid="uid://dynyoumu727x1" path="res://Assets/Materials/Sprites/Test_Wall_Sprite.png" id="1_m6x46"]
-[ext_resource type="Script" uid="uid://b8tnopunstk3m" path="res://Scenes/Testing/Ground Zero - Raymond/ball_script.gd" id="1_xo7ov"]
+[ext_resource type="Script" uid="uid://b8tnopunstk3m" path="res://Scripts/PlinkoStuff/ball_script.gd" id="1_xo7ov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpvxy"]
+size = Vector2(427.83862, 20.227272)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_udmuc"]
 radius = 11.0
@@ -16,8 +19,15 @@ anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=630428888]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1591345920]
+position = Vector2(962.50006, 40.5)
+scale = Vector2(1.5917218, 4.4)
+shape = SubResource("RectangleShape2D_kpvxy")
+
 [node name="Ball" type="RigidBody2D" parent="." unique_id=2012783804]
-position = Vector2(961, 38)
+position = Vector2(964, 44)
 input_pickable = true
 gravity_scale = 0.0
 script = ExtResource("1_xo7ov")
@@ -43,7 +53,7 @@ scale = Vector2(3.0288846, 3.0288846)
 texture = ExtResource("1_l3xo2")
 
 [node name="Wall_1" type="Sprite2D" parent="." unique_id=1724523323]
-position = Vector2(592.00006, 528)
+position = Vector2(592.00006, 596.25)
 scale = Vector2(2.0625, 25.328125)
 texture = ExtResource("1_m6x46")
 
@@ -56,23 +66,23 @@ scale = Vector2(9.387839, 1)
 position = Vector2(-3.3240242, -4.3313293)
 shape = SubResource("RectangleShape2D_l3xo2")
 
-[node name="Wall_3" type="Sprite2D" parent="." unique_id=227996033]
-position = Vector2(964.6833, 962)
-rotation = 1.5707964
-scale = Vector2(2.0625, 25.358713)
+[node name="Wall_3" type="Sprite2D" parent="Wall_1" unique_id=227996033]
+position = Vector2(180.69489, 17.135101)
+rotation = 1.5707968
+scale = Vector2(0.08143121, 12.295134)
 texture = ExtResource("1_m6x46")
 
-[node name="Wall" type="StaticBody2D" parent="Wall_3" unique_id=1905772065]
+[node name="Wall" type="StaticBody2D" parent="Wall_1/Wall_3" unique_id=1905772065]
 position = Vector2(4.395344, -31.265442)
 rotation = -1.5707964
 scale = Vector2(9.387839, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_3/Wall" unique_id=652473446]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_1/Wall_3/Wall" unique_id=652473446]
 position = Vector2(-3.3240242, -4.3313293)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Wall_2" type="Sprite2D" parent="." unique_id=1991128082]
-position = Vector2(1337.0001, 528)
+position = Vector2(1337.0001, 596.25)
 scale = Vector2(2.0625, 25.078127)
 texture = ExtResource("1_m6x46")
 
@@ -86,7 +96,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper" type="Sprite2D" parent="." unique_id=1734214889]
-position = Vector2(703.99994, 230.17224)
+position = Vector2(703.99994, 323.17224)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -101,7 +111,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper2" type="Sprite2D" parent="." unique_id=1497937666]
-position = Vector2(808, 230.17215)
+position = Vector2(808, 323.17215)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -116,7 +126,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper3" type="Sprite2D" parent="." unique_id=1434977899]
-position = Vector2(912, 230.17218)
+position = Vector2(912, 323.17218)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -131,7 +141,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper4" type="Sprite2D" parent="." unique_id=1850709840]
-position = Vector2(1015.99994, 230.17218)
+position = Vector2(1015.99994, 323.17218)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -146,7 +156,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper7" type="Sprite2D" parent="." unique_id=126777355]
-position = Vector2(1120, 230.17218)
+position = Vector2(1120, 323.17218)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -161,7 +171,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper8" type="Sprite2D" parent="." unique_id=202906889]
-position = Vector2(1224, 230.17221)
+position = Vector2(1224, 323.1722)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -176,7 +186,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper12" type="Sprite2D" parent="." unique_id=880015382]
-position = Vector2(702.1464, 444.34442)
+position = Vector2(702.1464, 537.3444)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -191,7 +201,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper13" type="Sprite2D" parent="." unique_id=85911769]
-position = Vector2(806.1465, 444.34433)
+position = Vector2(806.1465, 537.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -206,7 +216,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper14" type="Sprite2D" parent="." unique_id=266359912]
-position = Vector2(910.1465, 444.34436)
+position = Vector2(910.1465, 537.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -221,7 +231,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper15" type="Sprite2D" parent="." unique_id=1559594841]
-position = Vector2(1014.14636, 444.34436)
+position = Vector2(1014.14636, 537.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -236,7 +246,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper16" type="Sprite2D" parent="." unique_id=403892213]
-position = Vector2(1118.1465, 444.34436)
+position = Vector2(1118.1465, 537.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -251,7 +261,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper17" type="Sprite2D" parent="." unique_id=758850776]
-position = Vector2(1222.1465, 444.3444)
+position = Vector2(1222.1465, 537.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -266,7 +276,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper5" type="Sprite2D" parent="." unique_id=1810157054]
-position = Vector2(750.1464, 340.34442)
+position = Vector2(750.1464, 433.34442)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -281,7 +291,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper6" type="Sprite2D" parent="." unique_id=1392340927]
-position = Vector2(854.1465, 340.34433)
+position = Vector2(854.1465, 433.34433)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -296,7 +306,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper9" type="Sprite2D" parent="." unique_id=614932934]
-position = Vector2(958.1465, 340.34436)
+position = Vector2(958.1465, 433.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -311,7 +321,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper10" type="Sprite2D" parent="." unique_id=1542499208]
-position = Vector2(1062.1464, 340.34436)
+position = Vector2(1062.1464, 433.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -326,7 +336,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper11" type="Sprite2D" parent="." unique_id=417055604]
-position = Vector2(1166.1465, 340.34436)
+position = Vector2(1166.1465, 433.34436)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -341,7 +351,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper18" type="Sprite2D" parent="." unique_id=548602479]
-position = Vector2(702.1464, 662.17224)
+position = Vector2(702.1464, 755.17224)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -356,7 +366,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper19" type="Sprite2D" parent="." unique_id=520414117]
-position = Vector2(806.1465, 662.1721)
+position = Vector2(806.1465, 755.1721)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -371,7 +381,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper20" type="Sprite2D" parent="." unique_id=606455178]
-position = Vector2(910.1465, 662.1722)
+position = Vector2(910.1465, 755.1722)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -386,7 +396,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper21" type="Sprite2D" parent="." unique_id=2141788546]
-position = Vector2(1014.14636, 662.1722)
+position = Vector2(1014.14636, 755.1722)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -401,7 +411,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper22" type="Sprite2D" parent="." unique_id=1095577003]
-position = Vector2(1118.1465, 662.1722)
+position = Vector2(1118.1465, 755.1722)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -416,7 +426,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper23" type="Sprite2D" parent="." unique_id=38820273]
-position = Vector2(1222.1465, 662.17224)
+position = Vector2(1222.1465, 755.17224)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -431,7 +441,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper24" type="Sprite2D" parent="." unique_id=1466948341]
-position = Vector2(750.1464, 558.17224)
+position = Vector2(750.1464, 651.17224)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -446,7 +456,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper25" type="Sprite2D" parent="." unique_id=1681199253]
-position = Vector2(854.1465, 558.1721)
+position = Vector2(854.1465, 651.1721)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -461,7 +471,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper26" type="Sprite2D" parent="." unique_id=468806661]
-position = Vector2(958.1465, 558.1722)
+position = Vector2(958.1465, 651.1722)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -476,7 +486,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper27" type="Sprite2D" parent="." unique_id=202916908]
-position = Vector2(1062.1464, 558.1722)
+position = Vector2(1062.1464, 651.1722)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -491,7 +501,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper28" type="Sprite2D" parent="." unique_id=554655256]
-position = Vector2(1166.1465, 558.1722)
+position = Vector2(1166.1465, 651.1722)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -506,7 +516,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper35" type="Sprite2D" parent="." unique_id=722568145]
-position = Vector2(750.1464, 790.17224)
+position = Vector2(750.1464, 883.17224)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -521,7 +531,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper36" type="Sprite2D" parent="." unique_id=479510456]
-position = Vector2(854.1465, 790.1721)
+position = Vector2(854.1465, 883.1721)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -536,7 +546,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper37" type="Sprite2D" parent="." unique_id=1512899125]
-position = Vector2(958.1465, 790.1722)
+position = Vector2(958.1465, 883.1722)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -551,7 +561,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper38" type="Sprite2D" parent="." unique_id=1510454669]
-position = Vector2(1062.1464, 790.1722)
+position = Vector2(1062.1464, 883.1722)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
@@ -566,7 +576,7 @@ position = Vector2(-3.3304214, -4.4313774)
 shape = SubResource("RectangleShape2D_l3xo2")
 
 [node name="Bumper39" type="Sprite2D" parent="." unique_id=1264272178]
-position = Vector2(1166.1465, 790.1722)
+position = Vector2(1166.1465, 883.1722)
 rotation = -0.5493705
 scale = Vector2(0.6411737, 0.6460312)
 texture = ExtResource("1_m6x46")
