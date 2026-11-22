@@ -988,6 +988,14 @@ shadow_enabled = true
 omni_range = 10.989106
 omni_attenuation = 0.0
 
+[node name="OmniLight3D5" type="OmniLight3D" parent="MainHub/Lights" unique_id=1678495972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.192945, 1.1572235, 0.92861784)
+light_color = Color(0.23835754, 0.45865694, 0.48046875, 1)
+light_energy = 0.2
+shadow_enabled = true
+omni_range = 15.502635
+omni_attenuation = 0.0
+
 [node name="Platform1" type="Node3D" parent="." unique_id=1481217375]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.613739, 5.8899317)
 
