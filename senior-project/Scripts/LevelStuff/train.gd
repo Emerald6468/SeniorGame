@@ -12,7 +12,8 @@ var tween = create_tween()
 
 var following = false
 
-#func _ready() -> void:
+func _ready() -> void:
+	visible = false
 	#var tween = create_tween()
 	#tween.tween_property(self, "progress", max_distance, max_distance/speed)
 
@@ -20,6 +21,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Fire_Left"):
 		reset_progress()
 	if leader:
+		if leader.progress == 0.0:
+			reset_progress()
 		if leader.progress >= leader_distance && !following:
 			start_moving()
 	else:
@@ -31,8 +34,10 @@ func reset_progress():
 		tween.kill()
 	progress = 0
 	following = false
+	visible = false
 
 func start_moving():
 	following = true
+	visible = true
 	tween = create_tween()
 	tween.tween_property(self, "progress", max_distance, max_distance/speed)
