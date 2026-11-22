@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b8tnopunstk3m" path="res://Scripts/PlinkoStuff/ball_script.gd" id="1_xo7ov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpvxy"]
-size = Vector2(427.83862, 20.227272)
+size = Vector2(427.83862, 28.409092)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_udmuc"]
 radius = 11.0
@@ -19,7 +19,7 @@ anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=630428888]
+[node name="StaticBody2D" type="Area2D" parent="." unique_id=823049133]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1591345920]
 position = Vector2(962.50006, 40.5)
