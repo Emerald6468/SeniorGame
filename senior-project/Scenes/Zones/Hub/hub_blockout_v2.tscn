@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://b4tw332rudimy" path="res://Scripts/LevelStuff/train_manager.gd" id="7_ebwf8"]
 [ext_resource type="Texture2D" uid="uid://hqmg6cau3wpm" path="res://Assets/Textures/Rune2Neon.png" id="7_esbnu"]
 [ext_resource type="Texture2D" uid="uid://qo7258qw6h5v" path="res://Assets/Textures/Rune3Neon.png" id="8_e4gbk"]
+[ext_resource type="AudioStream" uid="uid://cesbf8c7lmehh" path="res://Assets/Audio/SFX/sfx_train_loop_1.mp3" id="12_fl2pl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7k6b3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -1671,10 +1672,11 @@ omni_attenuation = 0.0
 [node name="Track1" type="Path3D" parent="Subways" unique_id=667822555]
 curve = SubResource("Curve3D_yvc2r")
 
-[node name="Train1" type="PathFollow3D" parent="Subways/Track1" unique_id=1049743830]
+[node name="Train1" type="PathFollow3D" parent="Subways/Track1" unique_id=1049743830 node_paths=PackedStringArray("audio")]
 transform = Transform3D(0.48316514, -0.10229025, -0.8694917, -7.4500925e-09, 0.99309146, -0.11683863, 0.87545455, 0.056454204, 0.47987422, -19.11791, -19.894283, 131.98749)
 script = ExtResource("6_yvc2r")
 speed = 40.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track1/Train1" unique_id=1279294965]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
@@ -1685,6 +1687,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-08, 0, -7.8888216
 light_energy = 16.0
 spot_range = 25.80845
 spot_angle = 48.73151
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track1/Train1" unique_id=170864176]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
 
 [node name="Train2" type="PathFollow3D" parent="Subways/Track1" unique_id=64109962 node_paths=PackedStringArray("leader")]
 transform = Transform3D(0.48316514, -0.102290295, -0.8694922, -7.4500925e-09, 0.9930919, -0.11683869, 0.87545455, 0.05645423, 0.4798745, -19.11791, -19.894283, 131.98749)
@@ -1708,16 +1716,23 @@ leader_distance = 16.0
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
 
-[node name="Train4" type="PathFollow3D" parent="Subways/Track1" unique_id=2103124765 node_paths=PackedStringArray("leader")]
+[node name="Train4" type="PathFollow3D" parent="Subways/Track1" unique_id=2103124765 node_paths=PackedStringArray("leader", "audio")]
 transform = Transform3D(0.48316514, -0.102290295, -0.8694922, -7.4500925e-09, 0.9930919, -0.11683869, 0.87545455, 0.05645423, 0.4798745, -19.11791, -19.894283, 131.98749)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train3")
 leader_distance = 16.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track1/Train4" unique_id=43960382]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track1/Train4" unique_id=337595484]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
 
 [node name="TrackMesh1" type="CSGPolygon3D" parent="Subways" unique_id=595594252]
 polygon = PackedVector2Array(-2.5, -0.1, -2.5, 0, 2.5, 0, 2.5, -0.1)
@@ -1737,10 +1752,11 @@ material = SubResource("StandardMaterial3D_bhunq")
 [node name="Track2" type="Path3D" parent="Subways" unique_id=669686208]
 curve = SubResource("Curve3D_uil3p")
 
-[node name="Train1" type="PathFollow3D" parent="Subways/Track2" unique_id=710306712]
+[node name="Train1" type="PathFollow3D" parent="Subways/Track2" unique_id=710306712 node_paths=PackedStringArray("audio")]
 transform = Transform3D(0.054132096, -0.19095688, -0.9800793, -1.4900221e-08, 0.9814886, -0.19124314, 0.99847066, 0.010352743, 0.053135004, -8.548547, -11.794227, 49.931263)
 script = ExtResource("6_yvc2r")
 speed = 40.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track2/Train1" unique_id=1586757232]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
@@ -1752,38 +1768,65 @@ light_energy = 16.0
 spot_range = 25.80845
 spot_angle = 48.73151
 
-[node name="Train2" type="PathFollow3D" parent="Subways/Track2" unique_id=1337778456 node_paths=PackedStringArray("leader")]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track2/Train1" unique_id=1595273347]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
+
+[node name="Train2" type="PathFollow3D" parent="Subways/Track2" unique_id=1337778456 node_paths=PackedStringArray("leader", "audio")]
 transform = Transform3D(0.054132096, -0.190957, -0.98007995, -1.4900221e-08, 0.98148924, -0.19124328, 0.99847066, 0.010352749, 0.05313504, -8.548547, -11.794227, 49.931263)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train1")
 leader_distance = 16.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track2/Train2" unique_id=594841478]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
 
-[node name="Train3" type="PathFollow3D" parent="Subways/Track2" unique_id=1939086790 node_paths=PackedStringArray("leader")]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track2/Train2" unique_id=1572136513]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
+
+[node name="Train3" type="PathFollow3D" parent="Subways/Track2" unique_id=1939086790 node_paths=PackedStringArray("leader", "audio")]
 transform = Transform3D(0.054132096, -0.190957, -0.98007995, -1.4900221e-08, 0.98148924, -0.19124328, 0.99847066, 0.010352749, 0.05313504, -8.548547, -11.794227, 49.931263)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train2")
 leader_distance = 16.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track2/Train3" unique_id=116357510]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
 
-[node name="Train4" type="PathFollow3D" parent="Subways/Track2" unique_id=27757494 node_paths=PackedStringArray("leader")]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track2/Train3" unique_id=200311176]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
+
+[node name="Train4" type="PathFollow3D" parent="Subways/Track2" unique_id=27757494 node_paths=PackedStringArray("leader", "audio")]
 transform = Transform3D(0.054132096, -0.190957, -0.98007995, -1.4900221e-08, 0.98148924, -0.19124328, 0.99847066, 0.010352749, 0.05313504, -8.548547, -11.794227, 49.931263)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train3")
 leader_distance = 16.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track2/Train4" unique_id=1723930616]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track2/Train4" unique_id=1182471145]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Subways" unique_id=305893560]
 polygon = PackedVector2Array(-2.5, -0.1, -2.5, 0, 2.5, 0, 2.5, -0.1)
@@ -1803,10 +1846,11 @@ material = SubResource("StandardMaterial3D_bhunq")
 [node name="Track3" type="Path3D" parent="Subways" unique_id=4383215]
 curve = SubResource("Curve3D_ebwf8")
 
-[node name="Train1" type="PathFollow3D" parent="Subways/Track3" unique_id=1337634775]
+[node name="Train1" type="PathFollow3D" parent="Subways/Track3" unique_id=1337634775 node_paths=PackedStringArray("audio")]
 transform = Transform3D(0.9762261, -5.3378983e-07, -0.21647125, 2.8419915e-14, 0.99994576, -2.4658852e-06, 0.21646272, 2.4073408e-06, 0.97626454, 25.337276, -39.06221, 110.407776)
 script = ExtResource("6_yvc2r")
 speed = 40.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track3/Train1" unique_id=875964778]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
@@ -1818,38 +1862,65 @@ light_energy = 16.0
 spot_range = 25.80845
 spot_angle = 48.73151
 
-[node name="Train2" type="PathFollow3D" parent="Subways/Track3" unique_id=1334197879 node_paths=PackedStringArray("leader")]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track3/Train1" unique_id=1708771130]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
+
+[node name="Train2" type="PathFollow3D" parent="Subways/Track3" unique_id=1334197879 node_paths=PackedStringArray("leader", "audio")]
 transform = Transform3D(0.9762261, -5.3379017e-07, -0.21647139, 2.8419915e-14, 0.9999464, -2.465887e-06, 0.21646272, 2.4073424e-06, 0.9762652, 25.337276, -39.06221, 110.407776)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train1")
 leader_distance = 16.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track3/Train2" unique_id=906074590]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
 
-[node name="Train3" type="PathFollow3D" parent="Subways/Track3" unique_id=1227037276 node_paths=PackedStringArray("leader")]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track3/Train2" unique_id=248600711]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
+
+[node name="Train3" type="PathFollow3D" parent="Subways/Track3" unique_id=1227037276 node_paths=PackedStringArray("leader", "audio")]
 transform = Transform3D(0.9762261, -5.3379017e-07, -0.21647139, 2.8419915e-14, 0.9999464, -2.465887e-06, 0.21646272, 2.4073424e-06, 0.9762652, 25.337276, -39.06221, 110.407776)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train2")
 leader_distance = 16.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track3/Train3" unique_id=1997203122]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
 
-[node name="Train4" type="PathFollow3D" parent="Subways/Track3" unique_id=1893578371 node_paths=PackedStringArray("leader")]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track3/Train3" unique_id=1449424972]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
+
+[node name="Train4" type="PathFollow3D" parent="Subways/Track3" unique_id=1893578371 node_paths=PackedStringArray("leader", "audio")]
 transform = Transform3D(0.9762261, -5.3379017e-07, -0.21647139, 2.8419915e-14, 0.9999464, -2.465887e-06, 0.21646272, 2.4073424e-06, 0.9762652, 25.337276, -39.06221, 110.407776)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train3")
 leader_distance = 16.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track3/Train4" unique_id=273612454]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track3/Train4" unique_id=1131959465]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
 
 [node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Subways" unique_id=1015360255]
 polygon = PackedVector2Array(-2.5, -0.1, -2.5, 0, 2.5, 0, 2.5, -0.1)
@@ -1869,10 +1940,11 @@ material = SubResource("StandardMaterial3D_bhunq")
 [node name="Track4" type="Path3D" parent="Subways" unique_id=1655503810]
 curve = SubResource("Curve3D_10doq")
 
-[node name="Train1" type="PathFollow3D" parent="Subways/Track4" unique_id=1032557826]
+[node name="Train1" type="PathFollow3D" parent="Subways/Track4" unique_id=1032557826 node_paths=PackedStringArray("audio")]
 transform = Transform3D(-0.26527247, -0.19314852, 0.9445947, -1.4900138e-08, 0.97966796, 0.2003328, -0.96410227, 0.053144746, -0.25990495, 107.60308, 15.343405, 121.54393)
 script = ExtResource("6_yvc2r")
 speed = 40.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track4/Train1" unique_id=1737405313]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
@@ -1883,6 +1955,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-08, 0, -7.8888216
 light_energy = 16.0
 spot_range = 25.80845
 spot_angle = 48.73151
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track4/Train1" unique_id=620139648]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
 
 [node name="Train2" type="PathFollow3D" parent="Subways/Track4" unique_id=1731463803 node_paths=PackedStringArray("leader")]
 transform = Transform3D(-0.26527247, -0.1931487, 0.9445951, -1.4900138e-08, 0.9796689, 0.20033291, -0.96410227, 0.053144794, -0.25990507, 107.60308, 15.343405, 121.54393)
@@ -1906,16 +1984,23 @@ leader_distance = 16.0
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
 
-[node name="Train4" type="PathFollow3D" parent="Subways/Track4" unique_id=196981004 node_paths=PackedStringArray("leader")]
+[node name="Train4" type="PathFollow3D" parent="Subways/Track4" unique_id=196981004 node_paths=PackedStringArray("leader", "audio")]
 transform = Transform3D(-0.26527247, -0.1931487, 0.9445951, -1.4900138e-08, 0.9796689, 0.20033291, -0.96410227, 0.053144794, -0.25990507, 107.60308, 15.343405, 121.54393)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train3")
 leader_distance = 16.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track4/Train4" unique_id=995916638]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track4/Train4" unique_id=1534630177]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
 
 [node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Subways" unique_id=894639995]
 polygon = PackedVector2Array(-2.5, -0.1, -2.5, 0, 2.5, 0, 2.5, -0.1)
@@ -1935,10 +2020,11 @@ material = SubResource("StandardMaterial3D_bhunq")
 [node name="Track5" type="Path3D" parent="Subways" unique_id=102482040]
 curve = SubResource("Curve3D_fl2pl")
 
-[node name="Train1" type="PathFollow3D" parent="Subways/Track5" unique_id=357857828]
+[node name="Train1" type="PathFollow3D" parent="Subways/Track5" unique_id=357857828 node_paths=PackedStringArray("audio")]
 transform = Transform3D(-0.5631554, -0.013783002, -0.82618374, -4.6562856e-10, 0.99979454, -0.016680496, 0.826266, -0.009394036, -0.56309944, 9.829976, 3.3570225, -93.160805)
 script = ExtResource("6_yvc2r")
 speed = 40.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track5/Train1" unique_id=512800430]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
@@ -1949,6 +2035,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-08, 0, -7.8888216
 light_energy = 16.0
 spot_range = 25.80845
 spot_angle = 48.73151
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track5/Train1" unique_id=428079941]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
 
 [node name="Train2" type="PathFollow3D" parent="Subways/Track5" unique_id=796390604 node_paths=PackedStringArray("leader")]
 transform = Transform3D(-0.5631554, -0.013783015, -0.8261843, -4.6562856e-10, 0.9997955, -0.016680507, 0.826266, -0.009394044, -0.5630998, 9.829976, 3.3570225, -93.160805)
@@ -1972,16 +2064,23 @@ leader_distance = 16.0
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
 
-[node name="Train4" type="PathFollow3D" parent="Subways/Track5" unique_id=395796362 node_paths=PackedStringArray("leader")]
+[node name="Train4" type="PathFollow3D" parent="Subways/Track5" unique_id=395796362 node_paths=PackedStringArray("leader", "audio")]
 transform = Transform3D(-0.5631554, -0.013783015, -0.8261843, -4.6562856e-10, 0.9997955, -0.016680507, 0.826266, -0.009394044, -0.5630998, 9.829976, 3.3570225, -93.160805)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train3")
 leader_distance = 16.0
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Subways/Track5/Train4" unique_id=1677108260]
 transform = Transform3D(1.0000005, -8.363277e-07, -2.3841858e-07, 1.0244548e-08, 1.0000602, 1.7695129e-08, 2.3841858e-07, -3.4738332e-07, 1, -1.5258789e-05, 2.459961, -3.8146973e-05)
 mesh = SubResource("BoxMesh_bhunq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Subways/Track5/Train4" unique_id=1607404600]
+stream = ExtResource("12_fl2pl")
+bus = &"SFX"
+doppler_tracking = 2
+parameters/looping = true
 
 [node name="CSGPolygon3D4" type="CSGPolygon3D" parent="Subways" unique_id=915577787]
 polygon = PackedVector2Array(-2.5, -0.1, -2.5, 0, 2.5, 0, 2.5, -0.1)

@@ -4,6 +4,7 @@ class_name Train
 @export var speed: float = 1
 @export var leader: Train
 @export var leader_distance: float = 1
+@export var audio: AudioStreamPlayer3D
 
 @onready var parent = get_parent()
 @onready var max_distance =  parent.curve.get_baked_length()
@@ -41,3 +42,8 @@ func start_moving():
 	visible = true
 	tween = create_tween()
 	tween.tween_property(self, "progress", max_distance, max_distance/speed)
+	if audio:
+		audio.volume_db = 0
+		audio.play()
+		tween.tween_property(audio, "volume_db", -80, 5)
+		tween.tween_callback(audio.stop)
