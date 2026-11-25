@@ -269,6 +269,7 @@ size = Vector2(5, 15.5)
 
 [node name="Hall1" type="Node3D" unique_id=2014480433]
 script = ExtResource("1_qkp64")
+auto_complete = true
 
 [node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("3_mvblb")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -85.016106, -0.2625084, 214.56194)

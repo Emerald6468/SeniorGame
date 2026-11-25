@@ -47,6 +47,7 @@ uv1_triplanar = true
 
 [node name="Hall3" type="Node3D" unique_id=851948298]
 script = ExtResource("1_8kr7a")
+auto_complete = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1517803115]
 transform = Transform3D(0.8660253, 0.43301284, -0.25000006, 2.780595e-08, 0.49999994, 0.86602545, 0.5000001, -0.75, 0.43301257, 11.087933, 0, 34.41295)
