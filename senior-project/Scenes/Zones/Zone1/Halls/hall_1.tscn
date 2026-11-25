@@ -270,6 +270,7 @@ size = Vector2(5, 15.5)
 [node name="Hall1" type="Node3D" unique_id=2014480433]
 script = ExtResource("1_qkp64")
 auto_complete = true
+waves = 1
 
 [node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("3_mvblb")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -85.016106, -0.2625084, 214.56194)
@@ -1063,6 +1064,30 @@ spot_attenuation = 0.01
 [node name="enemies" type="Node3D" parent="." unique_id=374510159]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.2742195, 0, 35.73214)
 
+[node name="Wisp" parent="enemies" unique_id=1065493351 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27947044, 6.281332, -17.797096)
+
+[node name="Wisp2" parent="enemies" unique_id=1475125276 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.454447, 0, -16.233032)
+
+[node name="Wisp3" parent="enemies" unique_id=780518935 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.916336, 8.7446785, -21.88198)
+
+[node name="Wisp4" parent="enemies" unique_id=950435801 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17899036, 5.0215607, 14.5786915)
+
+[node name="Grunt" parent="enemies" unique_id=676758711 instance=ExtResource("16_wsy6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.285194, 1.000001, -4.0923233)
+
+[node name="Grunt2" parent="enemies" unique_id=1243110435 instance=ExtResource("16_wsy6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.446552, 1.000001, -1.3056526)
+
+[node name="Wisp5" parent="enemies" unique_id=1261338998 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2855606, 0.34612846, -98.609)
+
+[node name="Wisp6" parent="enemies" unique_id=1775640411 instance=ExtResource("15_rx1xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.189595, 8.051934, -9.699623)
+
 [node name="buildings" type="Node3D" parent="." unique_id=669202437]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.2742195, 0, 35.73214)
 
@@ -1355,30 +1380,6 @@ use_collision = true
 collision_mask = 7
 size = Vector3(0.25, 5, 15.5)
 material = SubResource("StandardMaterial3D_rx1xj")
-
-[node name="Wisp" parent="." unique_id=1065493351 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.553688, 6.281332, 53.529236)
-
-[node name="Wisp2" parent="." unique_id=1475125276 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -13.180229, 0, 51.96517)
-
-[node name="Wisp3" parent="." unique_id=780518935 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.6421185, 8.7446785, 57.61412)
-
-[node name="Wisp4" parent="." unique_id=950435801 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.09523, 5.0215607, 21.15345)
-
-[node name="Grunt" parent="." unique_id=676758711 instance=ExtResource("16_wsy6g")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -11.010977, 1.000001, 39.824463)
-
-[node name="Grunt2" parent="." unique_id=1243110435 instance=ExtResource("16_wsy6g")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -10.172333, 1.000001, 37.037792)
-
-[node name="Wisp5" parent="." unique_id=1261338998 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.98865, 0.34612846, 134.34114)
-
-[node name="Wisp6" parent="." unique_id=1775640411 instance=ExtResource("15_rx1xj")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.463814, 8.051934, 45.431763)
 
 [node name="MeshInstance3D" parent="." unique_id=172679901 instance=ExtResource("22_mvblb")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -33.024727, 0, 123.71478)
