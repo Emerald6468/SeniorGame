@@ -1,28 +1,11 @@
 [gd_scene format=3 uid="uid://vcnu34w0eb7s"]
 
 [ext_resource type="Script" uid="uid://derd45lshhssw" path="res://Scripts/LevelStuff/level_gen.gd" id="1_haxsg"]
-[ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="2_fl2q5"]
-
-[sub_resource type="Environment" id="Environment_5ewhj"]
-background_mode = 2
-background_energy_multiplier = 1.5
-sky = ExtResource("2_fl2q5")
-ambient_light_sky_contribution = 0.13
-glow_enabled = true
 
 [node name="LevelGenTest" type="Node3D" unique_id=1377752166]
 script = ExtResource("1_haxsg")
+birdeye = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=704607667]
 transform = Transform3D(-0.809452, 0.52099144, -0.27084243, 0.16848132, 0.647933, 0.74283063, 0.56249607, 0.55565375, -0.61224777, -1.6274481, 120.12196, -23.31175)
 fov = 125.3
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=93050006]
-transform = Transform3D(-0.8660254, -0.43301284, 0.25000003, 0.13974625, 0.27045453, 0.9525363, -0.4800741, 0.8598571, -0.17370857, 0, 0, -0.90342903)
-light_color = Color(0.68999875, 0.56769145, 0.37810874, 1)
-light_energy = 2.74
-shadow_enabled = true
-shadow_caster_mask = 4294443007
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=562048598]
-environment = SubResource("Environment_5ewhj")

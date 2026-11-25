@@ -2,6 +2,7 @@
 
 [ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="1_267rv"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_etkop"]
+[ext_resource type="Script" uid="uid://byo2rsevsvsjv" path="res://Scripts/LevelStuff/level_manager.gd" id="1_gnteu"]
 [ext_resource type="Texture2D" uid="uid://cjxqwj44mpj7q" path="res://Assets/Textures/wood1.png" id="2_li054"]
 [ext_resource type="Texture2D" uid="uid://c652ejfuywhbm" path="res://Assets/Textures/floor1.png" id="3_3odww"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_m06yq"]
@@ -1786,7 +1787,8 @@ uv1_offset = Vector3(-1, -2, 0)
 texture_repeat = false
 billboard_mode = 2
 
-[node name="NavigationRegion3D" type="Node3D" unique_id=2014480433]
+[node name="Arena3" type="Node3D" unique_id=2014480433]
+script = ExtResource("1_gnteu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
 transform = Transform3D(0.8660253, 0.43301293, -0.25000003, 0.13974626, 0.27045456, 0.9525363, 0.48007417, -0.8598571, 0.17370856, 12.267813, 0, 37.213654)

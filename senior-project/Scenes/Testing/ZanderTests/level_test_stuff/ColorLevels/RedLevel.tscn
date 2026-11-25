@@ -1,13 +1,23 @@
 [gd_scene format=3 uid="uid://dkn1pns4yx8p4"]
 
 [ext_resource type="Texture2D" uid="uid://6j8wn40eomn5" path="res://Assets/Placeholder/icon.svg" id="1_clr5n"]
+[ext_resource type="Script" uid="uid://byo2rsevsvsjv" path="res://Scripts/LevelStuff/level_manager.gd" id="1_tctd6"]
 [ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="2_f3fy8"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_e700w"]
+[ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="4_3n3wx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhunq"]
 albedo_color = Color(0.9998906, 0.31627136, 0.3213135, 1)
 
+[sub_resource type="Environment" id="Environment_tctd6"]
+background_mode = 2
+background_energy_multiplier = 1.5
+sky = ExtResource("4_3n3wx")
+ambient_light_sky_contribution = 0.13
+glow_enabled = true
+
 [node name="RedLevel" type="Node3D" unique_id=519722274]
+script = ExtResource("1_tctd6")
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=229252814]
 transform = Transform3D(2.5100632, 0, 0, 0, 0.5151402, 0, 0, 0, 2.5100632, 0, 0, 1.1799579)
@@ -26,3 +36,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.443)
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("3_e700w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40895367, 1.1944036, 1.13765)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=258668840]
+transform = Transform3D(-0.8660254, -0.43301284, 0.25000003, 0.13974625, 0.27045453, 0.9525363, -0.4800741, 0.8598571, -0.17370857, 0, 0, -0.90342903)
+light_color = Color(0.68999875, 0.56769145, 0.37810874, 1)
+light_energy = 2.74
+shadow_enabled = true
+shadow_caster_mask = 4294443007
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1032467796]
+environment = SubResource("Environment_tctd6")

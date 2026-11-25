@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cjtx2jjncontf"]
 
+[ext_resource type="Script" uid="uid://byo2rsevsvsjv" path="res://Scripts/LevelStuff/level_manager.gd" id="1_51glo"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_y8kri"]
 [ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="2_oj6lt"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_y84hh"]
@@ -189,6 +190,7 @@ ambient_light_sky_contribution = 0.05
 glow_enabled = true
 
 [node name="Arena2" type="Node3D" unique_id=2014480433]
+script = ExtResource("1_51glo")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1885805812]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.021217108, 0, 36.24103)

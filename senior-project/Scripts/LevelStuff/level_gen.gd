@@ -17,7 +17,9 @@ const HALL_1 = preload("uid://ddc4ekte7mymd")
 const HALL_2 = preload("uid://c2n3fl1m24dy1")
 const HALL_3 = preload("uid://bvb3cli4cxmvb")
 
-
+@export_category("DEV TEST")
+@export var birdeye = false
+@export var colorlevels = false
 #Lists of levels
 #Zone 1
 var all_zone1_levels: Array[PackedScene]
@@ -32,8 +34,12 @@ var current_room = 0
 var current_zone = 1
 var gen_num = 1
 var zone_array: Array[PackedScene]
+var level_list: Array[String]
 var next_position = Vector3(0,0,0)
 var next_rotation = Vector3(0,0,0)
+
+#connect to manager
+var inside_manager = false
 
 func pick_zone_layout():
 	if gen_num < level_length+1:
@@ -52,12 +58,14 @@ func pick_zone_layout():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#all_zone1_levels = [BLUE_LEVEL,GREEN_LEVEL,RED_LEVEL,YELLOW_LEVEL,ORANGE_LEVEL,PURPLE_LEVEL]
-	#all_zone1_hallways = [YELLOW_LEVEL,GREEN_LEVEL,PURPLE_LEVEL]
-	#all_zone1_arenas = [RED_LEVEL,BLUE_LEVEL,ORANGE_LEVEL]
-	all_zone1_levels = [ARENA_1,ARENA_2,ARENA_3,HALL_1,HALL_2,HALL_3]
-	all_zone1_hallways = [HALL_1,HALL_2,HALL_3]
-	all_zone1_arenas = [ARENA_1,ARENA_2,ARENA_3]
+	if colorlevels:
+		all_zone1_levels = [BLUE_LEVEL,GREEN_LEVEL,RED_LEVEL,YELLOW_LEVEL,ORANGE_LEVEL,PURPLE_LEVEL]
+		all_zone1_hallways = [YELLOW_LEVEL,GREEN_LEVEL,PURPLE_LEVEL]
+		all_zone1_arenas = [RED_LEVEL,BLUE_LEVEL,ORANGE_LEVEL]
+	else:
+		all_zone1_levels = [ARENA_1,ARENA_2,ARENA_3,HALL_1,HALL_2,HALL_3]
+		all_zone1_hallways = [HALL_1,HALL_2,HALL_3]
+		all_zone1_arenas = [ARENA_1,ARENA_2,ARENA_3]
 	match current_zone:
 		1:
 			cur_hall_choices = all_zone1_hallways
@@ -67,7 +75,7 @@ var s_num = 0
 func spawn_levels():
 	if s_num < level_length:
 		var new_level = zone_array[s_num].instantiate()
-		add_child(new_level)
+		add_sibling(new_level)
 		if s_num != 0:
 			new_level.get_node("Player").queue_free()
 			new_level.get_node("DirectionalLight3D").queue_free()
@@ -81,12 +89,25 @@ func spawn_levels():
 			#3: new_level.global_position.x = 15; print(str(new_level.name))
 		next_position = new_level.get_node("EndPoint").global_position
 		next_rotation = new_level.get_node("EndPoint").global_rotation
+		var level_name = new_level.get_level_name()
+		print(str(level_name))
+		level_list.append(str(level_name))
 		s_num += 1
-
+	else: return true
+	return false
+	
+var picks_done 
+var spawn_done 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#$Camera3D.make_current()
+	if birdeye: $Camera3D.make_current()
 	if Input.is_action_just_pressed("DevQuit"):get_tree().quit()
 	if Input.is_action_just_pressed("Restart"):get_tree().reload_current_scene()
-	var picks_done = pick_zone_layout()
-	if picks_done:spawn_levels();print("START      " + str(zone_array))
+	picks_done = pick_zone_layout()
+	if picks_done: spawn_done = spawn_levels();
+	if spawn_done:
+		print("START      " + str(level_list))
+		if inside_manager: 
+			get_parent().get_levels(level_list)
+			queue_free()
+	

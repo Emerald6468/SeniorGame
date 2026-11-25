@@ -1,13 +1,23 @@
 [gd_scene format=3 uid="uid://cnxhphcxjtvje"]
 
+[ext_resource type="Script" uid="uid://byo2rsevsvsjv" path="res://Scripts/LevelStuff/level_manager.gd" id="1_08vp5"]
 [ext_resource type="Texture2D" uid="uid://6j8wn40eomn5" path="res://Assets/Placeholder/icon.svg" id="1_v8nmf"]
 [ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="2_hxnh5"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_hxnh5"]
+[ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="4_clipw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhunq"]
 albedo_color = Color(0.6660263, 0.56298155, 0.86927503, 1)
 
-[node name="YellowLevel" type="Node3D" unique_id=519722274]
+[sub_resource type="Environment" id="Environment_08vp5"]
+background_mode = 2
+background_energy_multiplier = 1.5
+sky = ExtResource("4_clipw")
+ambient_light_sky_contribution = 0.13
+glow_enabled = true
+
+[node name="PurpleLevel" type="Node3D" unique_id=519722274]
+script = ExtResource("1_08vp5")
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=229252814]
 transform = Transform3D(2.5100632, 0, 0, 0, 0.5151402, 0, 0, 0, 2.5100632, 0, 0, 1.2359197)
@@ -41,3 +51,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6277027, 0, 7.5142775)
 
 [node name="Player" parent="." unique_id=469422006 instance=ExtResource("3_hxnh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40895367, 1.1944036, 1.13765)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=331934859]
+transform = Transform3D(-0.8660254, -0.43301284, 0.25000003, 0.13974625, 0.27045453, 0.9525363, -0.4800741, 0.8598571, -0.17370857, 0, 0, -0.90342903)
+light_color = Color(0.68999875, 0.56769145, 0.37810874, 1)
+light_energy = 2.74
+shadow_enabled = true
+shadow_caster_mask = 4294443007
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=907737557]
+environment = SubResource("Environment_08vp5")

@@ -1847,7 +1847,7 @@ material = SubResource("StandardMaterial3D_bhunq")
 curve = SubResource("Curve3D_ebwf8")
 
 [node name="Train1" type="PathFollow3D" parent="Subways/Track3" unique_id=1337634775 node_paths=PackedStringArray("audio")]
-transform = Transform3D(0.9762261, -5.3378983e-07, -0.21647125, 2.8419915e-14, 0.99994576, -2.4658852e-06, 0.21646272, 2.4073408e-06, 0.97626454, 25.337276, -39.06221, 110.407776)
+transform = Transform3D(0.97622603, -5.3378983e-07, -0.21647124, 2.8419914e-14, 0.99994576, -2.4658852e-06, 0.2164627, 2.4073408e-06, 0.97626454, 25.337276, -39.06221, 110.407776)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 audio = NodePath("AudioStreamPlayer3D")
@@ -1869,7 +1869,7 @@ doppler_tracking = 2
 parameters/looping = true
 
 [node name="Train2" type="PathFollow3D" parent="Subways/Track3" unique_id=1334197879 node_paths=PackedStringArray("leader", "audio")]
-transform = Transform3D(0.9762261, -5.3379017e-07, -0.21647139, 2.8419915e-14, 0.9999464, -2.465887e-06, 0.21646272, 2.4073424e-06, 0.9762652, 25.337276, -39.06221, 110.407776)
+transform = Transform3D(0.97622603, -5.3379017e-07, -0.21647136, 2.8419914e-14, 0.9999464, -2.4658866e-06, 0.2164627, 2.4073424e-06, 0.9762651, 25.337276, -39.06221, 110.407776)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train1")
@@ -1887,7 +1887,7 @@ doppler_tracking = 2
 parameters/looping = true
 
 [node name="Train3" type="PathFollow3D" parent="Subways/Track3" unique_id=1227037276 node_paths=PackedStringArray("leader", "audio")]
-transform = Transform3D(0.9762261, -5.3379017e-07, -0.21647139, 2.8419915e-14, 0.9999464, -2.465887e-06, 0.21646272, 2.4073424e-06, 0.9762652, 25.337276, -39.06221, 110.407776)
+transform = Transform3D(0.97622603, -5.3379017e-07, -0.21647136, 2.8419914e-14, 0.9999464, -2.4658866e-06, 0.2164627, 2.4073424e-06, 0.9762651, 25.337276, -39.06221, 110.407776)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train2")
@@ -1905,7 +1905,7 @@ doppler_tracking = 2
 parameters/looping = true
 
 [node name="Train4" type="PathFollow3D" parent="Subways/Track3" unique_id=1893578371 node_paths=PackedStringArray("leader", "audio")]
-transform = Transform3D(0.9762261, -5.3379017e-07, -0.21647139, 2.8419915e-14, 0.9999464, -2.465887e-06, 0.21646272, 2.4073424e-06, 0.9762652, 25.337276, -39.06221, 110.407776)
+transform = Transform3D(0.97622603, -5.3379017e-07, -0.21647136, 2.8419914e-14, 0.9999464, -2.4658866e-06, 0.2164627, 2.4073424e-06, 0.9762651, 25.337276, -39.06221, 110.407776)
 script = ExtResource("6_yvc2r")
 speed = 40.0
 leader = NodePath("../Train3")
