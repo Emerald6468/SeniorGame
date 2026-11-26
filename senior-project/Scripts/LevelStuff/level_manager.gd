@@ -1,3 +1,4 @@
+class_name Level
 extends Node3D
 
 
@@ -7,18 +8,19 @@ extends Node3D
 
 @export_group("Arena")
 @export var is_arena = false
-@export var waves = 3
+@export var waves = 1
 @export var enemy_per_wave = 3
 var total_enemies: int
 var enemies_defeated = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if is_arena: total_enemies = waves * enemy_per_wave
+	total_enemies = waves * enemy_per_wave
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	print(str(enemies_defeated))
+	#pass
 
 func get_level_name():
 	return self.name

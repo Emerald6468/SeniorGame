@@ -157,9 +157,31 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+
+var level_parent
+var cur_layer = self
+var not_in_level = false
+func check_for_level():
+	if cur_layer is Level: 
+		level_parent = cur_layer
+		return true
+	else: 
+		
+		if cur_layer.get_parent() != cur_layer.get_tree().get_root():
+			cur_layer = cur_layer.get_parent()
+		else: not_in_level = true
+	return false
+
+func find_level():
+	var level_check = false
+	while !level_check:
+		if not_in_level: return false
+		level_check = check_for_level()
+	return true
 	
 	
-	
+func _ready() -> void:
+	if !find_level(): level_parent = null
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	status_tracker()
@@ -170,6 +192,9 @@ func _process(delta: float) -> void:
 			else: health = max_health
 	else:
 		print("i die :(")
-		queue_free()
+		if level_parent != null: 
+			
+			level_parent.enemies_defeated += 1
+		call_deferred("queue_free")
 		
 		
