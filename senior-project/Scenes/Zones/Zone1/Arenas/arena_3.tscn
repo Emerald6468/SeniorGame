@@ -1789,6 +1789,8 @@ billboard_mode = 2
 
 [node name="Arena3" type="Node3D" unique_id=2014480433]
 script = ExtResource("1_gnteu")
+defeat_all_enemies = true
+is_arena = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
 transform = Transform3D(0.8660253, 0.43301293, -0.25000003, 0.13974626, 0.27045456, 0.9525363, 0.48007417, -0.8598571, 0.17370856, 12.267813, 0, 37.213654)

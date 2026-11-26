@@ -20,6 +20,7 @@ const HALL_3 = preload("uid://bvb3cli4cxmvb")
 @export_category("DEV TEST")
 @export var birdeye = false
 @export var colorlevels = false
+@export var swapsegments = false
 #Lists of levels
 #Zone 1
 var all_zone1_levels: Array[PackedScene]
@@ -43,7 +44,10 @@ var inside_manager = false
 
 func pick_zone_layout():
 	if gen_num < level_length+1:
-		if gen_num % 2 != 0:
+		var segment_order
+		if !swapsegments: segment_order = gen_num % 2 != 0
+		else: segment_order = gen_num % 2 == 0
+		if segment_order:
 			cur_hall_choices.shuffle()
 			zone_array.append(cur_hall_choices[0])
 			cur_hall_choices.pop_front()
