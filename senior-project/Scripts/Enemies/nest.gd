@@ -1,3 +1,4 @@
+class_name Nest
 extends Node3D
 
 var spawn_ready = true
@@ -11,6 +12,7 @@ func spawn(enemy:String):
 		"Grunt": enemy_type = GRUNT
 		"Wisp": enemy_type = WISP
 	var new_enemy = enemy_type.instantiate()
+	new_enemy.made_by_nest = true
 	get_parent().add_child(new_enemy)
 	new_enemy.global_position = global_position
 
@@ -32,4 +34,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	spawner()
+	#spawner()
+	pass

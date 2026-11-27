@@ -73,6 +73,7 @@
 [ext_resource type="MultiMesh" uid="uid://cc0bpl8oy5ugs" path="res://Assets/MultiMeshes/Grass1.tres" id="71_r7sbx"]
 [ext_resource type="ArrayMesh" uid="uid://bmj15bynv2dxg" path="res://Assets/Meshes/Props/Bench1a.glb" id="72_a08ac"]
 [ext_resource type="MultiMesh" uid="uid://cpe3wx3fsqsta" path="res://Assets/MultiMeshes/Grass2.tres" id="73_o7sq3"]
+[ext_resource type="PackedScene" uid="uid://wy0vgdc6rfum" path="res://Scenes/Prefabs/Enemies/Nest.tscn" id="74_r7sbx"]
 
 [sub_resource type="Environment" id="Environment_dyiuk"]
 background_mode = 2
@@ -2930,6 +2931,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4132284, -0.16530609, 72.57
 [node name="Bench1a" type="MeshInstance3D" parent="." unique_id=1922205382]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -6.5725403, 0.00016513467, 24.92198)
 mesh = ExtResource("72_a08ac")
+
+[node name="Nest" parent="." unique_id=209987961 instance=ExtResource("74_r7sbx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.550458, 0.5000019, 51.286743)
+
+[node name="Nest2" parent="." unique_id=604284646 instance=ExtResource("74_r7sbx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.575529, 9.944597, 36.344574)
+
+[node name="Nest3" parent="." unique_id=1272043678 instance=ExtResource("74_r7sbx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.424124, 2.77658, 20.59526)
 
 [editable path="EnemyWalker012"]
 [editable path="EnemyWalker012/EnemyEye02"]

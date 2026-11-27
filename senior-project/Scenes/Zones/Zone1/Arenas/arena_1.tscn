@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dcpmexqi1mmb2" path="res://Assets/Textures/grass1.png" id="16_0k5nc"]
 [ext_resource type="Script" uid="uid://bdvq6qko33kvg" path="res://Scripts/surface.gd" id="16_iaol8"]
 [ext_resource type="Texture2D" uid="uid://bnqrxk4vxlsfn" path="res://Assets/SurfaceMaps/z1a1_01.png" id="18_8akdw"]
+[ext_resource type="PackedScene" uid="uid://wy0vgdc6rfum" path="res://Scenes/Prefabs/Enemies/Nest.tscn" id="21_dm5gd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xhtoe"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -432,6 +433,10 @@ _surfaces = [{
 
 [node name="Arena1" type="Node3D" unique_id=2014480433]
 script = ExtResource("1_vsnhd")
+defeat_all_enemies = true
+is_arena = true
+waves = 2
+enemy_per_wave = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474800015]
 transform = Transform3D(0.8660253, 0.43301284, -0.25000006, 2.780595e-08, 0.49999994, 0.86602545, 0.5000001, -0.75, 0.43301257, -0.037032843, 0, 36.023956)
@@ -1100,3 +1105,18 @@ shape = SubResource("ConcavePolygonShape3D_jhc63")
 
 [node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("2_8akdw")]
 transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, 8.407398, -0.017684937, 81.802864)
+
+[node name="Nest" parent="." unique_id=209987961 instance=ExtResource("21_dm5gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8025956, 1.3097315, 41.523605)
+
+[node name="Nest2" parent="." unique_id=1227272801 instance=ExtResource("21_dm5gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.137535, 7.4831, 58.856236)
+
+[node name="Nest3" parent="." unique_id=644454763 instance=ExtResource("21_dm5gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.945791, 1.2158775, 74.0348)
+
+[node name="Nest4" parent="." unique_id=906590198 instance=ExtResource("21_dm5gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.994281, 0.9082444, 60.7562)
+
+[node name="Nest5" parent="." unique_id=815905488 instance=ExtResource("21_dm5gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.975558, 1.2368894, 30.481575)

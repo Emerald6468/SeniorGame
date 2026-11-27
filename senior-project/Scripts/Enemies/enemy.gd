@@ -19,6 +19,9 @@ enum ENEMY_STATES{
 @export var enemy_state: ENEMY_STATES
 
 
+#SpawnLevelStuff
+var made_by_nest = false
+
 
 #Monitor
 @onready var monitor: Area3D = $Monitor
@@ -182,6 +185,8 @@ func find_level():
 	
 func _ready() -> void:
 	if !find_level(): level_parent = null
+	#enemies allready put into level
+	if !made_by_nest: level_parent.total_enemies += 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	status_tracker()

@@ -37,4 +37,4 @@ func keep_off_ground():
 func _physics_process(delta: float) -> void:
 	super(delta)
 	keep_off_ground()
-	if enemy_state == ENEMY_STATES.Chasing: attack()
+	#if enemy_state == ENEMY_STATES.Chasing: attack()

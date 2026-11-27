@@ -9,6 +9,7 @@
 [ext_resource type="Sky" uid="uid://ddv37ae8addi1" path="res://Assets/Sky/purplesky.tres" id="7_j84jx"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="8_td08v"]
 [ext_resource type="Material" uid="uid://c3r5f45advnws" path="res://Assets/Textures/grass1.tres" id="9_v8jaq"]
+[ext_resource type="PackedScene" uid="uid://wy0vgdc6rfum" path="res://Scenes/Prefabs/Enemies/Nest.tscn" id="10_8ixhd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhtoe"]
 albedo_texture = ExtResource("1_y8kri")
@@ -191,6 +192,9 @@ glow_enabled = true
 
 [node name="Arena2" type="Node3D" unique_id=2014480433]
 script = ExtResource("1_51glo")
+defeat_all_enemies = true
+is_arena = true
+waves = 3
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1885805812]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.021217108, 0, 36.24103)
@@ -777,3 +781,12 @@ environment = SubResource("Environment_oj6lt")
 
 [node name="EndPoint" parent="." unique_id=401920304 instance=ExtResource("2_oj6lt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.041837, -0.17142296, 110.29819)
+
+[node name="Nest" parent="." unique_id=209987961 instance=ExtResource("10_8ixhd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.548933, 1.738708, 21.084648)
+
+[node name="Nest2" parent="." unique_id=1999736549 instance=ExtResource("10_8ixhd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.788717, 1.0280528, 62.798805)
+
+[node name="Nest3" parent="." unique_id=1551143436 instance=ExtResource("10_8ixhd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.452969, 1.6742368, 65.56065)

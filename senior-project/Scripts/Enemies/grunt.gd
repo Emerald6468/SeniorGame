@@ -26,4 +26,4 @@ func melee():
 
 func _physics_process(delta: float) -> void:
 	super(delta)
-	if close_enough: attack()
+	#if close_enough: attack()
