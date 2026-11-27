@@ -17,8 +17,9 @@ var nest_list
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	total_enemies = waves * enemy_per_wave
-	if is_arena: nest_list = get_children_of_type(self,Nest)
-	multi_waves()
+	if is_arena: 
+		nest_list = get_children_of_type(self,Nest)
+		multi_waves()
 	#print(nest_list)
 
 
