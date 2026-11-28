@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8g7tp85pg1p0"]
 
 [ext_resource type="Script" uid="uid://bwy6luidm3cu" path="res://Scripts/LevelStuff/zone_manager.gd" id="1_0smw7"]
-[ext_resource type="PackedScene" uid="uid://vcnu34w0eb7s" path="res://Scenes/Testing/ZanderTests/level_test_stuff/LevelGen.tscn" id="2_0smw7"]
+[ext_resource type="PackedScene" uid="uid://vcnu34w0eb7s" path="res://Scenes/Prefabs/LevelManagement/LevelGen.tscn" id="2_0smw7"]
 [ext_resource type="Script" uid="uid://ccx5b8vxrl6j" path="res://Scripts/SaveZone.gd" id="3_61bua"]
 
 [node name="ZoneManager" type="Node3D" unique_id=1318538575]

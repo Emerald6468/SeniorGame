@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://ccv787hm4h8fp"]
 
 [ext_resource type="Script" uid="uid://c5hn1kjc1e1em" path="res://Scripts/game_manager.gd" id="1_cxue2"]
+[ext_resource type="PackedScene" uid="uid://diulqm3vqe1jy" path="res://Scenes/Zones/Hub/hub_blockout_v2.tscn" id="2_cjmvj"]
 
 [node name="GameManager" type="Node3D" unique_id=762158510]
 script = ExtResource("1_cxue2")
 character_items = Array[int]([1, 2])
+
+[node name="hub_blockout_v2" parent="." unique_id=1653858458 instance=ExtResource("2_cjmvj")]

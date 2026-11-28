@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="1_5a80o"]
 [ext_resource type="Script" uid="uid://byo2rsevsvsjv" path="res://Scripts/LevelStuff/level_manager.gd" id="1_8kr7a"]
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="2_vgpiy"]
-[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="3_vgpiy"]
+[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Prefabs/LevelManagement/end_point.tscn" id="3_vgpiy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yoqnx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

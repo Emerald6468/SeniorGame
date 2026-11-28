@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c50dme8fkyjf1" path="res://Assets/Placeholder/templategrid_albedo.png" id="1_2oala"]
 [ext_resource type="Script" uid="uid://byo2rsevsvsjv" path="res://Scripts/LevelStuff/level_manager.gd" id="1_vsnhd"]
-[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="2_8akdw"]
+[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Prefabs/LevelManagement/end_point.tscn" id="2_8akdw"]
 [ext_resource type="Texture2D" uid="uid://cjxqwj44mpj7q" path="res://Assets/Textures/wood1.png" id="2_km03g"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="2_xhtoe"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="4_eg5nu"]

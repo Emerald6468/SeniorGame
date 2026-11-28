@@ -1,3 +1,4 @@
+class_name Zone
 extends Node3D
 
 #Files
@@ -32,7 +33,8 @@ var cur_arena_choices: Array[PackedScene]
 #to control level gen
 @export var level_length = 6
 var current_room = 0
-var current_zone = 1
+@export_category("Zone")
+@export var current_zone = 1
 var gen_num = 1
 var zone_array: Array[PackedScene]
 var level_list: Array[String]

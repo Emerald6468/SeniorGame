@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c652ejfuywhbm" path="res://Assets/Textures/floor1.png" id="3_3odww"]
 [ext_resource type="PackedScene" uid="uid://q1bcuxedsge5" path="res://Scenes/Prefabs/player.tscn" id="3_m06yq"]
 [ext_resource type="Texture2D" uid="uid://bw3mfmvigamss" path="res://Assets/Textures/fencetest1.png" id="3_vsdn7"]
-[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Testing/ZanderTests/level_test_stuff/end_point.tscn" id="3_wpv30"]
+[ext_resource type="PackedScene" uid="uid://ckngpwo4l44fc" path="res://Scenes/Prefabs/LevelManagement/end_point.tscn" id="3_wpv30"]
 [ext_resource type="ArrayMesh" uid="uid://d2e5081ai0b76" path="res://Assets/Meshes/Props/Pipes/Pipe1.glb" id="8_a08ac"]
 [ext_resource type="PackedScene" uid="uid://cek2fc4uwkope" path="res://Scenes/Prefabs/leaf_platform_1.tscn" id="8_lx5hw"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="8_xrskk"]

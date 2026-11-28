@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cp7wf3qugbheo"]
+
+[ext_resource type="Script" uid="uid://c26yjjcfcvx7j" path="res://Scripts/LevelStuff/level_transition.gd" id="1_awrm3"]
+[ext_resource type="Shader" uid="uid://dkebcbopw8irf" path="res://Scripts/Shaders/CartoonFire.gdshader" id="2_awrm3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ypcdf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q27vs"]
+render_priority = 0
+shader = ExtResource("2_awrm3")
+shader_parameter/apply_shape_deform = false
+shader_parameter/top_radius = 0.706000033535
+shader_parameter/bottom_radius = 0.7250000344375
+shader_parameter/center_radius = 2.42400011514
+shader_parameter/center_position = 0.0
+shader_parameter/cylinder_height = 1.0
+shader_parameter/bottom_curve = 0.4
+shader_parameter/_vibrate_amplitude = 0.015
+shader_parameter/_vibrate_frequency = 200.0
+shader_parameter/_speed = 2.0
+shader_parameter/_scale = 0.295
+shader_parameter/color_inner = Color(0.5038373, 1.1249076, 1.2382263, 0)
+shader_parameter/color_outer = Color(0.18904272, 0.4327615, 0.57371944, 0.6784314)
+shader_parameter/color_threshold = 0.5150000244625
+shader_parameter/flame_height = -0.1
+shader_parameter/flame_height_offset = -0.995
+shader_parameter/pattern_scale = 6.115
+shader_parameter/use_additional_texture = false
+shader_parameter/flame_additional_texture = SubResource("NoiseTexture2D_ypcdf")
+shader_parameter/texture_scale = 1.0
+shader_parameter/texture_blend = 1.0
+shader_parameter/outline_enabled = false
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_thickness = 0.04
+
+[sub_resource type="SphereMesh" id="SphereMesh_bhunq"]
+material = SubResource("ShaderMaterial_q27vs")
+radius = 1.0
+height = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
+radius = 1.75
+
+[node name="LevelTransition" type="Node3D" unique_id=1803552283]
+script = ExtResource("1_awrm3")
+Generator = null
+Destination = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=491939798]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("SphereMesh_bhunq")
+
+[node name="TeleportCollision" type="Area3D" parent="." unique_id=1208617665]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleportCollision" unique_id=1033120600]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_bhunq")
